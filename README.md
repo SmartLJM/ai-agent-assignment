@@ -46,10 +46,37 @@ This repository contains the complete assignment specifications for a course pro
 All students must complete the following three modules:
 
 ### 1. Knowledge Assets (35 points)
-Collect and organize ≥20 knowledge sets related to protein corona research. Each knowledge set includes:
+Collect and organize ≥20 knowledge sets related to computational biology and deep learning. Each knowledge set includes:
 - `content/` — Original content (papers, web pages, etc.)
 - `keywords.json` — Keywords and topic classification
 - `source.json` — Source metadata (DOI, URL, etc.)
+
+**Research Topic Themes**: Students can select one of the following topics as their research direction:
+
+| Topic | Description |
+|------|------|
+| `protein-corona` | Protein Corona |
+| `single-cell-omics` | Single-cell Omics |
+| `genomics-sequencing` | Genomics and Sequencing |
+| `gene-perturbation` | Gene Perturbation |
+| `drug-discovery` | Drug Discovery |
+| `protein-structure` | Protein Structure |
+| `neural-network` | Neural Networks |
+| `graph-neural-network` | Graph Neural Networks |
+| `generative-model` | Generative Models |
+| `foundation-model` | Foundation Models |
+| `multi-omics` | Multi-omics Integration |
+| `spatial-biology` | Spatial Biology |
+| `epigenomics` | Epigenomics |
+| `biomedical-nlp` | Biomedical Natural Language Processing |
+| `molecular-dynamics` | Molecular Dynamics |
+| `medical-image-reconstruction` | Medical Image Reconstruction |
+| `medical-image-segmentation` | Medical Image Segmentation |
+| `medical-image-classification` | Medical Image Classification/Recognition |
+| `medical-image-registration` | Medical Image Registration |
+| `medical-image-synthesis` | Medical Image Synthesis |
+
+Students can define custom keywords (using kebab-case format), but topics should align with the selected research direction.
 
 ### 2. Evaluation Benchmark (35 points)
 Build a test suite with ≥20 questions covering the knowledge base. Each question includes:

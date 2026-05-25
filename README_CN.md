@@ -48,10 +48,37 @@
 所有学生必须完成以下三个模块：
 
 ### 1. 知识资产（35 分）
-收集并整理至少 20 个与蛋白冠研究相关的知识集。每个知识集包含：
+收集并整理至少 20 个与计算生物学和深度学习相关的知识集。每个知识集包含：
 - `content/` —— 原始内容（论文、网页等）
 - `keywords.json` —— 关键词与主题分类
 - `source.json` —— 来源元数据（DOI、URL 等）
+
+**研究方向主题**：学生可从以下主题中选择一个作为研究方向：
+
+| 主题 | 说明 |
+|------|------|
+| `protein-corona` | 蛋白冠 |
+| `single-cell-omics` | 单细胞组学 |
+| `genomics-sequencing` | 基因组学与测序 |
+| `gene-perturbation` | 基因扰动 |
+| `drug-discovery` | 药物发现 |
+| `protein-structure` | 蛋白质结构 |
+| `neural-network` | 神经网络 |
+| `graph-neural-network` | 图神经网络 |
+| `generative-model` | 生成模型 |
+| `foundation-model` | 基础模型 |
+| `multi-omics` | 多组学整合 |
+| `spatial-biology` | 空间生物学 |
+| `epigenomics` | 表观基因组学 |
+| `biomedical-nlp` | 生物医学自然语言处理 |
+| `molecular-dynamics` | 分子动力学 |
+| `medical-image-reconstruction` | 医学图像重建 |
+| `medical-image-segmentation` | 医学图像分割 |
+| `medical-image-classification` | 医学图像分类/识别 |
+| `medical-image-registration` | 医学图像配准 |
+| `medical-image-synthesis` | 医学图像合成 |
+
+学生可以自定义关键词（使用 kebab-case 格式），但主题应与所选研究方向一致。
 
 ### 2. 评测基准（35 分）
 构建覆盖知识库的测试集，至少 20 道题目。每道题包含：

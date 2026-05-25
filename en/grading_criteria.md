@@ -48,9 +48,37 @@ The total score is **100 points**, consisting of three parts:
 |------|------|------|
 | **Question Quality** | 5 points | Questions are clearly stated, unambiguous |
 | **Source Citation** | 5 points | Each question has accurate source citation |
-| **Topic Classification** | 4 points | Topic classification is correct, using predefined topic terms |
+| **Topic Classification** | 4 points | Topic classification is correct, using predefined topic terms (see topic list below) |
 
 **Note**: Valid questions refer to those that can be clearly answered, have accurate sources, and are correctly formatted.
+
+### 3.3 Predefined Topic List
+When collecting knowledge assets and creating evaluation benchmarks, students should choose from the following topics:
+
+| Topic | Description |
+|------|------|
+| `protein-corona` | Protein Corona |
+| `single-cell-omics` | Single-cell Omics |
+| `genomics-sequencing` | Genomics and Sequencing |
+| `gene-perturbation` | Gene Perturbation |
+| `drug-discovery` | Drug Discovery |
+| `protein-structure` | Protein Structure |
+| `neural-network` | Neural Networks |
+| `graph-neural-network` | Graph Neural Networks |
+| `generative-model` | Generative Models |
+| `foundation-model` | Foundation Models |
+| `multi-omics` | Multi-omics Integration |
+| `spatial-biology` | Spatial Biology |
+| `epigenomics` | Epigenomics |
+| `biomedical-nlp` | Biomedical Natural Language Processing |
+| `molecular-dynamics` | Molecular Dynamics |
+| `medical-image-reconstruction` | Medical Image Reconstruction |
+| `medical-image-segmentation` | Medical Image Segmentation |
+| `medical-image-classification` | Medical Image Classification/Recognition |
+| `medical-image-registration` | Medical Image Registration |
+| `medical-image-synthesis` | Medical Image Synthesis |
+
+Students can select one of these topics as their research direction, and define relevant keywords for each knowledge set (using kebab-case format).
 
 ---
 

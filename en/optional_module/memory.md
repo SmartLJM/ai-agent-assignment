@@ -44,14 +44,24 @@
 - Edge D, Trinh H, Cheng N, Bradley J, Chao A, Mody AN, et al. From Local to Global: A Graph RAG Approach to Query-Focused Summarization. ArXiv. 2024;abs/2404.16130.
 - Zhuang L, Chen S, Xiao Y, Zhou H, Zhang Y, Chen H, et al. LinearRAG: Linear Graph Retrieval Augmented Generation on Large-scale Corpora. ArXiv. 2025;abs/2510.10114.
 
-**Task Objective**: Extract entities and relationships from unstructured text to build a structured knowledge base supporting basic queries.
+**Task Objective**: Transform knowledge assets into a structured knowledge base supporting basic queries. Students can choose one or more of the following structured approaches:
+
+| Approach | Structured Form | Suitable Scenarios | Technical Examples |
+|----------|----------------|-------------------|-------------------|
+| **A. Entity-Relationship Graph** | Nodes (entities) + Edges (relationships) | Domains with strong conceptual associations and clear relationships | Neo4j, NetworkX |
+| **B. Hierarchical Classification** | Tree/hierarchical structure | Knowledge with clear hierarchical relationships | Taxonomy, classification schemes |
+| **C. Attribute-Value Tables** | Structured tables/JSON | Scenarios with rich entity attributes | SQL, MongoDB |
+| **D. Temporal Event Chains** | Timeline + event nodes | Procedural, developmental knowledge | Time-series databases |
+| **E. Hybrid Structure** | Combination of above | Complex knowledge domains | Combined solutions |
 
 **Task Requirements**:
-- Extract entities and relationships from text corpora to build a knowledge base;
-- Support basic entity attribute queries;
-- Draw knowledge base construction flowcharts and entity relationship diagrams.
+- Choose a suitable structured approach based on domain characteristics and transform knowledge assets into a structured knowledge base;
+- Support basic query functions (at least 1 query method);
+- Draw knowledge base construction flowcharts and structure diagrams.
 
-**Deliverables**: Show the entity relationship diagram of the knowledge base.
+**Deliverables**:
+- Show the structure diagram of the knowledge base;
+- Explain the rationale for choosing this structured approach.
 
 
 **Grading Criteria** (Total 100 points)
@@ -60,9 +70,9 @@
 
 | Check Item | Points | Grading Rules |
 | ------- | --- | ------------------------------------------ |
-| Entity and Relationship Extraction | 25 | Can extract and classify entities, can extract relationships = 25 points; partially correct = 15 points; basically runnable = 5 points |
-| Attribute Completeness | 20 | Each entity contains ≥2 attributes = 20 points; some have attributes = 10 points |
-| Query Function | 15 | Can retrieve entity attributes based on questions = 15 points; partially runnable = 5 points |
+| Structuring Degree | 30 | Knowledge assets completely transformed into structured form = 30 points; partial transformation = 18 points; basically runnable = 6 points |
+| Query Function | 15 | Can implement basic queries = 15 points; partially runnable = 5 points |
+| Structure Rationality | 15 | Structural approach suitable for domain characteristics = 15 points; basically reasonable = 8 points; structure混乱 = 3 points |
 
 **II. Code and Documentation** (40 points)
 
@@ -70,7 +80,7 @@
 | ----- | --- | ------------------------------------- |
 | Runnability | 20 | Runs without errors = 20 points; minor fixable issues = 10 points; cannot run = 0 points |
 | Flowchart | 10 | Contains complete knowledge base construction process = 10 points; partial process = 5 points |
-| Entity Relationship Diagram | 10 | Clearly shows entities and relationships = 10 points; basically readable = 5 points; missing = 0 points |
+| Structure Diagram | 10 | Clearly shows knowledge base structure = 10 points; basically readable = 5 points; missing = 0 points |
 
 
 # Lv. 1 Agentic RAG
@@ -78,53 +88,77 @@
 **References**:
 - Singh A, Ehtesham A, Kumar S, Khoei TT. Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG. ArXiv. 2025;abs/2501.09136.
 
-**Task Objective**: Implement an adaptive retrieval-augmented generation system capable of:
-- Decomposing composite problems into sub-tasks, retrieving separately, and integrating results;
-- Self-checking and correcting answer quality.
+**Task Objective**: Implement an Agentic RAG system capable of:
+- **Autonomous retrieval decision-making**: The system independently analyzes user questions and determines what content needs to be retrieved (rather than directly using vector similarity Top-K);
+- **Dynamic retrieval strategy**: Decides retrieval strategy based on question characteristics (e.g., whether retrieval is needed, what type of knowledge to retrieve, retrieval scope, etc.).
+
+**Key Difference**:
+- **Traditional RAG**: Directly calculates vector similarity between questions and documents, returns Top-K results;
+- **Agentic RAG**: The system first "thinks" about what information the question needs, then actively retrieves, rather than passively matching.
 
 **Task Requirements**:
-- Implement task decomposition and result integration for composite problems;
-- Implement answer quality self-checking and correction mechanisms;
+- Implement question analysis module: The system can analyze user questions and output retrieval decisions (whether retrieval is needed, what to retrieve);
+- Implement dynamic retrieval module: Execute retrieval based on retrieval decisions to obtain relevant knowledge;
+- Implement answer generation module: Generate answers based on retrieval results;
 - Draw system flowcharts.
 
 **Deliverables**:
-- Composite task problems: Need to be decomposed into multiple sub-tasks, no fewer than 8;
-- Show the system's decision-making process for each problem in the following format:
+- Test question set: No fewer than 10 questions;
+- Show the system's **multi-step retrieval decision-making process** for each question and the final answer in the following format:
 
-| Problem | Sub-task Decomposition | Generated Answer | Self-check Result |
-|---|---|---|---|
-| {Problem content} | {List of decomposed sub-tasks} | {Final generated answer} | {Pass/Fail + Reason} |
+**Step-by-step display format**:
+
+**Question**: {Question content}
+
+**Retrieval Decision Process**:
+| Step | Retrieval Decision | Retrieved Content | Retrieval Result Summary |
+|------|-------------------|-------------------|-------------------------|
+| 1 | {Judgment: need to retrieve XX} | {Keywords/conditions} | {Summary of key information obtained} |
+| 2 | {Judgment: need to retrieve YY} | {Keywords/conditions} | {Summary of key information obtained} |
+| ... | ... | ... | ... |
+
+**Generated Answer**: {Final answer synthesized from all retrieval results}
+
+
+**Example**:
+
+**Question**: "Compare the differences in formation mechanisms, composition, and biological functions between protein corona and biomembrane"
+
+**Retrieval Decision Process**:
+| Step | Retrieval Decision | Retrieved Content | Retrieval Result Summary |
+|------|-------------------|-------------------|-------------------------|
+| 1 | Need to retrieve: protein corona formation mechanism | Keywords: "protein corona", "formation mechanism" | Protein corona is a dynamic layer formed by non-specific adsorption of proteins onto the surface of nanomaterials after entering biological environments |
+| 2 | Need to retrieve: biomembrane formation mechanism | Keywords: "biomembrane", "formation" | Biomembrane is formed by self-assembly of phospholipid bilayers with selective permeability function |
+| 3 | Need to retrieve: protein corona composition | Keywords: "protein corona", "composition" | Mainly composed of plasma proteins including albumin, immunoglobulin, fibrinogen, etc. |
+| 4 | Need to retrieve: biomembrane composition | Keywords: "biomembrane", "composition", "phospholipid" | Mainly composed of phospholipids, cholesterol, and membrane proteins |
+
+**Generated Answer**: "Protein corona and biomembrane show significant differences in formation mechanisms, composition, and biological functions. In terms of formation mechanism, protein corona is a dynamic layer formed by non-specific adsorption of proteins after nanomaterials enter biological environments, while biomembrane is a structure with selective permeability function formed by self-assembly of phospholipid bilayers. In terms of composition, protein corona is mainly composed of plasma proteins (albumin, immunoglobulin, fibrinogen, etc.), while biomembrane is mainly composed of phospholipids, cholesterol, and membrane proteins. In terms of biological function, protein corona affects the biological recognition and in vivo fate of nanomaterials, while biomembrane is responsible for selective exchange of substances between inside and outside cells and signal transduction..."
 
 
 **Grading Criteria** (Total 100 points)
 
-**I. Question Set Quality** (25 points)
+**I. Question Set Quality** (20 points)
 
 | Check Item | Points | Grading Rules |
-|---|---|---|
-| Number of Composite Tasks | 15 | ≥12 = 15 points; 8-11 = 10 points; <8 = 5 points |
-| Question Effectiveness | 10 | Clear problems, require decomposition, definite answers = 10 points; basically reasonable = 5 points; vague problems = 2 points |
+|------------|--------|---------------|
+| Number of Questions | 10 | ≥10 = 10 points; 5-9 = 6 points; <5 = 3 points |
+| Question Diversity | 10 | Includes both retrieval-needed and no-retrieval-needed questions = 10 points; single type = 5 points |
 
-**II. Functional Completeness** (50 points)
-
-| Check Item | Points | Grading Rules |
-|---|---|---|
-| Task Decomposition and Integration | 30 | Can correctly decompose composite tasks and integrate results = 30 points; partially correct = 15 points; basically runnable = 5 points |
-| Self-check Correction Mechanism | 20 | Can self-check and correct answers = 20 points; only self-check without correction = 10 points; no self-check = 0 points |
-
-**III. Code and Documentation** (15 points)
+**II. Functional Completeness** (60 points)
 
 | Check Item | Points | Grading Rules |
-|---|---|---|
+|------------|--------|---------------|
+| Retrieval Decision Ability | 35 | Can correctly determine whether retrieval is needed and what to retrieve = 35 points; partially correct = 20 points; basically runnable = 5 points |
+| Retrieval Execution Ability | 15 | Can correctly execute retrieval based on decisions = 15 points; partially correct = 8 points |
+| Answer Quality | 10 | Accurate and complete answers = 10 points; basically correct = 5 points |
+
+**III. Code and Documentation** (20 points)
+
+| Check Item | Points | Grading Rules |
+|------------|--------|---------------|
 | Runnability | 10 | Runs without errors = 10 points; minor fixable issues = 5 points; cannot run = 0 points |
 | Flowchart | 5 | Contains complete system processing flow = 5 points; partial flow = 3 points |
-
-**IV. Results Presentation** (10 points)
-
-| Check Item | Points | Grading Rules |
-| ------ | --- | -------------------------------------- |
-| Decision Process Display | 5 | Complete decomposition + self-check results for each problem = 5 points; partial display = 3 points |
-| Answer Quality | 5 | Accurate and complete answers = 5 points; basically correct but incomplete = 3 points; obvious errors = 1 point |
+| Decision Display | 5 | Clearly shows retrieval decision process for each question = 5 points; partial display = 3 points |
 
 
 # Lv. 1 Multi-level Persistent Memory System

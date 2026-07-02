@@ -1,0 +1,8 @@
+flowchart TD
+  START([Input: 提交合规审计])
+  N1_validate_submission["compliance-agent<br/>validate_submission"]
+  START --> N1_validate_submission
+  N2_summarize_audit["evidence-agent<br/>summarize_audit"]
+  N1_validate_submission --> N2_summarize_audit
+  END([Trace + result])
+  N2_summarize_audit --> END

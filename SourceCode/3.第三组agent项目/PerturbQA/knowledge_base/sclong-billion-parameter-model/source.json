@@ -1,0 +1,8 @@
+{
+  "type": "paper",
+  "doi": "10.1038/s41467-026-69102-y",
+  "title": "scLong: a billion-parameter foundation model for capturing long-range gene context in single-cell transcriptomics",
+  "authors": ["Bai D", "Mo S", "Zhang R", "Luo Y", "Gao J", "Yang JP", "Wu Q", "Rahmani H", "Amariuta T", "Grotjahn D", "Zhong S", "Lewis N", "Wang W", "Ideker T", "Xie P", "Xing E"],
+  "journal": "Nature Communications",
+  "year": 2026
+}

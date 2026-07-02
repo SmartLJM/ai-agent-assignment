@@ -1,0 +1,7 @@
+# Optional MedSAM runtime dependencies.
+# Install these only when you need to run "可选：运行 MedSAM 当前切片".
+#
+# For macOS + Python 3.9, torch 2.2.x still provides compatible wheels.
+torch==2.2.2
+torchvision==0.17.2
+segment-anything==1.0

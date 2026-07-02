@@ -1,0 +1,165 @@
+{
+  "official_rubric": {
+    "total": 100,
+    "knowledge_assets": 35,
+    "benchmark": 35,
+    "optional_modules": 30
+  },
+  "knowledge_assets": {
+    "observed": {
+      "asset_count": 75,
+      "valid_structure": 75,
+      "nonempty_content": 75,
+      "valid_keywords": 75,
+      "url_count": 75,
+      "direct_url_count": 72,
+      "fallback_url_count": 3,
+      "academic_paper_count": 51,
+      "academic_papers_with_doi": 51,
+      "source_types": {
+        "academic-paper": 51,
+        "web-resource": 5,
+        "course-resource": 15,
+        "textbook": 4
+      },
+      "issues": []
+    },
+    "status": "pass-with-source-quality-risk",
+    "evidence_files": [
+      "PartA_知识资产与评测基准/data/",
+      "PartA_知识资产与评测基准/validation_summary.json"
+    ],
+    "presentation_evidence": [
+      "75/75 个资产三件套完整",
+      "75/75 个关键词文件符合 kebab-case",
+      "72 个直达来源；3 个题名检索回退页",
+      "51/51 个 academic-paper 来源含 DOI"
+    ]
+  },
+  "benchmark": {
+    "observed": {
+      "question_count": 81,
+      "valid_schema": 81,
+      "unique_id_count": 81,
+      "linked_source_count": 81,
+      "quoted_evidence_match_count": 81,
+      "valid_theme_count": 81,
+      "issues": []
+    },
+    "status": "pass",
+    "evidence_files": [
+      "PartA_知识资产与评测基准/benchmark/qa_dataset.json",
+      "PartA_知识资产与评测基准/validation_summary.json"
+    ],
+    "presentation_evidence": [
+      "81 道问题",
+      "81/81 字段完整",
+      "81/81 ID 唯一",
+      "81/81 来源绑定到本地资产",
+      "81/81 引用原文可在资产中复核"
+    ]
+  },
+  "optional_modules": {
+    "selected": {
+      "selected_modules": [
+        {
+          "name": "advanced-static-orchestration",
+          "difficulty": 2,
+          "level": "Lv.2 (medium)",
+          "why_level_2": {
+            "optimized_beyond_basic": "Four JSON workflows use sequential, ThreadPoolExecutor parallel, and data-driven conditional modes.",
+            "edge_cases": "Unknown workflows/actions/roles, missing case IDs, parallel failures, output-key conflicts, missing condition fields, and step failures are explicit.",
+            "deeper_analysis": "Each run records node, Agent role, mode, status, elapsed time, input keys, output, branch decision, and final context."
+          },
+          "evidence": [
+            "workflows.json",
+            "code/workflow_engine.py",
+            "evaluation/workflow_demo_results.json",
+            "evaluation/orchestration_benchmark.json",
+            "evaluation/orchestration_benchmark_results.json",
+            "evaluation/flowcharts/workflow_modes.svg"
+          ]
+        },
+        {
+          "name": "multi-modal-knowledge-base",
+          "difficulty": 2,
+          "level": "Lv.2 (medium)",
+          "why_level_2": {
+            "optimized_beyond_basic": "Offline local-HTML ingestion extracts text, image references, and tables into one searchable index with modality-aware scoring.",
+            "edge_cases": "Empty queries, no-hit retrieval, modality filtering, missing local evidence, and deterministic ranking are covered.",
+            "deeper_analysis": "The evaluation reports modality counts (75/277/277 after restoring the full local NPC dataset), evidence modalities per query, and a 20-question result set."
+          },
+          "evidence": [
+            "code/multimodal_kb.py",
+            "evaluation/document_extraction_demo.json",
+            "evaluation/multimodal_benchmark.json",
+            "evaluation/multimodal_demo_results.json",
+            "evaluation/flowcharts/multimodal_construction.svg",
+            "evaluation/flowcharts/multimodal_retrieval.svg"
+          ]
+        }
+      ],
+      "difficulty_sum": 4,
+      "rubric_alignment": "Two Lv.2 modules satisfy the required total difficulty of at least 4."
+    },
+    "observed": {
+      "runtime_mode": {
+        "default": "local-only",
+        "dashscope": "explicit-opt-in",
+        "remote_html": "rejected"
+      },
+      "knowledge_records": {
+        "text": 75,
+        "image": 277,
+        "table": 277
+      },
+      "multimodal_questions": 20,
+      "multimodal_passed": 20,
+      "document_extraction": {
+        "text": 1,
+        "image": 1,
+        "table": 1
+      },
+      "document_extraction_passed": true,
+      "workflow_templates": 4,
+      "workflow_modes": [
+        "sequential",
+        "parallel",
+        "conditional"
+      ],
+      "workflow_demo_passed": 4,
+      "orchestration_questions": 12,
+      "orchestration_passed": 12,
+      "flowchart_files": 9,
+      "unit_tests": 19,
+      "unit_tests_passed": 19
+    },
+    "status": "pass",
+    "evidence_files": [
+      "PartB_智能体应用项目/workflows.json",
+      "PartB_智能体应用项目/evaluation/workflow_demo_results.json",
+      "PartB_智能体应用项目/evaluation/orchestration_benchmark_results.json",
+      "PartB_智能体应用项目/evaluation/multimodal_demo_results.json",
+      "PartB_智能体应用项目/evaluation/document_extraction_demo.json",
+      "PartB_智能体应用项目/evaluation/flowcharts/workflow_modes.svg",
+      "PartB_智能体应用项目/evaluation/flowcharts/multimodal_construction.svg",
+      "PartB_智能体应用项目/evaluation/flowcharts/multimodal_retrieval.svg"
+    ],
+    "presentation_evidence": [
+      "难度和 4",
+      "4 个工作流模板",
+      "编排模式：['sequential', 'parallel', 'conditional']",
+      "编排评测：12/12",
+      "多模态规模：{'text': 75, 'image': 277, 'table': 277}",
+      "多模态评测：20/20",
+      "本地 HTML 三模态抽取：{'text': 1, 'image': 1, 'table': 1}",
+      "运行模式：{'default': 'local-only', 'dashscope': 'explicit-opt-in', 'remote_html': 'rejected'}",
+      "单元测试：19/19"
+    ]
+  },
+  "evidence_chain_complete": true,
+  "remaining_risks": [
+    "3 个 web-resource 来源仍为题名检索回退页，已在 source.json 中标记 source_quality_note，建议提交前人工替换为直达论文页。",
+    "自动检查能证明格式、链接和引用原文存在，不能替代教师对答案学术准确性的人工判断。"
+  ]
+}

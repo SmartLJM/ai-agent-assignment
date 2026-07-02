@@ -1,0 +1,6 @@
+{
+    "id": "doc_019",
+    "source": "Improve Meta-learning for Few-Shot Text Classification.pdf",
+    "question": "文献中提出的Query-Data-Augmenter模块为何需结合最优传输（optimal transport）技术来联合估计类原型？该设计如何区别于传统Prototypical Networks中仅依赖支持集均值的原型构造方式？",
+    "answer": "最优传输技术被用于Query-Data-Augmenter模块，旨在在特征空间中建立支持集样本与查询集样本之间的结构化对应关系，从而在类内分布不均衡、支持集样本稀疏且偏离类中心时，仍能稳健地估计更接近真实类分布中心的原型。与Prototypical Networks（PN）仅对支持集样本做简单均值聚合（易受异常值和采样偏差影响）不同，LAQDA将查询样本视为待分配的‘质量点’，通过最优传输求解最小代价的样本匹配方案，使原型估计同时吸收查询样本的判别性分布信息，缓解因支持集小样本导致的原型模糊性和偏移性，提升少样本条件下的泛化鲁棒性。"
+}

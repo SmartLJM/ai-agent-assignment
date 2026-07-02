@@ -1,0 +1,38 @@
+{
+  "id": "Q0017",
+  "question": "What is ChEMBL mainly used for in computational drug discovery?",
+  "type": "short-answer",
+  "difficulty": 3,
+  "answer": {
+    "type": "keypoint",
+    "content": "ChEMBL is used as a curated bioactivity database linking compounds, targets, assays, activities, mechanisms, documents, and drug information for modeling and chemical biology analysis.",
+    "keypoints": [
+      {
+        "point": "curated bioactivity database",
+        "score": 3.33
+      },
+      {
+        "point": "compound-target-assay links",
+        "score": 3.33
+      },
+      {
+        "point": "model training/evaluation",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-018-chembl-bioactivity",
+      "original_text": "ChEMBL is a curated database of bioactive molecules with drug-like properties. It links compounds, targets, assays, activities, mechanisms, documents, and drug information. ChEMBL is widely used to train and evaluate computational models for bioactivity prediction, target association, QSAR, and chemical biology analysis."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "chembl",
+        "bioactivity"
+      ]
+    }
+  ]
+}

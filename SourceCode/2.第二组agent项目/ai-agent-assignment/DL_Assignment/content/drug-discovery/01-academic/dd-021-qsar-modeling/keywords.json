@@ -1,0 +1,8 @@
+{
+  "drug-discovery": [
+    "qsar",
+    "molecular-descriptors",
+    "bioactivity-prediction",
+    "applicability-domain"
+  ]
+}

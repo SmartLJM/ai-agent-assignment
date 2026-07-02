@@ -1,0 +1,38 @@
+{
+  "id": "Q0012",
+  "question": "What does pharmacodynamics study?",
+  "type": "short-answer",
+  "difficulty": 3,
+  "answer": {
+    "type": "keypoint",
+    "content": "Pharmacodynamics studies what a drug does to the body, including target engagement, mechanism of action, dose-response, efficacy, potency, and toxicity mechanisms.",
+    "keypoints": [
+      {
+        "point": "what drug does to body",
+        "score": 3.33
+      },
+      {
+        "point": "target engagement",
+        "score": 3.33
+      },
+      {
+        "point": "dose-response",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-013-pharmacodynamics",
+      "original_text": "Pharmacodynamics describes what a drug does to the body. It includes target engagement, receptor binding, pathway modulation, mechanism of action, dose-response relationships, efficacy, potency, biomarkers, and toxicity mechanisms. Pharmacodynamics links drug exposure to biological effect."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "pharmacodynamics",
+        "dose-response"
+      ]
+    }
+  ]
+}

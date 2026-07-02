@@ -1,0 +1,6 @@
+{
+    "id": "doc_030",
+    "source": "Mei_Cross-Modal_Interactive_Perception_Network_with_Mamba_for_Lung_Tumor_Segmentation_CVPR_2025_paper.pdf",
+    "question": "CIPA网络中动态跨模态交互模块（DCIM）如何利用PET图像的位置信息来增强CT图像的局部特征建模？其设计是否显式建模了PET与CT在解剖-功能空间中的几何对应关系？",
+    "answer": "DCIM通过将PET图像作为‘位置先验源’，利用其高代谢对比度识别潜在病灶区域，生成动态权重或注意力偏置，引导CT特征图在对应解剖位置上强化纹理与结构响应；具体通过交互区域Mamba块实现PET全局上下文到CT局部区域的条件化状态建模，并结合局部Mamba块捕获CT自身精细纹理。但文献未显式引入空间配准约束、形变场建模或坐标映射机制，因此DCIM是隐式地、数据驱动地建模PET-CT功能-解剖关联，而非显式编码几何对应关系。"
+}

@@ -1,0 +1,15 @@
+flowchart TD
+  START([Input: 病例条件审查])
+  N1_inspect_case["case-inspector<br/>inspect_case_statistics"]
+  START --> N1_inspect_case
+  N2_foreground_ratio_decision{"case_statistics.mask_ratio gt threshold?"}
+  N1_inspect_case --> N2_foreground_ratio_decision
+  N3_large_foreground_review["review-agent<br/>review_large_foreground"]
+  N2_foreground_ratio_decision --> N3_large_foreground_review
+  N4_small_foreground_review["review-agent<br/>review_small_foreground"]
+  N2_foreground_ratio_decision --> N4_small_foreground_review
+  N2_foreground_ratio_decision -. true .-> N3_large_foreground_review
+  N2_foreground_ratio_decision -. false .-> N4_small_foreground_review
+  END([Trace + result])
+  N3_large_foreground_review --> END
+  N4_small_foreground_review --> END

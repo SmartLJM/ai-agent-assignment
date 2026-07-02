@@ -1,0 +1,38 @@
+{
+  "id": "Q0008",
+  "question": "What is the main purpose of virtual screening?",
+  "type": "short-answer",
+  "difficulty": 3,
+  "answer": {
+    "type": "keypoint",
+    "content": "The main purpose of virtual screening is to prioritize compounds from large libraries so that a smaller enriched set can be experimentally tested.",
+    "keypoints": [
+      {
+        "point": "prioritize compounds",
+        "score": 3.33
+      },
+      {
+        "point": "large chemical libraries",
+        "score": 3.33
+      },
+      {
+        "point": "experimental testing",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-009-virtual-screening",
+      "original_text": "Virtual screening uses computational methods to prioritize compounds from chemical libraries before experimental testing. Structure-based virtual screening docks compounds into a binding site, whereas ligand-based virtual screening uses similarity, pharmacophores, QSAR, or machine-learning models based on known active compounds."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "virtual-screening",
+        "compound-library"
+      ]
+    }
+  ]
+}

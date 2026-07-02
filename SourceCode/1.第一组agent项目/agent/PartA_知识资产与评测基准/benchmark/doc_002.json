@@ -1,0 +1,6 @@
+{
+    "id": "doc_002",
+    "source": "A machine learning approach for multimodal data fusion for survival prediction in cancer patients.pdf",
+    "question": "为何该研究强调late fusion在TCGA多组学生存预测中优于early fusion？其统计与计算依据是什么？",
+    "answer": "因TCGA数据具有典型‘小样本-高维度’特性（n≈10–10³患者，p≈10³–10⁵特征），early fusion会直接拼接原始高维异构特征，急剧扩大参数空间，加剧过拟合风险，并难以处理模态间维度严重失衡（如突变数据稀疏vs基因表达高维）、缺失值及批效应等问题；而late fusion先对各模态独立降维与建模（如用Spearman相关性筛选OS相关特征），再融合预测结果，既保留模态特异性预处理灵活性，又通过模态级正则化天然抑制过拟合，且能自适应加权各模态贡献，避免低信息量模态主导融合过程——这在低信噪比、高缺失率的多组学场景下显著提升模型稳健性与泛化能力。"
+}

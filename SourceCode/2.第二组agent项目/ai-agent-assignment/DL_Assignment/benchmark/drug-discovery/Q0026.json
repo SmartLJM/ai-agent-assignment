@@ -1,0 +1,28 @@
+{
+  "id": "Q0026",
+  "question": "Which statements are correct about virtual screening?\nA. It prioritizes compounds before testing\nB. It guarantees clinical efficacy\nC. It may use docking or ligand-based models\nD. It requires experimental follow-up",
+  "type": "multiple-choice",
+  "difficulty": 4,
+  "answer": {
+    "type": "exact",
+    "content": [
+      "A",
+      "C",
+      "D"
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-009-virtual-screening",
+      "original_text": "Virtual screening uses computational methods to prioritize compounds from chemical libraries before experimental testing. Structure-based virtual screening docks compounds into a binding site, whereas ligand-based virtual screening uses similarity, pharmacophores, QSAR, or machine-learning models based on known active compounds."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "virtual-screening",
+        "molecular-docking"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "group_leader": 1,
+  "student_id": "25210812000032",
+  "student_name": "杨兴钊",
+  "members": [
+    {
+      "student_id": "25220854050036",
+      "student_name": "赵帅",
+      "role": "项目路演与展示"
+    }
+  ],
+  "research_direction": "3D医学图像处理与深度学习架构",
+  "weight_A": 0.5,
+  "weight_B": 0.5,
+  "PartA_summary": "构建75个符合官方content目录规范的知识资产，统一medical-image-segmentation主题；形成81道字段完整、ID唯一、带本地证据的QA评测题。",
+  "PartB_summary": "实现Gradio本地智能体、NIfTI预处理、真实标注三视图可视化、可选模型预测评测，以及支持串行/并行/条件分支的进阶静态编排Lv.2与多模态知识库Lv.2（难度和4）。"
+}

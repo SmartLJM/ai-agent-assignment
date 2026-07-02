@@ -1,0 +1,8 @@
+flowchart TD
+  START([Input: 多模态证据检索问答])
+  N1_retrieve_multimodal["multimodal-retriever<br/>retrieve_multimodal"]
+  START --> N1_retrieve_multimodal
+  N2_analyze_retrieval["answer-analyst<br/>analyze_retrieval"]
+  N1_retrieve_multimodal --> N2_analyze_retrieval
+  END([Trace + result])
+  N2_analyze_retrieval --> END

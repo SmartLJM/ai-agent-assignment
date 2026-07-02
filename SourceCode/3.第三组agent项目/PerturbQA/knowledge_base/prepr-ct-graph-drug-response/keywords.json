@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "PrePR-CT: Graph Attention Networks for Cell-Type-Specific Drug Response Prediction",
+  "keywords": ["PrePR-CT", "graph attention network", "cell-type-specific", "drug response", "co-expression networks", "inductive prior", "small data", "chemical perturbation"]
+}

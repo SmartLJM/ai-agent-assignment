@@ -1,0 +1,5 @@
+{
+  "topic": "graph neural network with biological priors for perturbation",
+  "title": "PerturbGraph GNN with Biological Priors",
+  "keywords": ["PerturbGraph", "GNN", "graph neural network", "STRING", "Node2Vec", "Gene Ontology", "perturbation signature", "SVD", "latent program", "cosine similarity", "Spearman correlation", "Replogle", "Norman", "unseen perturbation", "biological priors"]
+}

@@ -1,0 +1,16 @@
+{
+  "knowledge_set_id": "dd-012-pharmacokinetics",
+  "title": "Clinical Pharmacology and Pharmacokinetics overview",
+  "source_type": "educational-resource",
+  "authors": [
+    "FDA"
+  ],
+  "journal": "",
+  "publisher": "U.S. Food and Drug Administration",
+  "doi": "",
+  "url": "https://www.fda.gov/drugs/development-resources/clinical-pharmacology",
+  "publication_date": "2025",
+  "accessed": "2026-06-19",
+  "content_file": "content/content.md",
+  "license_note": "Curated educational summary included locally; original/source metadata is recorded for traceability."
+}

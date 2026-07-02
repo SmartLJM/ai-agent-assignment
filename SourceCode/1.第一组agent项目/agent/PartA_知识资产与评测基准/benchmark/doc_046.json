@@ -1,0 +1,6 @@
+{
+    "id": "doc_046",
+    "source": "SSL-ProtoNetSelf-supervised Learning Prototypical Networks for few-shot.pdf",
+    "question": "SSL-ProtoNet在微调阶段为何同时引入自监督损失（L_SSL）和小样本损失（L_FSL）？二者在特征空间约束上存在何种协同机制？",
+    "answer": "同时引入L_SSL和L_FSL是为了在任务适应过程中兼顾样本级判别性与类别级判别性：L_SSL通过最小化支持样本与其旋转增强变体之间的距离，强制模型在嵌入空间中拉近同一实例的不同扰动视图，从而增强样本内一致性并保留细粒度特征不变性；L_FSL则基于ProtoNet范式，最小化查询样本到其对应类原型（支持样本均值）的距离，优化类间可分性。二者协同形成双重约束——L_SSL维持预训练获得的通用样本判别能力，防止微调时因数据稀疏导致的表示坍缩；L_FSL将该能力定向适配至目标任务的类别结构，确保嵌入空间既具备实例鲁棒性又满足N-way K-shot分类的几何结构要求。"
+}

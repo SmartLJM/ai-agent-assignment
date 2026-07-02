@@ -1,0 +1,8 @@
+{
+  "drug-discovery": [
+    "lead-identification",
+    "potency",
+    "selectivity",
+    "structure-activity-relationship"
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "topic": "LLM embeddings for perturbation prediction",
+  "title": "Scouter LLM-Based Perturbation Prediction",
+  "keywords": ["Scouter", "LLM embeddings", "GenePT", "ChatGPT", "text-embedding-ada-002", "compressor-generator", "1536-dimensional", "MSE", "PCC", "GEARS comparison", "single-cell", "gene perturbation", "language model"]
+}

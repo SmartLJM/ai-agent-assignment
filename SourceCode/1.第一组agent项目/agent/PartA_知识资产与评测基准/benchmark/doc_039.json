@@ -1,0 +1,6 @@
+{
+    "id": "doc_039",
+    "source": "Multi-omics approaches in cancer research.pdf",
+    "question": "文献中提到Joint NMF和JIVE均用于无监督多组学整合，二者在特征对齐机制上有何本质区别？",
+    "answer": "Joint NMF通过将多个非负数据矩阵（如mRNA、miRNA、甲基化）联合分解为共享的非负因子矩阵和各自的数据特异性负荷矩阵，强制所有组学数据映射到同一低维‘模块空间’，实现隐式特征对齐；而JIVE则显式建模数据结构：将每个组学矩阵分解为‘共享成分’（common variation across omics）、‘个体成分’（individual variation unique to each omics layer）和‘噪声’，其对齐依赖于协方差结构的统计一致性估计，而非非负约束下的共同因子投影。因此，Joint NMF侧重模块共表达驱动的生物学聚类，JIVE侧重变异源分离与可解释性解耦。"
+}

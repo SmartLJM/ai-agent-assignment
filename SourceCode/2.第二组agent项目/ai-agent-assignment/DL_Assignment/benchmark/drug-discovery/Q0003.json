@@ -1,0 +1,38 @@
+{
+  "id": "Q0003",
+  "question": "What is the difference between a hit and a lead?",
+  "type": "short-answer",
+  "difficulty": 5,
+  "answer": {
+    "type": "keypoint",
+    "content": "A hit is an initial molecule with measurable activity, while a lead is a confirmed and improved chemical starting point with better potency, selectivity, tractability, and preliminary drug-like properties.",
+    "keypoints": [
+      {
+        "point": "hit is initial activity",
+        "score": 3.33
+      },
+      {
+        "point": "lead is confirmed starting point",
+        "score": 3.33
+      },
+      {
+        "point": "lead has improved properties",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-004-lead-identification",
+      "original_text": "Lead identification converts confirmed hits into more reliable chemical starting points. A lead should have enough potency, selectivity, chemical tractability, and preliminary drug-like properties to justify systematic optimization. Lead identification usually combines confirmatory assays, orthogonal assays, counter-screens, preliminary ADME testing, and early structure-activity relationship analysis."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "hit-discovery",
+        "lead-identification"
+      ]
+    }
+  ]
+}

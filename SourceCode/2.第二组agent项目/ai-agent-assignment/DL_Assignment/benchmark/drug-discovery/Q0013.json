@@ -1,0 +1,38 @@
+{
+  "id": "Q0013",
+  "question": "Why can drug repurposing reduce development risk but still require validation?",
+  "type": "short-answer",
+  "difficulty": 5,
+  "answer": {
+    "type": "keypoint",
+    "content": "Repurposing may reduce risk because some safety, pharmacokinetic, formulation, or manufacturing information already exists, but the new indication still needs evidence for dosing, efficacy, mechanism, and safety in the new patient population.",
+    "keypoints": [
+      {
+        "point": "existing safety or PK information",
+        "score": 3.33
+      },
+      {
+        "point": "new indication still needs efficacy evidence",
+        "score": 3.33
+      },
+      {
+        "point": "new context can change dose and safety",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-014-drug-repurposing",
+      "original_text": "Drug repurposing identifies new therapeutic uses for approved or previously investigated drugs. It can reduce development risk because some information about safety, formulation, pharmacokinetics, or manufacturing may already exist. Repurposing strategies include target-based reasoning, disease similarity, transcriptomic reversal, electronic health record mining, network medicine, and phenotypic screening."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "drug-repurposing",
+        "clinical-validation"
+      ]
+    }
+  ]
+}

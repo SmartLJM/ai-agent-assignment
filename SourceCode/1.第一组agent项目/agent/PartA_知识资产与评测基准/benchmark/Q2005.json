@@ -1,0 +1,25 @@
+{
+    "id": "Q2005",
+    "question": "在本课程Problem Set 5中，为何使用Robinson–Foulds（RF）距离而非欧氏距离或Jaccard相似度来度量两棵无根系统发育树的差异？请从系统发育树的离散组合结构本质出发，解释RF距离的生物学意义及其对树拓扑一致性的刻画能力。",
+    "type": "short-answer",
+    "difficulty": 5,
+    "answer": {
+        "type": "similar",
+        "content": "Robinson–Foulds距离专为系统发育树设计，其生物学意义根植于进化分裂（evolutionary split）这一核心概念：每棵无根二叉树唯一对应一组非平凡分裂（即由某条边移除诱导的叶节点划分）。RF距离定义为两棵树分裂集合的对称差大小（即仅属于其中一棵树的分裂数），直接量化二者在进化关系假设上的不一致程度。相比之下，欧氏距离要求树表示为连续向量空间中的点，但系统发育树空间是离散、非欧几里得的（如Billera-Holmes-Vogtmann树空间虽连续但非平坦）；Jaccard相似度仅衡量分裂交集比例，忽略分歧的绝对数量，且未归一化，难以跨不同规模数据集比较。RF距离具有可解释性（单位为‘分裂差异数’）、计算可行性（O(n)时间复杂度，n为叶数）、以及与进化模型兼容性——例如，若两棵树在所有内部分支上均支持相同祖先分化事件，则RF距离为0，表明完全拓扑一致。因此，它是评估系统发育推断稳健性与聚类生物学合理性的黄金标准度量。"
+    },
+    "sources": [
+        {
+            "knowledge_set_id": "course_005",
+            "original_text": "MIT Lecture Notes"
+        }
+    ],
+    "theme": [
+        {
+            "genomic-data-science": [
+                "Robinson-Foulds距离",
+                "系统发育树聚类",
+                "共识树特异性"
+            ]
+        }
+    ]
+}

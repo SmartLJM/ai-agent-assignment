@@ -1,0 +1,5 @@
+{
+  "topic": "compositional perturbation autoencoder",
+  "title": "CPA Compositional Perturbation Autoencoder",
+  "keywords": ["CPA", "compositional perturbation autoencoder", "VAE", "disentanglement", "adversarial training", "basal state", "drug response", "sci-Plex", "covariate embedding", "single-cell", "CRISPR", "chemical perturbation", "combinatorial"]
+}

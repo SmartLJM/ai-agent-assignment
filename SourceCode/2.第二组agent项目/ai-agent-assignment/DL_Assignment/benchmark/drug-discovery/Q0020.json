@@ -1,0 +1,38 @@
+{
+  "id": "Q0020",
+  "question": "What is an applicability domain in QSAR modeling?",
+  "type": "short-answer",
+  "difficulty": 5,
+  "answer": {
+    "type": "keypoint",
+    "content": "The applicability domain describes the chemical or data space where a QSAR model is expected to make reliable predictions based on similarity to its training data and validation evidence.",
+    "keypoints": [
+      {
+        "point": "domain where predictions are reliable",
+        "score": 3.33
+      },
+      {
+        "point": "based on training data similarity",
+        "score": 3.33
+      },
+      {
+        "point": "important for generalization",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-021-qsar-modeling",
+      "original_text": "Quantitative structure-activity relationship modeling links molecular structure to measured biological activity. Traditional QSAR uses molecular descriptors and statistical models, while modern QSAR may use fingerprints, graph neural networks, transformers, or ensemble machine learning. QSAR can prioritize compounds and guide medicinal chemistry decisions."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "qsar",
+        "applicability-domain"
+      ]
+    }
+  ]
+}

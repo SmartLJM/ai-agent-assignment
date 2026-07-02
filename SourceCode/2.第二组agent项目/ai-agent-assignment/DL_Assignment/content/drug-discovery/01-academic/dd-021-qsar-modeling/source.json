@@ -1,0 +1,16 @@
+{
+  "knowledge_set_id": "dd-021-qsar-modeling",
+  "title": "QSAR modeling: where have you been? where are you going to?",
+  "source_type": "research-paper",
+  "authors": [
+    "Cherkasov, A. et al."
+  ],
+  "journal": "Journal of Medicinal Chemistry",
+  "publisher": "American Chemical Society",
+  "doi": "10.1021/jm4004285",
+  "url": "https://doi.org/10.1021/jm4004285",
+  "publication_date": "2014",
+  "accessed": "2026-06-19",
+  "content_file": "content/content.md",
+  "license_note": "Curated educational summary included locally; original/source metadata is recorded for traceability."
+}

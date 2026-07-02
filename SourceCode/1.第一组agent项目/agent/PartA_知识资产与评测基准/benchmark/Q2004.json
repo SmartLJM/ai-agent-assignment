@@ -1,0 +1,25 @@
+{
+    "id": "Q2004",
+    "question": "为什么在基因组数据库搜索中，BLAST采用启发式局部比对策略而非直接运行Smith-Waterman算法？请从计算复杂度、生物学意义和实际应用三个角度解释。",
+    "type": "short-answer",
+    "difficulty": 5,
+    "answer": {
+        "type": "similar",
+        "content": "首先，计算复杂度上：Smith-Waterman是严格的动态规划算法，时间复杂度为O(mn)（m、n为查询序列与数据库序列长度），对海量数据库（如NCBI nr库含百亿级残基）进行全搜索不可行；而BLAST采用‘种子-扩展’启发式：先用快速哈希（如k-mer匹配）定位高分短片段（seed），再仅在局部区域做延伸比对，将平均时间复杂度降至接近线性，实现可扩展性。其次，生物学意义上：进化过程中功能域常以局部保守模块形式存在（如激酶结构域），全局比对会因非保守区拖累得分，而局部比对能精准识别这些具有共同祖先的功能单元，更符合分子进化现实。最后，实际应用中：BLAST通过统计模型（Karlin-Altschul）为局部比对得分赋予E-value，量化随机匹配概率，使结果具备可解释的显著性阈值，支持高通量假阳性控制——这是纯算法优化无法替代的生物学置信度保障。"
+    },
+    "sources": [
+        {
+            "knowledge_set_id": "course_004",
+            "original_text": "MIT Lecture Notes"
+        }
+    ],
+    "theme": [
+        {
+            "genomic-data-science": [
+                "局部比对",
+                "数据库搜索",
+                "Karp-Rabin算法"
+            ]
+        }
+    ]
+}

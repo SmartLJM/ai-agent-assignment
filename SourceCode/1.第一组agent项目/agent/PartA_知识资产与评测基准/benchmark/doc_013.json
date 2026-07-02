@@ -1,0 +1,6 @@
+{
+    "id": "doc_013",
+    "source": "Endowing Vision-Language Models with System 2 Thinking for Fine-Grained Visual Recognition.pdf",
+    "question": "SCAN如何实现图像与类别在属性层面的粒度对齐？其‘具象化类别名称’与‘抽象化查询图像’的具体技术路径是否依赖于特定领域知识（如医学解剖术语或基因组功能注释），还是完全基于通用视觉-语言基础模型的零样本推理？",
+    "answer": "SCAN通过调用现成的大规模基础模型（如多模态大模型或LLM）分别执行两类零样本推理：（1）对候选类别名称（如‘Rusty Blackbird’）进行‘具象化’——输入类别名，提示模型生成结构化、判别性的视觉属性描述（如‘Glossy dark head with subtle rusty edging on feathers’）；（2）对查询图像进行‘抽象化’——输入图像，提示同一或另一基础模型输出与上述属性描述对齐的图像级属性响应（如‘head: glossy dark with rusty edging’）。该过程完全不依赖人工定义的领域本体或预置规则，而是利用基础模型在海量图文对上习得的通用视觉-语义对齐能力，因此适用于任意细粒度视觉领域（包括医学影像中的病灶亚型区分），但原文未在医学或基因组数据上进行验证，亦未引入临床先验知识或组学数据模态。"
+}

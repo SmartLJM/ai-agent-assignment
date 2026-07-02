@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "Pertpy: End-to-End Python Framework for Single-Cell Perturbation Analysis",
+  "keywords": ["pertpy", "perturbation analysis", "Python framework", "scverse", "Perturb-seq", "CRISPR screens", "differential abundance", "drug response"]
+}

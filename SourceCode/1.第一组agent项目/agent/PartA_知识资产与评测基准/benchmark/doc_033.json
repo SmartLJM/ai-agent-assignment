@@ -1,0 +1,6 @@
+{
+    "id": "doc_033",
+    "source": "MetaLSTR Meta Learning with Long ShortTerm Transformer for futures volatility prediction.pdf",
+    "question": "文献中提出的去平稳化模块（de-stationary module）在长短期Transformer架构中具体承担什么功能？其设计动机与传统时间序列平稳化预处理（如差分）有何本质区别？",
+    "answer": "去平稳化模块并非对输入序列进行传统意义上的差分或标准化等预处理，而是在模型内部动态建模并分离时间序列的时变趋势与残差成分，从而显式校正非平稳性带来的偏差；其设计动机是应对期货数据固有的局部非平稳特性（如短时突变、时变方差），避免全局平稳化假设导致的信息损失；与传统差分不同，该模块是可学习、端到端嵌入的，能自适应地估计并消除趋势项，保留原始波动结构，支撑后续Transformer对多尺度非平稳特征的有效捕获。"
+}

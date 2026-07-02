@@ -1,0 +1,5 @@
+{
+  "topic": "causal representation learning for perturbation prediction",
+  "title": "PerturbedVAE Causal Representation for Perturbation",
+  "keywords": ["PerturbedVAE", "causal representation", "perturbation suppression hypothesis", "invariant variables", "perturbation-responsive variables", "contrastive alignment", "VAE", "ELBO", "identifiability", "combinatorial perturbation", "Norman", "Replogle", "foundation model", "disentanglement"]
+}

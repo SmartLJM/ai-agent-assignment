@@ -1,0 +1,522 @@
+{
+    "doc_001": {
+        "source": "A dataset of primary nasopharyngeal carcinoma MRI with multi-modalities segmentation.pdf",
+        "keywords": [
+            "鼻咽癌",
+            "多模态MRI",
+            "肿瘤分割数据集"
+        ]
+    },
+    "doc_002": {
+        "source": "A machine learning approach for multimodal data fusion for survival prediction in cancer patients.pdf",
+        "keywords": [
+            "多模态数据融合",
+            "晚期融合（late fusion）",
+            "生存预测"
+        ]
+    },
+    "doc_003": {
+        "source": "Advances_and_Challenges_in_Meta-Learning_A_Technical_Review.pdf",
+        "keywords": [
+            "meta-learning",
+            "few-shot learning",
+            "transfer learning"
+        ]
+    },
+    "doc_004": {
+        "source": "Advances_and_Challenges_in_Meta-Learning_A_Technical_Review_翻译版.pdf",
+        "keywords": [
+            "无可用文本",
+            "信息缺失",
+            "无法提取"
+        ]
+    },
+    "doc_005": {
+        "source": "Biomedical Signal Processing and Control.pdf",
+        "keywords": [
+            "Histopathological images",
+            "Non-Small Cell Lung Cancer",
+            "Dilated CNN"
+        ]
+    },
+    "doc_006": {
+        "source": "Breast_Cancer_Detection_by_Prototypical_Networks_using_Few_Shot_Learning.pdf",
+        "keywords": [
+            "少样本学习",
+            "原型网络",
+            "乳腺超声图像"
+        ]
+    },
+    "doc_007": {
+        "source": "CMVAECausal Meta VAE for Unsupervised MetaLearning.pdf",
+        "keywords": [
+            "无监督元学习",
+            "因果推断",
+            "结构因果模型"
+        ]
+    },
+    "doc_008": {
+        "source": "Deep learning-driven survival prediction in pan-cancerstudies by integrating multimodal histology-genomicdata.pdf",
+        "keywords": [
+            "癌症生存预测",
+            "深度学习",
+            "多模态数据融合"
+        ]
+    },
+    "doc_009": {
+        "source": "Deep learning-integrated MRI brain tumor analysis.pdf",
+        "keywords": [
+            "Brain tumor",
+            "MRI",
+            "3D replicator neural network"
+        ]
+    },
+    "doc_010": {
+        "source": "DRESS：基于解缠结表征的自监督元学习，适用于多种任务.pdf",
+        "keywords": [
+            "few-shot learning",
+            "disentangled representation",
+            "self-supervised meta-learning"
+        ]
+    },
+    "doc_011": {
+        "source": "Dual-Channel Prototype Network for Few-Shot Pathology Image Classification.pdf",
+        "keywords": [
+            "Few-shot learning",
+            "Pathology image classification",
+            "Dual-channel Prototype Network"
+        ]
+    },
+    "doc_012": {
+        "source": "Dual-Channel_Prototype_Network_for_Few-Shot_Pathology_Image_Classification.pdf",
+        "keywords": [
+            "few-shot learning",
+            "pathology image classification",
+            "dual-channel prototype network"
+        ]
+    },
+    "doc_013": {
+        "source": "Endowing Vision-Language Models with System 2 Thinking for Fine-Grained Visual Recognition.pdf",
+        "keywords": [
+            "视觉-语言模型",
+            "细粒度识别",
+            "双系统认知"
+        ]
+    },
+    "doc_014": {
+        "source": "Enhancing_Colon_Cancer_Prediction_in_Histopathology_with_Integrated_Deep_Learning_Models_A_Comparative_Study_on_the_LC25000_Dataset.pdf",
+        "keywords": [
+            "结肠癌",
+            "组织病理学图像",
+            "Inception V3-ResNet50混合模型"
+        ]
+    },
+    "doc_015": {
+        "source": "FedSaaS.pdf",
+        "keywords": [
+            "联邦语义分割",
+            "类一致性",
+            "类示例原型监督"
+        ]
+    },
+    "doc_016": {
+        "source": "Few-Shot_Lung_Cancer_Classification_Using_Prototypical_Networks.pdf",
+        "keywords": [
+            "CT Image",
+            "Prototypical Networks",
+            "Few-Shot Learning"
+        ]
+    },
+    "doc_017": {
+        "source": "gky889（癌亚型分类预处理）_翻译版.pdf",
+        "keywords": [
+            "无可用文本",
+            "信息缺失",
+            "无法提取"
+        ]
+    },
+    "doc_018": {
+        "source": "Graph Neural Networks in Cancer and Oncology Research Emerging and Future Trends.pdf",
+        "keywords": [
+            "graph neural network",
+            "cancer multiomics",
+            "biological networks"
+        ]
+    },
+    "doc_019": {
+        "source": "Improve Meta-learning for Few-Shot Text Classification.pdf",
+        "keywords": [
+            "few-shot text classification",
+            "meta-learning",
+            "optimal transport"
+        ]
+    },
+    "doc_020": {
+        "source": "Improve Meta-learning for Few-Shot Text Classification_翻译版.pdf",
+        "keywords": [
+            "无可用文本",
+            "信息缺失",
+            "无法提取"
+        ]
+    },
+    "doc_021": {
+        "source": "Integrating_Tensor_Similarity_to_Enhance_Clustering_Performance.pdf",
+        "keywords": [
+            "tensor similarity",
+            "spectral clustering",
+            "unsupervised learning"
+        ]
+    },
+    "doc_022": {
+        "source": "Integrating_Tensor_Similarity_to_Enhance_Clustering_Performance_翻译版.pdf",
+        "keywords": [
+            "阿尔茨海默病",
+            "多模态融合",
+            "图注意力网络"
+        ]
+    },
+    "doc_023": {
+        "source": "KalmanNet_Neural_Network_Aided_Kalman_Filtering_for_Partially_Known_Dynamics.pdf",
+        "keywords": [
+            "Kalman滤波",
+            "深度学习",
+            "状态空间模型"
+        ]
+    },
+    "doc_024": {
+        "source": "Learning to Compare Relation Network for Few-Shot Learning.pdf",
+        "keywords": [
+            "few-shot learning",
+            "relation network",
+            "metric learning"
+        ]
+    },
+    "doc_025": {
+        "source": "Learning to Compare Relation Network for Few-Shot Learning_翻译版.pdf",
+        "keywords": [
+            "无可用文本",
+            "文献缺失",
+            "信息不可提取"
+        ]
+    },
+    "doc_026": {
+        "source": "Lung and Colon Cancer Histopathological(lc25000).pdf",
+        "keywords": [
+            "LC25000",
+            "histopathological image dataset",
+            "machine learning in pathology"
+        ]
+    },
+    "doc_027": {
+        "source": "Lung_Cancer_Subtype_Diagnosis_by_Fusing_Image-Genomics_Data_and_Hybrid_Deep_Networks.pdf",
+        "keywords": [
+            "肺癌亚型诊断",
+            "图像-基因组数据融合",
+            "注意力机制"
+        ]
+    },
+    "doc_028": {
+        "source": "Mamba_Linear_Time_Sequenc.pdf",
+        "keywords": [
+            "选择性状态空间模型",
+            "Mamba架构",
+            "基因组序列建模"
+        ]
+    },
+    "doc_029": {
+        "source": "MAML-KalmanNet_A_Neural_Network-Assisted_Kalman_Filter_Based_on_Model-Agnostic_Meta-Learning.pdf",
+        "keywords": [
+            "Kalman滤波",
+            "元学习",
+            "神经网络辅助滤波"
+        ]
+    },
+    "doc_030": {
+        "source": "Mei_Cross-Modal_Interactive_Perception_Network_with_Mamba_for_Lung_Tumor_Segmentation_CVPR_2025_paper.pdf",
+        "keywords": [
+            "PET-CT",
+            "肺肿瘤分割",
+            "Mamba"
+        ]
+    },
+    "doc_031": {
+        "source": "META-LEARNING WITH LATENT EMBEDDING OPTIMIZATION.pdf",
+        "keywords": [
+            "元学习",
+            "少样本学习",
+            "潜在嵌入优化"
+        ]
+    },
+    "doc_032": {
+        "source": "Meta-Learning_Techniques_to_Analyze_the_Raman_Data_for_Optical_Diagnosis_of_Oral_Cancer_Detection.pdf",
+        "keywords": [
+            "Raman spectroscopy",
+            "AdaBoost",
+            "Bagging"
+        ]
+    },
+    "doc_033": {
+        "source": "MetaLSTR Meta Learning with Long ShortTerm Transformer for futures volatility prediction.pdf",
+        "keywords": [
+            "Futures price volatility",
+            "Volatility prediction",
+            "Meta-learning"
+        ]
+    },
+    "doc_034": {
+        "source": "Metric-Based Meta-Learning Approach for Few-Shot Classification of Brain Tumors Using Magnetic Resonance Images.pdf",
+        "keywords": [
+            "brain tumor",
+            "meta-learning",
+            "few-shot learning"
+        ]
+    },
+    "doc_035": {
+        "source": "MLLCD_A_Meta_Learning-based_Method_for_Lung_Cancer_Diagnosis_Using_Histopathology_Images.pdf",
+        "keywords": [
+            "MAML",
+            "CNN",
+            "transformer"
+        ]
+    },
+    "doc_036": {
+        "source": "Multi-attention Meta Learning for Few-shot Fine-grained Image Recognition.pdf",
+        "keywords": [
+            "少样本学习",
+            "细粒度图像识别",
+            "多注意力元学习"
+        ]
+    },
+    "doc_037": {
+        "source": "Multi-attention Meta Learning for Few-shot Fine-grained Image Recognition_翻译版.pdf",
+        "keywords": [
+            "多模态融合",
+            "跨模态对比对齐",
+            "脑胶质瘤预后预测"
+        ]
+    },
+    "doc_038": {
+        "source": "Multi-omic and multi-view clustering algorithms review and cancer benchmark（乳腺癌亚型分类预处理）.pdf",
+        "keywords": [
+            "多组学聚类",
+            "多视图学习",
+            "TCGA癌症亚型"
+        ]
+    },
+    "doc_039": {
+        "source": "Multi-omics approaches in cancer research.pdf",
+        "keywords": [
+            "Multi-omics integration",
+            "Cancer subtyping",
+            "Driver mutation"
+        ]
+    },
+    "doc_040": {
+        "source": "NeurIPS-2019-unsupervised-meta-learning-for-few-shot-image-classification-Paper.pdf",
+        "keywords": [
+            "few-shot learning",
+            "unsupervised meta-learning",
+            "MAML"
+        ]
+    },
+    "doc_041": {
+        "source": "NIPS-2017-attention-is-all-you-need-Paper.pdf",
+        "keywords": [
+            "Transformer",
+            "self-attention",
+            "sequence transduction"
+        ]
+    },
+    "doc_042": {
+        "source": "Prototypical Networks for Few-shot Learning.pdf",
+        "keywords": [
+            "小样本学习",
+            "原型网络",
+            "度量学习"
+        ]
+    },
+    "doc_043": {
+        "source": "Prototypical Networks for Few-shot Learning_翻译版.pdf",
+        "keywords": [
+            "阿尔茨海默病",
+            "多模态融合",
+            "跨模态对比学习"
+        ]
+    },
+    "doc_044": {
+        "source": "PRSN.pdf",
+        "keywords": [
+            "Few-shot learning",
+            "Prototypical network",
+            "Semantic alignment"
+        ]
+    },
+    "doc_045": {
+        "source": "Robust feature learning using contractive autoencoders for multi-omics clustering in cancer subtyping.pdf",
+        "keywords": [
+            "Multi-omics clustering",
+            "Contractive autoencoder",
+            "Cancer subtyping"
+        ]
+    },
+    "doc_046": {
+        "source": "SSL-ProtoNetSelf-supervised Learning Prototypical Networks for few-shot.pdf",
+        "keywords": [
+            "Few-shot classification",
+            "Self-supervised learning",
+            "Prototypical networks"
+        ]
+    },
+    "doc_047": {
+        "source": "Structured connectivity in the output of the cerebellar cortex.pdf",
+        "keywords": [
+            "小脑核",
+            "浦肯野细胞",
+            "功能横区"
+        ]
+    },
+    "doc_048": {
+        "source": "Survival Prediction Across Diverse Cancer Types Using NeuralNetworks.pdf",
+        "keywords": [
+            "Graph Convolutional Neural Network",
+            "Whole Slide Image",
+            "Survival Prediction"
+        ]
+    },
+    "doc_049": {
+        "source": "TCGA 泛癌症数据集的元学习方法分析.pdf",
+        "keywords": [
+            "MAML",
+            "few-shot learning",
+            "TCGA pan-cancer"
+        ]
+    },
+    "doc_050": {
+        "source": "TheCancerGenomeAtlas.pdf",
+        "keywords": [
+            "泛癌分析",
+            "多组学整合",
+            "驱动事件跨谱系共享"
+        ]
+    },
+    "doc_051": {
+        "source": "Transformer optimization with meta learning on pathology images for breast cancer lymph node micrometastasis.pdf",
+        "keywords": [
+            "元学习",
+            "病理图像分析",
+            "淋巴结微转移"
+        ]
+    },
+    "doc_052": {
+        "source": "Transformer-Based_Weakly_Supervised_Learning_for_Whole_Slide_Lung_Cancer_Image_Classification.pdf",
+        "keywords": [
+            "弱监督学习",
+            "全切片图像分析",
+            "视觉Transformer"
+        ]
+    },
+    "doc_053": {
+        "source": "Vilalta.pdf",
+        "keywords": [
+            "无可用文本",
+            "信息缺失",
+            "无法提取"
+        ]
+    },
+    "doc_054": {
+        "source": "Vilalta_翻译版.pdf",
+        "keywords": [
+            "无可用文本",
+            "信息缺失",
+            "无法提取"
+        ]
+    },
+    "doc_055": {
+        "source": "【He2015】Deep residual learning for image recognition.pdf",
+        "keywords": [
+            "残差学习",
+            "深度神经网络",
+            "捷径连接"
+        ]
+    },
+    "doc_056": {
+        "source": "使用元学习算法对超声乳腺癌图像进行少量分类.pdf",
+        "keywords": [
+            "Few-shot classification",
+            "Meta-learning",
+            "Prototypical networks"
+        ]
+    },
+    "doc_057": {
+        "source": "利用神经网络进行生存分析以预防癌症的研究.pdf",
+        "keywords": [
+            "survival analysis",
+            "recurrent neural network",
+            "LSTM"
+        ]
+    },
+    "doc_058": {
+        "source": "基于元学习的小样本癌症亚型分类算法.pdf.pdf",
+        "keywords": [
+            "癌症亚型分类",
+            "元学习",
+            "变分自编码器"
+        ]
+    },
+    "doc_059": {
+        "source": "基于多尺度多实例学习的非小细胞肺癌亚型分类方法.pdf",
+        "keywords": [
+            "非小细胞肺癌",
+            "多实例学习",
+            "Transformer"
+        ]
+    },
+    "doc_060": {
+        "source": "基于机器学习的磁共振成像在前列腺癌诊断中的应用：系统评价和荟萃分析2.pdf",
+        "keywords": [
+            "前列腺癌",
+            "机器学习",
+            "MRI放射组学"
+        ]
+    },
+    "doc_061": {
+        "source": "学会学习：轻松进行小样本学习的模型回归网络.pdf",
+        "keywords": [
+            "Small sample learning",
+            "Transfer learning",
+            "Model transformation"
+        ]
+    },
+    "doc_062": {
+        "source": "用于乳腺癌预后的多模态混合集成框架.pdf",
+        "keywords": [
+            "乳腺癌预后",
+            "多模态机器学习",
+            "堆叠元学习"
+        ]
+    },
+    "doc_063": {
+        "source": "肺部疾病检测中的元学习框架：一项综述.pdf",
+        "keywords": [
+            "元学习",
+            "肺部疾病检测",
+            "少样本学习"
+        ]
+    },
+    "doc_064": {
+        "source": "辅助元学习策略在癌症识别中的应用：利用外部数据和优化的特征映射.pdf",
+        "keywords": [
+            "Few-shot learning",
+            "Meta-learning",
+            "Medical image classification"
+        ]
+    },
+    "doc_065": {
+        "source": "达特茅斯肺癌数据集.pdf",
+        "keywords": [
+            "肺腺癌",
+            "全切片图像分析",
+            "组织学模式分类"
+        ]
+    }
+}

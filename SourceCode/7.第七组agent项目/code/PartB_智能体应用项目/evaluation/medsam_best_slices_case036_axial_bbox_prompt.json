@@ -1,0 +1,174 @@
+{
+  "case_id": "036",
+  "axis": "axial",
+  "prompt": "ground_truth_bbox_for_demo_upper_bound",
+  "evaluated_slices": 33,
+  "elapsed_seconds": 56.62,
+  "best": {
+    "case_id": "036",
+    "axis": "axial",
+    "slice_index": 35,
+    "dice": 0.861797,
+    "iou": 0.757156,
+    "gt_voxels": 822,
+    "pred_voxels": 1081,
+    "box": [
+      21,
+      37,
+      70,
+      84
+    ]
+  },
+  "top10": [
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 35,
+      "dice": 0.861797,
+      "iou": 0.757156,
+      "gt_voxels": 822,
+      "pred_voxels": 1081,
+      "box": [
+        21,
+        37,
+        70,
+        84
+      ]
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 37,
+      "dice": 0.847983,
+      "iou": 0.736086,
+      "gt_voxels": 822,
+      "pred_voxels": 1112,
+      "box": [
+        21,
+        37,
+        70,
+        84
+      ]
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 36,
+      "dice": 0.845201,
+      "iou": 0.731903,
+      "gt_voxels": 822,
+      "pred_voxels": 1116,
+      "box": [
+        21,
+        37,
+        70,
+        84
+      ]
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 43,
+      "dice": 0.84507,
+      "iou": 0.731707,
+      "gt_voxels": 884,
+      "pred_voxels": 1175,
+      "box": [
+        21,
+        41,
+        75,
+        83
+      ]
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 42,
+      "dice": 0.842308,
+      "iou": 0.727575,
+      "gt_voxels": 884,
+      "pred_voxels": 1196,
+      "box": [
+        21,
+        41,
+        75,
+        83
+      ]
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 44,
+      "dice": 0.826454,
+      "iou": 0.704237,
+      "gt_voxels": 884,
+      "pred_voxels": 1248,
+      "box": [
+        21,
+        41,
+        75,
+        83
+      ]
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 22,
+      "dice": 0.811245,
+      "iou": 0.682432,
+      "gt_voxels": 102,
+      "pred_voxels": 147,
+      "box": [
+        41,
+        45,
+        68,
+        65
+      ]
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 48,
+      "dice": 0.799294,
+      "iou": 0.665686,
+      "gt_voxels": 688,
+      "pred_voxels": 1011,
+      "box": [
+        24,
+        41,
+        73,
+        83
+      ]
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 40,
+      "dice": 0.79393,
+      "iou": 0.658279,
+      "gt_voxels": 821,
+      "pred_voxels": 1222,
+      "box": [
+        21,
+        38,
+        75,
+        83
+      ]
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 41,
+      "dice": 0.790087,
+      "iou": 0.653012,
+      "gt_voxels": 821,
+      "pred_voxels": 1237,
+      "box": [
+        21,
+        38,
+        75,
+        83
+      ]
+    }
+  ]
+}

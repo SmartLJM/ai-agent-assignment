@@ -1,0 +1,6 @@
+gradio>=4.44.0
+requests>=2.31.0
+# Optional extensions; deterministic retrieval works even without these.
+chromadb>=0.5.0
+sentence-transformers>=2.7.0
+gpt4all>=2.8.0

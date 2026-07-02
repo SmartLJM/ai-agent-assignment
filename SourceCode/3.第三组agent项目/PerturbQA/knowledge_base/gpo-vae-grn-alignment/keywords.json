@@ -1,0 +1,5 @@
+{
+  "topic": "GRN-aligned parameter optimization VAE",
+  "title": "GPO-VAE GRN-Aligned Perturbation Modeling",
+  "keywords": ["GPO-VAE", "GRN", "gene regulatory network", "parameter optimization", "CRADLE-VAE", "explainability", "DGE loss", "k-hop expansion", "perturbation prediction", "single-cell", "graph neural network", "interpretability"]
+}

@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "CellFM: 800M-Parameter Foundation Model Pretrained on 100 Million Human Cells",
+  "keywords": ["CellFM", "foundation model", "single-cell transcriptomics", "ERetNet", "perturbation prediction", "cell annotation", "100 million cells", "RetNet"]
+}

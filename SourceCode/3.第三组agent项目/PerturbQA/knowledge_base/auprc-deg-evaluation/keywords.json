@@ -1,0 +1,5 @@
+{
+  "topic": "AUPRC metric for DEG identification",
+  "title": "AUPRC Metric for Perturbation Evaluation",
+  "keywords": ["AUPRC", "area under precision-recall curve", "DEG", "differentially expressed genes", "R-squared", "metric", "evaluation", "perturbation prediction", "discordance", "ranking", "Briefings in Bioinformatics", "benchmark"]
+}

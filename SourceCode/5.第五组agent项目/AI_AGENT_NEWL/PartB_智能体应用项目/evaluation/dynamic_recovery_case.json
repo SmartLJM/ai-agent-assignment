@@ -1,0 +1,30 @@
+{
+  "benchmark_id": "dyn_009",
+  "question": "Run MedSAM prediction for case NPC_001; if unavailable, recover gracefully.",
+  "failed_agent": "medsam-agent",
+  "error_type": "RuntimeError",
+  "recovery_action": "switch_to_fallback_agent",
+  "fallback_agent": "ground-truth-overlay-agent",
+  "new_nodes_added": [
+    "fallback-ground-truth-overlay-agent"
+  ],
+  "status": "recovered",
+  "final_output_available": true,
+  "decision_trace_excerpt": [
+    {
+      "decision_point": "error_recovery",
+      "failed_agent": "medsam-agent",
+      "error_type": "RuntimeError",
+      "decision": "switch_to_fallback_agent",
+      "reason": "medsam-agent failed, so RecoveryManager selected ground-truth-overlay-agent.",
+      "fallback_agent": "ground-truth-overlay-agent",
+      "observed_result": {
+        "error": "model_unavailable: forced demo path for recovery benchmark",
+        "exception_type": "RuntimeError"
+      },
+      "new_nodes_added": [
+        "fallback-ground-truth-overlay-agent"
+      ]
+    }
+  ]
+}

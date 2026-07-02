@@ -1,0 +1,220 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is DNA methylation and where does it primarily occur in the human genome?",
+      "answer": "DNA methylation is the addition of a methyl group to cytosine residues, primarily at CpG dinucleotides in the human genome.",
+      "source": "dataset_1",
+      "topic": "dna-methylation",
+      "difficulty": "easy",
+      "type": "definition"
+    },
+    {
+      "id": 2,
+      "question": "What are CpG islands and why are they biologically significant?",
+      "answer": "CpG islands are genomic regions with high density of CpG sites (>50% GC content, observed/expected CpG ratio >0.6), typically found near gene promoters. They are significant because their methylation status regulates gene expression.",
+      "source": "dataset_1",
+      "topic": "cpg-islands",
+      "difficulty": "medium",
+      "type": "definition"
+    },
+    {
+      "id": 3,
+      "question": "List three major types of histone modifications and their functional roles.",
+      "answer": "1. H3K4me3 - marks active promoters; 2. H3K27me3 - marks repressed genes; 3. H3K27ac - marks active enhancers and promoters.",
+      "source": "dataset_3",
+      "topic": "histone-modifications",
+      "difficulty": "easy",
+      "type": "list"
+    },
+    {
+      "id": 4,
+      "question": "What is the difference between WGBS and RRBS in DNA methylation analysis?",
+      "answer": "WGBS (Whole Genome Bisulfite Sequencing) covers the entire genome with single-base resolution, while RRBS (Reduced Representation Bisulfite Sequencing) enriches for CpG-rich regions, covering less of the genome but at lower cost.",
+      "source": "dataset_1",
+      "topic": "methylation-techniques",
+      "difficulty": "medium",
+      "type": "comparison"
+    },
+    {
+      "id": 5,
+      "question": "What does chromatin accessibility measure and what techniques are used to study it?",
+      "answer": "Chromatin accessibility measures how tightly DNA is packed around nucleosomes. Techniques include ATAC-seq (Assay for Transposase-Accessible Chromatin) and DNase-seq (DNase I hypersensitivity sequencing).",
+      "source": "dataset_7",
+      "topic": "chromatin-accessibility",
+      "difficulty": "medium",
+      "type": "definition"
+    },
+    {
+      "id": 6,
+      "question": "What is the ENCODE project and what is its significance for epigenomics?",
+      "answer": "ENCODE (Encyclopedia of DNA Elements) is a comprehensive catalog of functional elements in the human genome, including ChIP-seq, DNase-seq, and methylation data. It has revolutionized our understanding of regulatory elements.",
+      "source": "dataset_11",
+      "topic": "encode-project",
+      "difficulty": "easy",
+      "type": "definition"
+    },
+    {
+      "id": 7,
+      "question": "How does DNA methylation differ between cancer cells and normal cells?",
+      "answer": "Cancer cells typically show global hypomethylation (decreased methylation) overall, but hypermethylation (increased methylation) at specific gene promoters, especially tumor suppressor genes, leading to their silencing.",
+      "source": "dataset_9",
+      "topic": "cancer-epigenomics",
+      "difficulty": "medium",
+      "type": "explanation"
+    },
+    {
+      "id": 8,
+      "question": "What are the 15 chromatin states in the Roadmap Epigenomics 15-state model?",
+      "answer": "The 15 chromatin states are: TssA (Active TSS), TssAFlnk (Flanking Active TSS), TxFlnk (Transcription at 5' and 3'), Tx (Transcription), TxWk (Weak Transcription), EnhG (Genic Enhancers), Enh (Enhancers), ZNF/Rpts (ZNF genes & repeats), Het (Heterochromatin), TssBiv (Bivalent TSS), BivFlnk (Flanking Bivalent TSS), EnhBiv (Bivalent Enhancer), ReprPC (Repressed PolyComb), ReprPCWk (Weak Repressed PolyComb), Quies (Quiescent).",
+      "source": "roadmap",
+      "topic": "chromatin-states",
+      "difficulty": "hard",
+      "type": "list"
+    },
+    {
+      "id": 9,
+      "question": "What is the role of H3K27me3 in gene regulation?",
+      "answer": "H3K27me3 is a histone modification associated with gene repression. It is deposited by the Polycomb repressive complex 2 (PRC2) and marks genes that are silenced or poised for repression.",
+      "source": "dataset_4",
+      "topic": "histone-repression",
+      "difficulty": "easy",
+      "type": "definition"
+    },
+    {
+      "id": 10,
+      "question": "What is the relationship between DNA methylation and histone modifications?",
+      "answer": "DNA methylation and histone modifications are interconnected: DNA methylation can recruit proteins that modify histones, and histone modifications can influence DNA methylation patterns. Together they form a regulatory network controlling gene expression.",
+      "source": "dataset_1",
+      "topic": "epigenetic-crosstalk",
+      "difficulty": "hard",
+      "type": "explanation"
+    },
+    {
+      "id": 11,
+      "question": "What is ATAC-seq and why is it preferred over DNase-seq for chromatin accessibility studies?",
+      "answer": "ATAC-seq (Assay for Transposase-Accessible Chromatin) uses a hyperactive Tn5 transposase to insert sequencing adapters into open chromatin. It requires fewer cells (as few as 500) and less time than DNase-seq, making it preferred for rare samples.",
+      "source": "dataset_7",
+      "topic": "atac-seq",
+      "difficulty": "medium",
+      "type": "comparison"
+    },
+    {
+      "id": 12,
+      "question": "What are bivalent domains in epigenomics?",
+      "answer": "Bivalent domains are genomic regions marked by both H3K4me3 (active promoter mark) and H3K27me3 (repressive mark) in embryonic stem cells. They maintain genes in a 'poised' state, ready for activation during differentiation.",
+      "source": "dataset_3",
+      "topic": "bivalent-domains",
+      "difficulty": "hard",
+      "type": "definition"
+    },
+    {
+      "id": 13,
+      "question": "How does the IHEC EpiATLAS contribute to epigenomics research?",
+      "answer": "IHEC EpiATLAS is the largest collection of human epigenomes to date, covering 2,897 individuals and 7,494 uniformly processed datasets. It enables integrative analysis across tissues, diseases, and species, providing an unprecedented resource for epigenomic research.",
+      "source": "ihec",
+      "topic": "ihec-atlas",
+      "difficulty": "medium",
+      "type": "definition"
+    },
+    {
+      "id": 14,
+      "question": "What is the difference between chromatin state segmentation and chromatin accessibility analysis?",
+      "answer": "Chromatin state segmentation uses combinations of histone modifications to define functional regions (e.g., promoters, enhancers, repressed). Chromatin accessibility measures the physical openness of chromatin, identifying regulatory regions where proteins can bind. Both are complementary approaches.",
+      "source": "roadmap",
+      "topic": "chromatin-analysis",
+      "difficulty": "hard",
+      "type": "comparison"
+    },
+    {
+      "id": 15,
+      "question": "What are the key challenges in integrating epigenomic data across different platforms?",
+      "answer": "Challenges include: 1) Batch effects between laboratories; 2) Different data formats (BAM, BigWig, etc.); 3) Different processing pipelines; 4) Lack of standardized metadata; 5) Integration of methylation (WGBS/RRBS) with ChIP-seq and ATAC-seq data. The IHEC aims to address these.",
+      "source": "ihec",
+      "topic": "data-integration",
+      "difficulty": "hard",
+      "type": "explanation"
+    },
+    {
+      "id": 16,
+      "question": "What is the role of TET enzymes in DNA methylation?",
+      "answer": "TET (Ten-Eleven Translocation) enzymes are dioxygenases that oxidize 5-methylcytosine (5mC) to 5-hydroxymethylcytosine (5hmC) and further oxidized derivatives, initiating active DNA demethylation. They play a crucial role in epigenetic reprogramming.",
+      "source": "dataset_1",
+      "topic": "dna-methylation",
+      "difficulty": "medium",
+      "type": "definition"
+    },
+    {
+      "id": 17,
+      "question": "How do environmental factors influence the epigenome?",
+      "answer": "Environmental factors such as diet, stress, and toxins can influence the epigenome by altering DNA methylation patterns, histone modifications, and chromatin structure, often through changes in the levels of metabolites that serve as substrates for epigenetic enzymes.",
+      "source": "roadmap",
+      "topic": "environmental-epigenetics",
+      "difficulty": "medium",
+      "type": "explanation"
+    },
+    {
+      "id": 18,
+      "question": "What is the significance of the 'quiescent' chromatin state in the Roadmap model?",
+      "answer": "The quiescent state represents the most repressed chromatin state, characterized by low signal for all modifications. It corresponds to silent, non-regulatory regions of the genome, often found in gene-poor regions and repetitive elements.",
+      "source": "roadmap",
+      "topic": "chromatin-states",
+      "difficulty": "easy",
+      "type": "definition"
+    },
+    {
+      "id": 19,
+      "question": "What are the advantages of single-cell epigenomics over bulk epigenomics?",
+      "answer": "Single-cell epigenomics reveals cellular heterogeneity, identifies rare cell populations, and captures dynamic transitions that are averaged out in bulk analysis. It is essential for understanding tissue development and disease progression at the cellular level.",
+      "source": "dataset_7",
+      "topic": "single-cell-epigenomics",
+      "difficulty": "hard",
+      "type": "comparison"
+    },
+    {
+      "id": 20,
+      "question": "How can epigenetic modifications be used as biomarkers for disease?",
+      "answer": "Epigenetic modifications such as DNA methylation patterns and histone marks can serve as disease biomarkers because they are stable, cell-type-specific, and change early in disease progression. They can be detected in liquid biopsies (e.g., cell-free DNA), making them valuable for early cancer detection and monitoring.",
+      "source": "dataset_9",
+      "topic": "epigenetic-biomarkers",
+      "difficulty": "medium",
+      "type": "explanation"
+    },
+    {
+      "id": 21,
+      "question": "What is the difference between DNA methylation at CpG islands versus gene bodies?",
+      "answer": "DNA methylation at CpG islands (near promoters) is typically associated with gene silencing, while methylation within gene bodies is often correlated with active transcription. The functional consequences depend on the genomic context.",
+      "source": "dataset_1",
+      "topic": "dna-methylation",
+      "difficulty": "medium",
+      "type": "comparison"
+    },
+    {
+      "id": 22,
+      "question": "What does H3K27ac mark and how does it differ from H3K4me3?",
+      "answer": "H3K27ac marks active enhancers and promoters, while H3K4me3 specifically marks active promoters. H3K27ac is associated with enhancer activity and indicates regions that are actively promoting transcription, whereas H3K4me3 is more specific to promoter regions.",
+      "source": "dataset_6",
+      "topic": "histone-modifications",
+      "difficulty": "medium",
+      "type": "comparison"
+    },
+    {
+      "id": 23,
+      "question": "What is the role of chromatin remodeling complexes in epigenomics?",
+      "answer": "Chromatin remodeling complexes use ATP hydrolysis to slide, eject, or restructure nucleosomes, altering chromatin accessibility. They work alongside histone modifiers to regulate gene expression by controlling access to DNA for transcription factors and other regulatory proteins.",
+      "source": "dataset_7",
+      "topic": "chromatin-remodeling",
+      "difficulty": "hard",
+      "type": "explanation"
+    },
+    {
+      "id": 24,
+      "question": "How does aberrant DNA methylation contribute to cancer development?",
+      "answer": "Aberrant DNA methylation contributes to cancer by: 1) Hypermethylation of tumor suppressor gene promoters (silencing protective genes); 2) Global hypomethylation (activating oncogenes and transposons); 3) Creating genomic instability. This dual mechanism makes methylation a key driver of carcinogenesis.",
+      "source": "dataset_9",
+      "topic": "cancer-epigenomics",
+      "difficulty": "hard",
+      "type": "explanation"
+    }
+  ]
+}

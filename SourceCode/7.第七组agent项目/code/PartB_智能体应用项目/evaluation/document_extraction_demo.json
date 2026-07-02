@@ -1,0 +1,15 @@
+{
+  "source": "evaluation/multimodal_document_demo.html",
+  "extractor": "MultiModalKnowledgeBase.ingest_html_document",
+  "counts": {
+    "text": 1,
+    "image": 1,
+    "table": 1
+  },
+  "record_ids": [
+    "document-text:multimodal-document-demo",
+    "document-image:multimodal-document-demo:1",
+    "document-table:multimodal-document-demo:1"
+  ],
+  "passed": true
+}

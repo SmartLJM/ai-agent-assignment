@@ -1,0 +1,25 @@
+{
+    "id": "Q2015",
+    "question": "In Problem 3(a), the lecture asks for the expected state duration and distribution of state durations for an HMM state k with self-loop transition probability a_kk. Derive both the mean state duration E[D_k] and the probability mass function P(D_k = d), and explain why this geometric distribution poses a fundamental limitation when modeling real genomic features such as exons or GC-rich isochores.",
+    "type": "short-answer",
+    "difficulty": 5,
+    "answer": {
+        "type": "similar",
+        "content": "The state duration D_k is the number of consecutive time steps spent in state k before transitioning out. Since at each step the chain remains in state k with probability a_kk and exits with probability (1 − a_kk), the duration follows a geometric distribution starting from 1 (first-passage time). Thus, P(D_k = d) = (a_kk)^(d−1) × (1 − a_kk) for d = 1, 2, 3, … The expected (mean) state duration is E[D_k] = 1 / (1 − a_kk). This geometric distribution implies exponentially decaying probabilities for longer durations — i.e., short segments are highly favored, and very long homogeneous regions (e.g., multi-megabase GC-rich isochores or large introns) are severely underrepresented in the model. Real genomic features often exhibit heavy-tailed or multimodal length distributions (e.g., power-law exon lengths, broad unimodal isochore sizes), violating the memoryless assumption of the geometric distribution. Consequently, standard two-state HMMs systematically mispredict boundaries and underestimate lengths of long functional regions, limiting biological interpretability and accuracy — a key motivation for advanced models like inhomogeneous HMMs or explicit duration modeling (e.g., GENSCAN’s use of non-geometric state duration densities via mixture models or explicit length histograms)."
+    },
+    "sources": [
+        {
+            "knowledge_set_id": "course_015",
+            "original_text": "MIT Lecture Notes"
+        }
+    ],
+    "theme": [
+        {
+            "genomic-data-science": [
+                "Needleman-Wunsch algorithm",
+                "k-mer hashing",
+                "Hidden Markov Models"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+  "knowledge_assets": {
+    "count": 75,
+    "structure_ok": 75,
+    "nonempty_content": 75,
+    "keywords_kebab_case": 75,
+    "valid_url": 75,
+    "direct_url": 72,
+    "title_search_fallback": 3,
+    "academic_papers": 51,
+    "academic_papers_with_doi": 51,
+    "source_types": {
+      "academic-paper": 51,
+      "web-resource": 5,
+      "course-resource": 15,
+      "textbook": 4
+    },
+    "official_source_folders": {
+      "01-academic": 51,
+      "02-textbook": 4,
+      "03-course": 15,
+      "06-knowledge-base": 5
+    }
+  },
+  "benchmark": {
+    "count": 81,
+    "schema_ok": 81,
+    "unique_ids": 81,
+    "source_links_ok": 81,
+    "quoted_evidence_matches": 81,
+    "themes_ok": 81
+  },
+  "structural_pass": true,
+  "quality_warnings": [
+    "3 个来源仍为题名检索回退页，已在 source.json 中标记 source_quality_note。"
+  ],
+  "issues": []
+}

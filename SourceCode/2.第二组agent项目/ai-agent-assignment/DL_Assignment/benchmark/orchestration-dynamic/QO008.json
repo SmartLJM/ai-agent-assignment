@@ -1,0 +1,12 @@
+{
+  "id": "QO008",
+  "question": "How can knowledge graphs help drug repurposing?",
+  "type": "orchestration-test",
+  "difficulty": 6,
+  "expected_dynamic_chain": [
+    "multi-hop-retrieval",
+    "parallel-retrieval",
+    "validator"
+  ],
+  "evaluation_note": "Used to demonstrate automatic workflow generation, dynamic adjustment, loop/retry, or error recovery."
+}

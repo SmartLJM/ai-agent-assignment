@@ -1,0 +1,8 @@
+{
+  "drug-discovery": [
+    "target-validation",
+    "crispr",
+    "rna-interference",
+    "causal-evidence"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "selected_modules": [
+    {
+      "name": "advanced-dynamic-orchestration",
+      "difficulty": 3,
+      "level": "Lv.3 (advanced)",
+      "why_level_3": {
+        "runtime_plan_generation": "DynamicPlanner analyzes the user query, detects intent, estimates complexity, and generates workflow nodes at runtime from agent_registry.json.",
+        "runtime_adjustment": "QualityGate can insert review or retry nodes after observing intermediate outputs, including small-target review and query-rewrite retry.",
+        "error_recovery": "RecoveryManager switches failed agents to registered fallback agents, such as MedSAM failure to ground-truth overlay and invalid case access to case metadata recovery.",
+        "auditability": "Every generated plan, node trace, quality decision, retry, fallback decision, elapsed time, input keys, output and final report are saved as JSON evidence."
+      },
+      "evidence": [
+        "agent_registry.json",
+        "code/dynamic_orchestrator.py",
+        "code/run_dynamic_orchestration_demo.py",
+        "evaluation/dynamic_orchestration_benchmark.json",
+        "evaluation/dynamic_orchestration_results.json",
+        "evaluation/dynamic_decision_traces.json",
+        "evaluation/dynamic_plan_comparison.json",
+        "evaluation/dynamic_recovery_case.json",
+        "evaluation/flowcharts/advanced_dynamic_orchestration.svg",
+        "evaluation/flowcharts/dynamic_recovery_loop.svg",
+        "workflows.json",
+        "evaluation/flowcharts/workflow_modes.svg"
+      ]
+    },
+    {
+      "name": "multi-modal-knowledge-base",
+      "difficulty": 2,
+      "level": "Lv.2 (medium)",
+      "why_level_2": {
+        "optimized_beyond_basic": "Offline local-HTML ingestion extracts text, image references, and tables into one searchable index with modality-aware scoring.",
+        "edge_cases": "Empty queries, no-hit retrieval, modality filtering, missing local evidence, and deterministic ranking are covered.",
+        "deeper_analysis": "The evaluation reports modality counts (75/277/277 after restoring the full local NPC dataset), evidence modalities per query, and a 20-question result set."
+      },
+      "evidence": [
+        "code/multimodal_kb.py",
+        "evaluation/document_extraction_demo.json",
+        "evaluation/multimodal_benchmark.json",
+        "evaluation/multimodal_demo_results.json",
+        "evaluation/flowcharts/multimodal_construction.svg",
+        "evaluation/flowcharts/multimodal_retrieval.svg"
+      ]
+    }
+  ],
+  "difficulty_sum": 5,
+  "rubric_alignment": "Advanced dynamic orchestration Lv.3 plus multi-modal knowledge base Lv.2 gives total difficulty 5, satisfying the required total difficulty of at least 4."
+}

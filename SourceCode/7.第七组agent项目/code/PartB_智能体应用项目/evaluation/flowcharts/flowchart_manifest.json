@@ -1,0 +1,19 @@
+{
+  "workflow_count": 4,
+  "supported_modes": [
+    "sequential",
+    "parallel",
+    "conditional"
+  ],
+  "files": [
+    "evaluation/flowcharts/submission_audit.mmd",
+    "evaluation/flowcharts/grounded_multimodal_qa.mmd",
+    "evaluation/flowcharts/parallel_case_analysis.mmd",
+    "evaluation/flowcharts/conditional_case_review.mmd",
+    "evaluation/flowcharts/workflow_modes.svg",
+    "evaluation/flowcharts/multimodal_construction.svg",
+    "evaluation/flowcharts/multimodal_retrieval.svg",
+    "evaluation/flowcharts/multimodal_construction.mmd",
+    "evaluation/flowcharts/multimodal_retrieval.mmd"
+  ]
+}

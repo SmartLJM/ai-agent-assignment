@@ -1,0 +1,12 @@
+{
+  "id": "QO002",
+  "question": "Compare pharmacokinetics and pharmacodynamics.",
+  "type": "orchestration-test",
+  "difficulty": 6,
+  "expected_dynamic_chain": [
+    "parallel-retrieval",
+    "synthesizer",
+    "validator"
+  ],
+  "evaluation_note": "Used to demonstrate automatic workflow generation, dynamic adjustment, loop/retry, or error recovery."
+}

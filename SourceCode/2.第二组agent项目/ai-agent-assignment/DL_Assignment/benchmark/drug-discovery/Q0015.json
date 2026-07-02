@@ -1,0 +1,38 @@
+{
+  "id": "Q0015",
+  "question": "What type of evidence is required for regulatory approval?",
+  "type": "short-answer",
+  "difficulty": 4,
+  "answer": {
+    "type": "keypoint",
+    "content": "Regulatory approval requires evidence that the drug is safe, effective, and manufactured with consistent quality for the intended population and indication.",
+    "keypoints": [
+      {
+        "point": "safe",
+        "score": 3.33
+      },
+      {
+        "point": "effective",
+        "score": 3.33
+      },
+      {
+        "point": "consistent quality/manufacturing",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-016-regulatory-approval",
+      "original_text": "Regulatory approval requires evidence that a drug is safe, effective, and manufactured with consistent quality for its intended use. Agencies review preclinical data, clinical efficacy, clinical safety, pharmacology, labeling, risk management, and chemistry, manufacturing, and controls. The decision is a benefit-risk judgment for a defined population and indication."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "regulatory-approval",
+        "benefit-risk"
+      ]
+    }
+  ]
+}

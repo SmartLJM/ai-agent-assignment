@@ -1,0 +1,6 @@
+{
+    "id": "doc_009",
+    "source": "Deep learning-integrated MRI brain tumor analysis.pdf",
+    "question": "文献中提出的‘2D volumetric convolutional network’与传统2D CNN或3D CNN在架构设计和体积建模能力上有何本质区别？其采用‘majority rule’如何具体实现以降低模型偏差？",
+    "answer": "文献所述‘2D volumetric convolutional network’并非标准3D CNN，而是对MRI体积数据沿三个正交平面（axial, sagittal, coronal）分别切片并独立训练三个2D CNN，再通过多数投票（majority rule）融合各平面网络对每个体素的分割预测结果；该策略通过多视角一致性约束提升分割鲁棒性，缓解单平面2D CNN因缺乏跨层空间上下文而导致的误分割，同时规避3D CNN高显存消耗与小样本过拟合风险；‘majority rule’指对同一解剖体素，若≥2个平面网络将其判定为肿瘤类，则最终标记为肿瘤，从而显著抑制单视角异常响应引入的模型偏差。"
+}

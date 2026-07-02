@@ -1,0 +1,6 @@
+{
+    "id": "doc_034",
+    "source": "Metric-Based Meta-Learning Approach for Few-Shot Classification of Brain Tumors Using Magnetic Resonance Images.pdf",
+    "question": "该研究采用视觉Transformer与Siamese网络联合架构，但未明确说明如何在少样本设定下实现跨序列（如T1、FLAIR）的特征对齐与度量一致性——其Siamese分支是否共享权重？是否对不同MRI序列分别编码后再融合，还是在统一ViT主干后引入序列感知的度量头？",
+    "answer": "根据文献描述，该方法‘以视觉Transformer进行特征提取’后‘通过度量增强的Siamese网络提升学习能力’，结合上下文‘所有四序列均需用于分类’及‘各序列对不同病理特征（如坏死/水肿）敏感’的论述，可推断其Siamese网络采用权重共享双分支结构，且输入为经预处理后的单序列切片（如轴向2D slice），每个分支独立处理一种序列模态；但原文未显式设计跨序列特征对齐模块（如交叉注意力或模态适配器），而是依赖共享ViT主干在统一嵌入空间中学习序列不变的判别性度量表示——即所有序列切片被映射至同一度量空间，通过对比损失（如原型网络或孪生损失）拉近同类肿瘤不同序列的嵌入距离、推远异类距离，从而隐式实现跨序列语义对齐。"
+}

@@ -1,0 +1,6 @@
+{
+    "id": "doc_045",
+    "source": "Robust feature learning using contractive autoencoders for multi-omics clustering in cancer subtyping.pdf",
+    "question": "为何在多组学聚类中采用Contractive Autoencoder而非标准Autoencoder或VAE？其正则化机制如何具体提升跨组学特征鲁棒性？",
+    "answer": "因多组学数据具有高维性、异质性及固有噪声，标准AE易过拟合局部扰动，VAE虽引入概率建模但其重构目标与下游聚类任务存在目标偏差；而Contractive Autoencoder通过在损失函数中显式添加Jacobian矩阵Frobenius范数正则项（‖∂h/∂x‖_F²），强制隐层表示h(x)对输入x的微小变化保持低敏感性，从而学习到对技术噪声、批次效应及组学平台差异更具不变性的紧凑特征；该机制使不同组学模态的特征映射在共享隐空间中具备更强的几何一致性，为后续生存驱动的特征融合与聚类提供更稳定、可泛化的表征基础。"
+}

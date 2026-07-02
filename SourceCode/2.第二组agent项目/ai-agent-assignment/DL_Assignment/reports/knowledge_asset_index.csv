@@ -1,0 +1,26 @@
+knowledge_set_id,title,category,source_type,keywords,url_or_doi
+dd-001-target-identification,Target Identification in Drug Discovery,01-academic,research-paper,target-identification;disease-biology;druggability;genomics,10.1111/j.1476-5381.2010.01127.x
+dd-002-target-validation,Target Validation,01-academic,web-resource,target-validation;crispr;rna-interference;causal-evidence,https://ncats.nih.gov/research/research-activities/drug-discovery-development
+dd-003-hit-discovery-hts,Hit Discovery and High-Throughput Screening,05-project,web-resource,hit-discovery;high-throughput-screening;assay;hit-confirmation,https://www.ncbi.nlm.nih.gov/books/NBK53196/
+dd-004-lead-identification,Lead Identification,01-academic,research-paper,lead-identification;potency;selectivity;structure-activity-relationship,10.1111/j.1476-5381.2010.01127.x
+dd-005-lead-optimization,Lead Optimization,01-academic,research-paper,lead-optimization;medicinal-chemistry;multi-objective-optimization;admet,10.1038/nrd3078
+dd-006-structure-based-design,Structure-Based Drug Design,01-academic,research-paper,structure-based-drug-design;protein-structure;binding-site;crystallography,10.1124/pr.112.007336
+dd-007-ligand-based-design,Ligand-Based Drug Design,01-academic,research-paper,ligand-based-drug-design;similarity-search;pharmacophore;qsar,10.1124/pr.112.007336
+dd-008-molecular-docking,Molecular Docking,01-academic,research-paper,molecular-docking;binding-pose;scoring-function;virtual-screening,10.1002/jcc.21334
+dd-009-virtual-screening,Virtual Screening,01-academic,research-paper,virtual-screening;compound-library;ranking;active-learning,10.1124/pr.112.007336
+dd-010-adme,ADME Properties,01-academic,research-paper,adme;absorption;distribution;metabolism;excretion,10.1038/srep42717
+dd-011-toxicology-safety,Toxicology and Safety Screening,04-encyclopedia,guidance,toxicology;safety;off-target-effects;hERG;genotoxicity,https://www.ich.org/page/safety-guidelines
+dd-012-pharmacokinetics,Pharmacokinetics,03-course,educational-resource,pharmacokinetics;half-life;clearance;bioavailability;auc,https://www.fda.gov/drugs/development-resources/clinical-pharmacology
+dd-013-pharmacodynamics,Pharmacodynamics,03-course,educational-resource,pharmacodynamics;dose-response;target-engagement;efficacy,https://www.fda.gov/drugs/development-resources/clinical-pharmacology
+dd-014-drug-repurposing,Drug Repurposing,01-academic,research-paper,drug-repurposing;indication-expansion;real-world-evidence;network-medicine,10.1038/nrd.2018.168
+dd-015-clinical-trial-phases,Clinical Trial Phases,04-encyclopedia,web-resource,clinical-trials;phase-1;phase-2;phase-3;human-studies,https://www.fda.gov/patients/drug-development-process/step-3-clinical-research
+dd-016-regulatory-approval,Regulatory Approval,04-encyclopedia,web-resource,regulatory-approval;fda;benefit-risk;quality;manufacturing,https://www.fda.gov/patients/learn-about-drug-and-device-approvals/drug-development-process
+dd-017-ai-machine-learning,AI and Machine Learning in Drug Discovery,01-academic,research-paper,artificial-intelligence;machine-learning;deep-learning;prediction,10.1038/s41573-020-00094-5
+dd-018-chembl-bioactivity,ChEMBL and Bioactivity Data,06-knowledge-base,knowledge-base,chembl;bioactivity;compound-target-assay;database,10.1093/nar/gkx1031
+dd-019-pubchem-chemical-information,PubChem and Chemical Information,06-knowledge-base,knowledge-base,pubchem;chemical-information;compound-properties;pug-rest,10.1093/nar/gkac956
+dd-020-agentic-rag,Agentic Retrieval-Augmented Generation for Drug Discovery Q&A,05-project,project-file,agentic-rag;retrieval-augmented-generation;tool-use;verification,https://github.com/Yuplx-HU/ai-agent-assignment
+dd-021-qsar-modeling,QSAR Modeling,01-academic,research-paper,qsar;molecular-descriptors;bioactivity-prediction;applicability-domain,10.1021/jm4004285
+dd-022-generative-de-novo-design,Generative and De Novo Molecular Design,01-academic,research-paper,de-novo-design;generative-model;molecular-generation;reinforcement-learning,10.1088/2632-2153/ab8ff3
+dd-023-assay-quality,Assay Quality and Screening Statistics,03-course,educational-resource,assay-quality;z-factor;controls;reproducibility,https://www.ncbi.nlm.nih.gov/books/NBK53196/
+dd-024-knowledge-graphs,Knowledge Graphs for Drug Discovery,05-project,research-paper,knowledge-graph;drug-target-disease;multi-hop-reasoning;graph-rag,10.1093/bib/bbac404
+dd-025-explainability-actionability,Pharmacologically Actionable Explainability,07-blog,technical-summary,explainability;mechanism-of-action;pharmacology;safety,https://github.com/Yuplx-HU/ai-agent-assignment

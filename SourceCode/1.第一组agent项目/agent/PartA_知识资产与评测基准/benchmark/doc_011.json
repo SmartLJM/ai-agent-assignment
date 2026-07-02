@@ -1,0 +1,6 @@
+{
+    "id": "doc_011",
+    "source": "Dual-Channel Prototype Network for Few-Shot Pathology Image Classification.pdf",
+    "question": "DCPN为何选择Pyramid Vision Transformer（PVT）而非标准ViT作为Transformer分支？其金字塔结构在少样本病理图像分类中如何具体支持多尺度特征提取与原型表示增强？",
+    "answer": "PVT采用渐进式下采样与分层特征金字塔设计，能在不同空间分辨率（如4×、8×、16×、32× downsample）上输出多粒度特征图，天然适配病理图像中组织结构的多尺度特性（如细胞核、腺体、间质等）。相比标准ViT的单一固定分辨率全局注意力，PVT的金字塔结构使模型可在低分辨率层捕获宏观组织构型，在高分辨率层保留微观细胞形态细节，从而为原型计算提供层次化、互补的嵌入空间；文献明确指出DCPN通过融合PVT各层级特征与CNN局部特征，实现‘multi-scale, highly precise pathological features’，显著扩展原型表示的特征空间维度与判别性，缓解单尺度原型在细粒度病理类别（如亚型癌）上的混淆问题。"
+}

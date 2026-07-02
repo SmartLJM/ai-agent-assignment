@@ -1,0 +1,503 @@
+{
+  "module": "advanced-dynamic-orchestration",
+  "level": "Lv.3",
+  "total_questions": 12,
+  "passed": 12,
+  "pass_rate": 1.0,
+  "auto_generated_plans": 12,
+  "plans_with_runtime_adjustment": 4,
+  "plans_with_retry": 1,
+  "plans_with_error_recovery": 2,
+  "decision_trace_records": 12,
+  "flowcharts": [
+    "evaluation/flowcharts/advanced_dynamic_orchestration.svg",
+    "evaluation/flowcharts/dynamic_recovery_loop.svg"
+  ],
+  "results": [
+    {
+      "id": "dyn_001",
+      "question": "What is U-Net?",
+      "passed": true,
+      "expected_intent": "simple_qa",
+      "observed_intent": "simple_qa",
+      "status": "success",
+      "expected_agents": [
+        "report-agent",
+        "text-retriever"
+      ],
+      "observed_agents": [
+        "report-agent",
+        "text-retriever"
+      ],
+      "missing_agents": [],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace"
+      ],
+      "observed_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace"
+      ],
+      "missing_dynamic_features": [],
+      "retry_count": 0,
+      "recovery_count": 0,
+      "runtime_adjustments": []
+    },
+    {
+      "id": "dyn_002",
+      "question": "Explain Dice score with local evidence.",
+      "passed": true,
+      "expected_intent": "grounded_qa",
+      "observed_intent": "grounded_qa",
+      "status": "success",
+      "expected_agents": [
+        "quality-validator",
+        "report-agent",
+        "text-retriever"
+      ],
+      "observed_agents": [
+        "quality-validator",
+        "report-agent",
+        "text-retriever"
+      ],
+      "missing_agents": [],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "runtime_quality_gate"
+      ],
+      "observed_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "runtime_quality_gate"
+      ],
+      "missing_dynamic_features": [],
+      "retry_count": 0,
+      "recovery_count": 0,
+      "runtime_adjustments": []
+    },
+    {
+      "id": "dyn_003",
+      "question": "Retrieve evidence about medical image segmentation evaluation and cite local sources.",
+      "passed": true,
+      "expected_intent": "grounded_qa",
+      "observed_intent": "grounded_qa",
+      "status": "success",
+      "expected_agents": [
+        "quality-validator",
+        "report-agent",
+        "text-retriever"
+      ],
+      "observed_agents": [
+        "quality-validator",
+        "report-agent",
+        "text-retriever"
+      ],
+      "missing_agents": [],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "runtime_quality_gate"
+      ],
+      "observed_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "runtime_quality_gate"
+      ],
+      "missing_dynamic_features": [],
+      "retry_count": 0,
+      "recovery_count": 0,
+      "runtime_adjustments": []
+    },
+    {
+      "id": "dyn_004",
+      "question": "Analyze case NPC_001 with image and mask evidence.",
+      "passed": true,
+      "expected_intent": "case_segmentation_analysis",
+      "observed_intent": "case_segmentation_analysis",
+      "status": "success",
+      "expected_agents": [
+        "image-agent",
+        "mask-agent",
+        "quality-validator",
+        "report-agent",
+        "text-retriever"
+      ],
+      "observed_agents": [
+        "image-agent",
+        "mask-agent",
+        "quality-validator",
+        "report-agent",
+        "text-retriever"
+      ],
+      "missing_agents": [],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_quality_gate"
+      ],
+      "observed_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_quality_gate"
+      ],
+      "missing_dynamic_features": [],
+      "retry_count": 0,
+      "recovery_count": 0,
+      "runtime_adjustments": []
+    },
+    {
+      "id": "dyn_005",
+      "question": "Show the mask overlay for NPC_001.",
+      "passed": true,
+      "expected_intent": "case_segmentation_analysis",
+      "observed_intent": "case_segmentation_analysis",
+      "status": "success",
+      "expected_agents": [
+        "image-agent",
+        "mask-agent",
+        "overlay-visualizer",
+        "quality-validator",
+        "report-agent",
+        "text-retriever"
+      ],
+      "observed_agents": [
+        "image-agent",
+        "mask-agent",
+        "overlay-visualizer",
+        "quality-validator",
+        "report-agent",
+        "text-retriever"
+      ],
+      "missing_agents": [],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_quality_gate"
+      ],
+      "observed_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_quality_gate"
+      ],
+      "missing_dynamic_features": [],
+      "retry_count": 0,
+      "recovery_count": 0,
+      "runtime_adjustments": []
+    },
+    {
+      "id": "dyn_006",
+      "question": "Compare image and mask statistics for NPC_001 and NPC_002.",
+      "passed": true,
+      "expected_intent": "comparative_analysis",
+      "observed_intent": "comparative_analysis",
+      "status": "success",
+      "expected_agents": [
+        "multi-case-retriever",
+        "quality-validator",
+        "report-agent",
+        "table-statistics-agent",
+        "text-retriever"
+      ],
+      "observed_agents": [
+        "multi-case-retriever",
+        "quality-validator",
+        "report-agent",
+        "table-statistics-agent",
+        "text-retriever"
+      ],
+      "missing_agents": [],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_quality_gate"
+      ],
+      "observed_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_quality_gate"
+      ],
+      "missing_dynamic_features": [],
+      "retry_count": 0,
+      "recovery_count": 0,
+      "runtime_adjustments": []
+    },
+    {
+      "id": "dyn_007",
+      "question": "Find a case with small foreground ratio using NPC_002 and explain why it needs review.",
+      "passed": true,
+      "expected_intent": "case_segmentation_analysis",
+      "observed_intent": "case_segmentation_analysis",
+      "status": "success",
+      "expected_agents": [
+        "image-agent",
+        "mask-agent",
+        "quality-validator",
+        "report-agent",
+        "small-target-review-agent",
+        "text-retriever"
+      ],
+      "observed_agents": [
+        "image-agent",
+        "mask-agent",
+        "quality-validator",
+        "report-agent",
+        "small-target-review-agent",
+        "text-retriever"
+      ],
+      "missing_agents": [],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_adjustment",
+        "runtime_quality_gate"
+      ],
+      "observed_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_adjustment",
+        "runtime_quality_gate"
+      ],
+      "missing_dynamic_features": [],
+      "retry_count": 0,
+      "recovery_count": 0,
+      "runtime_adjustments": [
+        {
+          "source_node": "validate-intermediate-results",
+          "new_nodes_added": [
+            "small-target-review"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dyn_008",
+      "question": "Run a grounded QA query about medical image segmentation evidence.",
+      "passed": true,
+      "expected_intent": "grounded_qa",
+      "observed_intent": "grounded_qa",
+      "status": "success",
+      "expected_agents": [
+        "quality-validator",
+        "report-agent",
+        "text-retriever"
+      ],
+      "observed_agents": [
+        "quality-validator",
+        "report-agent",
+        "text-retriever"
+      ],
+      "missing_agents": [],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "runtime_quality_gate"
+      ],
+      "observed_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "runtime_quality_gate"
+      ],
+      "missing_dynamic_features": [],
+      "retry_count": 0,
+      "recovery_count": 0,
+      "runtime_adjustments": []
+    },
+    {
+      "id": "dyn_009",
+      "question": "Run MedSAM prediction for case NPC_001; if unavailable, recover gracefully.",
+      "passed": true,
+      "expected_intent": "segmentation_prediction_demo",
+      "observed_intent": "segmentation_prediction_demo",
+      "status": "success",
+      "expected_agents": [
+        "ground-truth-overlay-agent",
+        "image-agent",
+        "medsam-agent",
+        "quality-validator",
+        "report-agent"
+      ],
+      "observed_agents": [
+        "ground-truth-overlay-agent",
+        "image-agent",
+        "medsam-agent",
+        "quality-validator",
+        "report-agent"
+      ],
+      "missing_agents": [],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "error_recovery",
+        "runtime_quality_gate"
+      ],
+      "observed_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "error_recovery",
+        "runtime_adjustment",
+        "runtime_quality_gate"
+      ],
+      "missing_dynamic_features": [],
+      "retry_count": 0,
+      "recovery_count": 1,
+      "runtime_adjustments": [
+        {
+          "source_node": "optional-medsam-slice-prediction",
+          "new_nodes_added": [
+            "fallback-ground-truth-overlay-agent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dyn_010",
+      "question": "Analyze an invalid case ID NPC_999 and recover gracefully.",
+      "passed": true,
+      "expected_intent": "case_segmentation_analysis",
+      "observed_intent": "case_segmentation_analysis",
+      "status": "success",
+      "expected_agents": [
+        "case-metadata-agent",
+        "image-agent",
+        "mask-agent",
+        "report-agent"
+      ],
+      "observed_agents": [
+        "case-metadata-agent",
+        "image-agent",
+        "mask-agent",
+        "quality-validator",
+        "report-agent",
+        "text-retriever"
+      ],
+      "missing_agents": [],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "error_recovery",
+        "parallel_sub_agents"
+      ],
+      "observed_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "error_recovery",
+        "parallel_sub_agents",
+        "runtime_adjustment",
+        "runtime_quality_gate"
+      ],
+      "missing_dynamic_features": [],
+      "retry_count": 0,
+      "recovery_count": 2,
+      "runtime_adjustments": [
+        {
+          "source_node": "load-and-summarize-case-image",
+          "new_nodes_added": [
+            "fallback-case-metadata-agent"
+          ]
+        },
+        {
+          "source_node": "analyze-segmentation-mask",
+          "new_nodes_added": [
+            "fallback-case-metadata-agent"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dyn_011",
+      "question": "Explain why Dice score may be insufficient for small tumor segmentation with local evidence.",
+      "passed": true,
+      "expected_intent": "grounded_qa",
+      "observed_intent": "grounded_qa",
+      "status": "success",
+      "expected_agents": [
+        "quality-validator",
+        "query-rewriter",
+        "report-agent",
+        "text-retriever"
+      ],
+      "observed_agents": [
+        "quality-validator",
+        "query-rewriter",
+        "report-agent",
+        "text-retriever"
+      ],
+      "missing_agents": [],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "retry_loop",
+        "runtime_adjustment",
+        "runtime_quality_gate"
+      ],
+      "observed_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "retry_loop",
+        "runtime_adjustment",
+        "runtime_quality_gate"
+      ],
+      "missing_dynamic_features": [],
+      "retry_count": 1,
+      "recovery_count": 0,
+      "runtime_adjustments": [
+        {
+          "source_node": "validate-intermediate-results",
+          "new_nodes_added": [
+            "rewrite-query-for-retry",
+            "retrieve-text-evidence-retry",
+            "validate-quality-after-retry"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dyn_012",
+      "question": "Generate a final case report from text, image and mask evidence for NPC_001.",
+      "passed": true,
+      "expected_intent": "case_segmentation_analysis",
+      "observed_intent": "case_segmentation_analysis",
+      "status": "success",
+      "expected_agents": [
+        "image-agent",
+        "mask-agent",
+        "quality-validator",
+        "report-agent",
+        "text-retriever"
+      ],
+      "observed_agents": [
+        "image-agent",
+        "mask-agent",
+        "quality-validator",
+        "report-agent",
+        "text-retriever"
+      ],
+      "missing_agents": [],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_quality_gate"
+      ],
+      "observed_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_quality_gate"
+      ],
+      "missing_dynamic_features": [],
+      "retry_count": 0,
+      "recovery_count": 0,
+      "runtime_adjustments": []
+    }
+  ]
+}

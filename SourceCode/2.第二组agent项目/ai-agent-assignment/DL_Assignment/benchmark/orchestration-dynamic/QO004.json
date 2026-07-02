@@ -1,0 +1,12 @@
+{
+  "id": "QO004",
+  "question": "Remember that my project focuses on ADME and then explain ADME.",
+  "type": "orchestration-test",
+  "difficulty": 6,
+  "expected_dynamic_chain": [
+    "memory-write",
+    "knowledge-retrieval",
+    "synthesizer"
+  ],
+  "evaluation_note": "Used to demonstrate automatic workflow generation, dynamic adjustment, loop/retry, or error recovery."
+}

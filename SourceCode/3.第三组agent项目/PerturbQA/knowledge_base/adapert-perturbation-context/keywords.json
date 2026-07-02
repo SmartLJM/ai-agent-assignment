@@ -1,0 +1,5 @@
+{
+  "topic": "adaptive perturbation-conditioned context for robust prediction",
+  "title": "AdaPert Adaptive Perturbation Context Learning",
+  "keywords": ["AdaPert", "mean-collapse", "perturbation-conditioned subgraph", "DEG", "non-DEG loss", "Huber loss", "Gumbel-Softmax", "knowledge graph", "adaptive learning", "Pearson-Delta", "PDS", "K562", "RPE1", "Replogle", "signal-noise separation"]
+}

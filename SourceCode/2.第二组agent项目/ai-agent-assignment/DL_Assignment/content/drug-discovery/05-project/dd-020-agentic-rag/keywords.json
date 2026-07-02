@@ -1,0 +1,8 @@
+{
+  "drug-discovery": [
+    "agentic-rag",
+    "retrieval-augmented-generation",
+    "tool-use",
+    "verification"
+  ]
+}

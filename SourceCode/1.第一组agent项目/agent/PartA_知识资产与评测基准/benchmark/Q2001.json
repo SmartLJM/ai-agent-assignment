@@ -1,0 +1,25 @@
+{
+    "id": "Q2001",
+    "question": "在分子进化分析中，为什么基于DNA序列构建系统发育树时需区分同义替换（synonymous substitution）和非同义替换（nonsynonymous substitution）？请从进化约束、选择压力和建树准确性三个角度解释。",
+    "type": "short-answer",
+    "difficulty": 5,
+    "answer": {
+        "type": "similar",
+        "content": "同义替换不改变氨基酸序列，通常受纯化选择压力较弱，近似中性进化，因此替换速率较高且更接近分子钟假设，适合作为系统发育信号的稳定来源；非同义替换改变氨基酸，常受强烈功能约束（尤其在保守蛋白域），易受正向选择或负向选择影响，导致速率异质性和长枝吸引等系统误差；若建树时未加区分（如直接使用未校正的p-distance），会因非同义位点饱和、选择偏差而低估分歧时间、扭曲拓扑结构；因此，现代方法（如Ka/Ks比、codon-based models）常单独建模两类替换，以提升系统发育推断的准确性与生物学可解释性。"
+    },
+    "sources": [
+        {
+            "knowledge_set_id": "course_001",
+            "original_text": "MIT Lecture Notes"
+        }
+    ],
+    "theme": [
+        {
+            "genomic-data-science": [
+                "分子进化",
+                "系统发育树",
+                "自然选择"
+            ]
+        }
+    ]
+}

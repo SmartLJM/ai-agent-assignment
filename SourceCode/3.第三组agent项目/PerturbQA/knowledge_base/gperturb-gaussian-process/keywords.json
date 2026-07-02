@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "GPerturb: Gaussian Process Modeling of Single-Cell Perturbation Data",
+  "keywords": ["GPerturb", "Gaussian process", "Bayesian", "perturbation effects", "sparse regression", "CRISPR screening", "uncertainty estimation", "gene-perturbation interactions"]
+}

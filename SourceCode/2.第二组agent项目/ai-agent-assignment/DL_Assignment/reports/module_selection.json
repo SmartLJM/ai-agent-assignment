@@ -1,0 +1,22 @@
+{
+  "topic": "drug-discovery",
+  "selected_modules": [
+    {
+      "module": "multi-level-persistent-memory-system",
+      "category": "memory",
+      "difficulty": 1
+    },
+    {
+      "module": "advanced-dynamic-orchestration",
+      "category": "orchestration",
+      "difficulty": 3
+    },
+    {
+      "module": "deploy-or-integrate-mcp-tool-skill",
+      "category": "skills",
+      "difficulty": 1
+    }
+  ],
+  "total_difficulty": 5,
+  "note": "Difficulty sum is 5, which exceeds the assignment minimum of 4."
+}

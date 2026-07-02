@@ -1,0 +1,286 @@
+{
+  "index": {
+    "index": "PartB_智能体应用项目/evaluation/multimodal_index.json",
+    "table": "PartB_智能体应用项目/evaluation/case_statistics.csv",
+    "counts": {
+      "text": 75,
+      "image": 277,
+      "table": 277
+    }
+  },
+  "total": 20,
+  "passed": 20,
+  "pass_rate": 1.0,
+  "results": [
+    {
+      "id": "MMQ001",
+      "passed": true,
+      "expected_modalities": [
+        "text"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "text:medsegdiff-medical-image-segmentation",
+        "text:semi-supervised-dual-task-consistency-segmentation"
+      ]
+    },
+    {
+      "id": "MMQ002",
+      "passed": true,
+      "expected_modalities": [
+        "text"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "text:hyperbolic-unet-segmentation",
+        "text:nnu-net-medical-image-segmentation"
+      ]
+    },
+    {
+      "id": "MMQ003",
+      "passed": true,
+      "expected_modalities": [
+        "text"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "text:medsam-medical-image-segmentation",
+        "text:course-stanford-deep-learning-efficiency"
+      ]
+    },
+    {
+      "id": "MMQ004",
+      "passed": true,
+      "expected_modalities": [
+        "text"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "text:segmamba-3d-medical-image-segmentation",
+        "text:semi-mamba-unet-segmentation"
+      ]
+    },
+    {
+      "id": "MMQ005",
+      "passed": true,
+      "expected_modalities": [
+        "text"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "text:medsegdiff-medical-image-segmentation",
+        "text:utnet-medical-image-segmentation"
+      ]
+    },
+    {
+      "id": "MMQ006",
+      "passed": true,
+      "expected_modalities": [
+        "image"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "image:034",
+        "image:001"
+      ]
+    },
+    {
+      "id": "MMQ007",
+      "passed": true,
+      "expected_modalities": [
+        "image"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "image:036",
+        "image:001"
+      ]
+    },
+    {
+      "id": "MMQ008",
+      "passed": true,
+      "expected_modalities": [
+        "image"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "image:045",
+        "image:001"
+      ]
+    },
+    {
+      "id": "MMQ009",
+      "passed": true,
+      "expected_modalities": [
+        "image"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "image:064",
+        "image:001"
+      ]
+    },
+    {
+      "id": "MMQ010",
+      "passed": true,
+      "expected_modalities": [
+        "image"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "image:071",
+        "image:001"
+      ]
+    },
+    {
+      "id": "MMQ011",
+      "passed": true,
+      "expected_modalities": [
+        "table"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "table:073",
+        "table:043"
+      ]
+    },
+    {
+      "id": "MMQ012",
+      "passed": true,
+      "expected_modalities": [
+        "table"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "table:082",
+        "table:011"
+      ]
+    },
+    {
+      "id": "MMQ013",
+      "passed": true,
+      "expected_modalities": [
+        "table"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "table:084",
+        "table:204"
+      ]
+    },
+    {
+      "id": "MMQ014",
+      "passed": true,
+      "expected_modalities": [
+        "table"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "table:092",
+        "table:121"
+      ]
+    },
+    {
+      "id": "MMQ015",
+      "passed": true,
+      "expected_modalities": [
+        "table"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "table:095",
+        "table:113"
+      ]
+    },
+    {
+      "id": "MMQ016",
+      "passed": true,
+      "expected_modalities": [
+        "image",
+        "table",
+        "text"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "image:034",
+        "image:001",
+        "table:034",
+        "table:015",
+        "text:medsegdiff-medical-image-segmentation",
+        "text:diffusion-models-for-implicit-segmentation-ensembles"
+      ]
+    },
+    {
+      "id": "MMQ017",
+      "passed": true,
+      "expected_modalities": [
+        "image",
+        "table",
+        "text"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "image:036",
+        "image:001",
+        "table:036",
+        "table:131",
+        "text:nnu-net-medical-image-segmentation",
+        "text:hyperbolic-unet-segmentation"
+      ]
+    },
+    {
+      "id": "MMQ018",
+      "passed": true,
+      "expected_modalities": [
+        "image",
+        "table",
+        "text"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "image:045",
+        "image:001",
+        "table:045",
+        "table:144",
+        "text:diffusion-models-for-implicit-segmentation-ensembles",
+        "text:semi-supervised-dual-task-consistency-segmentation"
+      ]
+    },
+    {
+      "id": "MMQ019",
+      "passed": true,
+      "expected_modalities": [
+        "image",
+        "table",
+        "text"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "image:064",
+        "image:001",
+        "table:064",
+        "table:006",
+        "text:segmamba-3d-medical-image-segmentation",
+        "text:semi-mamba-unet-segmentation"
+      ]
+    },
+    {
+      "id": "MMQ020",
+      "passed": true,
+      "expected_modalities": [
+        "image",
+        "table",
+        "text"
+      ],
+      "missing_modalities": [],
+      "evidence_ids": [
+        "image:071",
+        "image:001",
+        "table:071",
+        "table:047",
+        "text:medsam-medical-image-segmentation",
+        "text:textbook-information-retrieval"
+      ]
+    }
+  ]
+}

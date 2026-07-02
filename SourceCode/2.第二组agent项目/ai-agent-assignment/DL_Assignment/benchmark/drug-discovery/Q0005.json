@@ -1,0 +1,38 @@
+{
+  "id": "Q0005",
+  "question": "What is lead optimization trying to balance?",
+  "type": "short-answer",
+  "difficulty": 4,
+  "answer": {
+    "type": "keypoint",
+    "content": "Lead optimization balances potency, selectivity, ADME, toxicity, solubility, pharmacokinetics, safety, and manufacturability through iterative medicinal chemistry.",
+    "keypoints": [
+      {
+        "point": "potency and selectivity",
+        "score": 3.33
+      },
+      {
+        "point": "ADME and toxicity",
+        "score": 3.33
+      },
+      {
+        "point": "iterative medicinal chemistry",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-005-lead-optimization",
+      "original_text": "Lead optimization is the iterative improvement of a lead series through design, synthesis, testing, and analysis. The aim is to balance potency, selectivity, solubility, permeability, metabolic stability, safety, pharmacokinetics, and manufacturability. A compound that is very potent but insoluble, unstable, or toxic may fail as a development candidate."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "lead-optimization",
+        "multi-objective-optimization"
+      ]
+    }
+  ]
+}

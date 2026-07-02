@@ -1,0 +1,27 @@
+{
+    "id": "Q2003",
+    "question": "在Problem 2(a)中，要求计算所有6-mers在酵母间区序列中的频率和保守比例。若某6-mer 'ACGTAC' 在allinter中出现120次，其中在allintercons对应位置标记为'*'（即保守）的有96次，请计算其保守比例；并解释为何仅依赖高频率列表（而非高保守比例列表）可能引入系统性偏差？请结合DNA序列的碱基组成特性与选择压力原理说明。",
+    "type": "short-answer",
+    "difficulty": 5,
+    "answer": {
+        "type": "similar",
+        "content": "该6-mer的保守比例 = 保守实例数 / 总实例数 = 96 / 120 = 0.8（即80%）。仅依赖高频率列表会引入严重偏差，因为高频k-mers往往富集于低复杂度、重复或AT/GC偏向区域（如poly-A/T或Alu-like片段），这些区域通常受弱或无纯化选择，其高频率源于突变/复制机制而非功能约束；而高保守比例列表则特异性富集受强烈负选择保护的功能元件（如TFBS），因其在进化中维持序列不变以保障调控活性。例如，AT-rich k-mers occur frequently genome-wide due to mutational bias and low DNA stability, but are rarely conserved unless functionally critical; conversely, GC-rich or palindromic k-mers (e.g., for dimeric TFs) may be rarer overall but show exceptional conservation when functional. 因此，高保守比例列表更可靠地指向真实调控位点，是后续实验验证的优先候选。"
+    },
+    "sources": [
+        {
+            "knowledge_set_id": "course_003",
+            "original_text": "MIT Lecture Notes"
+        }
+    ],
+    "theme": [
+        {
+            "genomic-data-science": [
+                "Gibbs sampling",
+                "position weight matrix",
+                "evolutionary conservation",
+                "Nussinov algorithm",
+                "transcription factor binding sites"
+            ]
+        }
+    ]
+}

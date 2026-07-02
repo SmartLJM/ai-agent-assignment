@@ -1,0 +1,12 @@
+{
+  "id": "QO005",
+  "question": "What did I ask earlier about ADME?",
+  "type": "orchestration-test",
+  "difficulty": 6,
+  "expected_dynamic_chain": [
+    "memory-retrieval",
+    "synthesizer",
+    "validator"
+  ],
+  "evaluation_note": "Used to demonstrate automatic workflow generation, dynamic adjustment, loop/retry, or error recovery."
+}

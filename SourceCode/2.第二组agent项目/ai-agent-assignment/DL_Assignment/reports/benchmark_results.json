@@ -1,0 +1,406 @@
+{
+  "question_count": 30,
+  "average_score": 0.889,
+  "passed_at_0_34": 30,
+  "results": [
+    {
+      "id": "Q0001",
+      "question": "What is target identification in drug discovery?",
+      "score": 0.667,
+      "prediction": "Target identification is the selection of a disease-relevant biological molecule, pathway, or cellular process that can be modified to produce a therapeutic effect. A strong target is not simply associated with a disease; it should have evidence that changing the target can causally improve the disease phenotype. In computational drug discovery, target identification is often supported by disease networks, omics analysis, knowledge graphs, and machine-learning models that connect genes, proteins, pathways, phenotypes, and compounds. Poor target choice is a major reason for downstream failure.",
+      "gold": "Target identification is the selection of a disease-relevant biological molecule, pathway, or cellular process that can be modified to produce a therapeutic effect.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-001-target-identification",
+          "original_text": "Target identification is the selection of a disease-relevant biological molecule, pathway, or cellular process that can be modified to produce a therapeutic effect. A strong target is not simply associated with a disease; it should have evidence that changing the target can causally improve the disease phenotype. Evidence can come from human genetics, genomics, proteomics, pathway biology, patient data, perturbation experiments, and literature mining."
+        }
+      ]
+    },
+    {
+      "id": "Q0002",
+      "question": "Why is target validation needed after target identification?",
+      "score": 0.667,
+      "prediction": "Target validation is needed because it tests whether modulating the selected target produces a useful disease-relevant effect rather than only showing correlation with disease, reducing downstream failure risk.",
+      "gold": "Target validation is needed because it tests whether modulating the selected target produces a useful disease-relevant effect rather than only showing correlation with disease.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-002-target-validation",
+          "original_text": "Target validation tests whether modulating a chosen target produces the desired therapeutic effect in relevant biological systems. It reduces the risk that a candidate target is only correlated with disease rather than causally involved. Validation may use CRISPR knockout, CRISPR activation or inhibition, RNA interference, chemical probes, antibodies, animal models, patient-derived cells, organoids, or rescue experiments."
+        }
+      ]
+    },
+    {
+      "id": "Q0003",
+      "question": "What is the difference between a hit and a lead?",
+      "score": 1.0,
+      "prediction": "Comparison based on retrieved evidence: Hit Discovery and High-Throughput Screening: Hit discovery is the process of finding initial molecules that show measurable activity against a target, pathway, or phenotype. A robust screening campaign depends on assay quality, controls, reproducibility, and appropriate statistics. Lead Identification: A lead should have enough potency, selectivity, chemical tractability, and preliminary drug-like properties to justify systematic optimization. Lead identification usually combines confirmatory assays, orthogonal assays, counter-screens, preliminary ADME testing, and early structure-activity relationship analysis. Lead Optimization: Lead optimization is the iterative improvement of a lead series through design, synthesis, testing, and analysis. Computational tools can support lead optimization by predicting binding poses, ADMET liabilities, off-target risks, synthetic accessibility, and property trade-offs.",
+      "gold": "A hit is an initial molecule with measurable activity, while a lead is a confirmed and improved chemical starting point with better potency, selectivity, tractability, and preliminary drug-like properties.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-004-lead-identification",
+          "original_text": "Lead identification converts confirmed hits into more reliable chemical starting points. A lead should have enough potency, selectivity, chemical tractability, and preliminary drug-like properties to justify systematic optimization. Lead identification usually combines confirmatory assays, orthogonal assays, counter-screens, preliminary ADME testing, and early structure-activity relationship analysis."
+        }
+      ]
+    },
+    {
+      "id": "Q0004",
+      "question": "Which screening stage commonly uses automated assays to test many compounds?\nA. Regulatory approval\nB. High-throughput screening\nC. Phase 4 surveillance\nD. Drug labeling",
+      "score": 1.0,
+      "prediction": "B. High-throughput screening uses automated assays to test many compounds.",
+      "gold": "B",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-003-hit-discovery-hts",
+          "original_text": "Hit discovery is the process of finding initial molecules that show measurable activity against a target, pathway, or phenotype. High-throughput screening uses automated liquid handling, plate readers, robotic systems, and miniaturized assays to test thousands to millions of compounds. Primary screening produces candidate hits, but these hits require confirmation because false positives are common."
+        }
+      ]
+    },
+    {
+      "id": "Q0005",
+      "question": "What is lead optimization trying to balance?",
+      "score": 1.0,
+      "prediction": "Lead optimization balances potency, selectivity, ADME, toxicity, solubility, pharmacokinetics, safety, and manufacturability through iterative medicinal chemistry.",
+      "gold": "Lead optimization balances potency, selectivity, ADME, toxicity, solubility, pharmacokinetics, safety, and manufacturability through iterative medicinal chemistry.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-005-lead-optimization",
+          "original_text": "Lead optimization is the iterative improvement of a lead series through design, synthesis, testing, and analysis. The aim is to balance potency, selectivity, solubility, permeability, metabolic stability, safety, pharmacokinetics, and manufacturability. A compound that is very potent but insoluble, unstable, or toxic may fail as a development candidate."
+        }
+      ]
+    },
+    {
+      "id": "Q0006",
+      "question": "True or false: Docking scores prove that a compound will be clinically effective.",
+      "score": 1.0,
+      "prediction": "False. Docking scores are only computational estimates and do not prove binding, efficacy, safety, or clinical effectiveness.",
+      "gold": "false",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-008-molecular-docking",
+          "original_text": "Molecular docking predicts how a small molecule may orient within a target binding site and estimates relative binding affinity using a scoring function. Docking can generate binding-pose hypotheses, rank compounds, and support virtual screening. It requires target preparation, ligand preparation, binding-site definition, conformational sampling, scoring, and pose inspection."
+        }
+      ]
+    },
+    {
+      "id": "Q0007",
+      "question": "How does structure-based drug design differ from ligand-based drug design?",
+      "score": 1.0,
+      "prediction": "Structure-based drug design starts from the target three-dimensional structure and binding site, whereas ligand-based drug design starts from known active compounds and their similarity, pharmacophore, or QSAR patterns.",
+      "gold": "Structure-based design starts from the target three-dimensional structure and binding site, whereas ligand-based design starts from known active compounds and their shared structural or pharmacophoric features.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-006-structure-based-design",
+          "original_text": "Structure-based drug design uses the three-dimensional structure of a biological target to design or select ligands for a binding site. Structures can come from X-ray crystallography, cryo-electron microscopy, NMR spectroscopy, or high-confidence computational models. The method examines shape complementarity, hydrogen bonds, hydrophobic contacts, electrostatics, water networks, and induced fit."
+        }
+      ]
+    },
+    {
+      "id": "Q0008",
+      "question": "What is the main purpose of virtual screening?",
+      "score": 1.0,
+      "prediction": "Virtual screening uses computational methods to prioritize compounds from chemical libraries before experimental testing. Structure-based virtual screening docks compounds into a binding site, whereas ligand-based virtual screening uses similarity, pharmacophores, QSAR, or machine-learning models based on known active compounds. The purpose is enrichment: increasing the proportion of useful compounds in a smaller set that will be purchased or synthesized and tested. An agent should describe virtual screening as a prioritization tool, not as definitive evidence of therapeutic efficacy.",
+      "gold": "The main purpose of virtual screening is to prioritize compounds from large libraries so that a smaller enriched set can be experimentally tested.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-009-virtual-screening",
+          "original_text": "Virtual screening uses computational methods to prioritize compounds from chemical libraries before experimental testing. Structure-based virtual screening docks compounds into a binding site, whereas ligand-based virtual screening uses similarity, pharmacophores, QSAR, or machine-learning models based on known active compounds."
+        }
+      ]
+    },
+    {
+      "id": "Q0009",
+      "question": "Which terms belong to ADME?\nA. Absorption\nB. Distribution\nC. Metabolism\nD. Excretion",
+      "score": 1.0,
+      "prediction": "A, B, C, and D. ADME means absorption, distribution, metabolism, and excretion.",
+      "gold": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "sources": [
+        {
+          "knowledge_set_id": "dd-010-adme",
+          "original_text": "ADME stands for absorption, distribution, metabolism, and excretion. These properties determine how a compound enters the body, reaches tissues, is chemically transformed, and leaves the body. ADME problems can prevent a potent compound from becoming a useful drug because the compound may not reach the target at sufficient exposure or may be cleared too quickly."
+        }
+      ]
+    },
+    {
+      "id": "Q0010",
+      "question": "Name two early toxicology or safety concerns that can be screened before clinical trials.",
+      "score": 1.0,
+      "prediction": "Toxicology and safety screening evaluate whether a compound may cause harmful biological effects. Early screening can include cytotoxicity, genotoxicity, hERG channel inhibition, mitochondrial toxicity, reactive metabolite risk, liver toxicity, and off-target pharmacology. Later safety work includes animal toxicology, safety pharmacology, dose-range finding, and risk assessment. Mechanism-based safety concerns are especially important when the target or pathway is also needed in healthy tissues.",
+      "gold": "Examples include cytotoxicity, genotoxicity, hERG channel inhibition, mitochondrial toxicity, reactive metabolite risk, liver toxicity, and off-target pharmacology.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-011-toxicology-safety",
+          "original_text": "Toxicology and safety screening evaluate whether a compound may cause harmful biological effects. Early screening can include cytotoxicity, genotoxicity, hERG channel inhibition, mitochondrial toxicity, reactive metabolite risk, liver toxicity, and off-target pharmacology. Later safety work includes animal toxicology, safety pharmacology, dose-range finding, and risk assessment."
+        }
+      ]
+    },
+    {
+      "id": "Q0011",
+      "question": "What does pharmacokinetics study?",
+      "score": 0.667,
+      "prediction": "Pharmacokinetics describes what the body does to a drug over time. Pharmacokinetics helps determine dose, dosing interval, route of administration, and whether exposure is sufficient for the desired therapeutic effect. A precise answer should distinguish pharmacokinetics from pharmacodynamics, which asks what the drug does to the body.",
+      "gold": "Pharmacokinetics studies what the body does to a drug over time, including absorption, distribution, metabolism, excretion, clearance, half-life, bioavailability, and exposure.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-012-pharmacokinetics",
+          "original_text": "Pharmacokinetics describes what the body does to a drug over time. It covers absorption, distribution, metabolism, and excretion as dynamic processes after dosing. Common pharmacokinetic parameters include half-life, clearance, volume of distribution, bioavailability, maximum concentration, time to maximum concentration, and area under the concentration-time curve."
+        }
+      ]
+    },
+    {
+      "id": "Q0012",
+      "question": "What does pharmacodynamics study?",
+      "score": 1.0,
+      "prediction": "Pharmacodynamics studies what a drug does to the body, including target engagement, mechanism of action, dose-response, efficacy, potency, and toxicity mechanisms.",
+      "gold": "Pharmacodynamics studies what a drug does to the body, including target engagement, mechanism of action, dose-response, efficacy, potency, and toxicity mechanisms.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-013-pharmacodynamics",
+          "original_text": "Pharmacodynamics describes what a drug does to the body. It includes target engagement, receptor binding, pathway modulation, mechanism of action, dose-response relationships, efficacy, potency, biomarkers, and toxicity mechanisms. Pharmacodynamics links drug exposure to biological effect."
+        }
+      ]
+    },
+    {
+      "id": "Q0013",
+      "question": "Why can drug repurposing reduce development risk but still require validation?",
+      "score": 1.0,
+      "prediction": "Drug repurposing identifies new therapeutic uses for approved or previously investigated drugs. It can reduce development risk because some information about safety, formulation, pharmacokinetics, or manufacturing may already exist. Repurposing strategies include target-based reasoning, disease similarity, transcriptomic reversal, electronic health record mining, network medicine, and phenotypic screening. AI can help generate repurposing hypotheses, but clinical evidence is still required.",
+      "gold": "Repurposing may reduce risk because some safety, pharmacokinetic, formulation, or manufacturing information already exists, but the new indication still needs evidence for dosing, efficacy, mechanism, and safety in the new patient population.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-014-drug-repurposing",
+          "original_text": "Drug repurposing identifies new therapeutic uses for approved or previously investigated drugs. It can reduce development risk because some information about safety, formulation, pharmacokinetics, or manufacturing may already exist. Repurposing strategies include target-based reasoning, disease similarity, transcriptomic reversal, electronic health record mining, network medicine, and phenotypic screening."
+        }
+      ]
+    },
+    {
+      "id": "Q0014",
+      "question": "Which clinical phase usually involves larger confirmatory studies to support approval?\nA. Phase 1\nB. Phase 2\nC. Phase 3\nD. Phase 0",
+      "score": 1.0,
+      "prediction": "C. Phase 3 usually involves larger confirmatory studies to support approval.",
+      "gold": "C",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-015-clinical-trial-phases",
+          "original_text": "Clinical trials evaluate investigational drugs in humans through staged phases. Phase 1 usually studies safety, tolerability, dosage, and pharmacokinetics in a small group of participants. Phase 2 explores efficacy and side effects in patients with the target condition and helps select dose and endpoints. Phase 3 tests efficacy and safety in larger populations to support regulatory decisions."
+        }
+      ]
+    },
+    {
+      "id": "Q0015",
+      "question": "What type of evidence is required for regulatory approval?",
+      "score": 1.0,
+      "prediction": "Regulatory approval requires evidence that a drug is safe, effective, and manufactured with consistent quality for its intended use. The decision is a benefit-risk judgment for a defined population and indication. Approval is not based only on molecular novelty or computational prediction. A correct answer should connect approval to evidence standards.",
+      "gold": "Regulatory approval requires evidence that the drug is safe, effective, and manufactured with consistent quality for the intended population and indication.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-016-regulatory-approval",
+          "original_text": "Regulatory approval requires evidence that a drug is safe, effective, and manufactured with consistent quality for its intended use. Agencies review preclinical data, clinical efficacy, clinical safety, pharmacology, labeling, risk management, and chemistry, manufacturing, and controls. The decision is a benefit-risk judgment for a defined population and indication."
+        }
+      ]
+    },
+    {
+      "id": "Q0016",
+      "question": "List three uses of AI in drug discovery.",
+      "score": 1.0,
+      "prediction": "Artificial intelligence supports drug discovery by learning patterns from chemical, biological, clinical, imaging, and literature data. Applications include target identification, bioactivity prediction, virtual screening, de novo molecular generation, synthesis planning, ADMET prediction, toxicity prediction, drug repurposing, and scientific information extraction. Responsible use of AI requires uncertainty estimation, interpretability where possible, experimental feedback, and pharmacological reasoning. A useful answer should frame AI as a decision-support technology rather than a replacement for medicinal chemistry, biology, and clinical evidence.",
+      "gold": "AI can support target identification, bioactivity prediction, virtual screening, molecular generation, synthesis planning, ADMET prediction, toxicity prediction, drug repurposing, and literature extraction.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-017-ai-machine-learning",
+          "original_text": "Artificial intelligence supports drug discovery by learning patterns from chemical, biological, clinical, imaging, and literature data. Applications include target identification, bioactivity prediction, virtual screening, de novo molecular generation, synthesis planning, ADMET prediction, toxicity prediction, drug repurposing, and scientific information extraction."
+        }
+      ]
+    },
+    {
+      "id": "Q0017",
+      "question": "What is ChEMBL mainly used for in computational drug discovery?",
+      "score": 1.0,
+      "prediction": "ChEMBL is used as a curated bioactivity database with compound-target-assay links, connecting compounds, targets, assays, activities, mechanisms, documents, and drug information for model training, evaluation, and chemical biology analysis.",
+      "gold": "ChEMBL is used as a curated bioactivity database linking compounds, targets, assays, activities, mechanisms, documents, and drug information for modeling and chemical biology analysis.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-018-chembl-bioactivity",
+          "original_text": "ChEMBL is a curated database of bioactive molecules with drug-like properties. It links compounds, targets, assays, activities, mechanisms, documents, and drug information. ChEMBL is widely used to train and evaluate computational models for bioactivity prediction, target association, QSAR, and chemical biology analysis."
+        }
+      ]
+    },
+    {
+      "id": "Q0018",
+      "question": "What information can a PubChem skill retrieve for a compound?",
+      "score": 1.0,
+      "prediction": "A PubChem skill can retrieve chemical identifiers and properties such as molecular formula, molecular weight, canonical SMILES, InChIKey, IUPAC name, synonyms, and compound records.",
+      "gold": "A PubChem skill can retrieve chemical identifiers and properties such as molecular formula, molecular weight, canonical SMILES, InChIKey, IUPAC name, synonyms, and compound records.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-019-pubchem-chemical-information",
+          "original_text": "PubChem is an open chemistry database that provides information about chemical substances, compounds, structures, identifiers, synonyms, computed properties, assays, bioactivity links, patents, literature links, and safety annotations. It is useful for retrieving molecular formula, molecular weight, canonical SMILES, InChIKey, and IUPAC names."
+        }
+      ]
+    },
+    {
+      "id": "Q0019",
+      "question": "In agentic RAG, what should happen if retrieval confidence is low?",
+      "score": 0.667,
+      "prediction": "In a drug-discovery Q&A system, the agent should decide whether a question needs internal knowledge retrieval, a chemical database skill, memory retrieval, multi-hop comparison, or a fallback strategy. An agentic RAG system can generate a workflow from the question, run the appropriate agents, inspect intermediate results, and adjust if evidence is insufficient. If retrieval confidence is low, it can broaden the query and retry. This is especially important in scientific Q&A because answers should be supported by sources, not just fluent generation.",
+      "gold": "If retrieval confidence is low, the agent should adjust the workflow by broadening the query, increasing retrieval depth, retrying, using a fallback source, or reporting the limitation.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-020-agentic-rag",
+          "original_text": "Agentic retrieval-augmented generation combines retrieval, planning, tool use, memory, and answer validation. In a drug-discovery Q&A system, the agent should decide whether a question needs internal knowledge retrieval, a chemical database skill, memory retrieval, multi-hop comparison, or a fallback strategy."
+        }
+      ]
+    },
+    {
+      "id": "Q0020",
+      "question": "What is an applicability domain in QSAR modeling?",
+      "score": 0.667,
+      "prediction": "Quantitative structure-activity relationship modeling links molecular structure to measured biological activity. Traditional QSAR uses molecular descriptors and statistical models, while modern QSAR may use fingerprints, graph neural networks, transformers, or ensemble machine learning. Reliable QSAR requires curated data, consistent endpoints, appropriate train-test splitting, external validation, and clear applicability domain. QSAR generates hypotheses and rankings that must be tested experimentally, especially for new scaffolds outside the model’s training domain.",
+      "gold": "The applicability domain describes the chemical or data space where a QSAR model is expected to make reliable predictions based on similarity to its training data and validation evidence.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-021-qsar-modeling",
+          "original_text": "Quantitative structure-activity relationship modeling links molecular structure to measured biological activity. Traditional QSAR uses molecular descriptors and statistical models, while modern QSAR may use fingerprints, graph neural networks, transformers, or ensemble machine learning. QSAR can prioritize compounds and guide medicinal chemistry decisions."
+        }
+      ]
+    },
+    {
+      "id": "Q0021",
+      "question": "True or false: A generated molecule from a de novo design model is automatically a drug candidate.",
+      "score": 1.0,
+      "prediction": "False. A generated molecule is only a design proposal; it still requires synthesis, testing, ADME, toxicity, and validation before becoming a drug candidate.",
+      "gold": "false",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-022-generative-de-novo-design",
+          "original_text": "Generative and de novo molecular design uses algorithms to propose new chemical structures with desired properties. Approaches include recurrent neural networks, variational autoencoders, generative adversarial networks, diffusion models, graph generative models, transformers, and reinforcement learning. These models can explore chemical space beyond existing screening libraries."
+        }
+      ]
+    },
+    {
+      "id": "Q0022",
+      "question": "Why are orthogonal assays useful after a primary screen?",
+      "score": 1.0,
+      "prediction": "Orthogonal assays are useful because they confirm activity with a different assay format and help identify artifacts such as reporter interference, aggregation, nonspecific reactivity, or cytotoxicity.",
+      "gold": "Orthogonal assays are useful because they confirm activity with a different assay format and help identify artifacts such as reporter interference, aggregation, nonspecific reactivity, or cytotoxicity.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-023-assay-quality",
+          "original_text": "Assay quality determines whether screening results are interpretable. A screening assay should have relevant biology, stable reagents, robust signal, acceptable variability, and suitable positive and negative controls. Poor assays generate misleading hit lists regardless of how advanced the downstream computational method is."
+        }
+      ]
+    },
+    {
+      "id": "Q0023",
+      "question": "Why does a knowledge-graph path not automatically prove clinical efficacy?",
+      "score": 0.667,
+      "prediction": "Graph-based reasoning can answer multi-hop questions, such as connecting a compound to a target, the target to a pathway, and the pathway to a disease phenotype. However, a path in a graph does not prove causality or clinical efficacy. An agent should use knowledge graphs as structured evidence, not as automatic truth.",
+      "gold": "A knowledge-graph path can show possible relationships among drugs, targets, pathways, and diseases, but it does not prove causality, correct direction of effect, adequate exposure, safety, or clinical benefit.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-024-knowledge-graphs",
+          "original_text": "Knowledge graphs represent entities such as drugs, targets, diseases, pathways, side effects, genes, and publications as nodes connected by typed relationships. In drug discovery, knowledge graphs support target prioritization, repurposing, mechanism analysis, safety reasoning, and evidence integration across heterogeneous sources."
+        }
+      ]
+    },
+    {
+      "id": "Q0024",
+      "question": "What makes an AI explanation pharmacologically actionable?",
+      "score": 0.667,
+      "prediction": "An AI explanation is pharmacologically actionable when it connects the drug to the target, the target to disease biology, the direction of pathway modulation, dose or exposure feasibility, and relevant safety concerns.",
+      "gold": "An explanation is pharmacologically actionable when it connects the drug to the target, the target to disease biology, the direction of pathway modulation, dose or exposure feasibility, and relevant safety concerns.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-025-explainability-actionability",
+          "original_text": "Explainability in AI-driven drug discovery should be pharmacologically actionable. A model may provide feature importance, attention weights, embeddings, or graph paths, but these outputs are not always meaningful to a pharmacologist or clinician. Useful explanations connect the drug to a target, the target to disease biology, and the expected direction of pathway modulation."
+        }
+      ]
+    },
+    {
+      "id": "Q0025",
+      "question": "Which resource is best suited for retrieving molecular weight through an agent skill?\nA. PubChem\nB. Phase 3 protocol\nC. Clinical trial consent form\nD. Regulatory labeling only",
+      "score": 1.0,
+      "prediction": "A. PubChem is best suited for retrieving molecular weight through an agent skill.",
+      "gold": "A",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-019-pubchem-chemical-information",
+          "original_text": "PubChem is an open chemistry database that provides information about chemical substances, compounds, structures, identifiers, synonyms, computed properties, assays, bioactivity links, patents, literature links, and safety annotations. It is useful for retrieving molecular formula, molecular weight, canonical SMILES, InChIKey, and IUPAC names."
+        }
+      ]
+    },
+    {
+      "id": "Q0026",
+      "question": "Which statements are correct about virtual screening?\nA. It prioritizes compounds before testing\nB. It guarantees clinical efficacy\nC. It may use docking or ligand-based models\nD. It requires experimental follow-up",
+      "score": 1.0,
+      "prediction": "A, C, and D are correct. Virtual screening prioritizes compounds, may use docking or ligand-based models, and requires experimental follow-up.",
+      "gold": [
+        "A",
+        "C",
+        "D"
+      ],
+      "sources": [
+        {
+          "knowledge_set_id": "dd-009-virtual-screening",
+          "original_text": "Virtual screening uses computational methods to prioritize compounds from chemical libraries before experimental testing. Structure-based virtual screening docks compounds into a binding site, whereas ligand-based virtual screening uses similarity, pharmacophores, QSAR, or machine-learning models based on known active compounds."
+        }
+      ]
+    },
+    {
+      "id": "Q0027",
+      "question": "Explain why potency alone is insufficient for choosing a development candidate.",
+      "score": 0.667,
+      "prediction": "Lead optimization is the iterative improvement of a lead series through design, synthesis, testing, and analysis. The aim is to balance potency, selectivity, solubility, permeability, metabolic stability, safety, pharmacokinetics, and manufacturability. A compound that is very potent but insoluble, unstable, or toxic may fail as a development candidate. In agentic Q&A, lead optimization answers should therefore mention iterative decision-making, not only potency improvement.",
+      "gold": "Potency alone is insufficient because a development candidate must also have selectivity, suitable ADME, pharmacokinetics, safety, solubility, manufacturability, and an acceptable benefit-risk profile.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-005-lead-optimization",
+          "original_text": "Lead optimization is the iterative improvement of a lead series through design, synthesis, testing, and analysis. The aim is to balance potency, selectivity, solubility, permeability, metabolic stability, safety, pharmacokinetics, and manufacturability. A compound that is very potent but insoluble, unstable, or toxic may fail as a development candidate."
+        }
+      ]
+    },
+    {
+      "id": "Q0028",
+      "question": "A question asks for aspirin molecular weight. Which dynamic workflow should the agent choose?",
+      "score": 1.0,
+      "prediction": "The agent should generate a workflow that invokes the PubChem chemical information skill, retrieves or verifies the compound property, and then synthesizes a concise answer with a tool trace.",
+      "gold": "The agent should generate a workflow that invokes the PubChem chemical information skill, retrieves or verifies the compound property, and then synthesizes a concise answer with a tool trace.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-020-agentic-rag",
+          "original_text": "Agentic retrieval-augmented generation combines retrieval, planning, tool use, memory, and answer validation. In a drug-discovery Q&A system, the agent should decide whether a question needs internal knowledge retrieval, a chemical database skill, memory retrieval, multi-hop comparison, or a fallback strategy."
+        }
+      ]
+    },
+    {
+      "id": "Q0029",
+      "question": "Why should AI predictions in drug discovery be prospectively validated?",
+      "score": 0.667,
+      "prediction": "AI predictions should be prospectively validated because retrospective benchmarks can be biased and may not generalize to new chemical series, new assays, or new biological contexts.",
+      "gold": "AI predictions should be prospectively validated because retrospective benchmarks can be biased and may not generalize to new chemical series, new assays, or new biological contexts.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-017-ai-machine-learning",
+          "original_text": "Artificial intelligence supports drug discovery by learning patterns from chemical, biological, clinical, imaging, and literature data. Applications include target identification, bioactivity prediction, virtual screening, de novo molecular generation, synthesis planning, ADMET prediction, toxicity prediction, drug repurposing, and scientific information extraction."
+        }
+      ]
+    },
+    {
+      "id": "Q0030",
+      "question": "Compare pharmacokinetics and pharmacodynamics in one sentence.",
+      "score": 0.667,
+      "prediction": "Pharmacokinetics describes what the body does to the drug over time, while pharmacodynamics describes what the drug does to the body through target engagement, mechanism, dose-response, efficacy, and toxicity.",
+      "gold": "Pharmacokinetics describes what the body does to the drug over time, while pharmacodynamics describes what the drug does to the body through target engagement, mechanism, dose-response, efficacy, and toxicity.",
+      "sources": [
+        {
+          "knowledge_set_id": "dd-012-pharmacokinetics",
+          "original_text": "Pharmacokinetics describes what the body does to a drug over time. It covers absorption, distribution, metabolism, and excretion as dynamic processes after dosing. Common pharmacokinetic parameters include half-life, clearance, volume of distribution, bioavailability, maximum concentration, time to maximum concentration, and area under the concentration-time curve."
+        }
+      ]
+    }
+  ]
+}

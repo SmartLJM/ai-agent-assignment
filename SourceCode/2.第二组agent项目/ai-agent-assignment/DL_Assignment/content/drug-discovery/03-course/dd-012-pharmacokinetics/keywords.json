@@ -1,0 +1,9 @@
+{
+  "drug-discovery": [
+    "pharmacokinetics",
+    "half-life",
+    "clearance",
+    "bioavailability",
+    "auc"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "knowledge_set_id": "dd-022-generative-de-novo-design",
+  "title": "Molecular generative models for drug discovery",
+  "source_type": "research-paper",
+  "authors": [
+    "Grisoni, F."
+  ],
+  "journal": "Machine Learning: Science and Technology",
+  "publisher": "IOP Publishing",
+  "doi": "10.1088/2632-2153/ab8ff3",
+  "url": "https://doi.org/10.1088/2632-2153/ab8ff3",
+  "publication_date": "2020",
+  "accessed": "2026-06-19",
+  "content_file": "content/content.md",
+  "license_note": "Curated educational summary included locally; original/source metadata is recorded for traceability."
+}

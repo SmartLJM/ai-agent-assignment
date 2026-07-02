@@ -1,0 +1,295 @@
+{
+  "layer": "semantic",
+  "entities": [
+    {
+      "id": "adme",
+      "label": "adme",
+      "type": "drug-discovery-concept",
+      "mentions": 11
+    },
+    {
+      "id": "pharmacokinetics",
+      "label": "pharmacokinetics",
+      "type": "drug-discovery-concept",
+      "mentions": 13
+    },
+    {
+      "id": "pharmacodynamics",
+      "label": "pharmacodynamics",
+      "type": "drug-discovery-concept",
+      "mentions": 9
+    },
+    {
+      "id": "molecular-docking",
+      "label": "molecular docking",
+      "type": "drug-discovery-concept",
+      "mentions": 3
+    },
+    {
+      "id": "pubchem",
+      "label": "pubchem",
+      "type": "drug-discovery-resource",
+      "mentions": 11
+    },
+    {
+      "id": "aspirin",
+      "label": "aspirin",
+      "type": "compound",
+      "mentions": 7
+    },
+    {
+      "id": "target-identification",
+      "label": "target identification",
+      "type": "drug-discovery-concept",
+      "mentions": 6
+    },
+    {
+      "id": "knowledge-graph",
+      "label": "knowledge graph",
+      "type": "drug-discovery-concept",
+      "mentions": 4
+    },
+    {
+      "id": "ai",
+      "label": "ai",
+      "type": "drug-discovery-concept",
+      "mentions": 27
+    },
+    {
+      "id": "target-validation",
+      "label": "target validation",
+      "type": "drug-discovery-concept",
+      "mentions": 2
+    },
+    {
+      "id": "lead-optimization",
+      "label": "lead optimization",
+      "type": "drug-discovery-concept",
+      "mentions": 6
+    },
+    {
+      "id": "qsar",
+      "label": "qsar",
+      "type": "drug-discovery-concept",
+      "mentions": 6
+    },
+    {
+      "id": "virtual-screening",
+      "label": "virtual screening",
+      "type": "drug-discovery-concept",
+      "mentions": 6
+    },
+    {
+      "id": "clinical-trial",
+      "label": "clinical trial",
+      "type": "drug-discovery-concept",
+      "mentions": 4
+    },
+    {
+      "id": "toxicology",
+      "label": "toxicology",
+      "type": "drug-discovery-concept",
+      "mentions": 2
+    },
+    {
+      "id": "drug-repurposing",
+      "label": "drug repurposing",
+      "type": "drug-discovery-concept",
+      "mentions": 4
+    },
+    {
+      "id": "chembl",
+      "label": "chembl",
+      "type": "drug-discovery-concept",
+      "mentions": 2
+    },
+    {
+      "id": "machine-learning",
+      "label": "machine learning",
+      "type": "drug-discovery-concept",
+      "mentions": 2
+    }
+  ],
+  "relations": [
+    {
+      "head": "adme",
+      "relation": "is-part-of",
+      "tail": "pharmacokinetics"
+    },
+    {
+      "head": "molecular-docking",
+      "relation": "requires-experimental-follow-up",
+      "tail": "drug-discovery"
+    },
+    {
+      "head": "pubchem",
+      "relation": "provides-chemical-properties-for",
+      "tail": "aspirin"
+    },
+    {
+      "head": "pharmacokinetics",
+      "relation": "contrasts-with",
+      "tail": "pharmacodynamics"
+    },
+    {
+      "head": "target-identification",
+      "relation": "co-mentioned-with",
+      "tail": "knowledge-graph"
+    },
+    {
+      "head": "target-identification",
+      "relation": "co-mentioned-with",
+      "tail": "ai"
+    },
+    {
+      "head": "knowledge-graph",
+      "relation": "co-mentioned-with",
+      "tail": "ai"
+    },
+    {
+      "head": "target-identification",
+      "relation": "co-mentioned-with",
+      "tail": "target-validation"
+    },
+    {
+      "head": "target-validation",
+      "relation": "co-mentioned-with",
+      "tail": "ai"
+    },
+    {
+      "head": "adme",
+      "relation": "co-mentioned-with",
+      "tail": "lead-optimization"
+    },
+    {
+      "head": "adme",
+      "relation": "co-mentioned-with",
+      "tail": "ai"
+    },
+    {
+      "head": "lead-optimization",
+      "relation": "co-mentioned-with",
+      "tail": "ai"
+    },
+    {
+      "head": "adme",
+      "relation": "co-mentioned-with",
+      "tail": "pharmacokinetics"
+    },
+    {
+      "head": "pharmacokinetics",
+      "relation": "co-mentioned-with",
+      "tail": "lead-optimization"
+    },
+    {
+      "head": "virtual-screening",
+      "relation": "co-mentioned-with",
+      "tail": "qsar"
+    },
+    {
+      "head": "virtual-screening",
+      "relation": "co-mentioned-with",
+      "tail": "ai"
+    },
+    {
+      "head": "qsar",
+      "relation": "co-mentioned-with",
+      "tail": "ai"
+    },
+    {
+      "head": "clinical-trial",
+      "relation": "co-mentioned-with",
+      "tail": "toxicology"
+    },
+    {
+      "head": "pharmacokinetics",
+      "relation": "co-mentioned-with",
+      "tail": "pharmacodynamics"
+    },
+    {
+      "head": "pharmacokinetics",
+      "relation": "co-mentioned-with",
+      "tail": "drug-repurposing"
+    },
+    {
+      "head": "pharmacokinetics",
+      "relation": "co-mentioned-with",
+      "tail": "ai"
+    },
+    {
+      "head": "drug-repurposing",
+      "relation": "co-mentioned-with",
+      "tail": "ai"
+    },
+    {
+      "head": "target-identification",
+      "relation": "co-mentioned-with",
+      "tail": "virtual-screening"
+    },
+    {
+      "head": "target-identification",
+      "relation": "co-mentioned-with",
+      "tail": "adme"
+    },
+    {
+      "head": "target-identification",
+      "relation": "co-mentioned-with",
+      "tail": "drug-repurposing"
+    },
+    {
+      "head": "virtual-screening",
+      "relation": "co-mentioned-with",
+      "tail": "adme"
+    },
+    {
+      "head": "virtual-screening",
+      "relation": "co-mentioned-with",
+      "tail": "drug-repurposing"
+    },
+    {
+      "head": "adme",
+      "relation": "co-mentioned-with",
+      "tail": "drug-repurposing"
+    },
+    {
+      "head": "chembl",
+      "relation": "co-mentioned-with",
+      "tail": "ai"
+    },
+    {
+      "head": "qsar",
+      "relation": "co-mentioned-with",
+      "tail": "machine-learning"
+    },
+    {
+      "head": "ai",
+      "relation": "co-mentioned-with",
+      "tail": "machine-learning"
+    },
+    {
+      "head": "pubchem",
+      "relation": "co-mentioned-with",
+      "tail": "clinical-trial"
+    },
+    {
+      "head": "pubchem",
+      "relation": "co-mentioned-with",
+      "tail": "aspirin"
+    },
+    {
+      "head": "pubchem",
+      "relation": "co-mentioned-with",
+      "tail": "ai"
+    },
+    {
+      "head": "ai",
+      "relation": "co-mentioned-with",
+      "tail": "aspirin"
+    },
+    {
+      "head": "molecular-docking",
+      "relation": "co-mentioned-with",
+      "tail": "ai"
+    }
+  ]
+}

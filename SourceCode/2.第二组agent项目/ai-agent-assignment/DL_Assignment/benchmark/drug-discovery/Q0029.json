@@ -1,0 +1,38 @@
+{
+  "id": "Q0029",
+  "question": "Why should AI predictions in drug discovery be prospectively validated?",
+  "type": "short-answer",
+  "difficulty": 5,
+  "answer": {
+    "type": "keypoint",
+    "content": "AI predictions should be prospectively validated because retrospective benchmarks can be biased and may not generalize to new chemical series, new assays, or new biological contexts.",
+    "keypoints": [
+      {
+        "point": "retrospective bias",
+        "score": 3.33
+      },
+      {
+        "point": "generalization risk",
+        "score": 3.33
+      },
+      {
+        "point": "new chemical/biological context",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-017-ai-machine-learning",
+      "original_text": "Artificial intelligence supports drug discovery by learning patterns from chemical, biological, clinical, imaging, and literature data. Applications include target identification, bioactivity prediction, virtual screening, de novo molecular generation, synthesis planning, ADMET prediction, toxicity prediction, drug repurposing, and scientific information extraction."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "artificial-intelligence",
+        "validation"
+      ]
+    }
+  ]
+}

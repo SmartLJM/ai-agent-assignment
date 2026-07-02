@@ -1,0 +1,8 @@
+{
+  "type": "paper",
+  "doi": "10.1038/s41592-025-02877-y",
+  "title": "Squidiff: predicting cellular development and responses to perturbations using a diffusion model",
+  "authors": ["He S", "Zhu Y", "Tavakol DN", "Ye H", "Lao YH", "Zhu Z", "Xu C", "Chauhan S", "Garty G", "Tomer R", "Vunjak-Novakovic G", "Zou J", "Azizi E", "Leong KW"],
+  "journal": "Nature Methods",
+  "year": 2025
+}

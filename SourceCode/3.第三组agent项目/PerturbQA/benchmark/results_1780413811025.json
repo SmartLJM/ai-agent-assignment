@@ -1,0 +1,253 @@
+{
+  "timestamp": "2026-06-02T15:23:31.025Z",
+  "summary": {
+    "totalQuestions": 22,
+    "passed": 9,
+    "passRate": 40.909090909090914,
+    "avgScore": 41.54545454545455
+  },
+  "results": [
+    {
+      "id": "gp-001",
+      "question": "What is the mechanism by which CRISPR-Cas9 creates double-strand breaks in DNA?",
+      "difficulty": "medium",
+      "generatedAnswer": "# Mechanism of CRISPR-Cas9 Double-Strand Break Formation\n\n## Step-by-Step Mechanistic Explanation\n\n---\n\n### Step 1: Guide RNA Assembly with Cas9\n\nThe CRISPR-Cas9 system relies on a **single guide RNA (sgRNA)** — a chimeric molecule combining two functional components [CRISPR-Cas9 Mechanism of DNA Cleavage]:\n\n- **crRNA (~20 nucleotides)**: defines target specificity by base-complementarity to the genomic DNA sequence of interest\n- **tracrRNA**: a scaffold structure that recruits and activates the",
+      "validatorScore": 82,
+      "autoScore": 78,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": true
+    },
+    {
+      "id": "gp-002",
+      "question": "How does Perturb-seq combine CRISPR perturbations with single-cell RNA sequencing?",
+      "difficulty": "medium",
+      "generatedAnswer": "# How Perturb-seq Combines CRISPR Perturbations with Single-Cell RNA Sequencing\n\nPerturb-seq is a high-throughput method that couples pooled CRISPR genetic screens with single-cell RNA sequencing (scRNA-seq). It enables simultaneous measurement of (1) which gene was perturbed (via sgRNA identity) and (2) the resulting genome-wide transcriptional response in each individual cell. This transforms a conventional pooled screen from a single-endpoint fitness readout into a rich multi-dimensional phen",
+      "validatorScore": 82,
+      "autoScore": 72,
+      "retrievalRounds": 3,
+      "sourcesFound": 4,
+      "passed": true
+    },
+    {
+      "id": "gp-003",
+      "question": "What is the difference between CRISPRi and CRISPRa, and when would you use each?",
+      "difficulty": "easy",
+      "generatedAnswer": "## CRISPRi vs. CRISPRa: Key Differences and Use Cases\n\n**Note:** The provided context (focused on CRISPR-Cas9 nuclease mechanism) contains limited direct information about CRISPRi and CRISPRa. The following draws on what is available in the context plus clearly labeled general knowledge.\n\n---\n\n## Core Distinction\n\nBoth CRISPRi and CRISPRa use a **catalytically dead Cas9 (dCas9)** — a version of Cas9 with its nuclease domains inactivated — combined with an sgRNA for targeting. Unlike nuclease-act",
+      "validatorScore": 72,
+      "autoScore": 72,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": true
+    },
+    {
+      "id": "gp-004",
+      "question": "What is GEARS and how does it predict transcriptional responses to genetic perturbations?",
+      "difficulty": "hard",
+      "generatedAnswer": "# GEARS: A Graph Neural Network Framework for Predicting Transcriptional Responses to Genetic Perturbations\n\n## What GEARS Is\n\nGEARS (Gene Expression And Regulation by Similarity) is a deep learning framework published in *Nature Biotechnology* (2023) that predicts transcriptional responses to single and combinatorial genetic perturbations [GEARS: Graph Neural Network for Genetic Perturbation Prediction]. Its central motivation is that exhaustive experimental measurement of all possible gene com",
+      "validatorScore": 72,
+      "autoScore": 72,
+      "retrievalRounds": 3,
+      "sourcesFound": 4,
+      "passed": true
+    },
+    {
+      "id": "gp-005",
+      "question": "What are the main steps in the MAGeCK pipeline for analyzing pooled CRISPR screens?",
+      "difficulty": "medium",
+      "generatedAnswer": "The provided context does not contain information about the MAGeCK pipeline. The context focuses exclusively on Perturb-seq, which is a method that combines pooled CRISPR screens with single-cell RNA sequencing (scRNA-seq). MAGeCK (Model-based Analysis of Genome-wide CRISPR Knockout) is a separate computational tool used for analyzing pooled CRISPR screens, but it is not described in the available documentation.\n\nTo answer your question about the MAGeCK pipeline, additional context or documentat",
+      "validatorScore": 18,
+      "autoScore": 3,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": false
+    },
+    {
+      "id": "gp-006",
+      "question": "What distinguishes a positive selection screen from a negative selection screen in CRISPR pooled screens?",
+      "difficulty": "easy",
+      "generatedAnswer": "# Positive vs. Negative Selection Screens in CRISPR Pooled Screens: A Comparative Analysis\n\n## Overview\n\nCRISPR pooled screens classify broadly into two selection paradigms based on the biological question being asked and how sgRNA abundance shifts are interpreted. The table and sections below systematically contrast these approaches.\n\n---\n\n## Side-by-Side Comparison\n\n| Feature | **Negative Selection (Dropout) Screen** | **Positive Selection Screen** |\n|---|---|---|\n| **Biological goal** | Ident",
+      "validatorScore": 70,
+      "autoScore": 78,
+      "retrievalRounds": 1,
+      "sourcesFound": 5,
+      "passed": true
+    },
+    {
+      "id": "gp-007",
+      "question": "How do genetic interaction scores (epistasis) reveal functional relationships in combinatorial CRISPR screens?",
+      "difficulty": "hard",
+      "generatedAnswer": "The provided context (covering Perturb-seq experimental workflow including sgRNA library design, lentiviral delivery, single-cell capture, and sequencing) does not contain sufficient information to fully answer this question about genetic interaction scores and epistasis in combinatorial CRISPR screens. The context describes how Perturb-seq enables simultaneous measurement of which gene was perturbed and the resulting transcriptional response in individual cells, and mentions that it transforms ",
+      "validatorScore": 42,
+      "autoScore": 5,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": false
+    },
+    {
+      "id": "gp-008",
+      "question": "What are off-target effects in CRISPR-Cas9 and how can they be minimized?",
+      "difficulty": "medium",
+      "generatedAnswer": "# Off-Target Effects in CRISPR-Cas9: What the Provided Context Supports\n\n## What Are Off-Target Effects?\n\nOff-target effects in CRISPR-Cas9 refer to unintended double-strand breaks (DSBs) at genomic loci other than the intended target site. These occur when the Cas9-sgRNA complex binds and cleaves DNA sequences that are similar, but not identical, to the intended protospacer.\n\n## Molecular Basis (Supported by Provided Context)\n\nBased on the CRISPR-Cas9 mechanism described in the provided context",
+      "validatorScore": 72,
+      "autoScore": 52,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": false
+    },
+    {
+      "id": "gp-009",
+      "question": "What is CROP-seq and how does it differ from Perturb-seq?",
+      "difficulty": "medium",
+      "generatedAnswer": "The provided context does not contain information about CROP-seq or Perturb-seq methodologies. The context provided is exclusively about GPerturb, a Gaussian Process-based model for analyzing single-cell CRISPR screening data. Therefore, a grounded answer to this question cannot be generated from the available context. To answer this question accurately, context documents specifically describing CROP-seq (Datlinger et al.) and Perturb-seq (Dixit et al.) methods would be required.",
+      "validatorScore": 22,
+      "autoScore": 0,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": false
+    },
+    {
+      "id": "gp-010",
+      "question": "How is gene essentiality defined and measured in the context of CRISPR screens?",
+      "difficulty": "medium",
+      "generatedAnswer": "Based on the provided context, gene essentiality in CRISPR screens can only be partially addressed. The Perturb-seq context describes pooled CRISPR screens that use sgRNA libraries delivered via lentivirus at low MOI (< 0.3) to ensure single perturbations per cell, with cells selected and monitored over time (5–7 days for knockout). The context mentions that conventional pooled screens provide a 'single-endpoint fitness readout,' implying that essentiality is traditionally measured by changes in",
+      "validatorScore": 22,
+      "autoScore": 15,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": false
+    },
+    {
+      "id": "gp-011",
+      "question": "What design principles guide effective sgRNA library construction for genome-wide CRISPR screens?",
+      "difficulty": "hard",
+      "generatedAnswer": "# Design Principles for Effective sgRNA Library Construction in Genome-Wide CRISPR Screens\n\n## 1. sgRNA Coverage Per Gene\n\nSelecting an appropriate number of sgRNAs per gene is fundamental to statistical power and confidence in hit calling.\n\n- **Standard recommendation**: 3–6 sgRNAs per gene [CRISPR Pooled Screens: Design and Analysis]\n- **GeCKO v2 library**: ~6 sgRNAs/gene across the human genome (~200,000 sgRNAs total)\n- **Brunello library**: 4 sgRNAs/gene with activity optimization (77,441 sg",
+      "validatorScore": 72,
+      "autoScore": 72,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": true
+    },
+    {
+      "id": "gp-012",
+      "question": "What is synthetic lethality and why is it therapeutically relevant in cancer?",
+      "difficulty": "medium",
+      "generatedAnswer": "## Synthetic Lethality: What the Provided Context Tells Us\n\nThe provided context (from the GEARS paper) does not contain a dedicated explanation of synthetic lethality or its therapeutic relevance in cancer. However, it does include a relevant incidental mention:\n\n> The GEARS framework acknowledges that its **additivity assumption** for combining double-perturbation signals \"can fail for strongly epistatic gene pairs,\" and **synthetic lethality is cited as a specific case** where the model may n",
+      "validatorScore": 62,
+      "autoScore": 14,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": false
+    },
+    {
+      "id": "gp-013",
+      "question": "How does base editing differ from prime editing in terms of mechanism and application?",
+      "difficulty": "hard",
+      "generatedAnswer": "## Base Editing vs. Prime Editing: Mechanism and Application\n\n> **Note:** The provided knowledge base does not contain dedicated entries for base editing or prime editing. The context covers CRISPR-Cas9 double-strand break (DSB) mechanisms but does not describe these alternative editing technologies. The following partial answer is grounded only in what the context supports.\n\n---\n\n## What the Context Supports\n\nStandard SpCas9 creates a **blunt-ended double-strand break (DSB) approximately 3 bp u",
+      "validatorScore": 72,
+      "autoScore": 15,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": false
+    },
+    {
+      "id": "gp-014",
+      "question": "What computational approaches are used to model gene regulatory networks from Perturb-seq data?",
+      "difficulty": "hard",
+      "generatedAnswer": "# Computational Approaches for Modeling Gene Regulatory Networks from Perturb-seq Data\n\n## Why Perturb-seq Data Is Particularly Valuable for GRN Inference\n\nStandard observational single-cell RNA-seq data suffers from fundamental limitations: correlated expression patterns can reflect shared upstream regulators rather than direct regulation, and it is impossible to distinguish A→B from B→A from A←C→B by correlation alone. Perturb-seq provides **interventional** observations—each genetic knockout ",
+      "validatorScore": 62,
+      "autoScore": 20,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": false
+    },
+    {
+      "id": "gp-015",
+      "question": "What is the role of the PAM sequence in CRISPR-Cas9 targeting, and what are PAM-less variants?",
+      "difficulty": "medium",
+      "generatedAnswer": "# The Role of the PAM Sequence in CRISPR-Cas9 Targeting and PAM-Less Variants\n\n---\n\n## Part 1: Mechanistic Role of the PAM Sequence\n\n### What is the PAM?\n\nThe **Protospacer Adjacent Motif (PAM)** is a short DNA sequence recognized by Cas9 during target binding. For SpCas9 (*Streptococcus pyogenes*), the canonical PAM is **5'-NGG-3'**, recognized by the **PAM-Interacting (PI) domain** of the protein [CRISPR-Cas9 Mechanism of DNA Cleavage].\n\n---\n\n### Step-by-Step Mechanistic Role\n\n**Step 1 — Genom",
+      "validatorScore": 72,
+      "autoScore": 72,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": true
+    },
+    {
+      "id": "gp-016",
+      "question": "How does the CPA (Compositional Perturbation Autoencoder) model predict responses to unseen perturbations?",
+      "difficulty": "hard",
+      "generatedAnswer": "# How CPA Predicts Responses to Unseen Perturbations\n\n## 1. Overall Architecture: Disentangled Autoencoder\n\nCPA (Compositional Perturbation Autoencoder; Lotfollahi et al., Molecular Systems Biology 2023) is a generative model that disentangles a cell's gene expression profile into three independent, additive components:\n\n1. **Basal cell state** (z_basal) — the cell-intrinsic identity, free of perturbation or covariate information\n2. **Perturbation embeddings** — one learned vector per perturbati",
+      "validatorScore": 78,
+      "autoScore": 72,
+      "retrievalRounds": 1,
+      "sourcesFound": 5,
+      "passed": true
+    },
+    {
+      "id": "gp-017",
+      "question": "What is the Perturb-CITE-seq method and what additional information does it capture over standard Perturb-seq?",
+      "difficulty": "hard",
+      "generatedAnswer": "The provided context does not contain information about Perturb-CITE-seq or standard Perturb-seq. The context provided relates exclusively to the 'Departures' method — a neural Schrödinger bridge framework for single-cell perturbation prediction (Chi et al., AAAI 2026) — which addresses the unpaired nature of RNA-seq perturbation data using optimal transport. Without relevant source material about Perturb-CITE-seq in the context, a grounded answer to this question cannot be provided. Please supp",
+      "validatorScore": 22,
+      "autoScore": 3,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": false
+    },
+    {
+      "id": "gp-018",
+      "question": "How is guide RNA efficiency predicted computationally, and what features matter most?",
+      "difficulty": "medium",
+      "generatedAnswer": "## Computational Prediction of Guide RNA Efficiency\n\nBased on the available context, here is what is known about computational prediction of gRNA efficiency:\n\n### Computational Tools\nTwo tools are referenced for sgRNA activity prediction in library design:\n- **Rule Set 2 (Doench score)**: Used to rank and select top-performing sgRNAs\n- **Azimuth**: Also used for sgRNA activity prediction and selection\n\nThese tools are applied in practice — for example, the **Brunello library** uses '4 sgRNAs/gen",
+      "validatorScore": 78,
+      "autoScore": 45,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": false
+    },
+    {
+      "id": "gp-019",
+      "question": "What are the key differences between pooled and arrayed CRISPR screens?",
+      "difficulty": "easy",
+      "generatedAnswer": "## Pooled vs. Arrayed CRISPR Screens: Key Differences\n\n**Important note:** The provided context covers pooled CRISPR screens in depth but does not contain information about arrayed screens. The following describes pooled screen characteristics thoroughly; arrayed screen details are noted as outside the provided context.\n\n### Pooled CRISPR Screens (from provided context)\n\n**Setup:** A library of thousands of sgRNAs is delivered collectively to a large, mixed cell population — typically via lentiv",
+      "validatorScore": 72,
+      "autoScore": 42,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": false
+    },
+    {
+      "id": "gp-020",
+      "question": "How does scGPT use perturbation data for transfer learning in single-cell foundation models?",
+      "difficulty": "hard",
+      "generatedAnswer": "# How scGPT Uses Perturbation Data for Transfer Learning\n\n## 1. Pretraining Foundation\n\nscGPT employs a **generative pre-training approach** based on a transformer architecture, pretrained on over **33 million human single-cell RNA-seq profiles** from diverse tissues and cell types [scGPT Foundation Model]. The core self-supervised objective is **masked gene expression prediction**: the model learns to predict masked gene expression values from the unmasked context of the same cell, forcing it t",
+      "validatorScore": 72,
+      "autoScore": 72,
+      "retrievalRounds": 3,
+      "sourcesFound": 4,
+      "passed": true
+    },
+    {
+      "id": "gp-021",
+      "question": "What is the RNAi mechanism and how does it compare to CRISPR knockdowns for perturbation studies?",
+      "difficulty": "medium",
+      "generatedAnswer": "## RNAi Mechanism vs. CRISPR Knockdowns for Perturbation Studies\n\n**Important note:** The available knowledge base does not contain information about the RNAi mechanism. A fully grounded comparison is therefore not possible. Below is what the context supports regarding CRISPR-based approaches, with a clear flag on the RNAi gap.\n\n---\n\n### CRISPR-Based Perturbation (from context)\n\n**CRISPR Knockout (Cas9):**\n- Cas9 scans for a 5'-NGG-3' PAM sequence, forms an R-loop via sgRNA hybridization (~20 nt",
+      "validatorScore": 62,
+      "autoScore": 20,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": false
+    },
+    {
+      "id": "gp-022",
+      "question": "What normalization strategies are commonly applied in single-cell Perturb-seq analysis?",
+      "difficulty": "medium",
+      "generatedAnswer": "Based on the provided context (Pertpy framework paper), the context does not provide a detailed breakdown of normalization strategies specifically used in Perturb-seq analysis. The Pertpy paper briefly references that the framework supports standard single-cell analysis preprocessing (compatible with Scanpy workflows) and mentions scran or total count normalization as part of standard pipelines, but does not elaborate on specific normalization strategies in the excerpt provided.\n\nFrom what the c",
+      "validatorScore": 22,
+      "autoScore": 20,
+      "retrievalRounds": 3,
+      "sourcesFound": 5,
+      "passed": false
+    }
+  ]
+}

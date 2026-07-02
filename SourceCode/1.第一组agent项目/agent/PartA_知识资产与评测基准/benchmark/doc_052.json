@@ -1,0 +1,6 @@
+{
+    "id": "doc_052",
+    "source": "Transformer-Based_Weakly_Supervised_Learning_for_Whole_Slide_Lung_Cancer_Image_Classification.pdf",
+    "question": "文献中提出的Shuffle-Remix机制如何协同Transformer结构缓解WSI中AC与PSP因形态相似导致的特征混淆问题？",
+    "answer": "Shuffle-Remix机制通过对局部patch token序列进行跨区域随机打乱（shuffle）与语义混合（remix），强制模型学习跨空间位置的不变性表征，打破AC与PSP共有的局部模式（如乳头状、实性结构）的固定空间排列依赖；同时，结合SRViT中多头自注意力对长程依赖的建模能力，使模型能更鲁棒地捕获区分性全局上下文线索（如细胞多形性分布、间质硬化范围等宏观模式），从而缓解因局部形态高度相似导致的特征混淆。此外，配套的token labeling策略引入噪声感知损失，抑制粗标注中误标区域的token梯度贡献，进一步提升对AC/PSP边界模糊样本的判别鲁棒性。"
+}

@@ -1,0 +1,24 @@
+{
+  "id": "Q0006",
+  "question": "True or false: Docking scores prove that a compound will be clinically effective.",
+  "type": "true-false",
+  "difficulty": 2,
+  "answer": {
+    "type": "exact",
+    "content": "false"
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-008-molecular-docking",
+      "original_text": "Molecular docking predicts how a small molecule may orient within a target binding site and estimates relative binding affinity using a scoring function. Docking can generate binding-pose hypotheses, rank compounds, and support virtual screening. It requires target preparation, ligand preparation, binding-site definition, conformational sampling, scoring, and pose inspection."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "molecular-docking",
+        "scoring-function"
+      ]
+    }
+  ]
+}

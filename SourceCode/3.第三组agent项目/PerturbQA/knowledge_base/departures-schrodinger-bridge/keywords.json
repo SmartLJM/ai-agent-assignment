@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "Departures: Neural Schrodinger Bridge for Single-Cell Perturbation Prediction",
+  "keywords": ["Schrodinger bridge", "optimal transport", "single-cell perturbation", "unpaired data", "minibatch OT", "bridge matching", "genetic perturbation", "drug perturbation"]
+}

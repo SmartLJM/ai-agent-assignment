@@ -1,0 +1,8 @@
+{
+  "drug-discovery": [
+    "molecular-docking",
+    "binding-pose",
+    "scoring-function",
+    "virtual-screening"
+  ]
+}

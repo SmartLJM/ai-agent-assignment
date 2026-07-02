@@ -1,0 +1,9 @@
+{
+  "drug-discovery": [
+    "adme",
+    "absorption",
+    "distribution",
+    "metabolism",
+    "excretion"
+  ]
+}

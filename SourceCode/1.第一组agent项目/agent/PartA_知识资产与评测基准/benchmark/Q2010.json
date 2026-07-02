@@ -1,0 +1,27 @@
+{
+    "id": "Q2010",
+    "question": "在基因表达分析中，为何对RNA-seq数据进行log2转换（如log2(counts + 1)）后，再应用K-means聚类？请从数据分布特性、距离度量敏感性和生物学可解释性三方面解释。",
+    "type": "short-answer",
+    "difficulty": 5,
+    "answer": {
+        "type": "similar",
+        "content": "首先，RNA-seq原始计数呈严重右偏的离散分布（近似负二项分布），且高表达基因的绝对差异远大于低表达基因，直接聚类会导致距离计算被少数高丰度基因主导；log2转换压缩动态范围、近似使数据满足近似正态性，提升K-means基于欧氏距离的合理性。其次，欧氏距离对绝对差值敏感，而log2转换将倍数变化（biologically meaningful）转化为加性差异（如2倍变化→+1单位），使距离更能反映相对表达变化模式，增强共表达基因簇的生物学一致性。最后，log2尺度下，聚类结果中基因的平均表达谱更易解释为‘上调/下调’倍数关系，便于下游功能富集分析（如GO/KEGG），符合生物学家对调控幅度的直觉理解。"
+    },
+    "sources": [
+        {
+            "knowledge_set_id": "course_010",
+            "original_text": "MIT Lecture Notes"
+        }
+    ],
+    "theme": [
+        {
+            "genomic-data-science": [
+                "K-means聚类",
+                "层次聚类",
+                "朴素贝叶斯分类",
+                "基因表达矩阵",
+                "生成式模型"
+            ]
+        }
+    ]
+}

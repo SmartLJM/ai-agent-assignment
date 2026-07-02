@@ -1,0 +1,38 @@
+{
+  "id": "Q0024",
+  "question": "What makes an AI explanation pharmacologically actionable?",
+  "type": "short-answer",
+  "difficulty": 6,
+  "answer": {
+    "type": "keypoint",
+    "content": "An explanation is pharmacologically actionable when it connects the drug to the target, the target to disease biology, the direction of pathway modulation, dose or exposure feasibility, and relevant safety concerns.",
+    "keypoints": [
+      {
+        "point": "drug-target connection",
+        "score": 3.33
+      },
+      {
+        "point": "target-disease biology",
+        "score": 3.33
+      },
+      {
+        "point": "direction of modulation and safety",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-025-explainability-actionability",
+      "original_text": "Explainability in AI-driven drug discovery should be pharmacologically actionable. A model may provide feature importance, attention weights, embeddings, or graph paths, but these outputs are not always meaningful to a pharmacologist or clinician. Useful explanations connect the drug to a target, the target to disease biology, and the expected direction of pathway modulation."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "explainability",
+        "pharmacology"
+      ]
+    }
+  ]
+}

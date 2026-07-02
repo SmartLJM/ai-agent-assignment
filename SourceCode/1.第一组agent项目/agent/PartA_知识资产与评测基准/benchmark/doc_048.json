@@ -1,0 +1,6 @@
+{
+    "id": "doc_048",
+    "source": "Survival Prediction Across Diverse Cancer Types Using NeuralNetworks.pdf",
+    "question": "文献中构建的患者级图结构具体如何定义节点和边？其是否显式融合了临床变量（如年龄、分期）或分子特征（如基因突变）？",
+    "answer": "根据前两页文本，文献仅说明‘constructed patient-level graphs, encapsulating intricate spatial relationships within tumor tissues’，并指出图由WSI切片特征生成，用于输入GCN；但未明确描述节点（如是否为图像patch、组织区域或细胞簇）和边（如基于空间邻接、特征相似性或病理语义）的具体定义方式；且全文未提及任何临床协变量或分子组学数据（如基因组、转录组）的整合，方法完全基于WSI衍生的图像特征与图结构，属于单模态（病理图像）建模，未实现多组学融合。"
+}

@@ -1,0 +1,8 @@
+{
+  "drug-discovery": [
+    "de-novo-design",
+    "generative-model",
+    "molecular-generation",
+    "reinforcement-learning"
+  ]
+}

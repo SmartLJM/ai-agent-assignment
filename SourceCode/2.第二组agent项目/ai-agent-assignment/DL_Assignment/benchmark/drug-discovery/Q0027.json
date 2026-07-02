@@ -1,0 +1,38 @@
+{
+  "id": "Q0027",
+  "question": "Explain why potency alone is insufficient for choosing a development candidate.",
+  "type": "short-answer",
+  "difficulty": 5,
+  "answer": {
+    "type": "keypoint",
+    "content": "Potency alone is insufficient because a development candidate must also have selectivity, suitable ADME, pharmacokinetics, safety, solubility, manufacturability, and an acceptable benefit-risk profile.",
+    "keypoints": [
+      {
+        "point": "selectivity",
+        "score": 3.33
+      },
+      {
+        "point": "ADME/PK/safety",
+        "score": 3.33
+      },
+      {
+        "point": "manufacturability/benefit-risk",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-005-lead-optimization",
+      "original_text": "Lead optimization is the iterative improvement of a lead series through design, synthesis, testing, and analysis. The aim is to balance potency, selectivity, solubility, permeability, metabolic stability, safety, pharmacokinetics, and manufacturability. A compound that is very potent but insoluble, unstable, or toxic may fail as a development candidate."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "lead-optimization",
+        "admet"
+      ]
+    }
+  ]
+}

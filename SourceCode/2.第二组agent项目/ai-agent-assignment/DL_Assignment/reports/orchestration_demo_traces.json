@@ -1,0 +1,372 @@
+[
+  {
+    "question": "What is the molecular weight of aspirin?",
+    "answer": "PubChem reports for aspirin: molecular formula C9H8O4, molecular weight 180.16 g/mol, canonical/available SMILES CC(=O)OC1=CC=CC=C1C(=O)O, InChIKey BSYNRYMUTXBXSQ-UHFFFAOYSA-N, and IUPAC name 2-acetyloxybenzoic acid.",
+    "trace": {
+      "time": "2026-06-20T13:33:50",
+      "question": "What is the molecular weight of aspirin?",
+      "static_chain_baseline": [
+        "planner",
+        "knowledge-retriever",
+        "synthesizer",
+        "validator"
+      ],
+      "plan": {
+        "task": "What is the molecular weight of aspirin?",
+        "analysis": {
+          "compounds": [
+            "aspirin"
+          ],
+          "wants_chemical_property": true,
+          "wants_memory": false,
+          "wants_compare": false,
+          "complex_reasoning": false,
+          "estimated_complexity": "high"
+        },
+        "dynamic_chain": [
+          {
+            "agent": "planner",
+            "action": "analyze-task",
+            "reason": "Every question starts with task analysis."
+          },
+          {
+            "agent": "skill-router",
+            "action": "invoke-pubchem-skill",
+            "reason": "Chemical properties should come from a database tool when possible."
+          },
+          {
+            "agent": "knowledge-retriever",
+            "action": "retrieve-domain-evidence",
+            "reason": "Ground the answer in local drug-discovery knowledge assets."
+          },
+          {
+            "agent": "synthesizer",
+            "action": "compose-grounded-answer",
+            "reason": "Integrate retrieved evidence, memory, and skill results."
+          },
+          {
+            "agent": "validator",
+            "action": "check-answer-and-evidence",
+            "reason": "Detect weak evidence, empty answers, or failed tool calls."
+          }
+        ]
+      },
+      "events": [
+        {
+          "attempt": 1,
+          "event": "start-attempt",
+          "rationale": "Execute dynamically generated workflow."
+        },
+        {
+          "attempt": 1,
+          "agent": "skill-router",
+          "compound": "aspirin",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "agent": "knowledge-retriever",
+          "retrieved_ids": [
+            "dd-019-pubchem-chemical-information",
+            "dd-008-molecular-docking",
+            "dd-012-pharmacokinetics",
+            "dd-025-explainability-actionability",
+            "dd-022-generative-de-novo-design"
+          ],
+          "scores": [
+            19.7785,
+            14.2968,
+            12.1501,
+            10.9512,
+            10.3041
+          ]
+        },
+        {
+          "attempt": 1,
+          "agent": "validator",
+          "validation": {
+            "passed": true,
+            "issues": []
+          }
+        }
+      ],
+      "final_answer": "PubChem reports for aspirin: molecular formula C9H8O4, molecular weight 180.16 g/mol, canonical/available SMILES CC(=O)OC1=CC=CC=C1C(=O)O, InChIKey BSYNRYMUTXBXSQ-UHFFFAOYSA-N, and IUPAC name 2-acetyloxybenzoic acid.",
+      "final_sources": [
+        "dd-019-pubchem-chemical-information",
+        "dd-008-molecular-docking",
+        "dd-012-pharmacokinetics",
+        "dd-025-explainability-actionability"
+      ]
+    }
+  },
+  {
+    "question": "Compare pharmacokinetics and pharmacodynamics.",
+    "answer": "Pharmacokinetics describes what the body does to the drug over time, while pharmacodynamics describes what the drug does to the body through target engagement, mechanism, dose-response, efficacy, and toxicity.",
+    "trace": {
+      "time": "2026-06-20T13:33:52",
+      "question": "Compare pharmacokinetics and pharmacodynamics.",
+      "static_chain_baseline": [
+        "planner",
+        "knowledge-retriever",
+        "synthesizer",
+        "validator"
+      ],
+      "plan": {
+        "task": "Compare pharmacokinetics and pharmacodynamics.",
+        "analysis": {
+          "compounds": [],
+          "wants_chemical_property": false,
+          "wants_memory": false,
+          "wants_compare": true,
+          "complex_reasoning": false,
+          "estimated_complexity": "high"
+        },
+        "dynamic_chain": [
+          {
+            "agent": "planner",
+            "action": "analyze-task",
+            "reason": "Every question starts with task analysis."
+          },
+          {
+            "agent": "parallel-retriever",
+            "action": "retrieve-evidence-for-each-comparison-side",
+            "reason": "Comparison questions benefit from multiple retrieval branches."
+          },
+          {
+            "agent": "synthesizer",
+            "action": "compose-grounded-answer",
+            "reason": "Integrate retrieved evidence, memory, and skill results."
+          },
+          {
+            "agent": "validator",
+            "action": "check-answer-and-evidence",
+            "reason": "Detect weak evidence, empty answers, or failed tool calls."
+          }
+        ]
+      },
+      "events": [
+        {
+          "attempt": 1,
+          "event": "start-attempt",
+          "rationale": "Execute dynamically generated workflow."
+        },
+        {
+          "attempt": 1,
+          "agent": "knowledge-retriever",
+          "retrieved_ids": [
+            "dd-013-pharmacodynamics",
+            "dd-012-pharmacokinetics",
+            "dd-015-clinical-trial-phases",
+            "dd-018-chembl-bioactivity"
+          ],
+          "scores": [
+            23.7356,
+            20.3438,
+            5.5094,
+            5.3026
+          ]
+        },
+        {
+          "attempt": 1,
+          "agent": "validator",
+          "validation": {
+            "passed": true,
+            "issues": []
+          }
+        }
+      ],
+      "final_answer": "Pharmacokinetics describes what the body does to the drug over time, while pharmacodynamics describes what the drug does to the body through target engagement, mechanism, dose-response, efficacy, and toxicity.",
+      "final_sources": [
+        "dd-013-pharmacodynamics",
+        "dd-012-pharmacokinetics",
+        "dd-015-clinical-trial-phases",
+        "dd-018-chembl-bioactivity"
+      ]
+    }
+  },
+  {
+    "question": "What should the agent do if PubChem fails for an unknown compound xyzznotreal?",
+    "answer": "PubChem reports for aspirin: molecular formula C9H8O4, molecular weight 180.16 g/mol, canonical/available SMILES CC(=O)OC1=CC=CC=C1C(=O)O, InChIKey BSYNRYMUTXBXSQ-UHFFFAOYSA-N, and IUPAC name 2-acetyloxybenzoic acid.",
+    "trace": {
+      "time": "2026-06-20T13:33:52",
+      "question": "What should the agent do if PubChem fails for an unknown compound xyzznotreal?",
+      "static_chain_baseline": [
+        "planner",
+        "knowledge-retriever",
+        "synthesizer",
+        "validator"
+      ],
+      "plan": {
+        "task": "What should the agent do if PubChem fails for an unknown compound xyzznotreal?",
+        "analysis": {
+          "compounds": [],
+          "wants_chemical_property": true,
+          "wants_memory": false,
+          "wants_compare": false,
+          "complex_reasoning": false,
+          "estimated_complexity": "high"
+        },
+        "dynamic_chain": [
+          {
+            "agent": "planner",
+            "action": "analyze-task",
+            "reason": "Every question starts with task analysis."
+          },
+          {
+            "agent": "skill-router",
+            "action": "invoke-pubchem-skill",
+            "reason": "Chemical properties should come from a database tool when possible."
+          },
+          {
+            "agent": "knowledge-retriever",
+            "action": "retrieve-domain-evidence",
+            "reason": "Ground the answer in local drug-discovery knowledge assets."
+          },
+          {
+            "agent": "synthesizer",
+            "action": "compose-grounded-answer",
+            "reason": "Integrate retrieved evidence, memory, and skill results."
+          },
+          {
+            "agent": "validator",
+            "action": "check-answer-and-evidence",
+            "reason": "Detect weak evidence, empty answers, or failed tool calls."
+          }
+        ]
+      },
+      "events": [
+        {
+          "attempt": 1,
+          "event": "start-attempt",
+          "rationale": "Execute dynamically generated workflow."
+        },
+        {
+          "attempt": 1,
+          "agent": "skill-router",
+          "compound": "aspirin",
+          "ok": true
+        },
+        {
+          "attempt": 1,
+          "agent": "knowledge-retriever",
+          "retrieved_ids": [
+            "dd-019-pubchem-chemical-information",
+            "dd-020-agentic-rag",
+            "dd-012-pharmacokinetics",
+            "dd-025-explainability-actionability",
+            "dd-024-knowledge-graphs"
+          ],
+          "scores": [
+            36.5721,
+            29.7191,
+            20.4385,
+            18.0385,
+            14.0054
+          ]
+        },
+        {
+          "attempt": 1,
+          "agent": "validator",
+          "validation": {
+            "passed": true,
+            "issues": []
+          }
+        }
+      ],
+      "final_answer": "PubChem reports for aspirin: molecular formula C9H8O4, molecular weight 180.16 g/mol, canonical/available SMILES CC(=O)OC1=CC=CC=C1C(=O)O, InChIKey BSYNRYMUTXBXSQ-UHFFFAOYSA-N, and IUPAC name 2-acetyloxybenzoic acid.",
+      "final_sources": [
+        "dd-019-pubchem-chemical-information",
+        "dd-020-agentic-rag",
+        "dd-012-pharmacokinetics",
+        "dd-025-explainability-actionability"
+      ]
+    }
+  },
+  {
+    "question": "Why is a docking score not enough to approve a drug?",
+    "answer": "Molecular docking predicts how a small molecule may orient within a target binding site and estimates relative binding affinity using a scoring function. Docking is useful because it is faster and cheaper than testing every compound experimentally. However, docking scores are not direct measurements of binding free energy, and they can be affected by protein flexibility, water molecules, protonation states, covalent chemistry, metal coordination, and scoring-function limitations. The agent should not claim that the top docking score automatically identifies the best drug.",
+    "trace": {
+      "time": "2026-06-20T13:33:53",
+      "question": "Why is a docking score not enough to approve a drug?",
+      "static_chain_baseline": [
+        "planner",
+        "knowledge-retriever",
+        "synthesizer",
+        "validator"
+      ],
+      "plan": {
+        "task": "Why is a docking score not enough to approve a drug?",
+        "analysis": {
+          "compounds": [],
+          "wants_chemical_property": false,
+          "wants_memory": false,
+          "wants_compare": false,
+          "complex_reasoning": true,
+          "estimated_complexity": "high"
+        },
+        "dynamic_chain": [
+          {
+            "agent": "planner",
+            "action": "analyze-task",
+            "reason": "Every question starts with task analysis."
+          },
+          {
+            "agent": "knowledge-retriever",
+            "action": "retrieve-domain-evidence",
+            "reason": "Ground the answer in local drug-discovery knowledge assets."
+          },
+          {
+            "agent": "synthesizer",
+            "action": "compose-grounded-answer",
+            "reason": "Integrate retrieved evidence, memory, and skill results."
+          },
+          {
+            "agent": "validator",
+            "action": "check-answer-and-evidence",
+            "reason": "Detect weak evidence, empty answers, or failed tool calls."
+          }
+        ]
+      },
+      "events": [
+        {
+          "attempt": 1,
+          "event": "start-attempt",
+          "rationale": "Execute dynamically generated workflow."
+        },
+        {
+          "attempt": 1,
+          "agent": "knowledge-retriever",
+          "retrieved_ids": [
+            "dd-008-molecular-docking",
+            "dd-020-agentic-rag",
+            "dd-024-knowledge-graphs",
+            "dd-025-explainability-actionability",
+            "dd-016-regulatory-approval"
+          ],
+          "scores": [
+            32.1199,
+            27.8532,
+            23.7172,
+            23.6593,
+            23.1354
+          ]
+        },
+        {
+          "attempt": 1,
+          "agent": "validator",
+          "validation": {
+            "passed": true,
+            "issues": []
+          }
+        }
+      ],
+      "final_answer": "Molecular docking predicts how a small molecule may orient within a target binding site and estimates relative binding affinity using a scoring function. Docking is useful because it is faster and cheaper than testing every compound experimentally. However, docking scores are not direct measurements of binding free energy, and they can be affected by protein flexibility, water molecules, protonation states, covalent chemistry, metal coordination, and scoring-function limitations. The agent should not claim that the top docking score automatically identifies the best drug.",
+      "final_sources": [
+        "dd-008-molecular-docking",
+        "dd-020-agentic-rag",
+        "dd-024-knowledge-graphs",
+        "dd-025-explainability-actionability"
+      ]
+    }
+  }
+]

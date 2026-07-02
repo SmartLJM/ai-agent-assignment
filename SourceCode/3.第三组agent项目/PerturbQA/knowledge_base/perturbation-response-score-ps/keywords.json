@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "Perturbation-Response Score (PS) for Decoding Heterogeneous Single-Cell Perturbation Responses",
+  "keywords": ["perturbation-response score", "PS score", "Perturb-seq", "CRISPR", "single-cell heterogeneity", "dosage analysis", "essential genes", "constrained optimization"]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "Q0023",
+  "question": "Why does a knowledge-graph path not automatically prove clinical efficacy?",
+  "type": "short-answer",
+  "difficulty": 6,
+  "answer": {
+    "type": "keypoint",
+    "content": "A knowledge-graph path can show possible relationships among drugs, targets, pathways, and diseases, but it does not prove causality, correct direction of effect, adequate exposure, safety, or clinical benefit.",
+    "keypoints": [
+      {
+        "point": "path shows possible relationships",
+        "score": 3.33
+      },
+      {
+        "point": "does not prove causality",
+        "score": 3.33
+      },
+      {
+        "point": "needs exposure/safety/clinical evidence",
+        "score": 3.33
+      }
+    ],
+    "reasoning_steps": [
+      {
+        "step": 1,
+        "description": "Retrieve the relevant concept definition or evidence.",
+        "source": {
+          "knowledge_set_id": "dd-024-knowledge-graphs",
+          "original_text": "Knowledge graphs represent entities such as drugs, targets, diseases, pathways, side effects, genes, and publications as nodes connected by typed relationships. In drug discovery, knowledge graphs support target prioritization, repurposing, mechanism analysis, safety reasoning, and evidence integration across heterogeneous sources."
+        }
+      },
+      {
+        "step": 2,
+        "description": "Synthesize the relationship or comparison required by the question.",
+        "source": {
+          "knowledge_set_id": "dd-024-knowledge-graphs",
+          "original_text": "Knowledge graphs represent entities such as drugs, targets, diseases, pathways, side effects, genes, and publications as nodes connected by typed relationships. In drug discovery, knowledge graphs support target prioritization, repurposing, mechanism analysis, safety reasoning, and evidence integration across heterogeneous sources."
+        }
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-024-knowledge-graphs",
+      "original_text": "Knowledge graphs represent entities such as drugs, targets, diseases, pathways, side effects, genes, and publications as nodes connected by typed relationships. In drug discovery, knowledge graphs support target prioritization, repurposing, mechanism analysis, safety reasoning, and evidence integration across heterogeneous sources."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "knowledge-graph",
+        "multi-hop-reasoning"
+      ]
+    }
+  ]
+}

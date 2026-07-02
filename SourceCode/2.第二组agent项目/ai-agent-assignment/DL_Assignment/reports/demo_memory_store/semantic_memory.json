@@ -1,0 +1,51 @@
+{
+  "layer": "semantic",
+  "entities": [
+    {
+      "id": "adme",
+      "label": "adme",
+      "type": "drug-discovery-concept",
+      "mentions": 2
+    },
+    {
+      "id": "pharmacokinetics",
+      "label": "pharmacokinetics",
+      "type": "drug-discovery-concept",
+      "mentions": 2
+    },
+    {
+      "id": "ai",
+      "label": "ai",
+      "type": "drug-discovery-concept",
+      "mentions": 2
+    },
+    {
+      "id": "molecular-docking",
+      "label": "molecular docking",
+      "type": "drug-discovery-concept",
+      "mentions": 1
+    }
+  ],
+  "relations": [
+    {
+      "head": "adme",
+      "relation": "co-mentioned-with",
+      "tail": "pharmacokinetics"
+    },
+    {
+      "head": "adme",
+      "relation": "co-mentioned-with",
+      "tail": "ai"
+    },
+    {
+      "head": "pharmacokinetics",
+      "relation": "co-mentioned-with",
+      "tail": "ai"
+    },
+    {
+      "head": "molecular-docking",
+      "relation": "co-mentioned-with",
+      "tail": "ai"
+    }
+  ]
+}

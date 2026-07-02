@@ -1,0 +1,38 @@
+{
+  "id": "Q0002",
+  "question": "Why is target validation needed after target identification?",
+  "type": "short-answer",
+  "difficulty": 4,
+  "answer": {
+    "type": "keypoint",
+    "content": "Target validation is needed because it tests whether modulating the selected target produces a useful disease-relevant effect rather than only showing correlation with disease.",
+    "keypoints": [
+      {
+        "point": "tests modulation effect",
+        "score": 3.33
+      },
+      {
+        "point": "distinguishes causality from correlation",
+        "score": 3.33
+      },
+      {
+        "point": "reduces downstream failure risk",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-002-target-validation",
+      "original_text": "Target validation tests whether modulating a chosen target produces the desired therapeutic effect in relevant biological systems. It reduces the risk that a candidate target is only correlated with disease rather than causally involved. Validation may use CRISPR knockout, CRISPR activation or inhibition, RNA interference, chemical probes, antibodies, animal models, patient-derived cells, organoids, or rescue experiments."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "target-validation",
+        "causal-evidence"
+      ]
+    }
+  ]
+}

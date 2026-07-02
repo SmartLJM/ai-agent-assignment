@@ -1,0 +1,8 @@
+{
+  "type": "paper",
+  "doi": "10.1186/s13059-025-03519-4",
+  "title": "scVAEDer: integrating deep diffusion models and variational autoencoders for single-cell transcriptomics analysis",
+  "authors": ["Sadria M", "Layton A"],
+  "journal": "Genome Biology",
+  "year": 2025
+}

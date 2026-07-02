@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "scDist: Robust Identification of Perturbed Cell Types in scRNA-seq",
+  "keywords": ["scDist", "differential state analysis", "mixed-effects model", "scRNA-seq", "cell type perturbation", "false positives", "COVID-19", "immunotherapy"]
+}

@@ -1,0 +1,6 @@
+{
+    "id": "doc_051",
+    "source": "Transformer optimization with meta learning on pathology images for breast cancer lymph node micrometastasis.pdf",
+    "question": "文献中提出的MetaTrans为何需同时集成CNN与Transformer模块？其在处理病理图像微转移检测时如何协同解决局部细节建模与全局上下文建模的矛盾？",
+    "answer": "文献明确指出，纯Vision Transformer（ViT）在医学图像分析中面临两大瓶颈：（1）自注意力机制难以高效捕获微转移病灶所需的精细局部结构（如肿瘤细胞边缘形态、核异型性等亚细胞级纹理）；（2）计算复杂度高且依赖大规模标注数据，与微转移数据稀缺性相冲突。为此，MetaTrans采用CNN-Transformer混合架构——CNN分支负责提取高分辨率局部特征（如细胞核轮廓、染色强度梯度），而Transformer分支通过多头自注意力建模跨区域长程依赖（如肿瘤细胞簇的空间分布模式、与周围淋巴组织的拓扑关系）。二者在特征融合层进行互补性整合，使模型既能精准定位微小病灶（依赖CNN的局部敏感性），又能鲁棒区分形态相似的假阳性区域（如生发中心、脂肪组织，依赖Transformer的全局语义判别），从而在有限数据下实现细粒度+高鲁棒性的联合优化。"
+}

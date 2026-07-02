@@ -1,0 +1,5 @@
+{
+  "topic": "counterfactual artifact disentanglement VAE",
+  "title": "CRADLE-VAE Artifact Disentanglement",
+  "keywords": ["CRADLE-VAE", "counterfactual", "artifact disentanglement", "VAE", "basal state", "perturbation latent", "artifact latent", "KL loss", "single-cell", "CRISPR", "Norman", "Replogle", "batch effect", "technical variation"]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "Q0004",
+  "question": "Which screening stage commonly uses automated assays to test many compounds?\nA. Regulatory approval\nB. High-throughput screening\nC. Phase 4 surveillance\nD. Drug labeling",
+  "type": "single-choice",
+  "difficulty": 2,
+  "answer": {
+    "type": "exact",
+    "content": "B"
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-003-hit-discovery-hts",
+      "original_text": "Hit discovery is the process of finding initial molecules that show measurable activity against a target, pathway, or phenotype. High-throughput screening uses automated liquid handling, plate readers, robotic systems, and miniaturized assays to test thousands to millions of compounds. Primary screening produces candidate hits, but these hits require confirmation because false positives are common."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "high-throughput-screening",
+        "assay"
+      ]
+    }
+  ]
+}

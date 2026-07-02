@@ -1,0 +1,93 @@
+[
+  {
+    "id": "dyn_001",
+    "question": "What is U-Net?",
+    "expected_intent": "simple_qa",
+    "expected_dynamic_features": ["auto_plan_generation", "decision_trace"],
+    "expected_agents": ["text-retriever", "report-agent"]
+  },
+  {
+    "id": "dyn_002",
+    "question": "Explain Dice score with local evidence.",
+    "expected_intent": "grounded_qa",
+    "expected_dynamic_features": ["auto_plan_generation", "runtime_quality_gate", "decision_trace"],
+    "expected_agents": ["text-retriever", "quality-validator", "report-agent"]
+  },
+  {
+    "id": "dyn_003",
+    "question": "Retrieve evidence about medical image segmentation evaluation and cite local sources.",
+    "expected_intent": "grounded_qa",
+    "expected_dynamic_features": ["auto_plan_generation", "runtime_quality_gate", "decision_trace"],
+    "expected_agents": ["text-retriever", "quality-validator", "report-agent"]
+  },
+  {
+    "id": "dyn_004",
+    "question": "Analyze case NPC_001 with image and mask evidence.",
+    "expected_intent": "case_segmentation_analysis",
+    "expected_dynamic_features": ["auto_plan_generation", "parallel_sub_agents", "runtime_quality_gate", "decision_trace"],
+    "expected_agents": ["text-retriever", "image-agent", "mask-agent", "quality-validator", "report-agent"],
+    "context": {"case_id": "001"}
+  },
+  {
+    "id": "dyn_005",
+    "question": "Show the mask overlay for NPC_001.",
+    "expected_intent": "case_segmentation_analysis",
+    "expected_dynamic_features": ["auto_plan_generation", "parallel_sub_agents", "runtime_quality_gate", "decision_trace"],
+    "expected_agents": ["text-retriever", "image-agent", "mask-agent", "overlay-visualizer", "quality-validator", "report-agent"],
+    "context": {"case_id": "001", "axis": "axial", "slice_index": 31}
+  },
+  {
+    "id": "dyn_006",
+    "question": "Compare image and mask statistics for NPC_001 and NPC_002.",
+    "expected_intent": "comparative_analysis",
+    "expected_dynamic_features": ["auto_plan_generation", "parallel_sub_agents", "runtime_quality_gate", "decision_trace"],
+    "expected_agents": ["text-retriever", "table-statistics-agent", "multi-case-retriever", "quality-validator", "report-agent"]
+  },
+  {
+    "id": "dyn_007",
+    "question": "Find a case with small foreground ratio using NPC_002 and explain why it needs review.",
+    "expected_intent": "case_segmentation_analysis",
+    "expected_dynamic_features": ["auto_plan_generation", "parallel_sub_agents", "runtime_quality_gate", "runtime_adjustment", "decision_trace"],
+    "expected_agents": ["text-retriever", "image-agent", "mask-agent", "small-target-review-agent", "quality-validator", "report-agent"],
+    "context": {"case_id": "002"}
+  },
+  {
+    "id": "dyn_008",
+    "question": "Run a grounded QA query about medical image segmentation evidence.",
+    "expected_intent": "grounded_qa",
+    "expected_dynamic_features": ["auto_plan_generation", "runtime_quality_gate", "decision_trace"],
+    "expected_agents": ["text-retriever", "quality-validator", "report-agent"]
+  },
+  {
+    "id": "dyn_009",
+    "question": "Run MedSAM prediction for case NPC_001; if unavailable, recover gracefully.",
+    "expected_intent": "segmentation_prediction_demo",
+    "expected_dynamic_features": ["auto_plan_generation", "runtime_quality_gate", "error_recovery", "decision_trace"],
+    "expected_agents": ["image-agent", "medsam-agent", "ground-truth-overlay-agent", "quality-validator", "report-agent"],
+    "context": {"case_id": "001", "force_model_unavailable": true}
+  },
+  {
+    "id": "dyn_010",
+    "question": "Analyze an invalid case ID NPC_999 and recover gracefully.",
+    "expected_intent": "case_segmentation_analysis",
+    "expected_dynamic_features": ["auto_plan_generation", "parallel_sub_agents", "error_recovery", "decision_trace"],
+    "expected_agents": ["image-agent", "mask-agent", "case-metadata-agent", "report-agent"],
+    "context": {"case_id": "999"}
+  },
+  {
+    "id": "dyn_011",
+    "question": "Explain why Dice score may be insufficient for small tumor segmentation with local evidence.",
+    "expected_intent": "grounded_qa",
+    "expected_dynamic_features": ["auto_plan_generation", "runtime_quality_gate", "runtime_adjustment", "retry_loop", "decision_trace"],
+    "expected_agents": ["text-retriever", "query-rewriter", "quality-validator", "report-agent"],
+    "context": {"force_insufficient_first_pass": true}
+  },
+  {
+    "id": "dyn_012",
+    "question": "Generate a final case report from text, image and mask evidence for NPC_001.",
+    "expected_intent": "case_segmentation_analysis",
+    "expected_dynamic_features": ["auto_plan_generation", "parallel_sub_agents", "runtime_quality_gate", "decision_trace"],
+    "expected_agents": ["text-retriever", "image-agent", "mask-agent", "quality-validator", "report-agent"],
+    "context": {"case_id": "001"}
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "CRISPR Pooled Screens: Design and Analysis",
+  "keywords": ["pooled-screen", "mageck", "sgRNA-library", "dropout-screen", "positive-selection", "negative-selection", "gene-essentiality", "screen-analysis", "rra", "negative-binomial"]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "Q0018",
+  "question": "What information can a PubChem skill retrieve for a compound?",
+  "type": "short-answer",
+  "difficulty": 3,
+  "answer": {
+    "type": "keypoint",
+    "content": "A PubChem skill can retrieve chemical identifiers and properties such as molecular formula, molecular weight, canonical SMILES, InChIKey, IUPAC name, synonyms, and compound records.",
+    "keypoints": [
+      {
+        "point": "molecular formula or weight",
+        "score": 3.33
+      },
+      {
+        "point": "SMILES/InChIKey/IUPAC",
+        "score": 3.33
+      },
+      {
+        "point": "compound records/synonyms",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-019-pubchem-chemical-information",
+      "original_text": "PubChem is an open chemistry database that provides information about chemical substances, compounds, structures, identifiers, synonyms, computed properties, assays, bioactivity links, patents, literature links, and safety annotations. It is useful for retrieving molecular formula, molecular weight, canonical SMILES, InChIKey, and IUPAC names."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "pubchem",
+        "compound-properties"
+      ]
+    }
+  ]
+}

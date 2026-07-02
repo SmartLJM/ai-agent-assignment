@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "RegFormer: Mamba-Based Single-Cell Foundation Model with Gene Regulatory Hierarchies",
+  "keywords": ["RegFormer", "Mamba", "state space model", "gene regulatory networks", "single-cell foundation model", "perturbation prediction", "drug response", "GRN-guided"]
+}

@@ -1,0 +1,25 @@
+{
+    "id": "Q2016",
+    "question": "在MIT 6.047课程的Scribing Guide中，要求学生在课后使用\\todo{}宏标记待办任务。若你在整理‘ChIP-seq peak calling’一节时发现某处声称‘MACS2默认使用泊松分布建模背景噪声’，但最新MACS2论文（Zhang et al., 2008 & Feng et al., 2012）明确说明其采用动态λ背景模型并经FDR校正，而非泊松分布——此时应使用哪种\\todo{}类型？请写出符合规范的LaTeX命令，并解释该命令在教材协作流程中的具体作用。",
+    "type": "short-answer",
+    "difficulty": 5,
+    "answer": {
+        "type": "similar",
+        "content": "应使用类型为‘incorrect’的\\todo{}宏。规范命令为：\\todo{incorrect}{MACS2实际采用动态λ背景模型与FDR校正（Feng et al., Nat Methods 2012），非泊松分布；需修正文本并更新参考文献。}。该命令的作用是：（1）精准标识过时/错误的技术陈述，避免误导读者；（2）自动归因至当前screibe（@scribe），形成可追溯的协作审计线索；（3）触发后续审阅者（如TA或教授）优先验证并闭环修正，保障教材技术准确性；（4）与Dropbox源码目录中的.bib文件联动，强制推动参考文献更新，体现计算生物学领域方法学快速迭代下的教材维护机制。"
+    },
+    "sources": [
+        {
+            "knowledge_set_id": "course_016",
+            "original_text": "MIT Lecture Notes"
+        }
+    ],
+    "theme": [
+        {
+            "genomic-data-science": [
+                "学术协作写作",
+                "教材共建",
+                "LaTeX科学出版"
+            ]
+        }
+    ]
+}

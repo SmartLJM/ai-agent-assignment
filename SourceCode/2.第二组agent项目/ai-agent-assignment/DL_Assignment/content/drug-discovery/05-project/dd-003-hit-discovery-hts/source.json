@@ -1,0 +1,16 @@
+{
+  "knowledge_set_id": "dd-003-hit-discovery-hts",
+  "title": "Assay Guidance Manual",
+  "source_type": "web-resource",
+  "authors": [
+    "Markossian, S. et al."
+  ],
+  "journal": "NCBI Bookshelf",
+  "publisher": "NIH/NCBI",
+  "doi": "",
+  "url": "https://www.ncbi.nlm.nih.gov/books/NBK53196/",
+  "publication_date": "2024",
+  "accessed": "2026-06-19",
+  "content_file": "content/content.md",
+  "license_note": "Curated educational summary included locally; original/source metadata is recorded for traceability."
+}

@@ -1,0 +1,18 @@
+flowchart TD
+  START([Input: 病例并行分析])
+  N1_parallel_case_workers{"Parallel fork"}
+  START --> N1_parallel_case_workers
+  N2_analyze_image["image-agent<br/>analyze_image"]
+  N1_parallel_case_workers --> N2_analyze_image
+  N3_analyze_mask["mask-agent<br/>analyze_mask"]
+  N1_parallel_case_workers --> N3_analyze_mask
+  N4_retrieve_case_evidence["case-retriever<br/>retrieve_case_evidence"]
+  N1_parallel_case_workers --> N4_retrieve_case_evidence
+  N5_parallel_case_workers_merge{"Merge outputs"}
+  N2_analyze_image --> N5_parallel_case_workers_merge
+  N3_analyze_mask --> N5_parallel_case_workers_merge
+  N4_retrieve_case_evidence --> N5_parallel_case_workers_merge
+  N6_compose_case_report["report-agent<br/>compose_case_report"]
+  N5_parallel_case_workers_merge --> N6_compose_case_report
+  END([Trace + result])
+  N6_compose_case_report --> END

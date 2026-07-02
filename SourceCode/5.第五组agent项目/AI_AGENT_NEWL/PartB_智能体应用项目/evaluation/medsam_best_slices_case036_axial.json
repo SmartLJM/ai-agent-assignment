@@ -1,0 +1,107 @@
+{
+  "case_id": "036",
+  "axis": "axial",
+  "evaluated_slices": 33,
+  "elapsed_seconds": 49.8,
+  "best": {
+    "case_id": "036",
+    "axis": "axial",
+    "slice_index": 43,
+    "dice": 0.228424,
+    "iou": 0.128938,
+    "gt_voxels": 884,
+    "pred_voxels": 6856
+  },
+  "top10": [
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 43,
+      "dice": 0.228424,
+      "iou": 0.128938,
+      "gt_voxels": 884,
+      "pred_voxels": 6856
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 44,
+      "dice": 0.226609,
+      "iou": 0.127783,
+      "gt_voxels": 884,
+      "pred_voxels": 6918
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 42,
+      "dice": 0.22411,
+      "iou": 0.126196,
+      "gt_voxels": 884,
+      "pred_voxels": 7005
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 37,
+      "dice": 0.199951,
+      "iou": 0.111081,
+      "gt_voxels": 822,
+      "pred_voxels": 7400
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 40,
+      "dice": 0.199805,
+      "iou": 0.110991,
+      "gt_voxels": 821,
+      "pred_voxels": 7397
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 38,
+      "dice": 0.19949,
+      "iou": 0.110797,
+      "gt_voxels": 822,
+      "pred_voxels": 7419
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 39,
+      "dice": 0.199079,
+      "iou": 0.110543,
+      "gt_voxels": 821,
+      "pred_voxels": 7427
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 36,
+      "dice": 0.198168,
+      "iou": 0.109981,
+      "gt_voxels": 822,
+      "pred_voxels": 7474
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 41,
+      "dice": 0.196741,
+      "iou": 0.109103,
+      "gt_voxels": 821,
+      "pred_voxels": 7525
+    },
+    {
+      "case_id": "036",
+      "axis": "axial",
+      "slice_index": 35,
+      "dice": 0.196275,
+      "iou": 0.108817,
+      "gt_voxels": 822,
+      "pred_voxels": 7554
+    }
+  ]
+}

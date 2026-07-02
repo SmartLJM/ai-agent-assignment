@@ -1,0 +1,6 @@
+{
+    "id": "doc_008",
+    "source": "Deep learning-driven survival prediction in pan-cancerstudies by integrating multimodal histology-genomicdata.pdf",
+    "question": "CATfusion如何解决多模态数据间因尺度、语义和分布差异导致的‘模态鸿沟’问题？其交叉注意力机制在组织病理图像与基因组数据融合中具体如何实现跨模态对齐？",
+    "answer": "CATfusion通过双向交叉注意力（bidirectional cross-attention）机制实现跨模态对齐：在特征融合阶段，图像模态特征作为Query，基因组模态特征作为Key/Value（反之亦然），使二者在共享隐空间中相互引导注意力权重分配，从而强制不同模态在关键生物学相关区域（如高增殖区域对应特定基因表达模式）建立可解释的关联；该机制不依赖于早期拼接或简单加权融合，而是通过可学习的注意力矩阵动态校准模态间语义距离，有效缓解因原始数据维度悬殊（如WSI patch特征维数vs. 10k+基因表达向量）和统计分布差异引发的模态鸿沟。TabAE预训练进一步统一了基因组各层数据（mRNA/miRNA/CNV等）的嵌入尺度，为后续跨模态注意力提供结构一致的输入表征。"
+}

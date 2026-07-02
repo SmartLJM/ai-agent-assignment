@@ -1,0 +1,74 @@
+{
+  "comparison_target": "static template vs runtime generated plan",
+  "static_baseline": {
+    "workflow_id": "parallel_case_analysis",
+    "source_file": "workflows.json",
+    "selection_method": "predefined template",
+    "supported_modes": [
+      "sequential",
+      "parallel",
+      "conditional"
+    ],
+    "node_count": 2
+  },
+  "dynamic_plan": {
+    "benchmark_id": "dyn_007",
+    "source_file": "agent_registry.json + dynamic_orchestrator.py",
+    "selection_method": "query intent + complexity + capability registry",
+    "intent": "case_segmentation_analysis",
+    "complexity_score": 3,
+    "generated_node_count": 6,
+    "generated_nodes": [
+      {
+        "node_id": "retrieve-text-evidence",
+        "agent": "text-retriever",
+        "mode": "parallel",
+        "reason": "Case analysis needs literature evidence."
+      },
+      {
+        "node_id": "load-and-summarize-case-image",
+        "agent": "image-agent",
+        "mode": "parallel",
+        "reason": "The query mentions a case image."
+      },
+      {
+        "node_id": "analyze-segmentation-mask",
+        "agent": "mask-agent",
+        "mode": "parallel",
+        "reason": "The query needs segmentation mask statistics."
+      },
+      {
+        "node_id": "validate-intermediate-results",
+        "agent": "quality-validator",
+        "mode": "conditional",
+        "reason": "Intermediate case outputs must be checked."
+      },
+      {
+        "node_id": "small-target-review",
+        "agent": "small-target-review-agent",
+        "mode": "conditional",
+        "reason": "The mask foreground ratio is very small."
+      },
+      {
+        "node_id": "merge-outputs-into-final-report",
+        "agent": "report-agent",
+        "mode": "final",
+        "reason": "Generate the final case report."
+      }
+    ],
+    "runtime_adjustments": [
+      {
+        "source_node": "validate-intermediate-results",
+        "new_nodes_added": [
+          "small-target-review"
+        ]
+      }
+    ]
+  },
+  "why_this_is_dynamic": [
+    "The node list is generated at runtime from query signals.",
+    "The quality gate can insert retry or review nodes after intermediate outputs are observed.",
+    "The recovery manager can switch to fallback agents when a selected agent fails.",
+    "Every decision records observation, reason, action, and affected nodes."
+  ]
+}

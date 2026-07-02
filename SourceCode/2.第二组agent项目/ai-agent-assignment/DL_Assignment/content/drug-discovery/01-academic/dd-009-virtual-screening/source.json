@@ -1,0 +1,19 @@
+{
+  "knowledge_set_id": "dd-009-virtual-screening",
+  "title": "Computational methods in drug discovery",
+  "source_type": "research-paper",
+  "authors": [
+    "Sliwoski, G.",
+    "Kothiwale, S.",
+    "Meiler, J.",
+    "Lowe, E. W."
+  ],
+  "journal": "Pharmacological Reviews",
+  "publisher": "ASPET",
+  "doi": "10.1124/pr.112.007336",
+  "url": "https://doi.org/10.1124/pr.112.007336",
+  "publication_date": "2014",
+  "accessed": "2026-06-19",
+  "content_file": "content/content.md",
+  "license_note": "Curated educational summary included locally; original/source metadata is recorded for traceability."
+}

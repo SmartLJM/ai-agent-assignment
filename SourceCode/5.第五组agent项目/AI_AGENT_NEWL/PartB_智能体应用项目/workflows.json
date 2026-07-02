@@ -1,0 +1,200 @@
+{
+  "version": 2,
+  "module": "advanced-static-orchestration",
+  "difficulty": 2,
+  "supported_modes": ["sequential", "parallel", "conditional"],
+  "agent_roles": {
+    "compliance-agent": {
+      "responsibility": "检查知识资产、来源和评测基准格式",
+      "inputs": ["project_root"],
+      "outputs": ["submission_audit"]
+    },
+    "evidence-agent": {
+      "responsibility": "汇总可直接用于评分核验的证据",
+      "inputs": ["submission_audit"],
+      "outputs": ["audit_summary"]
+    },
+    "multimodal-retriever": {
+      "responsibility": "分别检索文本、影像和表格记录",
+      "inputs": ["query", "dataset_dir"],
+      "outputs": ["multimodal_answer", "index_counts"]
+    },
+    "answer-analyst": {
+      "responsibility": "分析检索命中模态、证据数量和回答状态",
+      "inputs": ["multimodal_answer"],
+      "outputs": ["retrieval_analysis"]
+    },
+    "image-agent": {
+      "responsibility": "独立分析3D影像尺寸和强度统计",
+      "inputs": ["case_id", "dataset_dir"],
+      "outputs": ["image_analysis"]
+    },
+    "mask-agent": {
+      "responsibility": "独立分析真实分割标注的体素、占比和包围盒",
+      "inputs": ["case_id", "dataset_dir"],
+      "outputs": ["mask_analysis"]
+    },
+    "case-retriever": {
+      "responsibility": "独立检索病例相关的文本、影像和表格证据",
+      "inputs": ["case_id", "query", "dataset_dir"],
+      "outputs": ["case_evidence"]
+    },
+    "report-agent": {
+      "responsibility": "合并并行Agent结果并形成结构化病例报告",
+      "inputs": ["image_analysis", "mask_analysis", "case_evidence"],
+      "outputs": ["case_report"]
+    },
+    "case-inspector": {
+      "responsibility": "计算条件分支需要的病例统计",
+      "inputs": ["case_id", "dataset_dir"],
+      "outputs": ["case_statistics"]
+    },
+    "review-agent": {
+      "responsibility": "根据前景占比选择不同审查策略",
+      "inputs": ["case_statistics"],
+      "outputs": ["review_result"]
+    }
+  },
+  "workflows": [
+    {
+      "id": "submission_audit",
+      "name": "提交合规审计",
+      "description": "串行检查Part A结构、来源字段与QA字段，再汇总评分证据。",
+      "mode": "sequential",
+      "nodes": [
+        {
+          "id": "validate-submission",
+          "type": "step",
+          "agent": "compliance-agent",
+          "action": "validate_submission",
+          "inputs": ["project_root"],
+          "outputs": ["submission_audit"]
+        },
+        {
+          "id": "summarize-audit",
+          "type": "step",
+          "agent": "evidence-agent",
+          "action": "summarize_audit",
+          "inputs": ["submission_audit"],
+          "outputs": ["audit_summary"]
+        }
+      ]
+    },
+    {
+      "id": "grounded_multimodal_qa",
+      "name": "多模态证据检索问答",
+      "description": "串行完成多模态检索和命中结果分析。",
+      "mode": "sequential",
+      "nodes": [
+        {
+          "id": "retrieve-multimodal",
+          "type": "step",
+          "agent": "multimodal-retriever",
+          "action": "retrieve_multimodal",
+          "inputs": ["query", "dataset_dir"],
+          "outputs": ["multimodal_answer", "index_counts"]
+        },
+        {
+          "id": "analyze-retrieval",
+          "type": "step",
+          "agent": "answer-analyst",
+          "action": "analyze_retrieval",
+          "inputs": ["multimodal_answer"],
+          "outputs": ["retrieval_analysis"]
+        }
+      ]
+    },
+    {
+      "id": "parallel_case_analysis",
+      "name": "病例并行分析",
+      "description": "并行调用影像、标注和检索Agent，再串行合并结果。",
+      "mode": "parallel",
+      "nodes": [
+        {
+          "id": "parallel-case-workers",
+          "type": "parallel",
+          "branches": [
+            {
+              "id": "analyze-image",
+              "type": "step",
+              "agent": "image-agent",
+              "action": "analyze_image",
+              "inputs": ["case_id", "dataset_dir"],
+              "outputs": ["image_analysis"]
+            },
+            {
+              "id": "analyze-mask",
+              "type": "step",
+              "agent": "mask-agent",
+              "action": "analyze_mask",
+              "inputs": ["case_id", "dataset_dir"],
+              "outputs": ["mask_analysis"]
+            },
+            {
+              "id": "retrieve-case-evidence",
+              "type": "step",
+              "agent": "case-retriever",
+              "action": "retrieve_case_evidence",
+              "inputs": ["case_id", "query", "dataset_dir"],
+              "outputs": ["case_evidence"]
+            }
+          ]
+        },
+        {
+          "id": "compose-case-report",
+          "type": "step",
+          "agent": "report-agent",
+          "action": "compose_case_report",
+          "inputs": ["image_analysis", "mask_analysis", "case_evidence"],
+          "outputs": ["case_report"]
+        }
+      ]
+    },
+    {
+      "id": "conditional_case_review",
+      "name": "病例条件审查",
+      "description": "先计算真实标注统计，再按前景占比选择大区域或小区域审查分支。",
+      "mode": "conditional",
+      "nodes": [
+        {
+          "id": "inspect-case",
+          "type": "step",
+          "agent": "case-inspector",
+          "action": "inspect_case_statistics",
+          "inputs": ["case_id", "dataset_dir"],
+          "outputs": ["case_statistics"]
+        },
+        {
+          "id": "foreground-ratio-decision",
+          "type": "condition",
+          "condition": {
+            "field": "case_statistics.mask_ratio",
+            "operator": "gt",
+            "value_from": "mask_ratio_threshold",
+            "default": 0.05
+          },
+          "if_true": [
+            {
+              "id": "large-foreground-review",
+              "type": "step",
+              "agent": "review-agent",
+              "action": "review_large_foreground",
+              "inputs": ["case_statistics"],
+              "outputs": ["review_result"]
+            }
+          ],
+          "if_false": [
+            {
+              "id": "small-foreground-review",
+              "type": "step",
+              "agent": "review-agent",
+              "action": "review_small_foreground",
+              "inputs": ["case_statistics"],
+              "outputs": ["review_result"]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

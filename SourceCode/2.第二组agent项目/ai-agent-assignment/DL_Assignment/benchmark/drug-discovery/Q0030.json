@@ -1,0 +1,56 @@
+{
+  "id": "Q0030",
+  "question": "Compare pharmacokinetics and pharmacodynamics in one sentence.",
+  "type": "short-answer",
+  "difficulty": 5,
+  "answer": {
+    "type": "keypoint",
+    "content": "Pharmacokinetics describes what the body does to the drug over time, while pharmacodynamics describes what the drug does to the body through target engagement, mechanism, dose-response, efficacy, and toxicity.",
+    "keypoints": [
+      {
+        "point": "PK: body does to drug",
+        "score": 3.33
+      },
+      {
+        "point": "PD: drug does to body",
+        "score": 3.33
+      },
+      {
+        "point": "time/exposure versus effect",
+        "score": 3.33
+      }
+    ],
+    "reasoning_steps": [
+      {
+        "step": 1,
+        "description": "Retrieve the relevant concept definition or evidence.",
+        "source": {
+          "knowledge_set_id": "dd-012-pharmacokinetics",
+          "original_text": "Pharmacokinetics describes what the body does to a drug over time. It covers absorption, distribution, metabolism, and excretion as dynamic processes after dosing. Common pharmacokinetic parameters include half-life, clearance, volume of distribution, bioavailability, maximum concentration, time to maximum concentration, and area under the concentration-time curve."
+        }
+      },
+      {
+        "step": 2,
+        "description": "Synthesize the relationship or comparison required by the question.",
+        "source": {
+          "knowledge_set_id": "dd-012-pharmacokinetics",
+          "original_text": "Pharmacokinetics describes what the body does to a drug over time. It covers absorption, distribution, metabolism, and excretion as dynamic processes after dosing. Common pharmacokinetic parameters include half-life, clearance, volume of distribution, bioavailability, maximum concentration, time to maximum concentration, and area under the concentration-time curve."
+        }
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-012-pharmacokinetics",
+      "original_text": "Pharmacokinetics describes what the body does to a drug over time. It covers absorption, distribution, metabolism, and excretion as dynamic processes after dosing. Common pharmacokinetic parameters include half-life, clearance, volume of distribution, bioavailability, maximum concentration, time to maximum concentration, and area under the concentration-time curve."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "pharmacokinetics",
+        "pharmacodynamics"
+      ]
+    }
+  ]
+}

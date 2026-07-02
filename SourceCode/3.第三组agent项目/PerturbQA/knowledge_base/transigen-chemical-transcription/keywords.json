@@ -1,0 +1,5 @@
+{
+  "topic": "chemical-induced transcriptional profile prediction",
+  "title": "TranSiGen Chemical Perturbation VAE",
+  "keywords": ["TranSiGen", "VAE", "chemical perturbation", "CMAP", "LINCS 2020", "8316 compounds", "164 cell lines", "drug repurposing", "self-supervised", "transcriptional profile", "phenotype-based", "drug discovery", "gene expression signature"]
+}

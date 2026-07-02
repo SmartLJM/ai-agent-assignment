@@ -1,0 +1,6199 @@
+[
+  {
+    "id": "dyn_001",
+    "question": "What is U-Net?",
+    "plan": {
+      "plan_id": "dynamic_plan_001",
+      "query": "What is U-Net?",
+      "intent": "simple_qa",
+      "complexity_score": 1,
+      "complexity_level": "simple",
+      "case_id": null,
+      "generated_nodes": [
+        {
+          "node_id": "retrieve-text-evidence",
+          "agent": "text-retriever",
+          "mode": "sequential",
+          "reason": "A concept query needs text evidence.",
+          "inputs": [
+            "query"
+          ],
+          "outputs": [
+            "text_evidence"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "merge-outputs-into-final-report",
+          "agent": "report-agent",
+          "mode": "final",
+          "reason": "Merge retrieved evidence into an answer.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "final_report"
+          ],
+          "params": {}
+        }
+      ],
+      "generation_decisions": [
+        {
+          "decision_point": "auto_plan_generation",
+          "decision": "generate_runtime_workflow",
+          "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+          "intent": "simple_qa",
+          "case_id": null,
+          "generated_nodes": [
+            {
+              "node_id": "retrieve-text-evidence",
+              "agent": "text-retriever",
+              "mode": "sequential",
+              "reason": "A concept query needs text evidence.",
+              "inputs": [
+                "query"
+              ],
+              "outputs": [
+                "text_evidence"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "merge-outputs-into-final-report",
+              "agent": "report-agent",
+              "mode": "final",
+              "reason": "Merge retrieved evidence into an answer.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "final_report"
+              ],
+              "params": {}
+            }
+          ]
+        },
+        {
+          "signal": "concept_explanation",
+          "points": 1,
+          "reason": "The query asks for a concept explanation."
+        }
+      ],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace"
+      ]
+    },
+    "status": "success",
+    "elapsed_ms": 1649.162,
+    "trace": [
+      {
+        "node_id": "retrieve-text-evidence",
+        "agent": "text-retriever",
+        "mode": "sequential",
+        "status": "success",
+        "elapsed_ms": 1649.054,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "text_evidence": [
+            {
+              "record_id": "text:nnu-net-medical-image-segmentation",
+              "modality": "text",
+              "title": "nnU-Net: Self-adapting framework for U-Net-based medical image segmentation",
+              "text": "本文介绍了一种名为nnU-Net的自适应框架，该框架基于2D和3D U-Net架构，旨在简化医学图像分割任务中的网络设计、预处理、训练及推理过程。通过去除不必要的复杂设计，专注于影响性能与泛化能力的关键因素，nnU-Net在医学分割十项全能挑战赛中取得了优异成绩，在多个不同实体、模态、几何形状及数据集大小的任务上均表现出色。",
+              "source": "https://arxiv.org/abs/1809.10486",
+              "metadata": {
+                "knowledge_set_id": "nnu-net-medical-image-segmentation"
+              },
+              "score": 18
+            },
+            {
+              "record_id": "text:hyperbolic-unet-segmentation",
+              "modality": "text",
+              "title": "Hyperbolic U-Net for Robust Medical Image Segmentation",
+              "text": "本文针对医学图像分割中普遍存在的噪声问题，提出了Hyperbolic U-Net架构。该架构保持了U-Net的编码器-解码器结构，但在双曲空间内操作，通过引入新的超参数初始化方法和超二维转置卷积层解决了训练难题。实验表明，在多种噪声条件下，Hyperbolic U-Net比传统的欧几里得U-Net表现出更强的鲁棒性。",
+              "source": "https://www.semanticscholar.org/search?q=Hyperbolic+U-Net+for+Robust+Medical+Image+Segmentation",
+              "metadata": {
+                "knowledge_set_id": "hyperbolic-unet-segmentation"
+              },
+              "score": 15
+            },
+            {
+              "record_id": "text:u-net-biomedical-image-segmentation",
+              "modality": "text",
+              "title": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+              "text": "本文提出了一种名为U-Net的卷积网络架构，专为生物医学图像分割任务设计。该网络通过充分利用数据增强技术来提高少量标注样本的训练效率。其结构包括一个用于捕捉上下文信息的收缩路径和一个对称扩展路径以实现精确定位。实验表明，U-Net不仅在电子显微镜下的神经结构分割挑战中超越了先前的最佳方法，还在细胞追踪挑战中取得了显著成绩。此外，U-Net处理速度快，适合实际应用。",
+              "source": "https://arxiv.org/abs/1505.04597",
+              "metadata": {
+                "knowledge_set_id": "u-net-biomedical-image-segmentation"
+              },
+              "score": 15
+            }
+          ],
+          "text_evidence_ids": [
+            "text:nnu-net-medical-image-segmentation",
+            "text:hyperbolic-unet-segmentation",
+            "text:u-net-biomedical-image-segmentation"
+          ],
+          "retry_count": 0,
+          "retrieval_strategy": "initial_keyword_scoring"
+        },
+        "decision": null
+      },
+      {
+        "node_id": "merge-outputs-into-final-report",
+        "agent": "report-agent",
+        "mode": "final",
+        "status": "success",
+        "elapsed_ms": 0.005,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "final_report",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "final_report": {
+            "query": "What is U-Net?",
+            "intent": "simple_qa",
+            "case_id": null,
+            "text_evidence_count": 3,
+            "text_evidence_ids": [
+              "text:nnu-net-medical-image-segmentation",
+              "text:hyperbolic-unet-segmentation",
+              "text:u-net-biomedical-image-segmentation"
+            ],
+            "has_image_summary": false,
+            "has_mask_statistics": false,
+            "has_overlay": false,
+            "target_review": null,
+            "prediction_status": null,
+            "recovery": null
+          }
+        },
+        "decision": null
+      }
+    ],
+    "decision_trace": [
+      {
+        "decision_point": "auto_plan_generation",
+        "decision": "generate_runtime_workflow",
+        "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+        "intent": "simple_qa",
+        "case_id": null,
+        "generated_nodes": [
+          {
+            "node_id": "retrieve-text-evidence",
+            "agent": "text-retriever",
+            "mode": "sequential",
+            "reason": "A concept query needs text evidence.",
+            "inputs": [
+              "query"
+            ],
+            "outputs": [
+              "text_evidence"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "merge-outputs-into-final-report",
+            "agent": "report-agent",
+            "mode": "final",
+            "reason": "Merge retrieved evidence into an answer.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "final_report"
+            ],
+            "params": {}
+          }
+        ]
+      },
+      {
+        "signal": "concept_explanation",
+        "points": 1,
+        "reason": "The query asks for a concept explanation."
+      }
+    ],
+    "runtime_adjustments": [],
+    "retry_count": 0,
+    "recovery_count": 0,
+    "final_report": {
+      "query": "What is U-Net?",
+      "intent": "simple_qa",
+      "case_id": null,
+      "text_evidence_count": 3,
+      "text_evidence_ids": [
+        "text:nnu-net-medical-image-segmentation",
+        "text:hyperbolic-unet-segmentation",
+        "text:u-net-biomedical-image-segmentation"
+      ],
+      "has_image_summary": false,
+      "has_mask_statistics": false,
+      "has_overlay": false,
+      "target_review": null,
+      "prediction_status": null,
+      "recovery": null
+    }
+  },
+  {
+    "id": "dyn_002",
+    "question": "Explain Dice score with local evidence.",
+    "plan": {
+      "plan_id": "dynamic_plan_002",
+      "query": "Explain Dice score with local evidence.",
+      "intent": "grounded_qa",
+      "complexity_score": 3,
+      "complexity_level": "medium",
+      "case_id": null,
+      "generated_nodes": [
+        {
+          "node_id": "retrieve-text-evidence",
+          "agent": "text-retriever",
+          "mode": "sequential",
+          "reason": "Grounded QA requires local text evidence.",
+          "inputs": [
+            "query"
+          ],
+          "outputs": [
+            "text_evidence"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "validate-intermediate-results",
+          "agent": "quality-validator",
+          "mode": "conditional",
+          "reason": "Evidence must pass the quality gate.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "quality_report"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "merge-outputs-into-final-report",
+          "agent": "report-agent",
+          "mode": "final",
+          "reason": "Generate a grounded final answer.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "final_report"
+          ],
+          "params": {}
+        }
+      ],
+      "generation_decisions": [
+        {
+          "decision_point": "auto_plan_generation",
+          "decision": "generate_runtime_workflow",
+          "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+          "intent": "grounded_qa",
+          "case_id": null,
+          "generated_nodes": [
+            {
+              "node_id": "retrieve-text-evidence",
+              "agent": "text-retriever",
+              "mode": "sequential",
+              "reason": "Grounded QA requires local text evidence.",
+              "inputs": [
+                "query"
+              ],
+              "outputs": [
+                "text_evidence"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "validate-intermediate-results",
+              "agent": "quality-validator",
+              "mode": "conditional",
+              "reason": "Evidence must pass the quality gate.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "quality_report"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "merge-outputs-into-final-report",
+              "agent": "report-agent",
+              "mode": "final",
+              "reason": "Generate a grounded final answer.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "final_report"
+              ],
+              "params": {}
+            }
+          ]
+        },
+        {
+          "signal": "concept_explanation",
+          "points": 1,
+          "reason": "The query asks for a concept explanation."
+        },
+        {
+          "signal": "needs_local_evidence",
+          "points": 2,
+          "reason": "The query asks for grounded evidence."
+        }
+      ],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "runtime_quality_gate"
+      ]
+    },
+    "status": "success",
+    "elapsed_ms": 1130.911,
+    "trace": [
+      {
+        "node_id": "retrieve-text-evidence",
+        "agent": "text-retriever",
+        "mode": "sequential",
+        "status": "success",
+        "elapsed_ms": 1130.794,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "text_evidence": [
+            {
+              "record_id": "text:2d-mamba-for-wsi-classification",
+              "modality": "text",
+              "title": "2DMamba: Efficient State Space Model for Image Representation with Applications on Giga-Pixel Whole Slide Image Classification",
+              "text": "本文提出了一种名为2DMamba的新颖二维选择性状态空间模型框架，旨在解决大规模二维图像（如Giga-Pixel全切片图像）的高效建模问题。该方法通过结合图像的二维空间结构与Mamba模型，并采用高度优化的硬件感知操作符来实现空间连续性和计算效率的同时提升。实验结果表明，在WSI分类和生存分析等任务上，2DMamba相较于现有方法在AUC、F1分数、准确率及C-index等多个指标上均有显著改进。",
+              "source": "https://arxiv.org/abs/2412.00678",
+              "metadata": {
+                "knowledge_set_id": "2d-mamba-for-wsi-classification"
+              },
+              "score": 3
+            },
+            {
+              "record_id": "text:2d-mamba-image-representation",
+              "modality": "text",
+              "title": "2DMamba: Efficient State Space Model for Image Representation with Applications on Giga-Pixel Whole Slide Image Classification",
+              "text": "本文针对大规模二维图像上下文建模问题，提出了一种名为2DMamba的新颖选择性状态空间模型框架。该模型结合了图像的二维空间结构，并通过高度优化的硬件感知算子实现了空间连续性和计算效率的平衡。实验结果表明，在WSI分类和生存分析等任务上，2DMamba相较于现有方法在AUC、F1分数、准确率及C-index等多个指标上均有显著提升。",
+              "source": "https://arxiv.org/abs/2412.00678",
+              "metadata": {
+                "knowledge_set_id": "2d-mamba-image-representation"
+              },
+              "score": 3
+            },
+            {
+              "record_id": "text:cross-pseudo-supervision-segmentation",
+              "modality": "text",
+              "title": "Semi-Supervised Semantic Segmentation with Cross Pseudo Supervision",
+              "text": "本文探讨了半监督语义分割问题，提出了一种新的基于网络扰动的一致性正则化方法——交叉伪监督(CPS)。该方法通过使用不同初始化的两个分割网络对同一输入图像进行处理，并利用一个网络输出的伪标签图来指导另一个网络的学习过程，从而鼓励两网络预测结果的一致性并扩展训练数据集。实验表明，在Cityscapes和PASCAL VOC 2012数据集上，CPS方法达到了当前最佳的半监督分割性能。",
+              "source": "https://arxiv.org/abs/2106.01226",
+              "metadata": {
+                "knowledge_set_id": "cross-pseudo-supervision-segmentation"
+              },
+              "score": 3
+            }
+          ],
+          "text_evidence_ids": [
+            "text:2d-mamba-for-wsi-classification",
+            "text:2d-mamba-image-representation",
+            "text:cross-pseudo-supervision-segmentation"
+          ],
+          "retry_count": 0,
+          "retrieval_strategy": "initial_keyword_scoring"
+        },
+        "decision": null
+      },
+      {
+        "node_id": "validate-intermediate-results",
+        "agent": "quality-validator",
+        "mode": "conditional",
+        "status": "success",
+        "elapsed_ms": 0.003,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "quality_report": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": null,
+            "prediction_status": null,
+            "passed": true
+          },
+          "_new_nodes": [],
+          "_decision": {
+            "decision_point": "quality_gate",
+            "observed_result": {
+              "text_evidence_count": 3,
+              "retry_count": 0,
+              "mask_foreground_ratio": null,
+              "prediction_status": null
+            },
+            "decision": "pass",
+            "reason": "Intermediate outputs satisfy the current quality rules.",
+            "new_nodes_added": []
+          }
+        },
+        "decision": {
+          "decision_point": "quality_gate",
+          "observed_result": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": null,
+            "prediction_status": null
+          },
+          "decision": "pass",
+          "reason": "Intermediate outputs satisfy the current quality rules.",
+          "new_nodes_added": []
+        }
+      },
+      {
+        "node_id": "merge-outputs-into-final-report",
+        "agent": "report-agent",
+        "mode": "final",
+        "status": "success",
+        "elapsed_ms": 0.002,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "final_report",
+          "intent",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "final_report": {
+            "query": "Explain Dice score with local evidence.",
+            "intent": "grounded_qa",
+            "case_id": null,
+            "text_evidence_count": 3,
+            "text_evidence_ids": [
+              "text:2d-mamba-for-wsi-classification",
+              "text:2d-mamba-image-representation",
+              "text:cross-pseudo-supervision-segmentation"
+            ],
+            "has_image_summary": false,
+            "has_mask_statistics": false,
+            "has_overlay": false,
+            "target_review": null,
+            "prediction_status": null,
+            "recovery": null
+          }
+        },
+        "decision": null
+      }
+    ],
+    "decision_trace": [
+      {
+        "decision_point": "auto_plan_generation",
+        "decision": "generate_runtime_workflow",
+        "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+        "intent": "grounded_qa",
+        "case_id": null,
+        "generated_nodes": [
+          {
+            "node_id": "retrieve-text-evidence",
+            "agent": "text-retriever",
+            "mode": "sequential",
+            "reason": "Grounded QA requires local text evidence.",
+            "inputs": [
+              "query"
+            ],
+            "outputs": [
+              "text_evidence"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "validate-intermediate-results",
+            "agent": "quality-validator",
+            "mode": "conditional",
+            "reason": "Evidence must pass the quality gate.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "quality_report"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "merge-outputs-into-final-report",
+            "agent": "report-agent",
+            "mode": "final",
+            "reason": "Generate a grounded final answer.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "final_report"
+            ],
+            "params": {}
+          }
+        ]
+      },
+      {
+        "signal": "concept_explanation",
+        "points": 1,
+        "reason": "The query asks for a concept explanation."
+      },
+      {
+        "signal": "needs_local_evidence",
+        "points": 2,
+        "reason": "The query asks for grounded evidence."
+      },
+      {
+        "decision_point": "quality_gate",
+        "observed_result": {
+          "text_evidence_count": 3,
+          "retry_count": 0,
+          "mask_foreground_ratio": null,
+          "prediction_status": null
+        },
+        "decision": "pass",
+        "reason": "Intermediate outputs satisfy the current quality rules.",
+        "new_nodes_added": []
+      }
+    ],
+    "runtime_adjustments": [],
+    "retry_count": 0,
+    "recovery_count": 0,
+    "final_report": {
+      "query": "Explain Dice score with local evidence.",
+      "intent": "grounded_qa",
+      "case_id": null,
+      "text_evidence_count": 3,
+      "text_evidence_ids": [
+        "text:2d-mamba-for-wsi-classification",
+        "text:2d-mamba-image-representation",
+        "text:cross-pseudo-supervision-segmentation"
+      ],
+      "has_image_summary": false,
+      "has_mask_statistics": false,
+      "has_overlay": false,
+      "target_review": null,
+      "prediction_status": null,
+      "recovery": null
+    }
+  },
+  {
+    "id": "dyn_003",
+    "question": "Retrieve evidence about medical image segmentation evaluation and cite local sources.",
+    "plan": {
+      "plan_id": "dynamic_plan_003",
+      "query": "Retrieve evidence about medical image segmentation evaluation and cite local sources.",
+      "intent": "grounded_qa",
+      "complexity_score": 4,
+      "complexity_level": "medium",
+      "case_id": null,
+      "generated_nodes": [
+        {
+          "node_id": "retrieve-text-evidence",
+          "agent": "text-retriever",
+          "mode": "sequential",
+          "reason": "Grounded QA requires local text evidence.",
+          "inputs": [
+            "query"
+          ],
+          "outputs": [
+            "text_evidence"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "validate-intermediate-results",
+          "agent": "quality-validator",
+          "mode": "conditional",
+          "reason": "Evidence must pass the quality gate.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "quality_report"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "merge-outputs-into-final-report",
+          "agent": "report-agent",
+          "mode": "final",
+          "reason": "Generate a grounded final answer.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "final_report"
+          ],
+          "params": {}
+        }
+      ],
+      "generation_decisions": [
+        {
+          "decision_point": "auto_plan_generation",
+          "decision": "generate_runtime_workflow",
+          "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+          "intent": "grounded_qa",
+          "case_id": null,
+          "generated_nodes": [
+            {
+              "node_id": "retrieve-text-evidence",
+              "agent": "text-retriever",
+              "mode": "sequential",
+              "reason": "Grounded QA requires local text evidence.",
+              "inputs": [
+                "query"
+              ],
+              "outputs": [
+                "text_evidence"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "validate-intermediate-results",
+              "agent": "quality-validator",
+              "mode": "conditional",
+              "reason": "Evidence must pass the quality gate.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "quality_report"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "merge-outputs-into-final-report",
+              "agent": "report-agent",
+              "mode": "final",
+              "reason": "Generate a grounded final answer.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "final_report"
+              ],
+              "params": {}
+            }
+          ]
+        },
+        {
+          "signal": "needs_local_evidence",
+          "points": 2,
+          "reason": "The query asks for grounded evidence."
+        },
+        {
+          "signal": "image_or_mask_required",
+          "points": 2,
+          "reason": "The query needs image or mask processing."
+        }
+      ],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "runtime_quality_gate"
+      ]
+    },
+    "status": "success",
+    "elapsed_ms": 1162.674,
+    "trace": [
+      {
+        "node_id": "retrieve-text-evidence",
+        "agent": "text-retriever",
+        "mode": "sequential",
+        "status": "success",
+        "elapsed_ms": 1162.555,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "text_evidence": [
+            {
+              "record_id": "text:siamese-diffusion-medical-image-synthesis-segmentation",
+              "modality": "text",
+              "title": "Noise-Consistent Siamese-Diffusion for Medical Image Synthesis and Segmentation",
+              "text": "本文针对医学图像分割中数据稀缺的问题，提出了一种名为Siamese-Diffusion的新方法。该方法通过结合Mask-Diffusion和Image-Diffusion两个组件，并在训练过程中引入噪声一致性损失来提高合成图像的形态保真度。实验结果表明，这种方法不仅提高了合成图像的质量，还增强了分割模型如SANet和UNet在多项指标上的表现。",
+              "source": "https://arxiv.org/abs/2505.06068",
+              "metadata": {
+                "knowledge_set_id": "siamese-diffusion-medical-image-synthesis-segmentation"
+              },
+              "score": 22
+            },
+            {
+              "record_id": "text:in-context-learning-medical-image-segmentation",
+              "modality": "text",
+              "title": "Show and Segment: Universal Medical Image Segmentation via In-Context Learning",
+              "text": "本文针对医学图像分割面临的多样性挑战，提出了一种名为Iris的新框架。该框架通过使用参考示例而无需微调即可适应新任务，其核心是一个轻量级的任务编码模块，能够从参考上下文图像-标签对中提取特定任务信息，并指导目标对象的分割。实验表明，Iris在分布内任务上表现良好，在未见过的数据集和类别上也展现出优越的泛化能力。",
+              "source": "https://arxiv.org/abs/2503.19359",
+              "metadata": {
+                "knowledge_set_id": "in-context-learning-medical-image-segmentation"
+              },
+              "score": 19
+            },
+            {
+              "record_id": "text:in-context-medical-image-segmentation",
+              "modality": "text",
+              "title": "Show and Segment: Universal Medical Image Segmentation via In-Context Learning",
+              "text": "本文针对医学图像分割领域存在的多样性挑战，提出了一种名为Iris的新框架。该框架通过利用上下文示例来指导目标对象的分割，无需对新任务进行微调即可实现灵活适应。实验表明，在十二个数据集上，Iris不仅在分布内任务上表现优异，而且对于未见过的数据和类别也展现出更强的泛化能力。此外，其任务编码模块能够自动发现跨数据集和模态的解剖关系。",
+              "source": "https://arxiv.org/abs/2503.19359",
+              "metadata": {
+                "knowledge_set_id": "in-context-medical-image-segmentation"
+              },
+              "score": 19
+            }
+          ],
+          "text_evidence_ids": [
+            "text:siamese-diffusion-medical-image-synthesis-segmentation",
+            "text:in-context-learning-medical-image-segmentation",
+            "text:in-context-medical-image-segmentation"
+          ],
+          "retry_count": 0,
+          "retrieval_strategy": "initial_keyword_scoring"
+        },
+        "decision": null
+      },
+      {
+        "node_id": "validate-intermediate-results",
+        "agent": "quality-validator",
+        "mode": "conditional",
+        "status": "success",
+        "elapsed_ms": 0.003,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "quality_report": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": null,
+            "prediction_status": null,
+            "passed": true
+          },
+          "_new_nodes": [],
+          "_decision": {
+            "decision_point": "quality_gate",
+            "observed_result": {
+              "text_evidence_count": 3,
+              "retry_count": 0,
+              "mask_foreground_ratio": null,
+              "prediction_status": null
+            },
+            "decision": "pass",
+            "reason": "Intermediate outputs satisfy the current quality rules.",
+            "new_nodes_added": []
+          }
+        },
+        "decision": {
+          "decision_point": "quality_gate",
+          "observed_result": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": null,
+            "prediction_status": null
+          },
+          "decision": "pass",
+          "reason": "Intermediate outputs satisfy the current quality rules.",
+          "new_nodes_added": []
+        }
+      },
+      {
+        "node_id": "merge-outputs-into-final-report",
+        "agent": "report-agent",
+        "mode": "final",
+        "status": "success",
+        "elapsed_ms": 0.002,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "final_report",
+          "intent",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "final_report": {
+            "query": "Retrieve evidence about medical image segmentation evaluation and cite local sources.",
+            "intent": "grounded_qa",
+            "case_id": null,
+            "text_evidence_count": 3,
+            "text_evidence_ids": [
+              "text:siamese-diffusion-medical-image-synthesis-segmentation",
+              "text:in-context-learning-medical-image-segmentation",
+              "text:in-context-medical-image-segmentation"
+            ],
+            "has_image_summary": false,
+            "has_mask_statistics": false,
+            "has_overlay": false,
+            "target_review": null,
+            "prediction_status": null,
+            "recovery": null
+          }
+        },
+        "decision": null
+      }
+    ],
+    "decision_trace": [
+      {
+        "decision_point": "auto_plan_generation",
+        "decision": "generate_runtime_workflow",
+        "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+        "intent": "grounded_qa",
+        "case_id": null,
+        "generated_nodes": [
+          {
+            "node_id": "retrieve-text-evidence",
+            "agent": "text-retriever",
+            "mode": "sequential",
+            "reason": "Grounded QA requires local text evidence.",
+            "inputs": [
+              "query"
+            ],
+            "outputs": [
+              "text_evidence"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "validate-intermediate-results",
+            "agent": "quality-validator",
+            "mode": "conditional",
+            "reason": "Evidence must pass the quality gate.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "quality_report"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "merge-outputs-into-final-report",
+            "agent": "report-agent",
+            "mode": "final",
+            "reason": "Generate a grounded final answer.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "final_report"
+            ],
+            "params": {}
+          }
+        ]
+      },
+      {
+        "signal": "needs_local_evidence",
+        "points": 2,
+        "reason": "The query asks for grounded evidence."
+      },
+      {
+        "signal": "image_or_mask_required",
+        "points": 2,
+        "reason": "The query needs image or mask processing."
+      },
+      {
+        "decision_point": "quality_gate",
+        "observed_result": {
+          "text_evidence_count": 3,
+          "retry_count": 0,
+          "mask_foreground_ratio": null,
+          "prediction_status": null
+        },
+        "decision": "pass",
+        "reason": "Intermediate outputs satisfy the current quality rules.",
+        "new_nodes_added": []
+      }
+    ],
+    "runtime_adjustments": [],
+    "retry_count": 0,
+    "recovery_count": 0,
+    "final_report": {
+      "query": "Retrieve evidence about medical image segmentation evaluation and cite local sources.",
+      "intent": "grounded_qa",
+      "case_id": null,
+      "text_evidence_count": 3,
+      "text_evidence_ids": [
+        "text:siamese-diffusion-medical-image-synthesis-segmentation",
+        "text:in-context-learning-medical-image-segmentation",
+        "text:in-context-medical-image-segmentation"
+      ],
+      "has_image_summary": false,
+      "has_mask_statistics": false,
+      "has_overlay": false,
+      "target_review": null,
+      "prediction_status": null,
+      "recovery": null
+    }
+  },
+  {
+    "id": "dyn_004",
+    "question": "Analyze case NPC_001 with image and mask evidence.",
+    "plan": {
+      "plan_id": "dynamic_plan_004",
+      "query": "Analyze case NPC_001 with image and mask evidence.",
+      "intent": "case_segmentation_analysis",
+      "complexity_score": 6,
+      "complexity_level": "complex",
+      "case_id": "001",
+      "generated_nodes": [
+        {
+          "node_id": "retrieve-text-evidence",
+          "agent": "text-retriever",
+          "mode": "parallel",
+          "reason": "Case analysis needs literature evidence.",
+          "inputs": [
+            "query"
+          ],
+          "outputs": [
+            "text_evidence"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "load-and-summarize-case-image",
+          "agent": "image-agent",
+          "mode": "parallel",
+          "reason": "The query mentions a case image.",
+          "inputs": [
+            "case_id"
+          ],
+          "outputs": [
+            "image_summary"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "analyze-segmentation-mask",
+          "agent": "mask-agent",
+          "mode": "parallel",
+          "reason": "The query needs segmentation mask statistics.",
+          "inputs": [
+            "case_id"
+          ],
+          "outputs": [
+            "mask_statistics"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "validate-intermediate-results",
+          "agent": "quality-validator",
+          "mode": "conditional",
+          "reason": "Intermediate case outputs must be checked.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "quality_report"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "merge-outputs-into-final-report",
+          "agent": "report-agent",
+          "mode": "final",
+          "reason": "Generate the final case report.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "final_report"
+          ],
+          "params": {}
+        }
+      ],
+      "generation_decisions": [
+        {
+          "decision_point": "auto_plan_generation",
+          "decision": "generate_runtime_workflow",
+          "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+          "intent": "case_segmentation_analysis",
+          "case_id": "001",
+          "generated_nodes": [
+            {
+              "node_id": "retrieve-text-evidence",
+              "agent": "text-retriever",
+              "mode": "parallel",
+              "reason": "Case analysis needs literature evidence.",
+              "inputs": [
+                "query"
+              ],
+              "outputs": [
+                "text_evidence"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "load-and-summarize-case-image",
+              "agent": "image-agent",
+              "mode": "parallel",
+              "reason": "The query mentions a case image.",
+              "inputs": [
+                "case_id"
+              ],
+              "outputs": [
+                "image_summary"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "analyze-segmentation-mask",
+              "agent": "mask-agent",
+              "mode": "parallel",
+              "reason": "The query needs segmentation mask statistics.",
+              "inputs": [
+                "case_id"
+              ],
+              "outputs": [
+                "mask_statistics"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "validate-intermediate-results",
+              "agent": "quality-validator",
+              "mode": "conditional",
+              "reason": "Intermediate case outputs must be checked.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "quality_report"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "merge-outputs-into-final-report",
+              "agent": "report-agent",
+              "mode": "final",
+              "reason": "Generate the final case report.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "final_report"
+              ],
+              "params": {}
+            }
+          ]
+        },
+        {
+          "signal": "needs_local_evidence",
+          "points": 2,
+          "reason": "The query asks for grounded evidence."
+        },
+        {
+          "signal": "case_id_detected",
+          "points": 2,
+          "reason": "The query mentions case 001."
+        },
+        {
+          "signal": "image_or_mask_required",
+          "points": 2,
+          "reason": "The query needs image or mask processing."
+        }
+      ],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_quality_gate"
+      ]
+    },
+    "status": "success",
+    "elapsed_ms": 1113.98,
+    "trace": [
+      {
+        "node_id": "retrieve-text-evidence",
+        "agent": "text-retriever",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 1113.666,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "text_evidence": [
+            {
+              "record_id": "text:siamese-diffusion-medical-image-synthesis",
+              "modality": "text",
+              "title": "Noise-Consistent Siamese-Diffusion for Medical Image Synthesis and Segmentation",
+              "text": "本文针对医学图像分割中因标注数据稀缺而面临的挑战，提出了一种名为Siamese-Diffusion的新方法。该方法结合了Mask-Diffusion和Image-Diffusion两个组件，并通过引入噪声一致性损失来提高Mask-Diffusion在参数空间中的形态保真度。实验结果表明，与现有技术相比，Siamese-Diffusion不仅提高了合成图像的质量，还增强了模型的多样性和可扩展性，在多项基准测试上取得了显著性能提升。",
+              "source": "https://arxiv.org/abs/2505.06068",
+              "metadata": {
+                "knowledge_set_id": "siamese-diffusion-medical-image-synthesis"
+              },
+              "score": 16
+            },
+            {
+              "record_id": "text:siamese-diffusion-medical-image-synthesis-segmentation",
+              "modality": "text",
+              "title": "Noise-Consistent Siamese-Diffusion for Medical Image Synthesis and Segmentation",
+              "text": "本文针对医学图像分割中数据稀缺的问题，提出了一种名为Siamese-Diffusion的新方法。该方法通过结合Mask-Diffusion和Image-Diffusion两个组件，并在训练过程中引入噪声一致性损失来提高合成图像的形态保真度。实验结果表明，这种方法不仅提高了合成图像的质量，还增强了分割模型如SANet和UNet在多项指标上的表现。",
+              "source": "https://arxiv.org/abs/2505.06068",
+              "metadata": {
+                "knowledge_set_id": "siamese-diffusion-medical-image-synthesis-segmentation"
+              },
+              "score": 13
+            },
+            {
+              "record_id": "text:2d-mamba-image-representation",
+              "modality": "text",
+              "title": "2DMamba: Efficient State Space Model for Image Representation with Applications on Giga-Pixel Whole Slide Image Classification",
+              "text": "本文针对大规模二维图像上下文建模问题，提出了一种名为2DMamba的新颖选择性状态空间模型框架。该模型结合了图像的二维空间结构，并通过高度优化的硬件感知算子实现了空间连续性和计算效率的平衡。实验结果表明，在WSI分类和生存分析等任务上，2DMamba相较于现有方法在AUC、F1分数、准确率及C-index等多个指标上均有显著提升。",
+              "source": "https://arxiv.org/abs/2412.00678",
+              "metadata": {
+                "knowledge_set_id": "2d-mamba-image-representation"
+              },
+              "score": 12
+            }
+          ],
+          "text_evidence_ids": [
+            "text:siamese-diffusion-medical-image-synthesis",
+            "text:siamese-diffusion-medical-image-synthesis-segmentation",
+            "text:2d-mamba-image-representation"
+          ],
+          "retry_count": 0,
+          "retrieval_strategy": "initial_keyword_scoring"
+        },
+        "decision": null
+      },
+      {
+        "node_id": "load-and-summarize-case-image",
+        "agent": "image-agent",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 5.713,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "image_summary",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence"
+        ],
+        "output": {
+          "image_summary": {
+            "case_id": "001",
+            "shape": [
+              128,
+              128,
+              64
+            ],
+            "mean": -0.0,
+            "std": 1.0,
+            "min": -0.789004,
+            "max": 6.604631
+          }
+        },
+        "decision": null
+      },
+      {
+        "node_id": "analyze-segmentation-mask",
+        "agent": "mask-agent",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 11.871,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "query",
+          "requires_grounded_evidence"
+        ],
+        "output": {
+          "mask_statistics": {
+            "case_id": "001",
+            "shape": [
+              128,
+              128,
+              64
+            ],
+            "labels": [
+              0,
+              1
+            ],
+            "foreground_voxels": 12976,
+            "foreground_ratio": 0.012375,
+            "bbox": [
+              43,
+              45,
+              21,
+              79,
+              74,
+              56
+            ],
+            "image_mean": -0.0,
+            "image_std": 1.0
+          }
+        },
+        "decision": null
+      },
+      {
+        "node_id": "validate-intermediate-results",
+        "agent": "quality-validator",
+        "mode": "conditional",
+        "status": "success",
+        "elapsed_ms": 0.004,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "image_summary",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "quality_report": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": 0.012375,
+            "prediction_status": null,
+            "passed": true
+          },
+          "_new_nodes": [],
+          "_decision": {
+            "decision_point": "quality_gate",
+            "observed_result": {
+              "text_evidence_count": 3,
+              "retry_count": 0,
+              "mask_foreground_ratio": 0.012375,
+              "prediction_status": null
+            },
+            "decision": "pass",
+            "reason": "Intermediate outputs satisfy the current quality rules.",
+            "new_nodes_added": []
+          }
+        },
+        "decision": {
+          "decision_point": "quality_gate",
+          "observed_result": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": 0.012375,
+            "prediction_status": null
+          },
+          "decision": "pass",
+          "reason": "Intermediate outputs satisfy the current quality rules.",
+          "new_nodes_added": []
+        }
+      },
+      {
+        "node_id": "merge-outputs-into-final-report",
+        "agent": "report-agent",
+        "mode": "final",
+        "status": "success",
+        "elapsed_ms": 0.002,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "final_report",
+          "image_summary",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "final_report": {
+            "query": "Analyze case NPC_001 with image and mask evidence.",
+            "intent": "case_segmentation_analysis",
+            "case_id": "001",
+            "text_evidence_count": 3,
+            "text_evidence_ids": [
+              "text:siamese-diffusion-medical-image-synthesis",
+              "text:siamese-diffusion-medical-image-synthesis-segmentation",
+              "text:2d-mamba-image-representation"
+            ],
+            "has_image_summary": true,
+            "has_mask_statistics": true,
+            "has_overlay": false,
+            "target_review": null,
+            "prediction_status": null,
+            "recovery": null
+          }
+        },
+        "decision": null
+      }
+    ],
+    "decision_trace": [
+      {
+        "decision_point": "auto_plan_generation",
+        "decision": "generate_runtime_workflow",
+        "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+        "intent": "case_segmentation_analysis",
+        "case_id": "001",
+        "generated_nodes": [
+          {
+            "node_id": "retrieve-text-evidence",
+            "agent": "text-retriever",
+            "mode": "parallel",
+            "reason": "Case analysis needs literature evidence.",
+            "inputs": [
+              "query"
+            ],
+            "outputs": [
+              "text_evidence"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "load-and-summarize-case-image",
+            "agent": "image-agent",
+            "mode": "parallel",
+            "reason": "The query mentions a case image.",
+            "inputs": [
+              "case_id"
+            ],
+            "outputs": [
+              "image_summary"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "analyze-segmentation-mask",
+            "agent": "mask-agent",
+            "mode": "parallel",
+            "reason": "The query needs segmentation mask statistics.",
+            "inputs": [
+              "case_id"
+            ],
+            "outputs": [
+              "mask_statistics"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "validate-intermediate-results",
+            "agent": "quality-validator",
+            "mode": "conditional",
+            "reason": "Intermediate case outputs must be checked.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "quality_report"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "merge-outputs-into-final-report",
+            "agent": "report-agent",
+            "mode": "final",
+            "reason": "Generate the final case report.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "final_report"
+            ],
+            "params": {}
+          }
+        ]
+      },
+      {
+        "signal": "needs_local_evidence",
+        "points": 2,
+        "reason": "The query asks for grounded evidence."
+      },
+      {
+        "signal": "case_id_detected",
+        "points": 2,
+        "reason": "The query mentions case 001."
+      },
+      {
+        "signal": "image_or_mask_required",
+        "points": 2,
+        "reason": "The query needs image or mask processing."
+      },
+      {
+        "decision_point": "quality_gate",
+        "observed_result": {
+          "text_evidence_count": 3,
+          "retry_count": 0,
+          "mask_foreground_ratio": 0.012375,
+          "prediction_status": null
+        },
+        "decision": "pass",
+        "reason": "Intermediate outputs satisfy the current quality rules.",
+        "new_nodes_added": []
+      }
+    ],
+    "runtime_adjustments": [],
+    "retry_count": 0,
+    "recovery_count": 0,
+    "final_report": {
+      "query": "Analyze case NPC_001 with image and mask evidence.",
+      "intent": "case_segmentation_analysis",
+      "case_id": "001",
+      "text_evidence_count": 3,
+      "text_evidence_ids": [
+        "text:siamese-diffusion-medical-image-synthesis",
+        "text:siamese-diffusion-medical-image-synthesis-segmentation",
+        "text:2d-mamba-image-representation"
+      ],
+      "has_image_summary": true,
+      "has_mask_statistics": true,
+      "has_overlay": false,
+      "target_review": null,
+      "prediction_status": null,
+      "recovery": null
+    }
+  },
+  {
+    "id": "dyn_005",
+    "question": "Show the mask overlay for NPC_001.",
+    "plan": {
+      "plan_id": "dynamic_plan_005",
+      "query": "Show the mask overlay for NPC_001.",
+      "intent": "case_segmentation_analysis",
+      "complexity_score": 6,
+      "complexity_level": "complex",
+      "case_id": "001",
+      "generated_nodes": [
+        {
+          "node_id": "retrieve-text-evidence",
+          "agent": "text-retriever",
+          "mode": "parallel",
+          "reason": "Case analysis needs literature evidence.",
+          "inputs": [
+            "query"
+          ],
+          "outputs": [
+            "text_evidence"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "load-and-summarize-case-image",
+          "agent": "image-agent",
+          "mode": "parallel",
+          "reason": "The query mentions a case image.",
+          "inputs": [
+            "case_id"
+          ],
+          "outputs": [
+            "image_summary"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "analyze-segmentation-mask",
+          "agent": "mask-agent",
+          "mode": "parallel",
+          "reason": "The query needs segmentation mask statistics.",
+          "inputs": [
+            "case_id"
+          ],
+          "outputs": [
+            "mask_statistics"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "create-image-mask-overlay",
+          "agent": "overlay-visualizer",
+          "mode": "after_parallel",
+          "reason": "The query asks for mask overlay.",
+          "inputs": [
+            "case_id",
+            "axis",
+            "slice_index"
+          ],
+          "outputs": [
+            "overlay_result"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "validate-intermediate-results",
+          "agent": "quality-validator",
+          "mode": "conditional",
+          "reason": "Intermediate case outputs must be checked.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "quality_report"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "merge-outputs-into-final-report",
+          "agent": "report-agent",
+          "mode": "final",
+          "reason": "Generate the final case report.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "final_report"
+          ],
+          "params": {}
+        }
+      ],
+      "generation_decisions": [
+        {
+          "decision_point": "auto_plan_generation",
+          "decision": "generate_runtime_workflow",
+          "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+          "intent": "case_segmentation_analysis",
+          "case_id": "001",
+          "generated_nodes": [
+            {
+              "node_id": "retrieve-text-evidence",
+              "agent": "text-retriever",
+              "mode": "parallel",
+              "reason": "Case analysis needs literature evidence.",
+              "inputs": [
+                "query"
+              ],
+              "outputs": [
+                "text_evidence"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "load-and-summarize-case-image",
+              "agent": "image-agent",
+              "mode": "parallel",
+              "reason": "The query mentions a case image.",
+              "inputs": [
+                "case_id"
+              ],
+              "outputs": [
+                "image_summary"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "analyze-segmentation-mask",
+              "agent": "mask-agent",
+              "mode": "parallel",
+              "reason": "The query needs segmentation mask statistics.",
+              "inputs": [
+                "case_id"
+              ],
+              "outputs": [
+                "mask_statistics"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "create-image-mask-overlay",
+              "agent": "overlay-visualizer",
+              "mode": "after_parallel",
+              "reason": "The query asks for mask overlay.",
+              "inputs": [
+                "case_id",
+                "axis",
+                "slice_index"
+              ],
+              "outputs": [
+                "overlay_result"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "validate-intermediate-results",
+              "agent": "quality-validator",
+              "mode": "conditional",
+              "reason": "Intermediate case outputs must be checked.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "quality_report"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "merge-outputs-into-final-report",
+              "agent": "report-agent",
+              "mode": "final",
+              "reason": "Generate the final case report.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "final_report"
+              ],
+              "params": {}
+            }
+          ]
+        },
+        {
+          "signal": "case_id_detected",
+          "points": 2,
+          "reason": "The query mentions case 001."
+        },
+        {
+          "signal": "image_or_mask_required",
+          "points": 2,
+          "reason": "The query needs image or mask processing."
+        },
+        {
+          "signal": "visualization_required",
+          "points": 2,
+          "reason": "The query asks for overlay or visualization."
+        }
+      ],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_quality_gate"
+      ]
+    },
+    "status": "success",
+    "elapsed_ms": 1123.318,
+    "trace": [
+      {
+        "node_id": "retrieve-text-evidence",
+        "agent": "text-retriever",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 1115.124,
+        "input_keys": [
+          "axis",
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "slice_index",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "text_evidence": [
+            {
+              "record_id": "text:siamese-diffusion-medical-image-synthesis",
+              "modality": "text",
+              "title": "Noise-Consistent Siamese-Diffusion for Medical Image Synthesis and Segmentation",
+              "text": "本文针对医学图像分割中因标注数据稀缺而面临的挑战，提出了一种名为Siamese-Diffusion的新方法。该方法结合了Mask-Diffusion和Image-Diffusion两个组件，并通过引入噪声一致性损失来提高Mask-Diffusion在参数空间中的形态保真度。实验结果表明，与现有技术相比，Siamese-Diffusion不仅提高了合成图像的质量，还增强了模型的多样性和可扩展性，在多项基准测试上取得了显著性能提升。",
+              "source": "https://arxiv.org/abs/2505.06068",
+              "metadata": {
+                "knowledge_set_id": "siamese-diffusion-medical-image-synthesis"
+              },
+              "score": 9
+            },
+            {
+              "record_id": "text:masked-autoencoders-vision-learning",
+              "modality": "text",
+              "title": "Masked autoencoders are scalable vision learners",
+              "text": "本文提出了一种基于掩码自编码器(MAE)的计算机视觉自监督学习方法。通过遮挡输入图像的部分区域并重建缺失像素，该方法采用非对称编码-解码架构设计，其中编码器仅处理可见图像块，而轻量级解码器则负责从潜在表示和掩码标记中恢复原始图像。实验表明，当遮挡比例达到75%时，模型能够高效训练且泛化能力强，在ImageNet-1K数据集上达到了87.8%的最佳准确率，并在下游任务中超越了有监督预训练的表现。",
+              "source": "https://arxiv.org/abs/2111.06377",
+              "metadata": {
+                "knowledge_set_id": "masked-autoencoders-vision-learning"
+              },
+              "score": 6
+            },
+            {
+              "record_id": "text:siamese-diffusion-medical-image-synthesis-segmentation",
+              "modality": "text",
+              "title": "Noise-Consistent Siamese-Diffusion for Medical Image Synthesis and Segmentation",
+              "text": "本文针对医学图像分割中数据稀缺的问题，提出了一种名为Siamese-Diffusion的新方法。该方法通过结合Mask-Diffusion和Image-Diffusion两个组件，并在训练过程中引入噪声一致性损失来提高合成图像的形态保真度。实验结果表明，这种方法不仅提高了合成图像的质量，还增强了分割模型如SANet和UNet在多项指标上的表现。",
+              "source": "https://arxiv.org/abs/2505.06068",
+              "metadata": {
+                "knowledge_set_id": "siamese-diffusion-medical-image-synthesis-segmentation"
+              },
+              "score": 6
+            }
+          ],
+          "text_evidence_ids": [
+            "text:siamese-diffusion-medical-image-synthesis",
+            "text:masked-autoencoders-vision-learning",
+            "text:siamese-diffusion-medical-image-synthesis-segmentation"
+          ],
+          "retry_count": 0,
+          "retrieval_strategy": "initial_keyword_scoring"
+        },
+        "decision": null
+      },
+      {
+        "node_id": "load-and-summarize-case-image",
+        "agent": "image-agent",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 3.394,
+        "input_keys": [
+          "axis",
+          "case_id",
+          "dataset_dir",
+          "image_summary",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence",
+          "slice_index"
+        ],
+        "output": {
+          "image_summary": {
+            "case_id": "001",
+            "shape": [
+              128,
+              128,
+              64
+            ],
+            "mean": -0.0,
+            "std": 1.0,
+            "min": -0.789004,
+            "max": 6.604631
+          }
+        },
+        "decision": null
+      },
+      {
+        "node_id": "analyze-segmentation-mask",
+        "agent": "mask-agent",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 9.683,
+        "input_keys": [
+          "axis",
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "query",
+          "requires_grounded_evidence",
+          "slice_index"
+        ],
+        "output": {
+          "mask_statistics": {
+            "case_id": "001",
+            "shape": [
+              128,
+              128,
+              64
+            ],
+            "labels": [
+              0,
+              1
+            ],
+            "foreground_voxels": 12976,
+            "foreground_ratio": 0.012375,
+            "bbox": [
+              43,
+              45,
+              21,
+              79,
+              74,
+              56
+            ],
+            "image_mean": -0.0,
+            "image_std": 1.0
+          }
+        },
+        "decision": null
+      },
+      {
+        "node_id": "create-image-mask-overlay",
+        "agent": "overlay-visualizer",
+        "mode": "after_parallel",
+        "status": "success",
+        "elapsed_ms": 7.909,
+        "input_keys": [
+          "axis",
+          "case_id",
+          "dataset_dir",
+          "image_summary",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "overlay_result",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "slice_index",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "overlay_result": {
+            "case_id": "001",
+            "axis": "axial",
+            "slice_index": 31,
+            "overlay_available": true,
+            "mask_statistics": {
+              "labels": [
+                0,
+                1
+              ],
+              "foreground_voxels": 12976,
+              "foreground_ratio": 0.012375
+            }
+          },
+          "mask_statistics": {
+            "labels": [
+              0,
+              1
+            ],
+            "foreground_voxels": 12976,
+            "foreground_ratio": 0.012375
+          }
+        },
+        "decision": null
+      },
+      {
+        "node_id": "validate-intermediate-results",
+        "agent": "quality-validator",
+        "mode": "conditional",
+        "status": "success",
+        "elapsed_ms": 0.004,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "axis",
+          "case_id",
+          "dataset_dir",
+          "image_summary",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "overlay_result",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "slice_index",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "quality_report": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": 0.012375,
+            "prediction_status": null,
+            "passed": true
+          },
+          "_new_nodes": [],
+          "_decision": {
+            "decision_point": "quality_gate",
+            "observed_result": {
+              "text_evidence_count": 3,
+              "retry_count": 0,
+              "mask_foreground_ratio": 0.012375,
+              "prediction_status": null
+            },
+            "decision": "pass",
+            "reason": "Intermediate outputs satisfy the current quality rules.",
+            "new_nodes_added": []
+          }
+        },
+        "decision": {
+          "decision_point": "quality_gate",
+          "observed_result": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": 0.012375,
+            "prediction_status": null
+          },
+          "decision": "pass",
+          "reason": "Intermediate outputs satisfy the current quality rules.",
+          "new_nodes_added": []
+        }
+      },
+      {
+        "node_id": "merge-outputs-into-final-report",
+        "agent": "report-agent",
+        "mode": "final",
+        "status": "success",
+        "elapsed_ms": 0.003,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "axis",
+          "case_id",
+          "dataset_dir",
+          "final_report",
+          "image_summary",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "overlay_result",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "slice_index",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "final_report": {
+            "query": "Show the mask overlay for NPC_001.",
+            "intent": "case_segmentation_analysis",
+            "case_id": "001",
+            "text_evidence_count": 3,
+            "text_evidence_ids": [
+              "text:siamese-diffusion-medical-image-synthesis",
+              "text:masked-autoencoders-vision-learning",
+              "text:siamese-diffusion-medical-image-synthesis-segmentation"
+            ],
+            "has_image_summary": true,
+            "has_mask_statistics": true,
+            "has_overlay": true,
+            "target_review": null,
+            "prediction_status": null,
+            "recovery": null
+          }
+        },
+        "decision": null
+      }
+    ],
+    "decision_trace": [
+      {
+        "decision_point": "auto_plan_generation",
+        "decision": "generate_runtime_workflow",
+        "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+        "intent": "case_segmentation_analysis",
+        "case_id": "001",
+        "generated_nodes": [
+          {
+            "node_id": "retrieve-text-evidence",
+            "agent": "text-retriever",
+            "mode": "parallel",
+            "reason": "Case analysis needs literature evidence.",
+            "inputs": [
+              "query"
+            ],
+            "outputs": [
+              "text_evidence"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "load-and-summarize-case-image",
+            "agent": "image-agent",
+            "mode": "parallel",
+            "reason": "The query mentions a case image.",
+            "inputs": [
+              "case_id"
+            ],
+            "outputs": [
+              "image_summary"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "analyze-segmentation-mask",
+            "agent": "mask-agent",
+            "mode": "parallel",
+            "reason": "The query needs segmentation mask statistics.",
+            "inputs": [
+              "case_id"
+            ],
+            "outputs": [
+              "mask_statistics"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "create-image-mask-overlay",
+            "agent": "overlay-visualizer",
+            "mode": "after_parallel",
+            "reason": "The query asks for mask overlay.",
+            "inputs": [
+              "case_id",
+              "axis",
+              "slice_index"
+            ],
+            "outputs": [
+              "overlay_result"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "validate-intermediate-results",
+            "agent": "quality-validator",
+            "mode": "conditional",
+            "reason": "Intermediate case outputs must be checked.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "quality_report"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "merge-outputs-into-final-report",
+            "agent": "report-agent",
+            "mode": "final",
+            "reason": "Generate the final case report.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "final_report"
+            ],
+            "params": {}
+          }
+        ]
+      },
+      {
+        "signal": "case_id_detected",
+        "points": 2,
+        "reason": "The query mentions case 001."
+      },
+      {
+        "signal": "image_or_mask_required",
+        "points": 2,
+        "reason": "The query needs image or mask processing."
+      },
+      {
+        "signal": "visualization_required",
+        "points": 2,
+        "reason": "The query asks for overlay or visualization."
+      },
+      {
+        "decision_point": "quality_gate",
+        "observed_result": {
+          "text_evidence_count": 3,
+          "retry_count": 0,
+          "mask_foreground_ratio": 0.012375,
+          "prediction_status": null
+        },
+        "decision": "pass",
+        "reason": "Intermediate outputs satisfy the current quality rules.",
+        "new_nodes_added": []
+      }
+    ],
+    "runtime_adjustments": [],
+    "retry_count": 0,
+    "recovery_count": 0,
+    "final_report": {
+      "query": "Show the mask overlay for NPC_001.",
+      "intent": "case_segmentation_analysis",
+      "case_id": "001",
+      "text_evidence_count": 3,
+      "text_evidence_ids": [
+        "text:siamese-diffusion-medical-image-synthesis",
+        "text:masked-autoencoders-vision-learning",
+        "text:siamese-diffusion-medical-image-synthesis-segmentation"
+      ],
+      "has_image_summary": true,
+      "has_mask_statistics": true,
+      "has_overlay": true,
+      "target_review": null,
+      "prediction_status": null,
+      "recovery": null
+    }
+  },
+  {
+    "id": "dyn_006",
+    "question": "Compare image and mask statistics for NPC_001 and NPC_002.",
+    "plan": {
+      "plan_id": "dynamic_plan_006",
+      "query": "Compare image and mask statistics for NPC_001 and NPC_002.",
+      "intent": "comparative_analysis",
+      "complexity_score": 6,
+      "complexity_level": "complex",
+      "case_id": "001",
+      "generated_nodes": [
+        {
+          "node_id": "retrieve-text-evidence",
+          "agent": "text-retriever",
+          "mode": "parallel",
+          "reason": "Comparison needs method evidence.",
+          "inputs": [
+            "query"
+          ],
+          "outputs": [
+            "text_evidence"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "retrieve-case-table-statistics",
+          "agent": "table-statistics-agent",
+          "mode": "parallel",
+          "reason": "Comparison needs structured mask statistics.",
+          "inputs": [
+            "case_id",
+            "query"
+          ],
+          "outputs": [
+            "table_statistics"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "retrieve-multiple-case-statistics",
+          "agent": "multi-case-retriever",
+          "mode": "parallel",
+          "reason": "The query compares more than one case or evidence source.",
+          "inputs": [
+            "query"
+          ],
+          "outputs": [
+            "multi_case_statistics"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "validate-intermediate-results",
+          "agent": "quality-validator",
+          "mode": "conditional",
+          "reason": "Comparative outputs must be validated.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "quality_report"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "merge-outputs-into-final-report",
+          "agent": "report-agent",
+          "mode": "final",
+          "reason": "Merge comparison evidence into a report.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "final_report"
+          ],
+          "params": {}
+        }
+      ],
+      "generation_decisions": [
+        {
+          "decision_point": "auto_plan_generation",
+          "decision": "generate_runtime_workflow",
+          "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+          "intent": "comparative_analysis",
+          "case_id": "001",
+          "generated_nodes": [
+            {
+              "node_id": "retrieve-text-evidence",
+              "agent": "text-retriever",
+              "mode": "parallel",
+              "reason": "Comparison needs method evidence.",
+              "inputs": [
+                "query"
+              ],
+              "outputs": [
+                "text_evidence"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "retrieve-case-table-statistics",
+              "agent": "table-statistics-agent",
+              "mode": "parallel",
+              "reason": "Comparison needs structured mask statistics.",
+              "inputs": [
+                "case_id",
+                "query"
+              ],
+              "outputs": [
+                "table_statistics"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "retrieve-multiple-case-statistics",
+              "agent": "multi-case-retriever",
+              "mode": "parallel",
+              "reason": "The query compares more than one case or evidence source.",
+              "inputs": [
+                "query"
+              ],
+              "outputs": [
+                "multi_case_statistics"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "validate-intermediate-results",
+              "agent": "quality-validator",
+              "mode": "conditional",
+              "reason": "Comparative outputs must be validated.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "quality_report"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "merge-outputs-into-final-report",
+              "agent": "report-agent",
+              "mode": "final",
+              "reason": "Merge comparison evidence into a report.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "final_report"
+              ],
+              "params": {}
+            }
+          ]
+        },
+        {
+          "signal": "case_id_detected",
+          "points": 2,
+          "reason": "The query mentions case 001."
+        },
+        {
+          "signal": "image_or_mask_required",
+          "points": 2,
+          "reason": "The query needs image or mask processing."
+        },
+        {
+          "signal": "comparison_required",
+          "points": 2,
+          "reason": "The query asks for comparison or evaluation."
+        }
+      ],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_quality_gate"
+      ]
+    },
+    "status": "success",
+    "elapsed_ms": 1285.22,
+    "trace": [
+      {
+        "node_id": "retrieve-text-evidence",
+        "agent": "text-retriever",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 1284.942,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "text_evidence": [
+            {
+              "record_id": "text:siamese-diffusion-medical-image-synthesis",
+              "modality": "text",
+              "title": "Noise-Consistent Siamese-Diffusion for Medical Image Synthesis and Segmentation",
+              "text": "本文针对医学图像分割中因标注数据稀缺而面临的挑战，提出了一种名为Siamese-Diffusion的新方法。该方法结合了Mask-Diffusion和Image-Diffusion两个组件，并通过引入噪声一致性损失来提高Mask-Diffusion在参数空间中的形态保真度。实验结果表明，与现有技术相比，Siamese-Diffusion不仅提高了合成图像的质量，还增强了模型的多样性和可扩展性，在多项基准测试上取得了显著性能提升。",
+              "source": "https://arxiv.org/abs/2505.06068",
+              "metadata": {
+                "knowledge_set_id": "siamese-diffusion-medical-image-synthesis"
+              },
+              "score": 17
+            },
+            {
+              "record_id": "text:siamese-diffusion-medical-image-synthesis-segmentation",
+              "modality": "text",
+              "title": "Noise-Consistent Siamese-Diffusion for Medical Image Synthesis and Segmentation",
+              "text": "本文针对医学图像分割中数据稀缺的问题，提出了一种名为Siamese-Diffusion的新方法。该方法通过结合Mask-Diffusion和Image-Diffusion两个组件，并在训练过程中引入噪声一致性损失来提高合成图像的形态保真度。实验结果表明，这种方法不仅提高了合成图像的质量，还增强了分割模型如SANet和UNet在多项指标上的表现。",
+              "source": "https://arxiv.org/abs/2505.06068",
+              "metadata": {
+                "knowledge_set_id": "siamese-diffusion-medical-image-synthesis-segmentation"
+              },
+              "score": 14
+            },
+            {
+              "record_id": "text:diffusion-transformers-image-generation",
+              "modality": "text",
+              "title": "Scalable Diffusion Models with Transformers",
+              "text": "本文探讨了一种基于Transformer架构的新类扩散模型。通过将常用的U-Net骨干替换为在潜在补丁上操作的Transformer，研究者们分析了这些Diffusion Transformers (DiTs) 的可扩展性，并发现具有更高Gflops的DiTs能够持续降低FID值。实验表明，在ImageNet 512x512和256x256分辨率下，最大的DiT-XL/2模型达到了最先进的FID分数。",
+              "source": "https://arxiv.org/abs/2212.09748",
+              "metadata": {
+                "knowledge_set_id": "diffusion-transformers-image-generation"
+              },
+              "score": 11
+            }
+          ],
+          "text_evidence_ids": [
+            "text:siamese-diffusion-medical-image-synthesis",
+            "text:siamese-diffusion-medical-image-synthesis-segmentation",
+            "text:diffusion-transformers-image-generation"
+          ],
+          "retry_count": 0,
+          "retrieval_strategy": "initial_keyword_scoring"
+        },
+        "decision": null
+      },
+      {
+        "node_id": "retrieve-case-table-statistics",
+        "agent": "table-statistics-agent",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 28.081,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence",
+          "table_statistics"
+        ],
+        "output": {
+          "table_statistics": {
+            "case_id": "001",
+            "shape": [
+              128,
+              128,
+              64
+            ],
+            "labels": [
+              0,
+              1
+            ],
+            "foreground_voxels": 12976,
+            "foreground_ratio": 0.012375,
+            "bbox": [
+              43,
+              45,
+              21,
+              79,
+              74,
+              56
+            ],
+            "image_mean": -0.0,
+            "image_std": 1.0
+          }
+        },
+        "decision": null
+      },
+      {
+        "node_id": "retrieve-multiple-case-statistics",
+        "agent": "multi-case-retriever",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 45.293,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "multi_case_statistics",
+          "original_query",
+          "query",
+          "requires_grounded_evidence"
+        ],
+        "output": {
+          "multi_case_statistics": [
+            {
+              "case_id": "001",
+              "shape": [
+                128,
+                128,
+                64
+              ],
+              "labels": [
+                0,
+                1
+              ],
+              "foreground_voxels": 12976,
+              "foreground_ratio": 0.012375,
+              "bbox": [
+                43,
+                45,
+                21,
+                79,
+                74,
+                56
+              ],
+              "image_mean": -0.0,
+              "image_std": 1.0
+            },
+            {
+              "case_id": "002",
+              "shape": [
+                128,
+                128,
+                64
+              ],
+              "labels": [
+                0,
+                1
+              ],
+              "foreground_voxels": 2152,
+              "foreground_ratio": 0.002052,
+              "bbox": [
+                54,
+                42,
+                10,
+                79,
+                55,
+                37
+              ],
+              "image_mean": 0.0,
+              "image_std": 1.0
+            }
+          ]
+        },
+        "decision": null
+      },
+      {
+        "node_id": "validate-intermediate-results",
+        "agent": "quality-validator",
+        "mode": "conditional",
+        "status": "success",
+        "elapsed_ms": 0.004,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "multi_case_statistics",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "table_statistics",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "quality_report": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": null,
+            "prediction_status": null,
+            "passed": true
+          },
+          "_new_nodes": [],
+          "_decision": {
+            "decision_point": "quality_gate",
+            "observed_result": {
+              "text_evidence_count": 3,
+              "retry_count": 0,
+              "mask_foreground_ratio": null,
+              "prediction_status": null
+            },
+            "decision": "pass",
+            "reason": "Intermediate outputs satisfy the current quality rules.",
+            "new_nodes_added": []
+          }
+        },
+        "decision": {
+          "decision_point": "quality_gate",
+          "observed_result": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": null,
+            "prediction_status": null
+          },
+          "decision": "pass",
+          "reason": "Intermediate outputs satisfy the current quality rules.",
+          "new_nodes_added": []
+        }
+      },
+      {
+        "node_id": "merge-outputs-into-final-report",
+        "agent": "report-agent",
+        "mode": "final",
+        "status": "success",
+        "elapsed_ms": 0.002,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "final_report",
+          "intent",
+          "multi_case_statistics",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "table_statistics",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "final_report": {
+            "query": "Compare image and mask statistics for NPC_001 and NPC_002.",
+            "intent": "comparative_analysis",
+            "case_id": "001",
+            "text_evidence_count": 3,
+            "text_evidence_ids": [
+              "text:siamese-diffusion-medical-image-synthesis",
+              "text:siamese-diffusion-medical-image-synthesis-segmentation",
+              "text:diffusion-transformers-image-generation"
+            ],
+            "has_image_summary": false,
+            "has_mask_statistics": false,
+            "has_overlay": false,
+            "target_review": null,
+            "prediction_status": null,
+            "recovery": null
+          }
+        },
+        "decision": null
+      }
+    ],
+    "decision_trace": [
+      {
+        "decision_point": "auto_plan_generation",
+        "decision": "generate_runtime_workflow",
+        "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+        "intent": "comparative_analysis",
+        "case_id": "001",
+        "generated_nodes": [
+          {
+            "node_id": "retrieve-text-evidence",
+            "agent": "text-retriever",
+            "mode": "parallel",
+            "reason": "Comparison needs method evidence.",
+            "inputs": [
+              "query"
+            ],
+            "outputs": [
+              "text_evidence"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "retrieve-case-table-statistics",
+            "agent": "table-statistics-agent",
+            "mode": "parallel",
+            "reason": "Comparison needs structured mask statistics.",
+            "inputs": [
+              "case_id",
+              "query"
+            ],
+            "outputs": [
+              "table_statistics"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "retrieve-multiple-case-statistics",
+            "agent": "multi-case-retriever",
+            "mode": "parallel",
+            "reason": "The query compares more than one case or evidence source.",
+            "inputs": [
+              "query"
+            ],
+            "outputs": [
+              "multi_case_statistics"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "validate-intermediate-results",
+            "agent": "quality-validator",
+            "mode": "conditional",
+            "reason": "Comparative outputs must be validated.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "quality_report"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "merge-outputs-into-final-report",
+            "agent": "report-agent",
+            "mode": "final",
+            "reason": "Merge comparison evidence into a report.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "final_report"
+            ],
+            "params": {}
+          }
+        ]
+      },
+      {
+        "signal": "case_id_detected",
+        "points": 2,
+        "reason": "The query mentions case 001."
+      },
+      {
+        "signal": "image_or_mask_required",
+        "points": 2,
+        "reason": "The query needs image or mask processing."
+      },
+      {
+        "signal": "comparison_required",
+        "points": 2,
+        "reason": "The query asks for comparison or evaluation."
+      },
+      {
+        "decision_point": "quality_gate",
+        "observed_result": {
+          "text_evidence_count": 3,
+          "retry_count": 0,
+          "mask_foreground_ratio": null,
+          "prediction_status": null
+        },
+        "decision": "pass",
+        "reason": "Intermediate outputs satisfy the current quality rules.",
+        "new_nodes_added": []
+      }
+    ],
+    "runtime_adjustments": [],
+    "retry_count": 0,
+    "recovery_count": 0,
+    "final_report": {
+      "query": "Compare image and mask statistics for NPC_001 and NPC_002.",
+      "intent": "comparative_analysis",
+      "case_id": "001",
+      "text_evidence_count": 3,
+      "text_evidence_ids": [
+        "text:siamese-diffusion-medical-image-synthesis",
+        "text:siamese-diffusion-medical-image-synthesis-segmentation",
+        "text:diffusion-transformers-image-generation"
+      ],
+      "has_image_summary": false,
+      "has_mask_statistics": false,
+      "has_overlay": false,
+      "target_review": null,
+      "prediction_status": null,
+      "recovery": null
+    }
+  },
+  {
+    "id": "dyn_007",
+    "question": "Find a case with small foreground ratio using NPC_002 and explain why it needs review.",
+    "plan": {
+      "plan_id": "dynamic_plan_007",
+      "query": "Find a case with small foreground ratio using NPC_002 and explain why it needs review.",
+      "intent": "case_segmentation_analysis",
+      "complexity_score": 3,
+      "complexity_level": "medium",
+      "case_id": "002",
+      "generated_nodes": [
+        {
+          "node_id": "retrieve-text-evidence",
+          "agent": "text-retriever",
+          "mode": "parallel",
+          "reason": "Case analysis needs literature evidence.",
+          "inputs": [
+            "query"
+          ],
+          "outputs": [
+            "text_evidence"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "load-and-summarize-case-image",
+          "agent": "image-agent",
+          "mode": "parallel",
+          "reason": "The query mentions a case image.",
+          "inputs": [
+            "case_id"
+          ],
+          "outputs": [
+            "image_summary"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "analyze-segmentation-mask",
+          "agent": "mask-agent",
+          "mode": "parallel",
+          "reason": "The query needs segmentation mask statistics.",
+          "inputs": [
+            "case_id"
+          ],
+          "outputs": [
+            "mask_statistics"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "validate-intermediate-results",
+          "agent": "quality-validator",
+          "mode": "conditional",
+          "reason": "Intermediate case outputs must be checked.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "quality_report"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "small-target-review",
+          "agent": "small-target-review-agent",
+          "mode": "conditional",
+          "reason": "The mask foreground ratio is very small.",
+          "inputs": [
+            "mask_statistics"
+          ],
+          "outputs": [
+            "target_review"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "merge-outputs-into-final-report",
+          "agent": "report-agent",
+          "mode": "final",
+          "reason": "Generate the final case report.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "final_report"
+          ],
+          "params": {}
+        }
+      ],
+      "generation_decisions": [
+        {
+          "decision_point": "auto_plan_generation",
+          "decision": "generate_runtime_workflow",
+          "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+          "intent": "case_segmentation_analysis",
+          "case_id": "002",
+          "generated_nodes": [
+            {
+              "node_id": "retrieve-text-evidence",
+              "agent": "text-retriever",
+              "mode": "parallel",
+              "reason": "Case analysis needs literature evidence.",
+              "inputs": [
+                "query"
+              ],
+              "outputs": [
+                "text_evidence"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "load-and-summarize-case-image",
+              "agent": "image-agent",
+              "mode": "parallel",
+              "reason": "The query mentions a case image.",
+              "inputs": [
+                "case_id"
+              ],
+              "outputs": [
+                "image_summary"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "analyze-segmentation-mask",
+              "agent": "mask-agent",
+              "mode": "parallel",
+              "reason": "The query needs segmentation mask statistics.",
+              "inputs": [
+                "case_id"
+              ],
+              "outputs": [
+                "mask_statistics"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "validate-intermediate-results",
+              "agent": "quality-validator",
+              "mode": "conditional",
+              "reason": "Intermediate case outputs must be checked.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "quality_report"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "merge-outputs-into-final-report",
+              "agent": "report-agent",
+              "mode": "final",
+              "reason": "Generate the final case report.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "final_report"
+              ],
+              "params": {}
+            }
+          ]
+        },
+        {
+          "signal": "concept_explanation",
+          "points": 1,
+          "reason": "The query asks for a concept explanation."
+        },
+        {
+          "signal": "case_id_detected",
+          "points": 2,
+          "reason": "The query mentions case 002."
+        }
+      ],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_quality_gate"
+      ]
+    },
+    "status": "success",
+    "elapsed_ms": 1219.422,
+    "trace": [
+      {
+        "node_id": "retrieve-text-evidence",
+        "agent": "text-retriever",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 1219.106,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "text_evidence": [
+            {
+              "record_id": "text:2d-mamba-for-wsi-classification",
+              "modality": "text",
+              "title": "2DMamba: Efficient State Space Model for Image Representation with Applications on Giga-Pixel Whole Slide Image Classification",
+              "text": "本文提出了一种名为2DMamba的新颖二维选择性状态空间模型框架，旨在解决大规模二维图像（如Giga-Pixel全切片图像）的高效建模问题。该方法通过结合图像的二维空间结构与Mamba模型，并采用高度优化的硬件感知操作符来实现空间连续性和计算效率的同时提升。实验结果表明，在WSI分类和生存分析等任务上，2DMamba相较于现有方法在AUC、F1分数、准确率及C-index等多个指标上均有显著改进。",
+              "source": "https://arxiv.org/abs/2412.00678",
+              "metadata": {
+                "knowledge_set_id": "2d-mamba-for-wsi-classification"
+              },
+              "score": 28
+            },
+            {
+              "record_id": "text:2d-mamba-image-representation",
+              "modality": "text",
+              "title": "2DMamba: Efficient State Space Model for Image Representation with Applications on Giga-Pixel Whole Slide Image Classification",
+              "text": "本文针对大规模二维图像上下文建模问题，提出了一种名为2DMamba的新颖选择性状态空间模型框架。该模型结合了图像的二维空间结构，并通过高度优化的硬件感知算子实现了空间连续性和计算效率的平衡。实验结果表明，在WSI分类和生存分析等任务上，2DMamba相较于现有方法在AUC、F1分数、准确率及C-index等多个指标上均有显著提升。",
+              "source": "https://arxiv.org/abs/2412.00678",
+              "metadata": {
+                "knowledge_set_id": "2d-mamba-image-representation"
+              },
+              "score": 25
+            },
+            {
+              "record_id": "text:segmamba-3d-medical-image-segmentation",
+              "modality": "text",
+              "title": "SegMamba: Long-range Sequential Modeling Mamba For 3D Medical Image Segmentation",
+              "text": "本文提出了一种新的三维医学图像分割模型SegMamba，该模型结合了U形结构与Mamba技术以有效捕捉全体积特征中的长距离依赖关系。相比基于Transformer的方法，SegMamba在处理高分辨率图像时表现出更高的效率和更好的性能。此外，研究者还构建了一个大规模的结直肠癌分割数据集CRC-500用于评估。实验结果表明，SegMamba不仅在新数据集上表现优异，在其他公开基准测试中也展示了其普遍适用性。",
+              "source": "https://arxiv.org/abs/2401.13560",
+              "metadata": {
+                "knowledge_set_id": "segmamba-3d-medical-image-segmentation"
+              },
+              "score": 23
+            }
+          ],
+          "text_evidence_ids": [
+            "text:2d-mamba-for-wsi-classification",
+            "text:2d-mamba-image-representation",
+            "text:segmamba-3d-medical-image-segmentation"
+          ],
+          "retry_count": 0,
+          "retrieval_strategy": "initial_keyword_scoring"
+        },
+        "decision": null
+      },
+      {
+        "node_id": "load-and-summarize-case-image",
+        "agent": "image-agent",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 3.741,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "image_summary",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence"
+        ],
+        "output": {
+          "image_summary": {
+            "case_id": "002",
+            "shape": [
+              128,
+              128,
+              64
+            ],
+            "mean": 0.0,
+            "std": 1.0,
+            "min": -0.859559,
+            "max": 6.132124
+          }
+        },
+        "decision": null
+      },
+      {
+        "node_id": "analyze-segmentation-mask",
+        "agent": "mask-agent",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 9.644,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "query",
+          "requires_grounded_evidence"
+        ],
+        "output": {
+          "mask_statistics": {
+            "case_id": "002",
+            "shape": [
+              128,
+              128,
+              64
+            ],
+            "labels": [
+              0,
+              1
+            ],
+            "foreground_voxels": 2152,
+            "foreground_ratio": 0.002052,
+            "bbox": [
+              54,
+              42,
+              10,
+              79,
+              55,
+              37
+            ],
+            "image_mean": 0.0,
+            "image_std": 1.0
+          }
+        },
+        "decision": null
+      },
+      {
+        "node_id": "validate-intermediate-results",
+        "agent": "quality-validator",
+        "mode": "conditional",
+        "status": "success",
+        "elapsed_ms": 0.006,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "image_summary",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "quality_report": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": 0.002052,
+            "prediction_status": null,
+            "passed": false
+          },
+          "_new_nodes": [
+            {
+              "node_id": "small-target-review",
+              "agent": "small-target-review-agent",
+              "mode": "conditional",
+              "reason": "The mask foreground ratio is very small.",
+              "inputs": [
+                "mask_statistics"
+              ],
+              "outputs": [
+                "target_review"
+              ],
+              "params": {}
+            }
+          ],
+          "_decision": {
+            "decision_point": "mask_quality_check",
+            "observed_result": {
+              "foreground_ratio": 0.002052
+            },
+            "decision": "add_small_target_review_agent",
+            "reason": "Small foreground masks need visibility and label checks.",
+            "new_nodes_added": [
+              "small-target-review"
+            ]
+          }
+        },
+        "decision": {
+          "decision_point": "mask_quality_check",
+          "observed_result": {
+            "foreground_ratio": 0.002052
+          },
+          "decision": "add_small_target_review_agent",
+          "reason": "Small foreground masks need visibility and label checks.",
+          "new_nodes_added": [
+            "small-target-review"
+          ]
+        }
+      },
+      {
+        "node_id": "small-target-review",
+        "agent": "small-target-review-agent",
+        "mode": "conditional",
+        "status": "success",
+        "elapsed_ms": 0.001,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "image_summary",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "target_review",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "target_review": {
+            "strategy": "small-target-review",
+            "checks": [
+              "visibility",
+              "label consistency",
+              "slice-level review"
+            ]
+          }
+        },
+        "decision": null
+      },
+      {
+        "node_id": "merge-outputs-into-final-report",
+        "agent": "report-agent",
+        "mode": "final",
+        "status": "success",
+        "elapsed_ms": 0.002,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "final_report",
+          "image_summary",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "target_review",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "final_report": {
+            "query": "Find a case with small foreground ratio using NPC_002 and explain why it needs review.",
+            "intent": "case_segmentation_analysis",
+            "case_id": "002",
+            "text_evidence_count": 3,
+            "text_evidence_ids": [
+              "text:2d-mamba-for-wsi-classification",
+              "text:2d-mamba-image-representation",
+              "text:segmamba-3d-medical-image-segmentation"
+            ],
+            "has_image_summary": true,
+            "has_mask_statistics": true,
+            "has_overlay": false,
+            "target_review": {
+              "strategy": "small-target-review",
+              "checks": [
+                "visibility",
+                "label consistency",
+                "slice-level review"
+              ]
+            },
+            "prediction_status": null,
+            "recovery": null
+          }
+        },
+        "decision": null
+      }
+    ],
+    "decision_trace": [
+      {
+        "decision_point": "auto_plan_generation",
+        "decision": "generate_runtime_workflow",
+        "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+        "intent": "case_segmentation_analysis",
+        "case_id": "002",
+        "generated_nodes": [
+          {
+            "node_id": "retrieve-text-evidence",
+            "agent": "text-retriever",
+            "mode": "parallel",
+            "reason": "Case analysis needs literature evidence.",
+            "inputs": [
+              "query"
+            ],
+            "outputs": [
+              "text_evidence"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "load-and-summarize-case-image",
+            "agent": "image-agent",
+            "mode": "parallel",
+            "reason": "The query mentions a case image.",
+            "inputs": [
+              "case_id"
+            ],
+            "outputs": [
+              "image_summary"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "analyze-segmentation-mask",
+            "agent": "mask-agent",
+            "mode": "parallel",
+            "reason": "The query needs segmentation mask statistics.",
+            "inputs": [
+              "case_id"
+            ],
+            "outputs": [
+              "mask_statistics"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "validate-intermediate-results",
+            "agent": "quality-validator",
+            "mode": "conditional",
+            "reason": "Intermediate case outputs must be checked.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "quality_report"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "merge-outputs-into-final-report",
+            "agent": "report-agent",
+            "mode": "final",
+            "reason": "Generate the final case report.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "final_report"
+            ],
+            "params": {}
+          }
+        ]
+      },
+      {
+        "signal": "concept_explanation",
+        "points": 1,
+        "reason": "The query asks for a concept explanation."
+      },
+      {
+        "signal": "case_id_detected",
+        "points": 2,
+        "reason": "The query mentions case 002."
+      },
+      {
+        "decision_point": "mask_quality_check",
+        "observed_result": {
+          "foreground_ratio": 0.002052
+        },
+        "decision": "add_small_target_review_agent",
+        "reason": "Small foreground masks need visibility and label checks.",
+        "new_nodes_added": [
+          "small-target-review"
+        ]
+      }
+    ],
+    "runtime_adjustments": [
+      {
+        "source_node": "validate-intermediate-results",
+        "new_nodes_added": [
+          "small-target-review"
+        ]
+      }
+    ],
+    "retry_count": 0,
+    "recovery_count": 0,
+    "final_report": {
+      "query": "Find a case with small foreground ratio using NPC_002 and explain why it needs review.",
+      "intent": "case_segmentation_analysis",
+      "case_id": "002",
+      "text_evidence_count": 3,
+      "text_evidence_ids": [
+        "text:2d-mamba-for-wsi-classification",
+        "text:2d-mamba-image-representation",
+        "text:segmamba-3d-medical-image-segmentation"
+      ],
+      "has_image_summary": true,
+      "has_mask_statistics": true,
+      "has_overlay": false,
+      "target_review": {
+        "strategy": "small-target-review",
+        "checks": [
+          "visibility",
+          "label consistency",
+          "slice-level review"
+        ]
+      },
+      "prediction_status": null,
+      "recovery": null
+    }
+  },
+  {
+    "id": "dyn_008",
+    "question": "Run a grounded QA query about medical image segmentation evidence.",
+    "plan": {
+      "plan_id": "dynamic_plan_008",
+      "query": "Run a grounded QA query about medical image segmentation evidence.",
+      "intent": "grounded_qa",
+      "complexity_score": 4,
+      "complexity_level": "medium",
+      "case_id": null,
+      "generated_nodes": [
+        {
+          "node_id": "retrieve-text-evidence",
+          "agent": "text-retriever",
+          "mode": "sequential",
+          "reason": "Grounded QA requires local text evidence.",
+          "inputs": [
+            "query"
+          ],
+          "outputs": [
+            "text_evidence"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "validate-intermediate-results",
+          "agent": "quality-validator",
+          "mode": "conditional",
+          "reason": "Evidence must pass the quality gate.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "quality_report"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "merge-outputs-into-final-report",
+          "agent": "report-agent",
+          "mode": "final",
+          "reason": "Generate a grounded final answer.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "final_report"
+          ],
+          "params": {}
+        }
+      ],
+      "generation_decisions": [
+        {
+          "decision_point": "auto_plan_generation",
+          "decision": "generate_runtime_workflow",
+          "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+          "intent": "grounded_qa",
+          "case_id": null,
+          "generated_nodes": [
+            {
+              "node_id": "retrieve-text-evidence",
+              "agent": "text-retriever",
+              "mode": "sequential",
+              "reason": "Grounded QA requires local text evidence.",
+              "inputs": [
+                "query"
+              ],
+              "outputs": [
+                "text_evidence"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "validate-intermediate-results",
+              "agent": "quality-validator",
+              "mode": "conditional",
+              "reason": "Evidence must pass the quality gate.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "quality_report"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "merge-outputs-into-final-report",
+              "agent": "report-agent",
+              "mode": "final",
+              "reason": "Generate a grounded final answer.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "final_report"
+              ],
+              "params": {}
+            }
+          ]
+        },
+        {
+          "signal": "needs_local_evidence",
+          "points": 2,
+          "reason": "The query asks for grounded evidence."
+        },
+        {
+          "signal": "image_or_mask_required",
+          "points": 2,
+          "reason": "The query needs image or mask processing."
+        }
+      ],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "runtime_quality_gate"
+      ]
+    },
+    "status": "success",
+    "elapsed_ms": 1212.289,
+    "trace": [
+      {
+        "node_id": "retrieve-text-evidence",
+        "agent": "text-retriever",
+        "mode": "sequential",
+        "status": "success",
+        "elapsed_ms": 1212.18,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "text_evidence": [
+            {
+              "record_id": "text:segmamba-3d-medical-image-segmentation",
+              "modality": "text",
+              "title": "SegMamba: Long-range Sequential Modeling Mamba For 3D Medical Image Segmentation",
+              "text": "本文提出了一种新的三维医学图像分割模型SegMamba，该模型结合了U形结构与Mamba技术以有效捕捉全体积特征中的长距离依赖关系。相比基于Transformer的方法，SegMamba在处理高分辨率图像时表现出更高的效率和更好的性能。此外，研究者还构建了一个大规模的结直肠癌分割数据集CRC-500用于评估。实验结果表明，SegMamba不仅在新数据集上表现优异，在其他公开基准测试中也展示了其普遍适用性。",
+              "source": "https://arxiv.org/abs/2401.13560",
+              "metadata": {
+                "knowledge_set_id": "segmamba-3d-medical-image-segmentation"
+              },
+              "score": 41
+            },
+            {
+              "record_id": "text:u-mamba-biomedical-image-segmentation",
+              "modality": "text",
+              "title": "U-Mamba: Enhancing Long-range Dependency for Biomedical Image Segmentation",
+              "text": "本文针对生物医学图像分割任务中长距离依赖关系处理能力不足的问题，提出了一种新的通用网络U-Mamba。该网络结合了卷积神经网络局部特征提取的优势与状态空间序列模型捕捉长距离依赖的能力，并具备自适应配置机制以适应不同数据集。实验表明，在包括CT和MRI腹部器官分割、内窥镜图像器械分割及显微镜细胞分割在内的多种任务上，U-Mamba的表现优于当前最先进的基于CNN或Transformer的分割网络。",
+              "source": "https://arxiv.org/abs/2401.04722",
+              "metadata": {
+                "knowledge_set_id": "u-mamba-biomedical-image-segmentation"
+              },
+              "score": 35
+            },
+            {
+              "record_id": "text:siamese-diffusion-medical-image-synthesis-segmentation",
+              "modality": "text",
+              "title": "Noise-Consistent Siamese-Diffusion for Medical Image Synthesis and Segmentation",
+              "text": "本文针对医学图像分割中数据稀缺的问题，提出了一种名为Siamese-Diffusion的新方法。该方法通过结合Mask-Diffusion和Image-Diffusion两个组件，并在训练过程中引入噪声一致性损失来提高合成图像的形态保真度。实验结果表明，这种方法不仅提高了合成图像的质量，还增强了分割模型如SANet和UNet在多项指标上的表现。",
+              "source": "https://arxiv.org/abs/2505.06068",
+              "metadata": {
+                "knowledge_set_id": "siamese-diffusion-medical-image-synthesis-segmentation"
+              },
+              "score": 34
+            }
+          ],
+          "text_evidence_ids": [
+            "text:segmamba-3d-medical-image-segmentation",
+            "text:u-mamba-biomedical-image-segmentation",
+            "text:siamese-diffusion-medical-image-synthesis-segmentation"
+          ],
+          "retry_count": 0,
+          "retrieval_strategy": "initial_keyword_scoring"
+        },
+        "decision": null
+      },
+      {
+        "node_id": "validate-intermediate-results",
+        "agent": "quality-validator",
+        "mode": "conditional",
+        "status": "success",
+        "elapsed_ms": 0.004,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "quality_report": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": null,
+            "prediction_status": null,
+            "passed": true
+          },
+          "_new_nodes": [],
+          "_decision": {
+            "decision_point": "quality_gate",
+            "observed_result": {
+              "text_evidence_count": 3,
+              "retry_count": 0,
+              "mask_foreground_ratio": null,
+              "prediction_status": null
+            },
+            "decision": "pass",
+            "reason": "Intermediate outputs satisfy the current quality rules.",
+            "new_nodes_added": []
+          }
+        },
+        "decision": {
+          "decision_point": "quality_gate",
+          "observed_result": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": null,
+            "prediction_status": null
+          },
+          "decision": "pass",
+          "reason": "Intermediate outputs satisfy the current quality rules.",
+          "new_nodes_added": []
+        }
+      },
+      {
+        "node_id": "merge-outputs-into-final-report",
+        "agent": "report-agent",
+        "mode": "final",
+        "status": "success",
+        "elapsed_ms": 0.003,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "final_report",
+          "intent",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "final_report": {
+            "query": "Run a grounded QA query about medical image segmentation evidence.",
+            "intent": "grounded_qa",
+            "case_id": null,
+            "text_evidence_count": 3,
+            "text_evidence_ids": [
+              "text:segmamba-3d-medical-image-segmentation",
+              "text:u-mamba-biomedical-image-segmentation",
+              "text:siamese-diffusion-medical-image-synthesis-segmentation"
+            ],
+            "has_image_summary": false,
+            "has_mask_statistics": false,
+            "has_overlay": false,
+            "target_review": null,
+            "prediction_status": null,
+            "recovery": null
+          }
+        },
+        "decision": null
+      }
+    ],
+    "decision_trace": [
+      {
+        "decision_point": "auto_plan_generation",
+        "decision": "generate_runtime_workflow",
+        "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+        "intent": "grounded_qa",
+        "case_id": null,
+        "generated_nodes": [
+          {
+            "node_id": "retrieve-text-evidence",
+            "agent": "text-retriever",
+            "mode": "sequential",
+            "reason": "Grounded QA requires local text evidence.",
+            "inputs": [
+              "query"
+            ],
+            "outputs": [
+              "text_evidence"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "validate-intermediate-results",
+            "agent": "quality-validator",
+            "mode": "conditional",
+            "reason": "Evidence must pass the quality gate.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "quality_report"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "merge-outputs-into-final-report",
+            "agent": "report-agent",
+            "mode": "final",
+            "reason": "Generate a grounded final answer.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "final_report"
+            ],
+            "params": {}
+          }
+        ]
+      },
+      {
+        "signal": "needs_local_evidence",
+        "points": 2,
+        "reason": "The query asks for grounded evidence."
+      },
+      {
+        "signal": "image_or_mask_required",
+        "points": 2,
+        "reason": "The query needs image or mask processing."
+      },
+      {
+        "decision_point": "quality_gate",
+        "observed_result": {
+          "text_evidence_count": 3,
+          "retry_count": 0,
+          "mask_foreground_ratio": null,
+          "prediction_status": null
+        },
+        "decision": "pass",
+        "reason": "Intermediate outputs satisfy the current quality rules.",
+        "new_nodes_added": []
+      }
+    ],
+    "runtime_adjustments": [],
+    "retry_count": 0,
+    "recovery_count": 0,
+    "final_report": {
+      "query": "Run a grounded QA query about medical image segmentation evidence.",
+      "intent": "grounded_qa",
+      "case_id": null,
+      "text_evidence_count": 3,
+      "text_evidence_ids": [
+        "text:segmamba-3d-medical-image-segmentation",
+        "text:u-mamba-biomedical-image-segmentation",
+        "text:siamese-diffusion-medical-image-synthesis-segmentation"
+      ],
+      "has_image_summary": false,
+      "has_mask_statistics": false,
+      "has_overlay": false,
+      "target_review": null,
+      "prediction_status": null,
+      "recovery": null
+    }
+  },
+  {
+    "id": "dyn_009",
+    "question": "Run MedSAM prediction for case NPC_001; if unavailable, recover gracefully.",
+    "plan": {
+      "plan_id": "dynamic_plan_009",
+      "query": "Run MedSAM prediction for case NPC_001; if unavailable, recover gracefully.",
+      "intent": "segmentation_prediction_demo",
+      "complexity_score": 6,
+      "complexity_level": "complex",
+      "case_id": "001",
+      "generated_nodes": [
+        {
+          "node_id": "load-and-summarize-case-image",
+          "agent": "image-agent",
+          "mode": "sequential",
+          "reason": "Prediction demo needs the case image.",
+          "inputs": [
+            "case_id"
+          ],
+          "outputs": [
+            "image_summary"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "optional-medsam-slice-prediction",
+          "agent": "medsam-agent",
+          "mode": "sequential",
+          "reason": "The query asks for MedSAM/model prediction.",
+          "inputs": [
+            "case_id",
+            "slice_index"
+          ],
+          "outputs": [
+            "prediction_mask"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "validate-intermediate-results",
+          "agent": "quality-validator",
+          "mode": "conditional",
+          "reason": "Prediction output or fallback must be validated.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "quality_report"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "merge-outputs-into-final-report",
+          "agent": "report-agent",
+          "mode": "final",
+          "reason": "Report prediction status and fallback evidence.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "final_report"
+          ],
+          "params": {}
+        }
+      ],
+      "generation_decisions": [
+        {
+          "decision_point": "auto_plan_generation",
+          "decision": "generate_runtime_workflow",
+          "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+          "intent": "segmentation_prediction_demo",
+          "case_id": "001",
+          "generated_nodes": [
+            {
+              "node_id": "load-and-summarize-case-image",
+              "agent": "image-agent",
+              "mode": "sequential",
+              "reason": "Prediction demo needs the case image.",
+              "inputs": [
+                "case_id"
+              ],
+              "outputs": [
+                "image_summary"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "optional-medsam-slice-prediction",
+              "agent": "medsam-agent",
+              "mode": "sequential",
+              "reason": "The query asks for MedSAM/model prediction.",
+              "inputs": [
+                "case_id",
+                "slice_index"
+              ],
+              "outputs": [
+                "prediction_mask"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "validate-intermediate-results",
+              "agent": "quality-validator",
+              "mode": "conditional",
+              "reason": "Prediction output or fallback must be validated.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "quality_report"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "merge-outputs-into-final-report",
+              "agent": "report-agent",
+              "mode": "final",
+              "reason": "Report prediction status and fallback evidence.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "final_report"
+              ],
+              "params": {}
+            }
+          ]
+        },
+        {
+          "signal": "case_id_detected",
+          "points": 2,
+          "reason": "The query mentions case 001."
+        },
+        {
+          "signal": "model_prediction_required",
+          "points": 2,
+          "reason": "The query asks for model prediction."
+        },
+        {
+          "signal": "recovery_likely",
+          "points": 2,
+          "reason": "The query likely needs recovery or fallback."
+        }
+      ],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "runtime_quality_gate",
+        "error_recovery"
+      ]
+    },
+    "status": "success",
+    "elapsed_ms": 10.365,
+    "trace": [
+      {
+        "node_id": "load-and-summarize-case-image",
+        "agent": "image-agent",
+        "mode": "sequential",
+        "status": "success",
+        "elapsed_ms": 2.5,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "force_model_unavailable",
+          "image_summary",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence"
+        ],
+        "output": {
+          "image_summary": {
+            "case_id": "001",
+            "shape": [
+              128,
+              128,
+              64
+            ],
+            "mean": -0.0,
+            "std": 1.0,
+            "min": -0.789004,
+            "max": 6.604631
+          }
+        },
+        "decision": null
+      },
+      {
+        "node_id": "optional-medsam-slice-prediction",
+        "agent": "medsam-agent",
+        "mode": "sequential",
+        "status": "success",
+        "elapsed_ms": 7.712,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "error",
+          "failed_agent",
+          "fallback_agent",
+          "fallback_output",
+          "force_model_unavailable",
+          "image_summary",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "overlay_result",
+          "prediction_status",
+          "query",
+          "recovered",
+          "requires_grounded_evidence"
+        ],
+        "output": {
+          "overlay_result": {
+            "case_id": "001",
+            "axis": "axial",
+            "slice_index": 31,
+            "overlay_available": true,
+            "mask_statistics": {
+              "labels": [
+                0,
+                1
+              ],
+              "foreground_voxels": 12976,
+              "foreground_ratio": 0.012375
+            }
+          },
+          "mask_statistics": {
+            "labels": [
+              0,
+              1
+            ],
+            "foreground_voxels": 12976,
+            "foreground_ratio": 0.012375
+          },
+          "prediction_status": "fallback_ground_truth_overlay",
+          "failed_agent": "medsam-agent",
+          "error": {
+            "error": "model_unavailable: forced demo path for recovery benchmark",
+            "exception_type": "RuntimeError"
+          },
+          "fallback_agent": "ground-truth-overlay-agent",
+          "fallback_output": {
+            "overlay_result": {
+              "case_id": "001",
+              "axis": "axial",
+              "slice_index": 31,
+              "overlay_available": true,
+              "mask_statistics": {
+                "labels": [
+                  0,
+                  1
+                ],
+                "foreground_voxels": 12976,
+                "foreground_ratio": 0.012375
+              }
+            },
+            "mask_statistics": {
+              "labels": [
+                0,
+                1
+              ],
+              "foreground_voxels": 12976,
+              "foreground_ratio": 0.012375
+            },
+            "prediction_status": "fallback_ground_truth_overlay"
+          },
+          "recovered": true
+        },
+        "decision": {
+          "decision_point": "error_recovery",
+          "failed_agent": "medsam-agent",
+          "error_type": "RuntimeError",
+          "decision": "switch_to_fallback_agent",
+          "reason": "medsam-agent failed, so RecoveryManager selected ground-truth-overlay-agent.",
+          "fallback_agent": "ground-truth-overlay-agent",
+          "observed_result": {
+            "error": "model_unavailable: forced demo path for recovery benchmark",
+            "exception_type": "RuntimeError"
+          },
+          "new_nodes_added": [
+            "fallback-ground-truth-overlay-agent"
+          ]
+        }
+      },
+      {
+        "node_id": "validate-intermediate-results",
+        "agent": "quality-validator",
+        "mode": "conditional",
+        "status": "success",
+        "elapsed_ms": 0.003,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "error",
+          "failed_agent",
+          "fallback_agent",
+          "fallback_output",
+          "force_model_unavailable",
+          "image_summary",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "overlay_result",
+          "prediction_status",
+          "quality_report",
+          "query",
+          "recovered",
+          "requires_grounded_evidence"
+        ],
+        "output": {
+          "quality_report": {
+            "text_evidence_count": 0,
+            "retry_count": 0,
+            "mask_foreground_ratio": 0.012375,
+            "prediction_status": "fallback_ground_truth_overlay",
+            "passed": true
+          },
+          "_new_nodes": [],
+          "_decision": {
+            "decision_point": "quality_gate",
+            "observed_result": {
+              "text_evidence_count": 0,
+              "retry_count": 0,
+              "mask_foreground_ratio": 0.012375,
+              "prediction_status": "fallback_ground_truth_overlay"
+            },
+            "decision": "pass",
+            "reason": "Intermediate outputs satisfy the current quality rules.",
+            "new_nodes_added": []
+          }
+        },
+        "decision": {
+          "decision_point": "quality_gate",
+          "observed_result": {
+            "text_evidence_count": 0,
+            "retry_count": 0,
+            "mask_foreground_ratio": 0.012375,
+            "prediction_status": "fallback_ground_truth_overlay"
+          },
+          "decision": "pass",
+          "reason": "Intermediate outputs satisfy the current quality rules.",
+          "new_nodes_added": []
+        }
+      },
+      {
+        "node_id": "merge-outputs-into-final-report",
+        "agent": "report-agent",
+        "mode": "final",
+        "status": "success",
+        "elapsed_ms": 0.002,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "error",
+          "failed_agent",
+          "fallback_agent",
+          "fallback_output",
+          "final_report",
+          "force_model_unavailable",
+          "image_summary",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "overlay_result",
+          "prediction_status",
+          "quality_report",
+          "query",
+          "recovered",
+          "requires_grounded_evidence"
+        ],
+        "output": {
+          "final_report": {
+            "query": "Run MedSAM prediction for case NPC_001; if unavailable, recover gracefully.",
+            "intent": "segmentation_prediction_demo",
+            "case_id": "001",
+            "text_evidence_count": 0,
+            "text_evidence_ids": [],
+            "has_image_summary": true,
+            "has_mask_statistics": true,
+            "has_overlay": true,
+            "target_review": null,
+            "prediction_status": "fallback_ground_truth_overlay",
+            "recovery": null
+          }
+        },
+        "decision": null
+      }
+    ],
+    "decision_trace": [
+      {
+        "decision_point": "auto_plan_generation",
+        "decision": "generate_runtime_workflow",
+        "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+        "intent": "segmentation_prediction_demo",
+        "case_id": "001",
+        "generated_nodes": [
+          {
+            "node_id": "load-and-summarize-case-image",
+            "agent": "image-agent",
+            "mode": "sequential",
+            "reason": "Prediction demo needs the case image.",
+            "inputs": [
+              "case_id"
+            ],
+            "outputs": [
+              "image_summary"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "optional-medsam-slice-prediction",
+            "agent": "medsam-agent",
+            "mode": "sequential",
+            "reason": "The query asks for MedSAM/model prediction.",
+            "inputs": [
+              "case_id",
+              "slice_index"
+            ],
+            "outputs": [
+              "prediction_mask"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "validate-intermediate-results",
+            "agent": "quality-validator",
+            "mode": "conditional",
+            "reason": "Prediction output or fallback must be validated.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "quality_report"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "merge-outputs-into-final-report",
+            "agent": "report-agent",
+            "mode": "final",
+            "reason": "Report prediction status and fallback evidence.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "final_report"
+            ],
+            "params": {}
+          }
+        ]
+      },
+      {
+        "signal": "case_id_detected",
+        "points": 2,
+        "reason": "The query mentions case 001."
+      },
+      {
+        "signal": "model_prediction_required",
+        "points": 2,
+        "reason": "The query asks for model prediction."
+      },
+      {
+        "signal": "recovery_likely",
+        "points": 2,
+        "reason": "The query likely needs recovery or fallback."
+      },
+      {
+        "decision_point": "error_recovery",
+        "failed_agent": "medsam-agent",
+        "error_type": "RuntimeError",
+        "decision": "switch_to_fallback_agent",
+        "reason": "medsam-agent failed, so RecoveryManager selected ground-truth-overlay-agent.",
+        "fallback_agent": "ground-truth-overlay-agent",
+        "observed_result": {
+          "error": "model_unavailable: forced demo path for recovery benchmark",
+          "exception_type": "RuntimeError"
+        },
+        "new_nodes_added": [
+          "fallback-ground-truth-overlay-agent"
+        ]
+      },
+      {
+        "decision_point": "quality_gate",
+        "observed_result": {
+          "text_evidence_count": 0,
+          "retry_count": 0,
+          "mask_foreground_ratio": 0.012375,
+          "prediction_status": "fallback_ground_truth_overlay"
+        },
+        "decision": "pass",
+        "reason": "Intermediate outputs satisfy the current quality rules.",
+        "new_nodes_added": []
+      }
+    ],
+    "runtime_adjustments": [
+      {
+        "source_node": "optional-medsam-slice-prediction",
+        "new_nodes_added": [
+          "fallback-ground-truth-overlay-agent"
+        ]
+      }
+    ],
+    "retry_count": 0,
+    "recovery_count": 1,
+    "final_report": {
+      "query": "Run MedSAM prediction for case NPC_001; if unavailable, recover gracefully.",
+      "intent": "segmentation_prediction_demo",
+      "case_id": "001",
+      "text_evidence_count": 0,
+      "text_evidence_ids": [],
+      "has_image_summary": true,
+      "has_mask_statistics": true,
+      "has_overlay": true,
+      "target_review": null,
+      "prediction_status": "fallback_ground_truth_overlay",
+      "recovery": null
+    }
+  },
+  {
+    "id": "dyn_010",
+    "question": "Analyze an invalid case ID NPC_999 and recover gracefully.",
+    "plan": {
+      "plan_id": "dynamic_plan_010",
+      "query": "Analyze an invalid case ID NPC_999 and recover gracefully.",
+      "intent": "case_segmentation_analysis",
+      "complexity_score": 4,
+      "complexity_level": "medium",
+      "case_id": "999",
+      "generated_nodes": [
+        {
+          "node_id": "retrieve-text-evidence",
+          "agent": "text-retriever",
+          "mode": "parallel",
+          "reason": "Case analysis needs literature evidence.",
+          "inputs": [
+            "query"
+          ],
+          "outputs": [
+            "text_evidence"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "load-and-summarize-case-image",
+          "agent": "image-agent",
+          "mode": "parallel",
+          "reason": "The query mentions a case image.",
+          "inputs": [
+            "case_id"
+          ],
+          "outputs": [
+            "image_summary"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "analyze-segmentation-mask",
+          "agent": "mask-agent",
+          "mode": "parallel",
+          "reason": "The query needs segmentation mask statistics.",
+          "inputs": [
+            "case_id"
+          ],
+          "outputs": [
+            "mask_statistics"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "validate-intermediate-results",
+          "agent": "quality-validator",
+          "mode": "conditional",
+          "reason": "Intermediate case outputs must be checked.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "quality_report"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "merge-outputs-into-final-report",
+          "agent": "report-agent",
+          "mode": "final",
+          "reason": "Generate the final case report.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "final_report"
+          ],
+          "params": {}
+        }
+      ],
+      "generation_decisions": [
+        {
+          "decision_point": "auto_plan_generation",
+          "decision": "generate_runtime_workflow",
+          "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+          "intent": "case_segmentation_analysis",
+          "case_id": "999",
+          "generated_nodes": [
+            {
+              "node_id": "retrieve-text-evidence",
+              "agent": "text-retriever",
+              "mode": "parallel",
+              "reason": "Case analysis needs literature evidence.",
+              "inputs": [
+                "query"
+              ],
+              "outputs": [
+                "text_evidence"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "load-and-summarize-case-image",
+              "agent": "image-agent",
+              "mode": "parallel",
+              "reason": "The query mentions a case image.",
+              "inputs": [
+                "case_id"
+              ],
+              "outputs": [
+                "image_summary"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "analyze-segmentation-mask",
+              "agent": "mask-agent",
+              "mode": "parallel",
+              "reason": "The query needs segmentation mask statistics.",
+              "inputs": [
+                "case_id"
+              ],
+              "outputs": [
+                "mask_statistics"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "validate-intermediate-results",
+              "agent": "quality-validator",
+              "mode": "conditional",
+              "reason": "Intermediate case outputs must be checked.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "quality_report"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "merge-outputs-into-final-report",
+              "agent": "report-agent",
+              "mode": "final",
+              "reason": "Generate the final case report.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "final_report"
+              ],
+              "params": {}
+            }
+          ]
+        },
+        {
+          "signal": "case_id_detected",
+          "points": 2,
+          "reason": "The query mentions case 999."
+        },
+        {
+          "signal": "recovery_likely",
+          "points": 2,
+          "reason": "The query likely needs recovery or fallback."
+        }
+      ],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_quality_gate"
+      ]
+    },
+    "status": "success",
+    "elapsed_ms": 1174.156,
+    "trace": [
+      {
+        "node_id": "retrieve-text-evidence",
+        "agent": "text-retriever",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 1173.853,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "text_evidence": [
+            {
+              "record_id": "text:course-stanford-visualizing-and-understanding-cnns",
+              "modality": "text",
+              "title": "Visualizing and Understanding Convolutional Neural Networks [Course slides]",
+              "text": "本课程主要介绍了卷积神经网络（CNN）的可视化和理解方法。首先回顾了计算机视觉任务，包括语义分类、实例分割、目标检测等。接着详细探讨了CNN内部的工作机制，特别是第一层滤波器的可视化以及最后一层特征向量的降维技术如PCA和t-SNE。通过这些方法，可以更好地理解CNN在图像处理中的表现。",
+              "source": "https://cs231n.stanford.edu/",
+              "metadata": {
+                "knowledge_set_id": "course-stanford-visualizing-and-understanding-cnns"
+              },
+              "score": 10
+            },
+            {
+              "record_id": "text:course-stanford-detection-and-segmentation",
+              "modality": "text",
+              "title": "Detection and Segmentation [Course slides]",
+              "text": "本节课主要介绍了图像分割、定位和检测的相关概念和技术。首先回顾了循环神经网络（RNN）的基本结构，包括Vanilla RNN和长短期记忆网络（LSTM）。接着详细讲解了语义分割的任务，即为图像中的每个像素分配类别标签，并讨论了基于滑动窗口的方法及其效率问题。此外，还提到了一些相关的研究工作。",
+              "source": "https://cs231n.stanford.edu/",
+              "metadata": {
+                "knowledge_set_id": "course-stanford-detection-and-segmentation"
+              },
+              "score": 7
+            },
+            {
+              "record_id": "text:diffusion-transformers-image-generation",
+              "modality": "text",
+              "title": "Scalable Diffusion Models with Transformers",
+              "text": "本文探讨了一种基于Transformer架构的新类扩散模型。通过将常用的U-Net骨干替换为在潜在补丁上操作的Transformer，研究者们分析了这些Diffusion Transformers (DiTs) 的可扩展性，并发现具有更高Gflops的DiTs能够持续降低FID值。实验表明，在ImageNet 512x512和256x256分辨率下，最大的DiT-XL/2模型达到了最先进的FID分数。",
+              "source": "https://arxiv.org/abs/2212.09748",
+              "metadata": {
+                "knowledge_set_id": "diffusion-transformers-image-generation"
+              },
+              "score": 7
+            }
+          ],
+          "text_evidence_ids": [
+            "text:course-stanford-visualizing-and-understanding-cnns",
+            "text:course-stanford-detection-and-segmentation",
+            "text:diffusion-transformers-image-generation"
+          ],
+          "retry_count": 0,
+          "retrieval_strategy": "initial_keyword_scoring"
+        },
+        "decision": null
+      },
+      {
+        "node_id": "load-and-summarize-case-image",
+        "agent": "image-agent",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 16.545,
+        "input_keys": [
+          "case_id",
+          "case_recovery",
+          "dataset_dir",
+          "error",
+          "failed_agent",
+          "fallback_agent",
+          "fallback_output",
+          "intent",
+          "original_query",
+          "query",
+          "recovered",
+          "requires_grounded_evidence"
+        ],
+        "output": {
+          "case_recovery": {
+            "requested_case_id": "999",
+            "available_cases": [
+              "001",
+              "002",
+              "003",
+              "004",
+              "005",
+              "006",
+              "007",
+              "008",
+              "009",
+              "010"
+            ],
+            "selected_fallback_case": "001"
+          },
+          "case_id": "001",
+          "failed_agent": "image-agent",
+          "error": {
+            "error": "找不到病例目录: /Users/zs/Documents/Codex/2026-06-26/https-github-com-yuplx-hu-ai/work/ai_agent_newl_extracted/AI_AGENT_NEWL/PartB_智能体应用项目/code/npc_dataset_nii/999",
+            "exception_type": "FileNotFoundError"
+          },
+          "fallback_agent": "case-metadata-agent",
+          "fallback_output": {
+            "case_recovery": {
+              "requested_case_id": "999",
+              "available_cases": [
+                "001",
+                "002",
+                "003",
+                "004",
+                "005",
+                "006",
+                "007",
+                "008",
+                "009",
+                "010"
+              ],
+              "selected_fallback_case": "001"
+            },
+            "case_id": "001"
+          },
+          "recovered": true
+        },
+        "decision": {
+          "decision_point": "error_recovery",
+          "failed_agent": "image-agent",
+          "error_type": "FileNotFoundError",
+          "decision": "switch_to_fallback_agent",
+          "reason": "image-agent failed, so RecoveryManager selected case-metadata-agent.",
+          "fallback_agent": "case-metadata-agent",
+          "observed_result": {
+            "error": "找不到病例目录: /Users/zs/Documents/Codex/2026-06-26/https-github-com-yuplx-hu-ai/work/ai_agent_newl_extracted/AI_AGENT_NEWL/PartB_智能体应用项目/code/npc_dataset_nii/999",
+            "exception_type": "FileNotFoundError"
+          },
+          "new_nodes_added": [
+            "fallback-case-metadata-agent"
+          ]
+        }
+      },
+      {
+        "node_id": "analyze-segmentation-mask",
+        "agent": "mask-agent",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 16.276,
+        "input_keys": [
+          "case_id",
+          "case_recovery",
+          "dataset_dir",
+          "error",
+          "failed_agent",
+          "fallback_agent",
+          "fallback_output",
+          "intent",
+          "original_query",
+          "query",
+          "recovered",
+          "requires_grounded_evidence"
+        ],
+        "output": {
+          "case_recovery": {
+            "requested_case_id": "999",
+            "available_cases": [
+              "001",
+              "002",
+              "003",
+              "004",
+              "005",
+              "006",
+              "007",
+              "008",
+              "009",
+              "010"
+            ],
+            "selected_fallback_case": "001"
+          },
+          "case_id": "001",
+          "failed_agent": "mask-agent",
+          "error": {
+            "error": "找不到病例目录: /Users/zs/Documents/Codex/2026-06-26/https-github-com-yuplx-hu-ai/work/ai_agent_newl_extracted/AI_AGENT_NEWL/PartB_智能体应用项目/code/npc_dataset_nii/999",
+            "exception_type": "FileNotFoundError"
+          },
+          "fallback_agent": "case-metadata-agent",
+          "fallback_output": {
+            "case_recovery": {
+              "requested_case_id": "999",
+              "available_cases": [
+                "001",
+                "002",
+                "003",
+                "004",
+                "005",
+                "006",
+                "007",
+                "008",
+                "009",
+                "010"
+              ],
+              "selected_fallback_case": "001"
+            },
+            "case_id": "001"
+          },
+          "recovered": true
+        },
+        "decision": {
+          "decision_point": "error_recovery",
+          "failed_agent": "mask-agent",
+          "error_type": "FileNotFoundError",
+          "decision": "switch_to_fallback_agent",
+          "reason": "mask-agent failed, so RecoveryManager selected case-metadata-agent.",
+          "fallback_agent": "case-metadata-agent",
+          "observed_result": {
+            "error": "找不到病例目录: /Users/zs/Documents/Codex/2026-06-26/https-github-com-yuplx-hu-ai/work/ai_agent_newl_extracted/AI_AGENT_NEWL/PartB_智能体应用项目/code/npc_dataset_nii/999",
+            "exception_type": "FileNotFoundError"
+          },
+          "new_nodes_added": [
+            "fallback-case-metadata-agent"
+          ]
+        }
+      },
+      {
+        "node_id": "validate-intermediate-results",
+        "agent": "quality-validator",
+        "mode": "conditional",
+        "status": "success",
+        "elapsed_ms": 0.004,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "case_recovery",
+          "dataset_dir",
+          "error",
+          "failed_agent",
+          "fallback_agent",
+          "fallback_output",
+          "intent",
+          "original_query",
+          "quality_report",
+          "query",
+          "recovered",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "quality_report": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": null,
+            "prediction_status": null,
+            "passed": true
+          },
+          "_new_nodes": [],
+          "_decision": {
+            "decision_point": "quality_gate",
+            "observed_result": {
+              "text_evidence_count": 3,
+              "retry_count": 0,
+              "mask_foreground_ratio": null,
+              "prediction_status": null
+            },
+            "decision": "pass",
+            "reason": "Intermediate outputs satisfy the current quality rules.",
+            "new_nodes_added": []
+          }
+        },
+        "decision": {
+          "decision_point": "quality_gate",
+          "observed_result": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": null,
+            "prediction_status": null
+          },
+          "decision": "pass",
+          "reason": "Intermediate outputs satisfy the current quality rules.",
+          "new_nodes_added": []
+        }
+      },
+      {
+        "node_id": "merge-outputs-into-final-report",
+        "agent": "report-agent",
+        "mode": "final",
+        "status": "success",
+        "elapsed_ms": 0.002,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "case_recovery",
+          "dataset_dir",
+          "error",
+          "failed_agent",
+          "fallback_agent",
+          "fallback_output",
+          "final_report",
+          "intent",
+          "original_query",
+          "quality_report",
+          "query",
+          "recovered",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "final_report": {
+            "query": "Analyze an invalid case ID NPC_999 and recover gracefully.",
+            "intent": "case_segmentation_analysis",
+            "case_id": "001",
+            "text_evidence_count": 3,
+            "text_evidence_ids": [
+              "text:course-stanford-visualizing-and-understanding-cnns",
+              "text:course-stanford-detection-and-segmentation",
+              "text:diffusion-transformers-image-generation"
+            ],
+            "has_image_summary": false,
+            "has_mask_statistics": false,
+            "has_overlay": false,
+            "target_review": null,
+            "prediction_status": null,
+            "recovery": {
+              "requested_case_id": "999",
+              "available_cases": [
+                "001",
+                "002",
+                "003",
+                "004",
+                "005",
+                "006",
+                "007",
+                "008",
+                "009",
+                "010"
+              ],
+              "selected_fallback_case": "001"
+            }
+          }
+        },
+        "decision": null
+      }
+    ],
+    "decision_trace": [
+      {
+        "decision_point": "auto_plan_generation",
+        "decision": "generate_runtime_workflow",
+        "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+        "intent": "case_segmentation_analysis",
+        "case_id": "999",
+        "generated_nodes": [
+          {
+            "node_id": "retrieve-text-evidence",
+            "agent": "text-retriever",
+            "mode": "parallel",
+            "reason": "Case analysis needs literature evidence.",
+            "inputs": [
+              "query"
+            ],
+            "outputs": [
+              "text_evidence"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "load-and-summarize-case-image",
+            "agent": "image-agent",
+            "mode": "parallel",
+            "reason": "The query mentions a case image.",
+            "inputs": [
+              "case_id"
+            ],
+            "outputs": [
+              "image_summary"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "analyze-segmentation-mask",
+            "agent": "mask-agent",
+            "mode": "parallel",
+            "reason": "The query needs segmentation mask statistics.",
+            "inputs": [
+              "case_id"
+            ],
+            "outputs": [
+              "mask_statistics"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "validate-intermediate-results",
+            "agent": "quality-validator",
+            "mode": "conditional",
+            "reason": "Intermediate case outputs must be checked.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "quality_report"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "merge-outputs-into-final-report",
+            "agent": "report-agent",
+            "mode": "final",
+            "reason": "Generate the final case report.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "final_report"
+            ],
+            "params": {}
+          }
+        ]
+      },
+      {
+        "signal": "case_id_detected",
+        "points": 2,
+        "reason": "The query mentions case 999."
+      },
+      {
+        "signal": "recovery_likely",
+        "points": 2,
+        "reason": "The query likely needs recovery or fallback."
+      },
+      {
+        "decision_point": "error_recovery",
+        "failed_agent": "image-agent",
+        "error_type": "FileNotFoundError",
+        "decision": "switch_to_fallback_agent",
+        "reason": "image-agent failed, so RecoveryManager selected case-metadata-agent.",
+        "fallback_agent": "case-metadata-agent",
+        "observed_result": {
+          "error": "找不到病例目录: /Users/zs/Documents/Codex/2026-06-26/https-github-com-yuplx-hu-ai/work/ai_agent_newl_extracted/AI_AGENT_NEWL/PartB_智能体应用项目/code/npc_dataset_nii/999",
+          "exception_type": "FileNotFoundError"
+        },
+        "new_nodes_added": [
+          "fallback-case-metadata-agent"
+        ]
+      },
+      {
+        "decision_point": "error_recovery",
+        "failed_agent": "mask-agent",
+        "error_type": "FileNotFoundError",
+        "decision": "switch_to_fallback_agent",
+        "reason": "mask-agent failed, so RecoveryManager selected case-metadata-agent.",
+        "fallback_agent": "case-metadata-agent",
+        "observed_result": {
+          "error": "找不到病例目录: /Users/zs/Documents/Codex/2026-06-26/https-github-com-yuplx-hu-ai/work/ai_agent_newl_extracted/AI_AGENT_NEWL/PartB_智能体应用项目/code/npc_dataset_nii/999",
+          "exception_type": "FileNotFoundError"
+        },
+        "new_nodes_added": [
+          "fallback-case-metadata-agent"
+        ]
+      },
+      {
+        "decision_point": "quality_gate",
+        "observed_result": {
+          "text_evidence_count": 3,
+          "retry_count": 0,
+          "mask_foreground_ratio": null,
+          "prediction_status": null
+        },
+        "decision": "pass",
+        "reason": "Intermediate outputs satisfy the current quality rules.",
+        "new_nodes_added": []
+      }
+    ],
+    "runtime_adjustments": [
+      {
+        "source_node": "load-and-summarize-case-image",
+        "new_nodes_added": [
+          "fallback-case-metadata-agent"
+        ]
+      },
+      {
+        "source_node": "analyze-segmentation-mask",
+        "new_nodes_added": [
+          "fallback-case-metadata-agent"
+        ]
+      }
+    ],
+    "retry_count": 0,
+    "recovery_count": 2,
+    "final_report": {
+      "query": "Analyze an invalid case ID NPC_999 and recover gracefully.",
+      "intent": "case_segmentation_analysis",
+      "case_id": "001",
+      "text_evidence_count": 3,
+      "text_evidence_ids": [
+        "text:course-stanford-visualizing-and-understanding-cnns",
+        "text:course-stanford-detection-and-segmentation",
+        "text:diffusion-transformers-image-generation"
+      ],
+      "has_image_summary": false,
+      "has_mask_statistics": false,
+      "has_overlay": false,
+      "target_review": null,
+      "prediction_status": null,
+      "recovery": {
+        "requested_case_id": "999",
+        "available_cases": [
+          "001",
+          "002",
+          "003",
+          "004",
+          "005",
+          "006",
+          "007",
+          "008",
+          "009",
+          "010"
+        ],
+        "selected_fallback_case": "001"
+      }
+    }
+  },
+  {
+    "id": "dyn_011",
+    "question": "Explain why Dice score may be insufficient for small tumor segmentation with local evidence.",
+    "plan": {
+      "plan_id": "dynamic_plan_011",
+      "query": "Explain why Dice score may be insufficient for small tumor segmentation with local evidence.",
+      "intent": "grounded_qa",
+      "complexity_score": 3,
+      "complexity_level": "medium",
+      "case_id": null,
+      "generated_nodes": [
+        {
+          "node_id": "retrieve-text-evidence",
+          "agent": "text-retriever",
+          "mode": "sequential",
+          "reason": "Grounded QA requires local text evidence.",
+          "inputs": [
+            "query"
+          ],
+          "outputs": [
+            "text_evidence"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "validate-intermediate-results",
+          "agent": "quality-validator",
+          "mode": "conditional",
+          "reason": "Evidence must pass the quality gate.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "quality_report"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "rewrite-query-for-retry",
+          "agent": "query-rewriter",
+          "mode": "retry",
+          "reason": "Only one evidence item was retrieved; rewrite the query and retry.",
+          "inputs": [
+            "query",
+            "quality_report"
+          ],
+          "outputs": [
+            "query",
+            "rewrite_reason"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "retrieve-text-evidence-retry",
+          "agent": "text-retriever",
+          "mode": "retry",
+          "reason": "Run text retrieval again with the rewritten query.",
+          "inputs": [
+            "query"
+          ],
+          "outputs": [
+            "text_evidence"
+          ],
+          "params": {
+            "retry": true
+          }
+        },
+        {
+          "node_id": "validate-quality-after-retry",
+          "agent": "quality-validator",
+          "mode": "conditional",
+          "reason": "Validate evidence after retry.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "quality_report"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "merge-outputs-into-final-report",
+          "agent": "report-agent",
+          "mode": "final",
+          "reason": "Generate a grounded final answer.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "final_report"
+          ],
+          "params": {}
+        }
+      ],
+      "generation_decisions": [
+        {
+          "decision_point": "auto_plan_generation",
+          "decision": "generate_runtime_workflow",
+          "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+          "intent": "grounded_qa",
+          "case_id": null,
+          "generated_nodes": [
+            {
+              "node_id": "retrieve-text-evidence",
+              "agent": "text-retriever",
+              "mode": "sequential",
+              "reason": "Grounded QA requires local text evidence.",
+              "inputs": [
+                "query"
+              ],
+              "outputs": [
+                "text_evidence"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "validate-intermediate-results",
+              "agent": "quality-validator",
+              "mode": "conditional",
+              "reason": "Evidence must pass the quality gate.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "quality_report"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "merge-outputs-into-final-report",
+              "agent": "report-agent",
+              "mode": "final",
+              "reason": "Generate a grounded final answer.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "final_report"
+              ],
+              "params": {}
+            }
+          ]
+        },
+        {
+          "signal": "concept_explanation",
+          "points": 1,
+          "reason": "The query asks for a concept explanation."
+        },
+        {
+          "signal": "needs_local_evidence",
+          "points": 2,
+          "reason": "The query asks for grounded evidence."
+        }
+      ],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "runtime_quality_gate"
+      ]
+    },
+    "status": "success",
+    "elapsed_ms": 2231.797,
+    "trace": [
+      {
+        "node_id": "retrieve-text-evidence",
+        "agent": "text-retriever",
+        "mode": "sequential",
+        "status": "success",
+        "elapsed_ms": 1117.313,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "force_insufficient_first_pass",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "text_evidence": [
+            {
+              "record_id": "text:semi-supervised-medical-image-segmentation",
+              "modality": "text",
+              "title": "Semi-Supervised Medical Image Segmentation via Cross Teaching between CNN and Transformer",
+              "text": "本文针对医学图像分割中全监督学习需要大量标注数据的问题，提出了一种基于CNN与Transformer之间交叉教学的半监督学习框架。该方法通过简化深度协同训练为直接使用一个网络的预测作为另一个网络的伪标签来进行端到端的学习。实验表明，在公共基准测试上，此方法优于现有的八种半监督学习方法，并且可能是首次将CNN和Transformer结合用于半监督医学图像分割的研究。",
+              "source": "https://arxiv.org/abs/2112.04894",
+              "metadata": {
+                "knowledge_set_id": "semi-supervised-medical-image-segmentation"
+              },
+              "score": 10
+            }
+          ],
+          "text_evidence_ids": [
+            "text:semi-supervised-medical-image-segmentation"
+          ],
+          "retry_count": 0,
+          "retrieval_strategy": "initial_keyword_scoring"
+        },
+        "decision": null
+      },
+      {
+        "node_id": "validate-intermediate-results",
+        "agent": "quality-validator",
+        "mode": "conditional",
+        "status": "success",
+        "elapsed_ms": 0.006,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "force_insufficient_first_pass",
+          "intent",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "quality_report": {
+            "text_evidence_count": 1,
+            "retry_count": 0,
+            "mask_foreground_ratio": null,
+            "prediction_status": null,
+            "passed": false
+          },
+          "_new_nodes": [
+            {
+              "node_id": "rewrite-query-for-retry",
+              "agent": "query-rewriter",
+              "mode": "retry",
+              "reason": "Only one evidence item was retrieved; rewrite the query and retry.",
+              "inputs": [
+                "query",
+                "quality_report"
+              ],
+              "outputs": [
+                "query",
+                "rewrite_reason"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "retrieve-text-evidence-retry",
+              "agent": "text-retriever",
+              "mode": "retry",
+              "reason": "Run text retrieval again with the rewritten query.",
+              "inputs": [
+                "query"
+              ],
+              "outputs": [
+                "text_evidence"
+              ],
+              "params": {
+                "retry": true
+              }
+            },
+            {
+              "node_id": "validate-quality-after-retry",
+              "agent": "quality-validator",
+              "mode": "conditional",
+              "reason": "Validate evidence after retry.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "quality_report"
+              ],
+              "params": {}
+            }
+          ],
+          "_decision": {
+            "decision_point": "quality_gate",
+            "observed_result": {
+              "text_evidence_count": 1,
+              "retry_count": 0,
+              "mask_foreground_ratio": null,
+              "prediction_status": null
+            },
+            "decision": "add_retry_nodes",
+            "reason": "Fewer than two text evidence items were retrieved for grounded QA.",
+            "new_nodes_added": [
+              "rewrite-query-for-retry",
+              "retrieve-text-evidence-retry",
+              "validate-quality-after-retry"
+            ],
+            "retry_count": 1,
+            "retry_reason": "insufficient_evidence",
+            "strategy_switch": "query_rewrite"
+          }
+        },
+        "decision": {
+          "decision_point": "quality_gate",
+          "observed_result": {
+            "text_evidence_count": 1,
+            "retry_count": 0,
+            "mask_foreground_ratio": null,
+            "prediction_status": null
+          },
+          "decision": "add_retry_nodes",
+          "reason": "Fewer than two text evidence items were retrieved for grounded QA.",
+          "new_nodes_added": [
+            "rewrite-query-for-retry",
+            "retrieve-text-evidence-retry",
+            "validate-quality-after-retry"
+          ],
+          "retry_count": 1,
+          "retry_reason": "insufficient_evidence",
+          "strategy_switch": "query_rewrite"
+        }
+      },
+      {
+        "node_id": "rewrite-query-for-retry",
+        "agent": "query-rewriter",
+        "mode": "retry",
+        "status": "success",
+        "elapsed_ms": 0.001,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "force_insufficient_first_pass",
+          "intent",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "rewrite_reason",
+          "strategy_switch",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "query": "Explain why Dice score may be insufficient for small tumor segmentation with local evidence. Dice score limitation small object segmentation Hausdorff distance boundary error medical image segmentation evaluation",
+          "rewrite_reason": "insufficient_evidence",
+          "strategy_switch": "query_rewrite"
+        },
+        "decision": null
+      },
+      {
+        "node_id": "retrieve-text-evidence-retry",
+        "agent": "text-retriever",
+        "mode": "retry",
+        "status": "success",
+        "elapsed_ms": 1114.271,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "force_insufficient_first_pass",
+          "intent",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "rewrite_reason",
+          "strategy_switch",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "text_evidence": [
+            {
+              "record_id": "text:semi-supervised-medical-image-segmentation",
+              "modality": "text",
+              "title": "Semi-Supervised Medical Image Segmentation via Cross Teaching between CNN and Transformer",
+              "text": "本文针对医学图像分割中全监督学习需要大量标注数据的问题，提出了一种基于CNN与Transformer之间交叉教学的半监督学习框架。该方法通过简化深度协同训练为直接使用一个网络的预测作为另一个网络的伪标签来进行端到端的学习。实验表明，在公共基准测试上，此方法优于现有的八种半监督学习方法，并且可能是首次将CNN和Transformer结合用于半监督医学图像分割的研究。",
+              "source": "https://arxiv.org/abs/2112.04894",
+              "metadata": {
+                "knowledge_set_id": "semi-supervised-medical-image-segmentation"
+              },
+              "score": 22
+            },
+            {
+              "record_id": "text:siamese-diffusion-medical-image-synthesis-segmentation",
+              "modality": "text",
+              "title": "Noise-Consistent Siamese-Diffusion for Medical Image Synthesis and Segmentation",
+              "text": "本文针对医学图像分割中数据稀缺的问题，提出了一种名为Siamese-Diffusion的新方法。该方法通过结合Mask-Diffusion和Image-Diffusion两个组件，并在训练过程中引入噪声一致性损失来提高合成图像的形态保真度。实验结果表明，这种方法不仅提高了合成图像的质量，还增强了分割模型如SANet和UNet在多项指标上的表现。",
+              "source": "https://arxiv.org/abs/2505.06068",
+              "metadata": {
+                "knowledge_set_id": "siamese-diffusion-medical-image-synthesis-segmentation"
+              },
+              "score": 22
+            },
+            {
+              "record_id": "text:transunet-medical-image-segmentation",
+              "modality": "text",
+              "title": "TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation",
+              "text": "本文针对医学图像分割任务提出了一种新的网络架构TransUNet，它结合了Transformer和U-Net的优点。通过利用Transformer的全局自注意力机制来编码从CNN特征图中提取的图像块序列，并与高分辨率CNN特征图相结合以实现精确定位，从而克服了传统U-Net在建模长距离依赖关系上的局限性。实验表明，在多器官分割及心脏分割等多个医学应用上，TransUNet的表现优于现有方法。",
+              "source": "https://arxiv.org/abs/2102.04306",
+              "metadata": {
+                "knowledge_set_id": "transunet-medical-image-segmentation"
+              },
+              "score": 22
+            }
+          ],
+          "text_evidence_ids": [
+            "text:semi-supervised-medical-image-segmentation",
+            "text:siamese-diffusion-medical-image-synthesis-segmentation",
+            "text:transunet-medical-image-segmentation"
+          ],
+          "retry_count": 1,
+          "retrieval_strategy": "query_rewrite_retry"
+        },
+        "decision": null
+      },
+      {
+        "node_id": "validate-quality-after-retry",
+        "agent": "quality-validator",
+        "mode": "conditional",
+        "status": "success",
+        "elapsed_ms": 0.003,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "force_insufficient_first_pass",
+          "intent",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "rewrite_reason",
+          "strategy_switch",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "quality_report": {
+            "text_evidence_count": 3,
+            "retry_count": 1,
+            "mask_foreground_ratio": null,
+            "prediction_status": null,
+            "passed": true
+          },
+          "_new_nodes": [],
+          "_decision": {
+            "decision_point": "quality_gate",
+            "observed_result": {
+              "text_evidence_count": 3,
+              "retry_count": 1,
+              "mask_foreground_ratio": null,
+              "prediction_status": null
+            },
+            "decision": "pass",
+            "reason": "Intermediate outputs satisfy the current quality rules.",
+            "new_nodes_added": []
+          }
+        },
+        "decision": {
+          "decision_point": "quality_gate",
+          "observed_result": {
+            "text_evidence_count": 3,
+            "retry_count": 1,
+            "mask_foreground_ratio": null,
+            "prediction_status": null
+          },
+          "decision": "pass",
+          "reason": "Intermediate outputs satisfy the current quality rules.",
+          "new_nodes_added": []
+        }
+      },
+      {
+        "node_id": "merge-outputs-into-final-report",
+        "agent": "report-agent",
+        "mode": "final",
+        "status": "success",
+        "elapsed_ms": 0.002,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "final_report",
+          "force_insufficient_first_pass",
+          "intent",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "rewrite_reason",
+          "strategy_switch",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "final_report": {
+            "query": "Explain why Dice score may be insufficient for small tumor segmentation with local evidence.",
+            "intent": "grounded_qa",
+            "case_id": null,
+            "text_evidence_count": 3,
+            "text_evidence_ids": [
+              "text:semi-supervised-medical-image-segmentation",
+              "text:siamese-diffusion-medical-image-synthesis-segmentation",
+              "text:transunet-medical-image-segmentation"
+            ],
+            "has_image_summary": false,
+            "has_mask_statistics": false,
+            "has_overlay": false,
+            "target_review": null,
+            "prediction_status": null,
+            "recovery": null
+          }
+        },
+        "decision": null
+      }
+    ],
+    "decision_trace": [
+      {
+        "decision_point": "auto_plan_generation",
+        "decision": "generate_runtime_workflow",
+        "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+        "intent": "grounded_qa",
+        "case_id": null,
+        "generated_nodes": [
+          {
+            "node_id": "retrieve-text-evidence",
+            "agent": "text-retriever",
+            "mode": "sequential",
+            "reason": "Grounded QA requires local text evidence.",
+            "inputs": [
+              "query"
+            ],
+            "outputs": [
+              "text_evidence"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "validate-intermediate-results",
+            "agent": "quality-validator",
+            "mode": "conditional",
+            "reason": "Evidence must pass the quality gate.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "quality_report"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "merge-outputs-into-final-report",
+            "agent": "report-agent",
+            "mode": "final",
+            "reason": "Generate a grounded final answer.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "final_report"
+            ],
+            "params": {}
+          }
+        ]
+      },
+      {
+        "signal": "concept_explanation",
+        "points": 1,
+        "reason": "The query asks for a concept explanation."
+      },
+      {
+        "signal": "needs_local_evidence",
+        "points": 2,
+        "reason": "The query asks for grounded evidence."
+      },
+      {
+        "decision_point": "quality_gate",
+        "observed_result": {
+          "text_evidence_count": 1,
+          "retry_count": 0,
+          "mask_foreground_ratio": null,
+          "prediction_status": null
+        },
+        "decision": "add_retry_nodes",
+        "reason": "Fewer than two text evidence items were retrieved for grounded QA.",
+        "new_nodes_added": [
+          "rewrite-query-for-retry",
+          "retrieve-text-evidence-retry",
+          "validate-quality-after-retry"
+        ],
+        "retry_count": 1,
+        "retry_reason": "insufficient_evidence",
+        "strategy_switch": "query_rewrite"
+      },
+      {
+        "decision_point": "quality_gate",
+        "observed_result": {
+          "text_evidence_count": 3,
+          "retry_count": 1,
+          "mask_foreground_ratio": null,
+          "prediction_status": null
+        },
+        "decision": "pass",
+        "reason": "Intermediate outputs satisfy the current quality rules.",
+        "new_nodes_added": []
+      }
+    ],
+    "runtime_adjustments": [
+      {
+        "source_node": "validate-intermediate-results",
+        "new_nodes_added": [
+          "rewrite-query-for-retry",
+          "retrieve-text-evidence-retry",
+          "validate-quality-after-retry"
+        ]
+      }
+    ],
+    "retry_count": 1,
+    "recovery_count": 0,
+    "final_report": {
+      "query": "Explain why Dice score may be insufficient for small tumor segmentation with local evidence.",
+      "intent": "grounded_qa",
+      "case_id": null,
+      "text_evidence_count": 3,
+      "text_evidence_ids": [
+        "text:semi-supervised-medical-image-segmentation",
+        "text:siamese-diffusion-medical-image-synthesis-segmentation",
+        "text:transunet-medical-image-segmentation"
+      ],
+      "has_image_summary": false,
+      "has_mask_statistics": false,
+      "has_overlay": false,
+      "target_review": null,
+      "prediction_status": null,
+      "recovery": null
+    }
+  },
+  {
+    "id": "dyn_012",
+    "question": "Generate a final case report from text, image and mask evidence for NPC_001.",
+    "plan": {
+      "plan_id": "dynamic_plan_012",
+      "query": "Generate a final case report from text, image and mask evidence for NPC_001.",
+      "intent": "case_segmentation_analysis",
+      "complexity_score": 6,
+      "complexity_level": "complex",
+      "case_id": "001",
+      "generated_nodes": [
+        {
+          "node_id": "retrieve-text-evidence",
+          "agent": "text-retriever",
+          "mode": "parallel",
+          "reason": "Case analysis needs literature evidence.",
+          "inputs": [
+            "query"
+          ],
+          "outputs": [
+            "text_evidence"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "load-and-summarize-case-image",
+          "agent": "image-agent",
+          "mode": "parallel",
+          "reason": "The query mentions a case image.",
+          "inputs": [
+            "case_id"
+          ],
+          "outputs": [
+            "image_summary"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "analyze-segmentation-mask",
+          "agent": "mask-agent",
+          "mode": "parallel",
+          "reason": "The query needs segmentation mask statistics.",
+          "inputs": [
+            "case_id"
+          ],
+          "outputs": [
+            "mask_statistics"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "validate-intermediate-results",
+          "agent": "quality-validator",
+          "mode": "conditional",
+          "reason": "Intermediate case outputs must be checked.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "quality_report"
+          ],
+          "params": {}
+        },
+        {
+          "node_id": "merge-outputs-into-final-report",
+          "agent": "report-agent",
+          "mode": "final",
+          "reason": "Generate the final case report.",
+          "inputs": [
+            "context"
+          ],
+          "outputs": [
+            "final_report"
+          ],
+          "params": {}
+        }
+      ],
+      "generation_decisions": [
+        {
+          "decision_point": "auto_plan_generation",
+          "decision": "generate_runtime_workflow",
+          "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+          "intent": "case_segmentation_analysis",
+          "case_id": "001",
+          "generated_nodes": [
+            {
+              "node_id": "retrieve-text-evidence",
+              "agent": "text-retriever",
+              "mode": "parallel",
+              "reason": "Case analysis needs literature evidence.",
+              "inputs": [
+                "query"
+              ],
+              "outputs": [
+                "text_evidence"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "load-and-summarize-case-image",
+              "agent": "image-agent",
+              "mode": "parallel",
+              "reason": "The query mentions a case image.",
+              "inputs": [
+                "case_id"
+              ],
+              "outputs": [
+                "image_summary"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "analyze-segmentation-mask",
+              "agent": "mask-agent",
+              "mode": "parallel",
+              "reason": "The query needs segmentation mask statistics.",
+              "inputs": [
+                "case_id"
+              ],
+              "outputs": [
+                "mask_statistics"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "validate-intermediate-results",
+              "agent": "quality-validator",
+              "mode": "conditional",
+              "reason": "Intermediate case outputs must be checked.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "quality_report"
+              ],
+              "params": {}
+            },
+            {
+              "node_id": "merge-outputs-into-final-report",
+              "agent": "report-agent",
+              "mode": "final",
+              "reason": "Generate the final case report.",
+              "inputs": [
+                "context"
+              ],
+              "outputs": [
+                "final_report"
+              ],
+              "params": {}
+            }
+          ]
+        },
+        {
+          "signal": "needs_local_evidence",
+          "points": 2,
+          "reason": "The query asks for grounded evidence."
+        },
+        {
+          "signal": "case_id_detected",
+          "points": 2,
+          "reason": "The query mentions case 001."
+        },
+        {
+          "signal": "image_or_mask_required",
+          "points": 2,
+          "reason": "The query needs image or mask processing."
+        }
+      ],
+      "expected_dynamic_features": [
+        "auto_plan_generation",
+        "decision_trace",
+        "parallel_sub_agents",
+        "runtime_quality_gate"
+      ]
+    },
+    "status": "success",
+    "elapsed_ms": 1125.092,
+    "trace": [
+      {
+        "node_id": "retrieve-text-evidence",
+        "agent": "text-retriever",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 1124.824,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "text_evidence": [
+            {
+              "record_id": "text:2d-mamba-for-wsi-classification",
+              "modality": "text",
+              "title": "2DMamba: Efficient State Space Model for Image Representation with Applications on Giga-Pixel Whole Slide Image Classification",
+              "text": "本文提出了一种名为2DMamba的新颖二维选择性状态空间模型框架，旨在解决大规模二维图像（如Giga-Pixel全切片图像）的高效建模问题。该方法通过结合图像的二维空间结构与Mamba模型，并采用高度优化的硬件感知操作符来实现空间连续性和计算效率的同时提升。实验结果表明，在WSI分类和生存分析等任务上，2DMamba相较于现有方法在AUC、F1分数、准确率及C-index等多个指标上均有显著改进。",
+              "source": "https://arxiv.org/abs/2412.00678",
+              "metadata": {
+                "knowledge_set_id": "2d-mamba-for-wsi-classification"
+              },
+              "score": 39
+            },
+            {
+              "record_id": "text:2d-mamba-image-representation",
+              "modality": "text",
+              "title": "2DMamba: Efficient State Space Model for Image Representation with Applications on Giga-Pixel Whole Slide Image Classification",
+              "text": "本文针对大规模二维图像上下文建模问题，提出了一种名为2DMamba的新颖选择性状态空间模型框架。该模型结合了图像的二维空间结构，并通过高度优化的硬件感知算子实现了空间连续性和计算效率的平衡。实验结果表明，在WSI分类和生存分析等任务上，2DMamba相较于现有方法在AUC、F1分数、准确率及C-index等多个指标上均有显著提升。",
+              "source": "https://arxiv.org/abs/2412.00678",
+              "metadata": {
+                "knowledge_set_id": "2d-mamba-image-representation"
+              },
+              "score": 38
+            },
+            {
+              "record_id": "text:segmamba-3d-medical-image-segmentation",
+              "modality": "text",
+              "title": "SegMamba: Long-range Sequential Modeling Mamba For 3D Medical Image Segmentation",
+              "text": "本文提出了一种新的三维医学图像分割模型SegMamba，该模型结合了U形结构与Mamba技术以有效捕捉全体积特征中的长距离依赖关系。相比基于Transformer的方法，SegMamba在处理高分辨率图像时表现出更高的效率和更好的性能。此外，研究者还构建了一个大规模的结直肠癌分割数据集CRC-500用于评估。实验结果表明，SegMamba不仅在新数据集上表现优异，在其他公开基准测试中也展示了其普遍适用性。",
+              "source": "https://arxiv.org/abs/2401.13560",
+              "metadata": {
+                "knowledge_set_id": "segmamba-3d-medical-image-segmentation"
+              },
+              "score": 38
+            }
+          ],
+          "text_evidence_ids": [
+            "text:2d-mamba-for-wsi-classification",
+            "text:2d-mamba-image-representation",
+            "text:segmamba-3d-medical-image-segmentation"
+          ],
+          "retry_count": 0,
+          "retrieval_strategy": "initial_keyword_scoring"
+        },
+        "decision": null
+      },
+      {
+        "node_id": "load-and-summarize-case-image",
+        "agent": "image-agent",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 3.14,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "image_summary",
+          "intent",
+          "original_query",
+          "query",
+          "requires_grounded_evidence"
+        ],
+        "output": {
+          "image_summary": {
+            "case_id": "001",
+            "shape": [
+              128,
+              128,
+              64
+            ],
+            "mean": -0.0,
+            "std": 1.0,
+            "min": -0.789004,
+            "max": 6.604631
+          }
+        },
+        "decision": null
+      },
+      {
+        "node_id": "analyze-segmentation-mask",
+        "agent": "mask-agent",
+        "mode": "parallel",
+        "status": "success",
+        "elapsed_ms": 9.685,
+        "input_keys": [
+          "case_id",
+          "dataset_dir",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "query",
+          "requires_grounded_evidence"
+        ],
+        "output": {
+          "mask_statistics": {
+            "case_id": "001",
+            "shape": [
+              128,
+              128,
+              64
+            ],
+            "labels": [
+              0,
+              1
+            ],
+            "foreground_voxels": 12976,
+            "foreground_ratio": 0.012375,
+            "bbox": [
+              43,
+              45,
+              21,
+              79,
+              74,
+              56
+            ],
+            "image_mean": -0.0,
+            "image_std": 1.0
+          }
+        },
+        "decision": null
+      },
+      {
+        "node_id": "validate-intermediate-results",
+        "agent": "quality-validator",
+        "mode": "conditional",
+        "status": "success",
+        "elapsed_ms": 0.004,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "image_summary",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "quality_report": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": 0.012375,
+            "prediction_status": null,
+            "passed": true
+          },
+          "_new_nodes": [],
+          "_decision": {
+            "decision_point": "quality_gate",
+            "observed_result": {
+              "text_evidence_count": 3,
+              "retry_count": 0,
+              "mask_foreground_ratio": 0.012375,
+              "prediction_status": null
+            },
+            "decision": "pass",
+            "reason": "Intermediate outputs satisfy the current quality rules.",
+            "new_nodes_added": []
+          }
+        },
+        "decision": {
+          "decision_point": "quality_gate",
+          "observed_result": {
+            "text_evidence_count": 3,
+            "retry_count": 0,
+            "mask_foreground_ratio": 0.012375,
+            "prediction_status": null
+          },
+          "decision": "pass",
+          "reason": "Intermediate outputs satisfy the current quality rules.",
+          "new_nodes_added": []
+        }
+      },
+      {
+        "node_id": "merge-outputs-into-final-report",
+        "agent": "report-agent",
+        "mode": "final",
+        "status": "success",
+        "elapsed_ms": 0.002,
+        "input_keys": [
+          "_decision",
+          "_new_nodes",
+          "case_id",
+          "dataset_dir",
+          "final_report",
+          "image_summary",
+          "intent",
+          "mask_statistics",
+          "original_query",
+          "quality_report",
+          "query",
+          "requires_grounded_evidence",
+          "retrieval_strategy",
+          "retry_count",
+          "text_evidence",
+          "text_evidence_ids"
+        ],
+        "output": {
+          "final_report": {
+            "query": "Generate a final case report from text, image and mask evidence for NPC_001.",
+            "intent": "case_segmentation_analysis",
+            "case_id": "001",
+            "text_evidence_count": 3,
+            "text_evidence_ids": [
+              "text:2d-mamba-for-wsi-classification",
+              "text:2d-mamba-image-representation",
+              "text:segmamba-3d-medical-image-segmentation"
+            ],
+            "has_image_summary": true,
+            "has_mask_statistics": true,
+            "has_overlay": false,
+            "target_review": null,
+            "prediction_status": null,
+            "recovery": null
+          }
+        },
+        "decision": null
+      }
+    ],
+    "decision_trace": [
+      {
+        "decision_point": "auto_plan_generation",
+        "decision": "generate_runtime_workflow",
+        "reason": "The system builds nodes from query signals and the agent registry, not from workflows.json.",
+        "intent": "case_segmentation_analysis",
+        "case_id": "001",
+        "generated_nodes": [
+          {
+            "node_id": "retrieve-text-evidence",
+            "agent": "text-retriever",
+            "mode": "parallel",
+            "reason": "Case analysis needs literature evidence.",
+            "inputs": [
+              "query"
+            ],
+            "outputs": [
+              "text_evidence"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "load-and-summarize-case-image",
+            "agent": "image-agent",
+            "mode": "parallel",
+            "reason": "The query mentions a case image.",
+            "inputs": [
+              "case_id"
+            ],
+            "outputs": [
+              "image_summary"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "analyze-segmentation-mask",
+            "agent": "mask-agent",
+            "mode": "parallel",
+            "reason": "The query needs segmentation mask statistics.",
+            "inputs": [
+              "case_id"
+            ],
+            "outputs": [
+              "mask_statistics"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "validate-intermediate-results",
+            "agent": "quality-validator",
+            "mode": "conditional",
+            "reason": "Intermediate case outputs must be checked.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "quality_report"
+            ],
+            "params": {}
+          },
+          {
+            "node_id": "merge-outputs-into-final-report",
+            "agent": "report-agent",
+            "mode": "final",
+            "reason": "Generate the final case report.",
+            "inputs": [
+              "context"
+            ],
+            "outputs": [
+              "final_report"
+            ],
+            "params": {}
+          }
+        ]
+      },
+      {
+        "signal": "needs_local_evidence",
+        "points": 2,
+        "reason": "The query asks for grounded evidence."
+      },
+      {
+        "signal": "case_id_detected",
+        "points": 2,
+        "reason": "The query mentions case 001."
+      },
+      {
+        "signal": "image_or_mask_required",
+        "points": 2,
+        "reason": "The query needs image or mask processing."
+      },
+      {
+        "decision_point": "quality_gate",
+        "observed_result": {
+          "text_evidence_count": 3,
+          "retry_count": 0,
+          "mask_foreground_ratio": 0.012375,
+          "prediction_status": null
+        },
+        "decision": "pass",
+        "reason": "Intermediate outputs satisfy the current quality rules.",
+        "new_nodes_added": []
+      }
+    ],
+    "runtime_adjustments": [],
+    "retry_count": 0,
+    "recovery_count": 0,
+    "final_report": {
+      "query": "Generate a final case report from text, image and mask evidence for NPC_001.",
+      "intent": "case_segmentation_analysis",
+      "case_id": "001",
+      "text_evidence_count": 3,
+      "text_evidence_ids": [
+        "text:2d-mamba-for-wsi-classification",
+        "text:2d-mamba-image-representation",
+        "text:segmamba-3d-medical-image-segmentation"
+      ],
+      "has_image_summary": true,
+      "has_mask_statistics": true,
+      "has_overlay": false,
+      "target_review": null,
+      "prediction_status": null,
+      "recovery": null
+    }
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "id": "Q0009",
+  "question": "Which terms belong to ADME?\nA. Absorption\nB. Distribution\nC. Metabolism\nD. Excretion",
+  "type": "multiple-choice",
+  "difficulty": 2,
+  "answer": {
+    "type": "exact",
+    "content": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-010-adme",
+      "original_text": "ADME stands for absorption, distribution, metabolism, and excretion. These properties determine how a compound enters the body, reaches tissues, is chemically transformed, and leaves the body. ADME problems can prevent a potent compound from becoming a useful drug because the compound may not reach the target at sufficient exposure or may be cleared too quickly."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "adme",
+        "absorption",
+        "distribution",
+        "metabolism",
+        "excretion"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "QO001",
+  "question": "What is the molecular weight of aspirin?",
+  "type": "orchestration-test",
+  "difficulty": 6,
+  "expected_dynamic_chain": [
+    "skill:pubchem",
+    "synthesizer",
+    "validator"
+  ],
+  "evaluation_note": "Used to demonstrate automatic workflow generation, dynamic adjustment, loop/retry, or error recovery."
+}

@@ -1,0 +1,5 @@
+{
+  "topic": "functional diffusion for perturbation modeling",
+  "title": "PerturbDiff Functional Diffusion Model",
+  "keywords": ["PerturbDiff", "functional diffusion", "RKHS", "kernel mean embedding", "Hilbert space", "MM-DiT", "marginal pretraining", "61 million cells", "distribution-level", "single-cell", "perturbation prediction", "diffusion model", "gene expression"]
+}

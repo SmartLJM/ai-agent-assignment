@@ -1,0 +1,5 @@
+{
+  "topic": "calibrated evaluation metrics for perturbation models",
+  "title": "Dynamic Range Fraction Calibration for Perturbation Metrics",
+  "keywords": ["Dynamic Range Fraction", "DRF", "calibration", "interpolated duplicate baseline", "deep learning", "perturbation prediction", "metric bias", "14 datasets", "13 metrics", "GEARS", "CellFlow", "evaluation", "benchmark", "model comparison"]
+}

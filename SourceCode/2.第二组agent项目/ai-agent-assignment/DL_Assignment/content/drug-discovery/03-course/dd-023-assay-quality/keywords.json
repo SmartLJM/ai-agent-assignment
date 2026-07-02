@@ -1,0 +1,8 @@
+{
+  "drug-discovery": [
+    "assay-quality",
+    "z-factor",
+    "controls",
+    "reproducibility"
+  ]
+}

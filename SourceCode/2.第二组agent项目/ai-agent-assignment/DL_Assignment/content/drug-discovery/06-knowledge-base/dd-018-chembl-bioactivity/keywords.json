@@ -1,0 +1,8 @@
+{
+  "drug-discovery": [
+    "chembl",
+    "bioactivity",
+    "compound-target-assay",
+    "database"
+  ]
+}

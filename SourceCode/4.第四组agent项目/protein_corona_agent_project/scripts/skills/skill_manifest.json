@@ -1,0 +1,33 @@
+{
+  "name": "UniProtProteinSkill",
+  "version": "1.0.0",
+  "description": "Query UniProt public REST API for protein and gene information, then summarize the result for cell omics questions.",
+  "provider": "UniProt public REST API",
+  "requires_api_key": false,
+  "tools": [
+    {
+      "name": "search_protein",
+      "description": "Search reviewed human UniProtKB entries by gene name, protein name, or accession.",
+      "input_schema": {
+        "query": "protein name, gene symbol, or accession",
+        "organism_id": "NCBI taxonomy id, default 9606",
+        "size": "maximum number of results"
+      }
+    },
+    {
+      "name": "get_protein",
+      "description": "Fetch one UniProtKB entry by accession.",
+      "input_schema": {
+        "accession": "UniProt accession, e.g. P04637"
+      }
+    },
+    {
+      "name": "explain_protein_for_context",
+      "description": "Search a protein and return a compact explanation tailored to a biological question.",
+      "input_schema": {
+        "query": "protein or gene name",
+        "context_question": "user's biological question"
+      }
+    }
+  ]
+}

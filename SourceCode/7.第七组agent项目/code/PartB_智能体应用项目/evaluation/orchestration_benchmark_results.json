@@ -1,0 +1,143 @@
+{
+  "total": 12,
+  "passed": 12,
+  "pass_rate": 1.0,
+  "results": [
+    {
+      "id": "ORQ001",
+      "question": "系统是否提供至少3个预定义工作流模板？",
+      "category": "template-coverage",
+      "passed": true,
+      "observed": 4
+    },
+    {
+      "id": "ORQ002",
+      "question": "系统是否明确支持串行、并行和条件分支三种模式？",
+      "category": "mode-coverage",
+      "passed": true,
+      "observed": [
+        "conditional",
+        "parallel",
+        "sequential"
+      ]
+    },
+    {
+      "id": "ORQ003",
+      "question": "提交审计串行工作流能否成功完成？",
+      "category": "sequential",
+      "passed": true,
+      "observed": "success"
+    },
+    {
+      "id": "ORQ004",
+      "question": "串行工作流是否在节点之间完整传递审计结果？",
+      "category": "data-transfer",
+      "passed": true,
+      "observed": [
+        "audit_summary",
+        "submission_audit"
+      ]
+    },
+    {
+      "id": "ORQ005",
+      "question": "多模态串行工作流是否展示两个不同Agent角色？",
+      "category": "agent-roles",
+      "passed": true,
+      "observed": [
+        "answer-analyst",
+        "multimodal-retriever"
+      ]
+    },
+    {
+      "id": "ORQ006",
+      "question": "病例并行分析是否真正运行至少3个并行Agent节点？",
+      "category": "parallel",
+      "passed": true,
+      "observed": [
+        "image-agent",
+        "mask-agent",
+        "case-retriever"
+      ]
+    },
+    {
+      "id": "ORQ007",
+      "question": "并行工作流是否无冲突地合并影像、标注和检索结果？",
+      "category": "parallel-merge",
+      "passed": true,
+      "observed": [
+        "case_id",
+        "evidence",
+        "ground_truth_mask",
+        "image",
+        "parallel_outputs_complete"
+      ]
+    },
+    {
+      "id": "ORQ008",
+      "question": "阈值为0时条件工作流是否选择大区域审查分支？",
+      "category": "conditional-true",
+      "passed": true,
+      "observed": "large-foreground-review"
+    },
+    {
+      "id": "ORQ009",
+      "question": "阈值为1时条件工作流是否选择小区域审查分支？",
+      "category": "conditional-false",
+      "passed": true,
+      "observed": "small-foreground-review"
+    },
+    {
+      "id": "ORQ010",
+      "question": "病例ID缺失时工作流是否返回结构化失败轨迹？",
+      "category": "edge-case",
+      "passed": true,
+      "observed": {
+        "status": "failed",
+        "failed_steps": [
+          "parallel-case-workers",
+          "analyze-image",
+          "analyze-mask",
+          "retrieve-case-evidence"
+        ],
+        "errors": [
+          null,
+          "该工作流需要 case_id。",
+          "该工作流需要 case_id。",
+          "该工作流需要 case_id。"
+        ]
+      }
+    },
+    {
+      "id": "ORQ011",
+      "question": "调用未知工作流时系统是否明确拒绝？",
+      "category": "edge-case",
+      "passed": true,
+      "observed": "'未知工作流：not-a-workflow'"
+    },
+    {
+      "id": "ORQ012",
+      "question": "是否生成可直接展示的三模式工作流程图？",
+      "category": "visualization",
+      "passed": true,
+      "observed": {
+        "workflow_count": 4,
+        "supported_modes": [
+          "sequential",
+          "parallel",
+          "conditional"
+        ],
+        "files": [
+          "evaluation/flowcharts/submission_audit.mmd",
+          "evaluation/flowcharts/grounded_multimodal_qa.mmd",
+          "evaluation/flowcharts/parallel_case_analysis.mmd",
+          "evaluation/flowcharts/conditional_case_review.mmd",
+          "evaluation/flowcharts/workflow_modes.svg",
+          "evaluation/flowcharts/multimodal_construction.svg",
+          "evaluation/flowcharts/multimodal_retrieval.svg",
+          "evaluation/flowcharts/multimodal_construction.mmd",
+          "evaluation/flowcharts/multimodal_retrieval.mmd"
+        ]
+      }
+    }
+  ]
+}

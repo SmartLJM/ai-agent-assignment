@@ -1,0 +1,38 @@
+{
+  "id": "Q0016",
+  "question": "List three uses of AI in drug discovery.",
+  "type": "short-answer",
+  "difficulty": 3,
+  "answer": {
+    "type": "keypoint",
+    "content": "AI can support target identification, bioactivity prediction, virtual screening, molecular generation, synthesis planning, ADMET prediction, toxicity prediction, drug repurposing, and literature extraction.",
+    "keypoints": [
+      {
+        "point": "target identification or bioactivity prediction",
+        "score": 3.33
+      },
+      {
+        "point": "virtual screening or molecular generation",
+        "score": 3.33
+      },
+      {
+        "point": "ADMET/toxicity/repurposing/literature extraction",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-017-ai-machine-learning",
+      "original_text": "Artificial intelligence supports drug discovery by learning patterns from chemical, biological, clinical, imaging, and literature data. Applications include target identification, bioactivity prediction, virtual screening, de novo molecular generation, synthesis planning, ADMET prediction, toxicity prediction, drug repurposing, and scientific information extraction."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "artificial-intelligence",
+        "machine-learning"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": "Q0001",
+  "question": "What is target identification in drug discovery?",
+  "type": "short-answer",
+  "difficulty": 3,
+  "answer": {
+    "type": "keypoint",
+    "content": "Target identification is the selection of a disease-relevant biological molecule, pathway, or cellular process that can be modified to produce a therapeutic effect.",
+    "keypoints": [
+      {
+        "point": "selection of disease-relevant target",
+        "score": 3.33
+      },
+      {
+        "point": "therapeutic modulation",
+        "score": 3.33
+      },
+      {
+        "point": "causal disease relevance",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-001-target-identification",
+      "original_text": "Target identification is the selection of a disease-relevant biological molecule, pathway, or cellular process that can be modified to produce a therapeutic effect. A strong target is not simply associated with a disease; it should have evidence that changing the target can causally improve the disease phenotype. Evidence can come from human genetics, genomics, proteomics, pathway biology, patient data, perturbation experiments, and literature mining."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "target-identification",
+        "disease-biology"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+    "id": "doc_016",
+    "source": "Few-Shot_Lung_Cancer_Classification_Using_Prototypical_Networks.pdf",
+    "question": "文献中将U-Net列为关键词之一，但正文未描述其在原型网络框架中的具体作用（如是否用于病灶分割以生成ROI输入）；那么U-Net在此研究中是作为独立模块参与流程，还是仅作为对比基线模型之一？",
+    "answer": "U-Net在此研究中既未作为功能模块（如病灶分割器）集成到原型网络流程中，也未作为对比基线模型进行实验评估；它仅被列为Keywords，属于文献综述中提及的既有方法（如Nicholas et al. [14]的few-shot U-Net用于肺部病灶分割），但本研究实际采用的特征提取主干为VGG16、ResNet50和DenseNet三种预训练CNN，全文未实施或验证U-Net架构。"
+}

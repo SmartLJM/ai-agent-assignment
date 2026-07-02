@@ -1,0 +1,6 @@
+{
+    "id": "doc_007",
+    "source": "CMVAECausal Meta VAE for Unsupervised MetaLearning.pdf",
+    "question": "CMV AE如何利用Independent Causal Mechanism（ICM）原则实现对混杂先验的解耦？具体而言，ICM如何支撑其因果因子分解与干预设计？",
+    "answer": "ICM原则指出：每个变量在其因果父节点下的条件分布是独立且模块化的，即P(Di|PA(i))的变化不会影响其他P(Dj|PA(j))（j≠i）。CMV AE据此假设先验变量D1,…,Dd的联合分布可唯一分解为P(D)=∏_i P(Di|PA(i))，其中PA(i)为其因果父节点集合；该分解对应于一个DAG结构（如'flying→sky'和'flying→wing'），使原本统计依赖的先验（如sky与wing）在给定共同原因（flying）条件下条件独立。由此，CMV AE可通过do-intervention（如do(Di=d_i)）单独切断某一先验的影响而不扰动其余机制，从而消除其作为混杂因子对X→Y预测路径的干扰，实现真正的因果表征学习。"
+}

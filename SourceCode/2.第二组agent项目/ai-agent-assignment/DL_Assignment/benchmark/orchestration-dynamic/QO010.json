@@ -1,0 +1,13 @@
+{
+  "id": "QO010",
+  "question": "What is a good workflow for a complex drug-discovery question needing sources and a chemical lookup?",
+  "type": "orchestration-test",
+  "difficulty": 6,
+  "expected_dynamic_chain": [
+    "dynamic-planner",
+    "skill",
+    "retrieval",
+    "validator"
+  ],
+  "evaluation_note": "Used to demonstrate automatic workflow generation, dynamic adjustment, loop/retry, or error recovery."
+}

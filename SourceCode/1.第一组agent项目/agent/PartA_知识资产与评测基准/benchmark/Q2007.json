@@ -1,0 +1,27 @@
+{
+    "id": "Q2007",
+    "question": "在基因表达调控的多层级框架中，为什么将‘转录后调控（post-transcriptional regulation）’视为独立于‘转录调控（transcriptional regulation）’的关键控制层？请结合至少两个分子机制实例，并说明其对细胞响应动态性的影响。",
+    "type": "short-answer",
+    "difficulty": 5,
+    "answer": {
+        "type": "similar",
+        "content": "转录后调控独立于转录调控，因其作用发生在mRNA已合成但尚未翻译为蛋白的阶段，提供了快速、可逆且不依赖新转录的精细调控能力。两个典型机制：（1）microRNA介导的mRNA降解或翻译抑制——例如miR-21靶向PTEN mRNA 3'UTR，迅速降低抑癌蛋白PTEN丰度，使细胞在应激下快速切换增殖状态；（2）RNA结合蛋白（RBP）调控的可变剪接与核质转运——例如NOVA蛋白在神经元中调控NMDA受体亚基GluN1的剪接异构体，决定受体钙通透性，实现突触可塑性的毫秒级适应。这些机制绕过转录起始的慢速过程（需染色质重塑、Pol II招募等），使细胞能在数分钟内重编程蛋白组，显著提升响应动态性与环境适应性。"
+    },
+    "sources": [
+        {
+            "knowledge_set_id": "course_007",
+            "original_text": "MIT Lecture Notes"
+        }
+    ],
+    "theme": [
+        {
+            "genomic-data-science": [
+                "基因调控层级",
+                "转录调控",
+                "转录后调控",
+                "信号网络",
+                "代谢网络"
+            ]
+        }
+    ]
+}

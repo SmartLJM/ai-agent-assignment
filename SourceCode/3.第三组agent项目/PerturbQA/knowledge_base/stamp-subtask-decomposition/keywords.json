@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "STAMP: Subtask Decomposition Modeling for Genetic Perturbation Prediction",
+  "keywords": ["STAMP", "subtask decomposition", "genetic perturbation", "DEG prediction", "expression direction", "combinatorial perturbation", "cross-cell-line", "scGPT"]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "Q0011",
+  "question": "What does pharmacokinetics study?",
+  "type": "short-answer",
+  "difficulty": 3,
+  "answer": {
+    "type": "keypoint",
+    "content": "Pharmacokinetics studies what the body does to a drug over time, including absorption, distribution, metabolism, excretion, clearance, half-life, bioavailability, and exposure.",
+    "keypoints": [
+      {
+        "point": "what body does to drug",
+        "score": 3.33
+      },
+      {
+        "point": "ADME over time",
+        "score": 3.33
+      },
+      {
+        "point": "parameters such as half-life or clearance",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-012-pharmacokinetics",
+      "original_text": "Pharmacokinetics describes what the body does to a drug over time. It covers absorption, distribution, metabolism, and excretion as dynamic processes after dosing. Common pharmacokinetic parameters include half-life, clearance, volume of distribution, bioavailability, maximum concentration, time to maximum concentration, and area under the concentration-time curve."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "pharmacokinetics",
+        "half-life",
+        "clearance"
+      ]
+    }
+  ]
+}

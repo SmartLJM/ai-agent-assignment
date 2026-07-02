@@ -1,0 +1,38 @@
+{
+  "id": "Q0022",
+  "question": "Why are orthogonal assays useful after a primary screen?",
+  "type": "short-answer",
+  "difficulty": 4,
+  "answer": {
+    "type": "keypoint",
+    "content": "Orthogonal assays are useful because they confirm activity with a different assay format and help identify artifacts such as reporter interference, aggregation, nonspecific reactivity, or cytotoxicity.",
+    "keypoints": [
+      {
+        "point": "different assay format",
+        "score": 3.33
+      },
+      {
+        "point": "confirms activity",
+        "score": 3.33
+      },
+      {
+        "point": "detects artifacts",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-023-assay-quality",
+      "original_text": "Assay quality determines whether screening results are interpretable. A screening assay should have relevant biology, stable reagents, robust signal, acceptable variability, and suitable positive and negative controls. Poor assays generate misleading hit lists regardless of how advanced the downstream computational method is."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "assay-quality",
+        "controls"
+      ]
+    }
+  ]
+}

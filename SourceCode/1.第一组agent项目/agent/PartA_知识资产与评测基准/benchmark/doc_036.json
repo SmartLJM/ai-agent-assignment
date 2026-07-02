@@ -1,0 +1,6 @@
+{
+    "id": "doc_036",
+    "source": "Multi-attention Meta Learning for Few-shot Fine-grained Image Recognition.pdf",
+    "question": "文献中提出的MattML方法如何实现‘任务相关敏感初始化’？该机制与传统元学习中对整个网络参数的初始化有何本质区别？",
+    "answer": "MattML通过任务学习器（task learner）生成任务表征，并利用该表征驱动权重生成器（weight generator）对基础学习器中分类器的初始权重进行注意力调制（attended initialization），从而赋予分类器对当前少样本任务的语义敏感性；而两个CBAM模块则保持其结构化注意力能力以定位判别性局部区域。这与传统元学习（如MAML）中对整个网络参数进行统一、任务无关的初始化有本质区别：后者优化的是全局可迁移的初始参数，适用于任意任务；而MattML将初始化解耦——CBAM参数保留通用局部感知能力，分类器权重则被显式注入任务特定先验，实现了‘模块化初始化’，更契合细粒度识别中‘共享局部特征提取器+任务定制决策头’的认知需求。"
+}

@@ -1,0 +1,25 @@
+{
+    "id": "Q2017",
+    "question": "在利用孟德尔随机化（MR）推断DNA甲基化水平变化对阿尔茨海默病（AD）的因果效应时，为什么必须满足‘工具变量三假设’？请逐一解释每个假设在此场景下的具体生物学和统计学含义，并说明若违反‘无混杂’假设（即存在与甲基化和AD均相关的未测量混杂因素），会导致何种因果推断偏差。",
+    "type": "short-answer",
+    "difficulty": 5,
+    "answer": {
+        "type": "similar",
+        "content": "孟德尔随机化要求遗传变异（如CpG位点附近的SNP）作为工具变量（IV）满足三个核心假设：（1）关联性（Relevance）：该SNP必须与暴露（即目标CpG位点的甲基化水平）显著相关——通常通过cis-meQTL分析验证，p<5×10⁻⁸；（2）独立性（Independence）：SNP与所有混杂因素（如年龄、APOE ε4状态、教育水平、环境暴露）独立——依赖于SNP在受精卵形成时的随机分配（孟德尔第二定律），但需通过LD Score回归或PhenoScanner排除已知混杂关联；（3）排他性限制（Exclusion Restriction）：SNP仅通过影响甲基化水平作用于AD风险，不通过其他生物学通路（如影响基因表达、蛋白质结构或邻近基因调控）。若违反‘无混杂’假设（即存在未测量混杂，如慢性神经炎症同时驱动特定位点低甲基化和AD病理），则SNP与AD的关联可能部分源于该混杂路径，导致MR估计值有偏（overestimation或underestimation），丧失因果推断效力。此时需采用多变量MR、MR-Egger回归或敏感性分析（如MR-PRESSO）进行校正。"
+    },
+    "sources": [
+        {
+            "knowledge_set_id": "course_017",
+            "original_text": "MIT Lecture Notes"
+        }
+    ],
+    "theme": [
+        {
+            "genomic-data-science": [
+                "孟德尔随机化",
+                "多基因风险评分",
+                "meQTL"
+            ]
+        }
+    ]
+}

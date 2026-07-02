@@ -1,0 +1,3 @@
+# Local adapter dependency for exporting/importing SegRap2023 MetaImage files.
+# The official SegRap2023 inference runtime is built through its Dockerfile.
+SimpleITK>=2.3,<3

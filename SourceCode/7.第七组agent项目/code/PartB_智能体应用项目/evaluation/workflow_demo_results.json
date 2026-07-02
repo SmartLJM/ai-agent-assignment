@@ -1,0 +1,743 @@
+{
+  "template_count": 4,
+  "supported_modes": [
+    "sequential",
+    "parallel",
+    "conditional"
+  ],
+  "runs": [
+    {
+      "workflow_id": "submission_audit",
+      "workflow_name": "提交合规审计",
+      "declared_mode": "sequential",
+      "status": "success",
+      "elapsed_ms": 10.882,
+      "trace": [
+        {
+          "node_id": "validate-submission",
+          "agent": "compliance-agent",
+          "mode": "sequential",
+          "status": "success",
+          "elapsed_ms": 10.856,
+          "input_keys": [],
+          "output": {
+            "submission_audit": {
+              "asset_count": 75,
+              "valid_asset_count": 75,
+              "direct_source_count": 72,
+              "fallback_source_count": 3,
+              "question_count": 81,
+              "valid_question_count": 81,
+              "linked_question_count": 81,
+              "passed": true
+            }
+          },
+          "decision": null
+        },
+        {
+          "node_id": "summarize-audit",
+          "agent": "evidence-agent",
+          "mode": "sequential",
+          "status": "success",
+          "elapsed_ms": 0.002,
+          "input_keys": [
+            "submission_audit"
+          ],
+          "output": {
+            "audit_summary": {
+              "passed": true,
+              "score_evidence": {
+                "knowledge_assets": "75/75",
+                "benchmark_schema": "81/81",
+                "benchmark_links": "81/81"
+              },
+              "quality_warning": "3 个来源仍是题名检索页，建议替换为 DOI 或论文直达页。"
+            }
+          },
+          "decision": null
+        }
+      ],
+      "modes_used": [
+        "sequential"
+      ],
+      "result": {
+        "submission_audit": {
+          "asset_count": 75,
+          "valid_asset_count": 75,
+          "direct_source_count": 72,
+          "fallback_source_count": 3,
+          "question_count": 81,
+          "valid_question_count": 81,
+          "linked_question_count": 81,
+          "passed": true
+        },
+        "audit_summary": {
+          "passed": true,
+          "score_evidence": {
+            "knowledge_assets": "75/75",
+            "benchmark_schema": "81/81",
+            "benchmark_links": "81/81"
+          },
+          "quality_warning": "3 个来源仍是题名检索页，建议替换为 DOI 或论文直达页。"
+        }
+      }
+    },
+    {
+      "workflow_id": "grounded_multimodal_qa",
+      "workflow_name": "多模态证据检索问答",
+      "declared_mode": "sequential",
+      "status": "success",
+      "elapsed_ms": 76.984,
+      "trace": [
+        {
+          "node_id": "retrieve-multimodal",
+          "agent": "multimodal-retriever",
+          "mode": "sequential",
+          "status": "success",
+          "elapsed_ms": 76.959,
+          "input_keys": [
+            "query"
+          ],
+          "output": {
+            "multimodal_answer": {
+              "query": "联合检索病例 036 的影像、统计表和 U-Net 分割文献",
+              "answer": "检索到以下本地多模态证据：\n[text] nnU-Net: Self-adapting framework for U-Net-based medical image segmentation：本文介绍了一种名为nnU-Net的自适应框架，该框架基于2D和3D U-Net架构，旨在简化医学图像分割任务中的网络设计、预处理、训练及推理过程。通过去除不必要的复杂设计，专注于影响性能与泛化能力的关键因素，nnU-Net在医学分割十项全能挑战赛中取得了优异成绩，在多个不同实体、模态、几何形状及数据集大小的任务上均表现出色。\n[text] U-Net: Convolutional Networks for Biomedical Image Segmentation：本文提出了一种名为U-Net的卷积网络架构，专为生物医学图像分割任务设计。该网络通过充分利用数据增强技术来提高少量标注样本的训练效率。其结构包括一个用于捕捉上下文信息的收缩路径和一个对称扩展路径以实现精确定位。实验表明，U-Net不仅在电子显微镜下的神经结构分割挑战中超越了先前的最佳方法，还在细胞追踪挑战中取得了显著成绩。此外，U-Net处理速度快，适合实际应用。\n[text] Hyperbolic U-Net for Robust Medical Image Segmentation：本文针对医学图像分割中普遍存在的噪声问题，提出了Hyperbolic U-Net架构。该架构保持了U-Net的编码器-解码器结构，但在双曲空间内操作，通过引入新的超参数初始化方法和超二维转置卷积层解决了训练难题。实验表明，在多种噪声条件下，Hyperbolic U-Net比传统的欧几里得U-Net表现出更强的鲁棒性。\n[text] Attention U-Net: Learning Where to Look for the Pancreas：本文提出了一种新的注意力门（AG）模型，用于医学影像中目标结构的自动聚焦。该模型能够学习抑制输入图像中的无关区域，并突出对特定任务有用的显著特征，从而避免了使用外部组织/器官定位模块的需求。将AG集成到U-Net架构中形成的Attention U-Net，在保持计算效率的同时提高了模型敏感性和预测准确性。实验结果表明，AG在不同数据集和训练规模下均能一致地提升U-Net的表现。\n[text] TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation：本文针对医学图像分割任务提出了一种新的网络架构TransUNet，它结合了Transformer和U-Net的优点。通过利用Transformer的全局自注意力机制来编码从CNN特征图中提取的图像块序列，并与高分辨率CNN特征图相结合以实现精确定位，从而克服了传统U-Net在建模长距离依赖关系上的局限性。实验表明，在多器官分割及心脏分割等多个医学应用上，TransUNet的表现优于现有方法。",
+              "evidence": [
+                {
+                  "record_id": "text:nnu-net-medical-image-segmentation",
+                  "modality": "text",
+                  "title": "nnU-Net: Self-adapting framework for U-Net-based medical image segmentation",
+                  "text": "本文介绍了一种名为nnU-Net的自适应框架，该框架基于2D和3D U-Net架构，旨在简化医学图像分割任务中的网络设计、预处理、训练及推理过程。通过去除不必要的复杂设计，专注于影响性能与泛化能力的关键因素，nnU-Net在医学分割十项全能挑战赛中取得了优异成绩，在多个不同实体、模态、几何形状及数据集大小的任务上均表现出色。",
+                  "source": "https://arxiv.org/abs/1809.10486",
+                  "metadata": {
+                    "knowledge_set_id": "nnu-net-medical-image-segmentation"
+                  },
+                  "score": 24
+                },
+                {
+                  "record_id": "text:u-net-biomedical-image-segmentation",
+                  "modality": "text",
+                  "title": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+                  "text": "本文提出了一种名为U-Net的卷积网络架构，专为生物医学图像分割任务设计。该网络通过充分利用数据增强技术来提高少量标注样本的训练效率。其结构包括一个用于捕捉上下文信息的收缩路径和一个对称扩展路径以实现精确定位。实验表明，U-Net不仅在电子显微镜下的神经结构分割挑战中超越了先前的最佳方法，还在细胞追踪挑战中取得了显著成绩。此外，U-Net处理速度快，适合实际应用。",
+                  "source": "https://arxiv.org/abs/1505.04597",
+                  "metadata": {
+                    "knowledge_set_id": "u-net-biomedical-image-segmentation"
+                  },
+                  "score": 21
+                },
+                {
+                  "record_id": "text:hyperbolic-unet-segmentation",
+                  "modality": "text",
+                  "title": "Hyperbolic U-Net for Robust Medical Image Segmentation",
+                  "text": "本文针对医学图像分割中普遍存在的噪声问题，提出了Hyperbolic U-Net架构。该架构保持了U-Net的编码器-解码器结构，但在双曲空间内操作，通过引入新的超参数初始化方法和超二维转置卷积层解决了训练难题。实验表明，在多种噪声条件下，Hyperbolic U-Net比传统的欧几里得U-Net表现出更强的鲁棒性。",
+                  "source": "https://www.semanticscholar.org/search?q=Hyperbolic+U-Net+for+Robust+Medical+Image+Segmentation",
+                  "metadata": {
+                    "knowledge_set_id": "hyperbolic-unet-segmentation"
+                  },
+                  "score": 20
+                },
+                {
+                  "record_id": "text:attention-unet-pancreas-segmentation",
+                  "modality": "text",
+                  "title": "Attention U-Net: Learning Where to Look for the Pancreas",
+                  "text": "本文提出了一种新的注意力门（AG）模型，用于医学影像中目标结构的自动聚焦。该模型能够学习抑制输入图像中的无关区域，并突出对特定任务有用的显著特征，从而避免了使用外部组织/器官定位模块的需求。将AG集成到U-Net架构中形成的Attention U-Net，在保持计算效率的同时提高了模型敏感性和预测准确性。实验结果表明，AG在不同数据集和训练规模下均能一致地提升U-Net的表现。",
+                  "source": "https://arxiv.org/abs/1804.03999",
+                  "metadata": {
+                    "knowledge_set_id": "attention-unet-pancreas-segmentation"
+                  },
+                  "score": 17
+                },
+                {
+                  "record_id": "text:transunet-medical-image-segmentation",
+                  "modality": "text",
+                  "title": "TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation",
+                  "text": "本文针对医学图像分割任务提出了一种新的网络架构TransUNet，它结合了Transformer和U-Net的优点。通过利用Transformer的全局自注意力机制来编码从CNN特征图中提取的图像块序列，并与高分辨率CNN特征图相结合以实现精确定位，从而克服了传统U-Net在建模长距离依赖关系上的局限性。实验表明，在多器官分割及心脏分割等多个医学应用上，TransUNet的表现优于现有方法。",
+                  "source": "https://arxiv.org/abs/2102.04306",
+                  "metadata": {
+                    "knowledge_set_id": "transunet-medical-image-segmentation"
+                  },
+                  "score": 13
+                }
+              ],
+              "modalities": [
+                "text"
+              ]
+            },
+            "index_counts": {
+              "text": 75,
+              "image": 10,
+              "table": 10
+            }
+          },
+          "decision": null
+        },
+        {
+          "node_id": "analyze-retrieval",
+          "agent": "answer-analyst",
+          "mode": "sequential",
+          "status": "success",
+          "elapsed_ms": 0.002,
+          "input_keys": [
+            "index_counts",
+            "multimodal_answer",
+            "query"
+          ],
+          "output": {
+            "retrieval_analysis": {
+              "evidence_count": 5,
+              "modalities": [
+                "text"
+              ],
+              "has_local_evidence": true,
+              "evidence_ids": [
+                "text:nnu-net-medical-image-segmentation",
+                "text:u-net-biomedical-image-segmentation",
+                "text:hyperbolic-unet-segmentation",
+                "text:attention-unet-pancreas-segmentation",
+                "text:transunet-medical-image-segmentation"
+              ]
+            }
+          },
+          "decision": null
+        }
+      ],
+      "modes_used": [
+        "sequential"
+      ],
+      "result": {
+        "query": "联合检索病例 036 的影像、统计表和 U-Net 分割文献",
+        "multimodal_answer": {
+          "query": "联合检索病例 036 的影像、统计表和 U-Net 分割文献",
+          "answer": "检索到以下本地多模态证据：\n[text] nnU-Net: Self-adapting framework for U-Net-based medical image segmentation：本文介绍了一种名为nnU-Net的自适应框架，该框架基于2D和3D U-Net架构，旨在简化医学图像分割任务中的网络设计、预处理、训练及推理过程。通过去除不必要的复杂设计，专注于影响性能与泛化能力的关键因素，nnU-Net在医学分割十项全能挑战赛中取得了优异成绩，在多个不同实体、模态、几何形状及数据集大小的任务上均表现出色。\n[text] U-Net: Convolutional Networks for Biomedical Image Segmentation：本文提出了一种名为U-Net的卷积网络架构，专为生物医学图像分割任务设计。该网络通过充分利用数据增强技术来提高少量标注样本的训练效率。其结构包括一个用于捕捉上下文信息的收缩路径和一个对称扩展路径以实现精确定位。实验表明，U-Net不仅在电子显微镜下的神经结构分割挑战中超越了先前的最佳方法，还在细胞追踪挑战中取得了显著成绩。此外，U-Net处理速度快，适合实际应用。\n[text] Hyperbolic U-Net for Robust Medical Image Segmentation：本文针对医学图像分割中普遍存在的噪声问题，提出了Hyperbolic U-Net架构。该架构保持了U-Net的编码器-解码器结构，但在双曲空间内操作，通过引入新的超参数初始化方法和超二维转置卷积层解决了训练难题。实验表明，在多种噪声条件下，Hyperbolic U-Net比传统的欧几里得U-Net表现出更强的鲁棒性。\n[text] Attention U-Net: Learning Where to Look for the Pancreas：本文提出了一种新的注意力门（AG）模型，用于医学影像中目标结构的自动聚焦。该模型能够学习抑制输入图像中的无关区域，并突出对特定任务有用的显著特征，从而避免了使用外部组织/器官定位模块的需求。将AG集成到U-Net架构中形成的Attention U-Net，在保持计算效率的同时提高了模型敏感性和预测准确性。实验结果表明，AG在不同数据集和训练规模下均能一致地提升U-Net的表现。\n[text] TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation：本文针对医学图像分割任务提出了一种新的网络架构TransUNet，它结合了Transformer和U-Net的优点。通过利用Transformer的全局自注意力机制来编码从CNN特征图中提取的图像块序列，并与高分辨率CNN特征图相结合以实现精确定位，从而克服了传统U-Net在建模长距离依赖关系上的局限性。实验表明，在多器官分割及心脏分割等多个医学应用上，TransUNet的表现优于现有方法。",
+          "evidence": [
+            {
+              "record_id": "text:nnu-net-medical-image-segmentation",
+              "modality": "text",
+              "title": "nnU-Net: Self-adapting framework for U-Net-based medical image segmentation",
+              "text": "本文介绍了一种名为nnU-Net的自适应框架，该框架基于2D和3D U-Net架构，旨在简化医学图像分割任务中的网络设计、预处理、训练及推理过程。通过去除不必要的复杂设计，专注于影响性能与泛化能力的关键因素，nnU-Net在医学分割十项全能挑战赛中取得了优异成绩，在多个不同实体、模态、几何形状及数据集大小的任务上均表现出色。",
+              "source": "https://arxiv.org/abs/1809.10486",
+              "metadata": {
+                "knowledge_set_id": "nnu-net-medical-image-segmentation"
+              },
+              "score": 24
+            },
+            {
+              "record_id": "text:u-net-biomedical-image-segmentation",
+              "modality": "text",
+              "title": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+              "text": "本文提出了一种名为U-Net的卷积网络架构，专为生物医学图像分割任务设计。该网络通过充分利用数据增强技术来提高少量标注样本的训练效率。其结构包括一个用于捕捉上下文信息的收缩路径和一个对称扩展路径以实现精确定位。实验表明，U-Net不仅在电子显微镜下的神经结构分割挑战中超越了先前的最佳方法，还在细胞追踪挑战中取得了显著成绩。此外，U-Net处理速度快，适合实际应用。",
+              "source": "https://arxiv.org/abs/1505.04597",
+              "metadata": {
+                "knowledge_set_id": "u-net-biomedical-image-segmentation"
+              },
+              "score": 21
+            },
+            {
+              "record_id": "text:hyperbolic-unet-segmentation",
+              "modality": "text",
+              "title": "Hyperbolic U-Net for Robust Medical Image Segmentation",
+              "text": "本文针对医学图像分割中普遍存在的噪声问题，提出了Hyperbolic U-Net架构。该架构保持了U-Net的编码器-解码器结构，但在双曲空间内操作，通过引入新的超参数初始化方法和超二维转置卷积层解决了训练难题。实验表明，在多种噪声条件下，Hyperbolic U-Net比传统的欧几里得U-Net表现出更强的鲁棒性。",
+              "source": "https://www.semanticscholar.org/search?q=Hyperbolic+U-Net+for+Robust+Medical+Image+Segmentation",
+              "metadata": {
+                "knowledge_set_id": "hyperbolic-unet-segmentation"
+              },
+              "score": 20
+            },
+            {
+              "record_id": "text:attention-unet-pancreas-segmentation",
+              "modality": "text",
+              "title": "Attention U-Net: Learning Where to Look for the Pancreas",
+              "text": "本文提出了一种新的注意力门（AG）模型，用于医学影像中目标结构的自动聚焦。该模型能够学习抑制输入图像中的无关区域，并突出对特定任务有用的显著特征，从而避免了使用外部组织/器官定位模块的需求。将AG集成到U-Net架构中形成的Attention U-Net，在保持计算效率的同时提高了模型敏感性和预测准确性。实验结果表明，AG在不同数据集和训练规模下均能一致地提升U-Net的表现。",
+              "source": "https://arxiv.org/abs/1804.03999",
+              "metadata": {
+                "knowledge_set_id": "attention-unet-pancreas-segmentation"
+              },
+              "score": 17
+            },
+            {
+              "record_id": "text:transunet-medical-image-segmentation",
+              "modality": "text",
+              "title": "TransUNet: Transformers Make Strong Encoders for Medical Image Segmentation",
+              "text": "本文针对医学图像分割任务提出了一种新的网络架构TransUNet，它结合了Transformer和U-Net的优点。通过利用Transformer的全局自注意力机制来编码从CNN特征图中提取的图像块序列，并与高分辨率CNN特征图相结合以实现精确定位，从而克服了传统U-Net在建模长距离依赖关系上的局限性。实验表明，在多器官分割及心脏分割等多个医学应用上，TransUNet的表现优于现有方法。",
+              "source": "https://arxiv.org/abs/2102.04306",
+              "metadata": {
+                "knowledge_set_id": "transunet-medical-image-segmentation"
+              },
+              "score": 13
+            }
+          ],
+          "modalities": [
+            "text"
+          ]
+        },
+        "index_counts": {
+          "text": 75,
+          "image": 10,
+          "table": 10
+        },
+        "retrieval_analysis": {
+          "evidence_count": 5,
+          "modalities": [
+            "text"
+          ],
+          "has_local_evidence": true,
+          "evidence_ids": [
+            "text:nnu-net-medical-image-segmentation",
+            "text:u-net-biomedical-image-segmentation",
+            "text:hyperbolic-unet-segmentation",
+            "text:attention-unet-pancreas-segmentation",
+            "text:transunet-medical-image-segmentation"
+          ]
+        }
+      }
+    },
+    {
+      "workflow_id": "parallel_case_analysis",
+      "workflow_name": "病例并行分析",
+      "declared_mode": "parallel",
+      "status": "success",
+      "elapsed_ms": 60.629,
+      "trace": [
+        {
+          "node_id": "parallel-case-workers",
+          "agent": "parallel-orchestrator",
+          "mode": "parallel",
+          "status": "success",
+          "elapsed_ms": 60.597,
+          "input_keys": [
+            "case_id",
+            "query"
+          ],
+          "output": {
+            "branches": {
+              "analyze-image": "success",
+              "analyze-mask": "success",
+              "retrieve-case-evidence": "success"
+            },
+            "merged_keys": [
+              "case_evidence",
+              "image_analysis",
+              "mask_analysis"
+            ],
+            "output_conflicts": []
+          },
+          "decision": null
+        },
+        {
+          "node_id": "analyze-image",
+          "agent": "image-agent",
+          "mode": "parallel",
+          "status": "success",
+          "elapsed_ms": 4.677,
+          "input_keys": [
+            "case_id",
+            "query"
+          ],
+          "output": {
+            "image_analysis": {
+              "case_id": "036",
+              "shape": [
+                128,
+                128,
+                64
+              ],
+              "dtype": "float64",
+              "mean": 0.0,
+              "std": 1.0,
+              "min": -0.805174,
+              "max": 5.041941
+            }
+          },
+          "decision": null
+        },
+        {
+          "node_id": "analyze-mask",
+          "agent": "mask-agent",
+          "mode": "parallel",
+          "status": "success",
+          "elapsed_ms": 10.217,
+          "input_keys": [
+            "case_id",
+            "query"
+          ],
+          "output": {
+            "mask_analysis": {
+              "case_id": "036",
+              "shape": [
+                128,
+                128,
+                64
+              ],
+              "labels": [
+                0,
+                1
+              ],
+              "foreground_voxels": 16207,
+              "mask_ratio": 0.015456,
+              "bbox": [
+                43,
+                27,
+                22,
+                82,
+                69,
+                54
+              ]
+            }
+          },
+          "decision": null
+        },
+        {
+          "node_id": "retrieve-case-evidence",
+          "agent": "case-retriever",
+          "mode": "parallel",
+          "status": "success",
+          "elapsed_ms": 60.166,
+          "input_keys": [
+            "case_id",
+            "query"
+          ],
+          "output": {
+            "case_evidence": {
+              "query": "病例 036 影像、统计表和 U-Net 文献",
+              "evidence_count": 6,
+              "modalities": [
+                "image",
+                "table",
+                "text"
+              ],
+              "evidence_ids": [
+                "image:001",
+                "image:002",
+                "table:001",
+                "table:002",
+                "text:nnu-net-medical-image-segmentation",
+                "text:hyperbolic-unet-segmentation"
+              ]
+            }
+          },
+          "decision": null
+        },
+        {
+          "node_id": "compose-case-report",
+          "agent": "report-agent",
+          "mode": "sequential",
+          "status": "success",
+          "elapsed_ms": 0.001,
+          "input_keys": [
+            "case_evidence",
+            "case_id",
+            "image_analysis",
+            "mask_analysis",
+            "query"
+          ],
+          "output": {
+            "case_report": {
+              "case_id": "036",
+              "image": {
+                "case_id": "036",
+                "shape": [
+                  128,
+                  128,
+                  64
+                ],
+                "dtype": "float64",
+                "mean": 0.0,
+                "std": 1.0,
+                "min": -0.805174,
+                "max": 5.041941
+              },
+              "ground_truth_mask": {
+                "case_id": "036",
+                "shape": [
+                  128,
+                  128,
+                  64
+                ],
+                "labels": [
+                  0,
+                  1
+                ],
+                "foreground_voxels": 16207,
+                "mask_ratio": 0.015456,
+                "bbox": [
+                  43,
+                  27,
+                  22,
+                  82,
+                  69,
+                  54
+                ]
+              },
+              "evidence": {
+                "query": "病例 036 影像、统计表和 U-Net 文献",
+                "evidence_count": 6,
+                "modalities": [
+                  "image",
+                  "table",
+                  "text"
+                ],
+                "evidence_ids": [
+                  "image:001",
+                  "image:002",
+                  "table:001",
+                  "table:002",
+                  "text:nnu-net-medical-image-segmentation",
+                  "text:hyperbolic-unet-segmentation"
+                ]
+              },
+              "parallel_outputs_complete": true
+            }
+          },
+          "decision": null
+        }
+      ],
+      "modes_used": [
+        "parallel",
+        "sequential"
+      ],
+      "result": {
+        "case_id": "036",
+        "query": "病例 036 影像、统计表和 U-Net 文献",
+        "image_analysis": {
+          "case_id": "036",
+          "shape": [
+            128,
+            128,
+            64
+          ],
+          "dtype": "float64",
+          "mean": 0.0,
+          "std": 1.0,
+          "min": -0.805174,
+          "max": 5.041941
+        },
+        "mask_analysis": {
+          "case_id": "036",
+          "shape": [
+            128,
+            128,
+            64
+          ],
+          "labels": [
+            0,
+            1
+          ],
+          "foreground_voxels": 16207,
+          "mask_ratio": 0.015456,
+          "bbox": [
+            43,
+            27,
+            22,
+            82,
+            69,
+            54
+          ]
+        },
+        "case_evidence": {
+          "query": "病例 036 影像、统计表和 U-Net 文献",
+          "evidence_count": 6,
+          "modalities": [
+            "image",
+            "table",
+            "text"
+          ],
+          "evidence_ids": [
+            "image:001",
+            "image:002",
+            "table:001",
+            "table:002",
+            "text:nnu-net-medical-image-segmentation",
+            "text:hyperbolic-unet-segmentation"
+          ]
+        },
+        "case_report": {
+          "case_id": "036",
+          "image": {
+            "case_id": "036",
+            "shape": [
+              128,
+              128,
+              64
+            ],
+            "dtype": "float64",
+            "mean": 0.0,
+            "std": 1.0,
+            "min": -0.805174,
+            "max": 5.041941
+          },
+          "ground_truth_mask": {
+            "case_id": "036",
+            "shape": [
+              128,
+              128,
+              64
+            ],
+            "labels": [
+              0,
+              1
+            ],
+            "foreground_voxels": 16207,
+            "mask_ratio": 0.015456,
+            "bbox": [
+              43,
+              27,
+              22,
+              82,
+              69,
+              54
+            ]
+          },
+          "evidence": {
+            "query": "病例 036 影像、统计表和 U-Net 文献",
+            "evidence_count": 6,
+            "modalities": [
+              "image",
+              "table",
+              "text"
+            ],
+            "evidence_ids": [
+              "image:001",
+              "image:002",
+              "table:001",
+              "table:002",
+              "text:nnu-net-medical-image-segmentation",
+              "text:hyperbolic-unet-segmentation"
+            ]
+          },
+          "parallel_outputs_complete": true
+        }
+      }
+    },
+    {
+      "workflow_id": "conditional_case_review",
+      "workflow_name": "病例条件审查",
+      "declared_mode": "conditional",
+      "status": "success",
+      "elapsed_ms": 4.851,
+      "trace": [
+        {
+          "node_id": "inspect-case",
+          "agent": "case-inspector",
+          "mode": "sequential",
+          "status": "success",
+          "elapsed_ms": 4.824,
+          "input_keys": [
+            "case_id",
+            "mask_ratio_threshold"
+          ],
+          "output": {
+            "case_statistics": {
+              "case_id": "036",
+              "shape": [
+                128,
+                128,
+                64
+              ],
+              "labels": [
+                0,
+                1
+              ],
+              "foreground_voxels": 16207,
+              "mask_ratio": 0.015456,
+              "bbox": [
+                43,
+                27,
+                22,
+                82,
+                69,
+                54
+              ]
+            }
+          },
+          "decision": null
+        },
+        {
+          "node_id": "foreground-ratio-decision",
+          "agent": "conditional-orchestrator",
+          "mode": "conditional",
+          "status": "success",
+          "elapsed_ms": 0.0,
+          "input_keys": [
+            "case_id",
+            "case_statistics",
+            "mask_ratio_threshold"
+          ],
+          "output": {
+            "selected_branch": "if_false"
+          },
+          "decision": {
+            "field": "case_statistics.mask_ratio",
+            "operator": "gt",
+            "actual": 0.015456,
+            "expected": 0.05,
+            "result": false
+          }
+        },
+        {
+          "node_id": "small-foreground-review",
+          "agent": "review-agent",
+          "mode": "sequential",
+          "status": "success",
+          "elapsed_ms": 0.002,
+          "input_keys": [
+            "case_id",
+            "case_statistics",
+            "mask_ratio_threshold"
+          ],
+          "output": {
+            "review_result": {
+              "selected_strategy": "small-foreground-review",
+              "reason": "mask_ratio=0.015456 未超过阈值，优先检查小目标可见性。",
+              "checks": [
+                "foreground-slice",
+                "bbox",
+                "label-presence"
+              ]
+            }
+          },
+          "decision": null
+        }
+      ],
+      "modes_used": [
+        "conditional",
+        "sequential"
+      ],
+      "result": {
+        "case_id": "036",
+        "mask_ratio_threshold": 0.05,
+        "case_statistics": {
+          "case_id": "036",
+          "shape": [
+            128,
+            128,
+            64
+          ],
+          "labels": [
+            0,
+            1
+          ],
+          "foreground_voxels": 16207,
+          "mask_ratio": 0.015456,
+          "bbox": [
+            43,
+            27,
+            22,
+            82,
+            69,
+            54
+          ]
+        },
+        "review_result": {
+          "selected_strategy": "small-foreground-review",
+          "reason": "mask_ratio=0.015456 未超过阈值，优先检查小目标可见性。",
+          "checks": [
+            "foreground-slice",
+            "bbox",
+            "label-presence"
+          ]
+        }
+      }
+    }
+  ],
+  "passed": 4
+}

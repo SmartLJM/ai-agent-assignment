@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "scLong: Billion-Parameter Foundation Model Capturing Long-Range Gene Context",
+  "keywords": ["scLong", "billion parameters", "Gene Ontology", "graph convolutional network", "long-range dependencies", "single-cell transcriptomics", "perturbation prediction", "cancer drug response"]
+}

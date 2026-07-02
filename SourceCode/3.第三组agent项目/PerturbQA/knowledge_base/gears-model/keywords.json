@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "GEARS: Graph Neural Network for Genetic Perturbation Prediction",
+  "keywords": ["gears", "graph-neural-network", "perturbation-prediction", "gene-expression", "combinatorial-perturbation", "go-terms", "knowledge-graph", "message-passing", "out-of-distribution", "deep-learning"]
+}

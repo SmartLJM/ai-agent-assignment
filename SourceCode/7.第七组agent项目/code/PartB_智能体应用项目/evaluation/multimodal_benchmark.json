@@ -1,0 +1,22 @@
+[
+  {"id":"MMQ001","question":"检索医学图像分割的相关文献证据。","expected_modalities":["text"],"must_include":["医学图像分割"]},
+  {"id":"MMQ002","question":"哪些本地文献讨论 U-Net 或 UNet？","expected_modalities":["text"],"must_include":["u-net"]},
+  {"id":"MMQ003","question":"检索 MedSAM 的方法或基础模型背景。","expected_modalities":["text"],"must_include":["medsam"]},
+  {"id":"MMQ004","question":"检索 Mamba 在医学影像分割中的应用。","expected_modalities":["text"],"must_include":["mamba"]},
+  {"id":"MMQ005","question":"检索医学图像分割中的注意力机制相关文献。","expected_modalities":["text"],"must_include":["attention"]},
+  {"id":"MMQ006","question":"显示病例 034 的 3D 影像记录。","expected_modalities":["image"],"must_include":["034"]},
+  {"id":"MMQ007","question":"显示病例 036 的影像尺寸与归一化统计。","expected_modalities":["image"],"must_include":["036"]},
+  {"id":"MMQ008","question":"查找病例 045 的医学影像体数据。","expected_modalities":["image"],"must_include":["045"]},
+  {"id":"MMQ009","question":"查找病例 064 的切片影像来源。","expected_modalities":["image"],"must_include":["064"]},
+  {"id":"MMQ010","question":"检索病例 071 的图像 volume 记录。","expected_modalities":["image"],"must_include":["071"]},
+  {"id":"MMQ011","question":"查询病例 073 的前景体素和占比统计表。","expected_modalities":["table"],"must_include":["073"]},
+  {"id":"MMQ012","question":"查询病例 082 的 mask 包围盒表格记录。","expected_modalities":["table"],"must_include":["082"]},
+  {"id":"MMQ013","question":"查询病例 084 的分割统计表。","expected_modalities":["table"],"must_include":["084"]},
+  {"id":"MMQ014","question":"病例 092 的前景占比是多少？请检索统计表。","expected_modalities":["table"],"must_include":["092"]},
+  {"id":"MMQ015","question":"病例 095 的 mask 体素数量是多少？","expected_modalities":["table"],"must_include":["095"]},
+  {"id":"MMQ016","question":"联合检索病例 034 的影像、分割统计表和相关医学图像分割文献。","expected_modalities":["image","table","text"],"must_include":["034"]},
+  {"id":"MMQ017","question":"结合病例 036 的 3D 图像与统计表，检索 U-Net 文献。","expected_modalities":["image","table","text"],"must_include":["036","u-net"]},
+  {"id":"MMQ018","question":"结合病例 045 的影像和前景统计，检索注意力分割方法。","expected_modalities":["image","table","text"],"must_include":["045","attention"]},
+  {"id":"MMQ019","question":"结合病例 064 的体数据与统计表，检索 Mamba 分割研究。","expected_modalities":["image","table","text"],"must_include":["064","mamba"]},
+  {"id":"MMQ020","question":"结合病例 071 的影像与表格证据，检索 MedSAM 背景。","expected_modalities":["image","table","text"],"must_include":["071","medsam"]}
+]

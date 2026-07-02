@@ -1,0 +1,6 @@
+{
+    "id": "doc_037",
+    "source": "Multi-attention Meta Learning for Few-shot Fine-grained Image Recognition_翻译版.pdf",
+    "question": "文献中提出的跨模态对比对齐（CCA）模块如何解决MRI影像特征与分子亚型标签之间语义鸿沟问题？",
+    "answer": "CCA模块通过构建双分支对比学习架构：影像分支将增强后的多序列MRI patches映射至共享隐空间，分子分支将基于TCGA-LGG/GBM队列定义的IDH、MGMT、EGFR等关键驱动基因状态组合编码为离散亚型标签向量；在隐空间中，最大化同一患者影像patch嵌入与对应分子亚型向量的余弦相似度（正样本对），同时最小化与其他患者亚型向量的相似度（负样本对）；该设计强制影像局部纹理/强化模式等表型特征学习与分子功能状态的判别性语义关联，从而弥合表型-基因型间的语义鸿沟。"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "Q0007",
+  "question": "How does structure-based drug design differ from ligand-based drug design?",
+  "type": "short-answer",
+  "difficulty": 5,
+  "answer": {
+    "type": "keypoint",
+    "content": "Structure-based design starts from the target three-dimensional structure and binding site, whereas ligand-based design starts from known active compounds and their shared structural or pharmacophoric features.",
+    "keypoints": [
+      {
+        "point": "target 3D structure",
+        "score": 3.33
+      },
+      {
+        "point": "known active ligands",
+        "score": 3.33
+      },
+      {
+        "point": "binding site versus ligand similarity",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-006-structure-based-design",
+      "original_text": "Structure-based drug design uses the three-dimensional structure of a biological target to design or select ligands for a binding site. Structures can come from X-ray crystallography, cryo-electron microscopy, NMR spectroscopy, or high-confidence computational models. The method examines shape complementarity, hydrogen bonds, hydrophobic contacts, electrostatics, water networks, and induced fit."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "structure-based-drug-design",
+        "ligand-based-drug-design"
+      ]
+    }
+  ]
+}

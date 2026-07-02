@@ -1,0 +1,6 @@
+{
+    "id": "doc_014",
+    "source": "Enhancing_Colon_Cancer_Prediction_in_Histopathology_with_Integrated_Deep_Learning_Models_A_Comparative_Study_on_the_LC25000_Dataset.pdf",
+    "question": "文献中提出的Inception V3与CNN/ResNet50的‘hybridization’被明确区别于传统ensemble方法，其核心技术实现路径（如特征融合层级、连接方式、训练策略）是什么？",
+    "answer": "文献指出该hybridization是特征级（feature-level）的串联（concatenation）融合，而非决策级ensemble；具体为将Inception V3提取的高层语义特征图与CNN或ResNet50各自提取的特征图在通道维度进行拼接（concatenation），再输入后续全连接层分类；该策略属于前向融合（early fusion）范式，且强调‘动态调整各模型贡献’，暗示可能引入了可学习的门控权重或注意力机制（虽未详述具体模块），以适配LC25000中图像质量高变异性的挑战；训练方式为端到端联合优化，而非分阶段微调。"
+}

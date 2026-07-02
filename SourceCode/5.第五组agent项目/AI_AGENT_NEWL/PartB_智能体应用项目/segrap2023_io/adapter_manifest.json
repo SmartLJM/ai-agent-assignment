@@ -1,0 +1,51 @@
+{
+  "adapter": "segrap2023_task2_gtv",
+  "case_id": "036",
+  "input_dir": "/Users/zs/Documents/Codex/2026-06-26/https-github-com-yuplx-hu-ai/work/ai_agent_newl_extracted/AI_AGENT_NEWL/PartB_智能体应用项目/segrap2023_io/input",
+  "output_dir": "/Users/zs/Documents/Codex/2026-06-26/https-github-com-yuplx-hu-ai/work/ai_agent_newl_extracted/AI_AGENT_NEWL/PartB_智能体应用项目/segrap2023_io/output",
+  "modality_policy": "single_modality_duplicated_for_demo",
+  "ct": {
+    "source": "/Users/zs/Documents/Codex/2026-06-26/https-github-com-yuplx-hu-ai/work/ai_agent_newl_extracted/AI_AGENT_NEWL/PartB_智能体应用项目/code/npc_dataset_nii/036/image.nii.gz",
+    "destination": "/Users/zs/Documents/Codex/2026-06-26/https-github-com-yuplx-hu-ai/work/ai_agent_newl_extracted/AI_AGENT_NEWL/PartB_智能体应用项目/segrap2023_io/input/head-neck-ct/036.mha",
+    "size_xyz": [
+      432,
+      432,
+      20
+    ],
+    "spacing_xyz": [
+      0.46296295523643494,
+      0.46296295523643494,
+      5.5
+    ],
+    "origin_xyz": [
+      -100.77185821533203,
+      -124.25142669677734,
+      -31.177047729492188
+    ]
+  },
+  "contrast_enhanced_ct": {
+    "source": "/Users/zs/Documents/Codex/2026-06-26/https-github-com-yuplx-hu-ai/work/ai_agent_newl_extracted/AI_AGENT_NEWL/PartB_智能体应用项目/code/npc_dataset_nii/036/image.nii.gz",
+    "destination": "/Users/zs/Documents/Codex/2026-06-26/https-github-com-yuplx-hu-ai/work/ai_agent_newl_extracted/AI_AGENT_NEWL/PartB_智能体应用项目/segrap2023_io/input/head-neck-contrast-enhanced-ct/036.mha",
+    "size_xyz": [
+      432,
+      432,
+      20
+    ],
+    "spacing_xyz": [
+      0.46296295523643494,
+      0.46296295523643494,
+      5.5
+    ],
+    "origin_xyz": [
+      -100.77185821533203,
+      -124.25142669677734,
+      -31.177047729492188
+    ]
+  },
+  "docker_build_command": "cd \"/Users/zs/Documents/Codex/2026-06-26/https-github-com-yuplx-hu-ai/work/external/segrap2023/task2\" && docker build . -t segrap2023_gtv_segmentationcontainer",
+  "docker_run_command": "docker run --rm --gpus all -v \"/Users/zs/Documents/Codex/2026-06-26/https-github-com-yuplx-hu-ai/work/ai_agent_newl_extracted/AI_AGENT_NEWL/PartB_智能体应用项目/segrap2023_io/input:/input/images\" -v \"/Users/zs/Documents/Codex/2026-06-26/https-github-com-yuplx-hu-ai/work/ai_agent_newl_extracted/AI_AGENT_NEWL/PartB_智能体应用项目/segrap2023_io/output:/output/images\" --shm-size 2g segrap2023_gtv_segmentationcontainer",
+  "notes": [
+    "SegRap2023 task2 原生需要非增强 CT 与增强 CT 两个已配准模态。",
+    "当前演示数据只有单模态 CT；复制单模态只用于流程适配演示，不能等同于真实双模态推理质量。"
+  ]
+}

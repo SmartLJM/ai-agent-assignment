@@ -1,0 +1,16 @@
+{
+  "knowledge_set_id": "dd-023-assay-quality",
+  "title": "Assay Guidance Manual: Assay Operations for SAR Support",
+  "source_type": "educational-resource",
+  "authors": [
+    "NIH/NCATS"
+  ],
+  "journal": "NCBI Bookshelf",
+  "publisher": "NIH/NCBI",
+  "doi": "",
+  "url": "https://www.ncbi.nlm.nih.gov/books/NBK53196/",
+  "publication_date": "2024",
+  "accessed": "2026-06-19",
+  "content_file": "content/content.md",
+  "license_note": "Curated educational summary included locally; original/source metadata is recorded for traceability."
+}

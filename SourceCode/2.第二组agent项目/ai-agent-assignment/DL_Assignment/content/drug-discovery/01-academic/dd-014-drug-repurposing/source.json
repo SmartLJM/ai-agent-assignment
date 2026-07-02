@@ -1,0 +1,16 @@
+{
+  "knowledge_set_id": "dd-014-drug-repurposing",
+  "title": "Drug repurposing: progress, challenges and recommendations",
+  "source_type": "research-paper",
+  "authors": [
+    "Pushpakom, S. et al."
+  ],
+  "journal": "Nature Reviews Drug Discovery",
+  "publisher": "Springer Nature",
+  "doi": "10.1038/nrd.2018.168",
+  "url": "https://doi.org/10.1038/nrd.2018.168",
+  "publication_date": "2019",
+  "accessed": "2026-06-19",
+  "content_file": "content/content.md",
+  "license_note": "Curated educational summary included locally; original/source metadata is recorded for traceability."
+}

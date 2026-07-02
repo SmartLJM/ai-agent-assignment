@@ -1,0 +1,92 @@
+[
+  {
+    "id": "ORQ001",
+    "question": "系统是否提供至少3个预定义工作流模板？",
+    "category": "template-coverage",
+    "assertion": "template_count_at_least_3"
+  },
+  {
+    "id": "ORQ002",
+    "question": "系统是否明确支持串行、并行和条件分支三种模式？",
+    "category": "mode-coverage",
+    "assertion": "all_three_modes"
+  },
+  {
+    "id": "ORQ003",
+    "question": "提交审计串行工作流能否成功完成？",
+    "category": "sequential",
+    "assertion": "workflow_success",
+    "workflow_id": "submission_audit",
+    "inputs": {}
+  },
+  {
+    "id": "ORQ004",
+    "question": "串行工作流是否在节点之间完整传递审计结果？",
+    "category": "data-transfer",
+    "assertion": "audit_data_transfer",
+    "workflow_id": "submission_audit",
+    "inputs": {}
+  },
+  {
+    "id": "ORQ005",
+    "question": "多模态串行工作流是否展示两个不同Agent角色？",
+    "category": "agent-roles",
+    "assertion": "at_least_two_agents",
+    "workflow_id": "grounded_multimodal_qa",
+    "inputs": {"query": "检索病例036的影像、统计表和U-Net文献"}
+  },
+  {
+    "id": "ORQ006",
+    "question": "病例并行分析是否真正运行至少3个并行Agent节点？",
+    "category": "parallel",
+    "assertion": "at_least_three_parallel_agents",
+    "workflow_id": "parallel_case_analysis",
+    "inputs": {"case_id": "036", "query": "病例036影像、统计表和U-Net文献"}
+  },
+  {
+    "id": "ORQ007",
+    "question": "并行工作流是否无冲突地合并影像、标注和检索结果？",
+    "category": "parallel-merge",
+    "assertion": "parallel_outputs_complete",
+    "workflow_id": "parallel_case_analysis",
+    "inputs": {"case_id": "036", "query": "病例036影像、统计表和U-Net文献"}
+  },
+  {
+    "id": "ORQ008",
+    "question": "阈值为0时条件工作流是否选择大区域审查分支？",
+    "category": "conditional-true",
+    "assertion": "selected_strategy",
+    "expected": "large-foreground-review",
+    "workflow_id": "conditional_case_review",
+    "inputs": {"case_id": "036", "mask_ratio_threshold": 0.0}
+  },
+  {
+    "id": "ORQ009",
+    "question": "阈值为1时条件工作流是否选择小区域审查分支？",
+    "category": "conditional-false",
+    "assertion": "selected_strategy",
+    "expected": "small-foreground-review",
+    "workflow_id": "conditional_case_review",
+    "inputs": {"case_id": "036", "mask_ratio_threshold": 1.0}
+  },
+  {
+    "id": "ORQ010",
+    "question": "病例ID缺失时工作流是否返回结构化失败轨迹？",
+    "category": "edge-case",
+    "assertion": "missing_case_fails_safely",
+    "workflow_id": "parallel_case_analysis",
+    "inputs": {}
+  },
+  {
+    "id": "ORQ011",
+    "question": "调用未知工作流时系统是否明确拒绝？",
+    "category": "edge-case",
+    "assertion": "unknown_workflow_rejected"
+  },
+  {
+    "id": "ORQ012",
+    "question": "是否生成可直接展示的三模式工作流程图？",
+    "category": "visualization",
+    "assertion": "flowchart_generated"
+  }
+]

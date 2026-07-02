@@ -1,0 +1,32 @@
+{
+  "runtime_mode": {
+    "default": "local-only",
+    "dashscope": "explicit-opt-in",
+    "remote_html": "rejected"
+  },
+  "knowledge_records": {
+    "text": 75,
+    "image": 277,
+    "table": 277
+  },
+  "multimodal_questions": 20,
+  "multimodal_passed": 20,
+  "document_extraction": {
+    "text": 1,
+    "image": 1,
+    "table": 1
+  },
+  "document_extraction_passed": true,
+  "workflow_templates": 4,
+  "workflow_modes": [
+    "sequential",
+    "parallel",
+    "conditional"
+  ],
+  "workflow_demo_passed": 4,
+  "orchestration_questions": 12,
+  "orchestration_passed": 12,
+  "flowchart_files": 9,
+  "unit_tests": 19,
+  "unit_tests_passed": 19
+}

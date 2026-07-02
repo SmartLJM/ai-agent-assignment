@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "Perturb-seq: CRISPR Screens with Single-Cell Transcriptomics",
+  "keywords": ["perturb-seq", "single-cell", "scrnaseq", "crispr-screen", "sgRNA-capture", "10x-genomics", "transcriptome", "pooled-library", "gene-expression", "phenotype"]
+}

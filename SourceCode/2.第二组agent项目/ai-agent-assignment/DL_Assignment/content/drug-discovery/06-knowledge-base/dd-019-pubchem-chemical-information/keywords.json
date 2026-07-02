@@ -1,0 +1,8 @@
+{
+  "drug-discovery": [
+    "pubchem",
+    "chemical-information",
+    "compound-properties",
+    "pug-rest"
+  ]
+}

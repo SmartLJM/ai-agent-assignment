@@ -1,0 +1,38 @@
+{
+  "id": "Q0028",
+  "question": "A question asks for aspirin molecular weight. Which dynamic workflow should the agent choose?",
+  "type": "short-answer",
+  "difficulty": 4,
+  "answer": {
+    "type": "keypoint",
+    "content": "The agent should generate a workflow that invokes the PubChem chemical information skill, retrieves or verifies the compound property, and then synthesizes a concise answer with a tool trace.",
+    "keypoints": [
+      {
+        "point": "invoke PubChem skill",
+        "score": 3.33
+      },
+      {
+        "point": "retrieve compound property",
+        "score": 3.33
+      },
+      {
+        "point": "synthesize with trace",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-020-agentic-rag",
+      "original_text": "Agentic retrieval-augmented generation combines retrieval, planning, tool use, memory, and answer validation. In a drug-discovery Q&A system, the agent should decide whether a question needs internal knowledge retrieval, a chemical database skill, memory retrieval, multi-hop comparison, or a fallback strategy."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "agentic-rag",
+        "tool-use"
+      ]
+    }
+  ]
+}

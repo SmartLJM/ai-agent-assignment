@@ -1,0 +1,40 @@
+{
+  "runtime_mode": {
+    "default": "local-only",
+    "dashscope": "explicit-opt-in",
+    "remote_html": "rejected"
+  },
+  "knowledge_records": {
+    "text": 75,
+    "image": 277,
+    "table": 277
+  },
+  "multimodal_questions": 20,
+  "multimodal_passed": 20,
+  "document_extraction": {
+    "text": 1,
+    "image": 1,
+    "table": 1
+  },
+  "document_extraction_passed": true,
+  "workflow_templates": 4,
+  "workflow_modes": [
+    "sequential",
+    "parallel",
+    "conditional"
+  ],
+  "workflow_demo_passed": 4,
+  "orchestration_questions": 12,
+  "orchestration_passed": 12,
+  "flowchart_files": 11,
+  "unit_tests": 19,
+  "unit_tests_passed": 19,
+  "dynamic_orchestration_questions": 12,
+  "dynamic_orchestration_passed": 12,
+  "dynamic_auto_generated_plans": 12,
+  "dynamic_runtime_adjustment_plans": 4,
+  "dynamic_retry_plans": 1,
+  "dynamic_recovery_plans": 2,
+  "dynamic_decision_trace_records": 12,
+  "dynamic_orchestration_status": "12/12"
+}

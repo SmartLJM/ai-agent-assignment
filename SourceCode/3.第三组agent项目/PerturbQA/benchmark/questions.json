@@ -1,0 +1,205 @@
+{
+  "version": "1.0",
+  "topic": "gene-perturbation",
+  "description": "Benchmark questions for the PerturbQA gene perturbation knowledge Q&A system",
+  "questions": [
+    {
+      "id": "gp-001",
+      "question": "What is the mechanism by which CRISPR-Cas9 creates double-strand breaks in DNA?",
+      "answer": "CRISPR-Cas9 creates double-strand breaks through a two-step nuclease mechanism. The guide RNA (sgRNA, composed of crRNA and tracrRNA) directs the Cas9 protein to a target sequence adjacent to a PAM site (typically NGG for SpCas9). Upon binding, Cas9 undergoes a conformational change that activates its two nuclease domains: the HNH domain cleaves the strand complementary to the sgRNA, while the RuvC domain cleaves the non-complementary strand. This produces a blunt-ended DSB approximately 3 bp upstream of the PAM site, triggering cellular DNA repair via NHEJ (causing indels) or HDR (enabling precise edits).",
+      "source": { "type": "paper", "doi": "10.1126/science.1225829", "title": "A Programmable Dual-RNA-Guided DNA Endonuclease in Adaptive Bacterial Immunity" },
+      "topic": "gene-perturbation",
+      "difficulty": "medium",
+      "type": "mechanistic"
+    },
+    {
+      "id": "gp-002",
+      "question": "How does Perturb-seq combine CRISPR perturbations with single-cell RNA sequencing?",
+      "answer": "Perturb-seq integrates genome-scale CRISPR screens with single-cell transcriptomics. Each cell receives a pooled lentiviral library delivering a unique sgRNA targeting a specific gene. A cell-barcoded capture sequence linked to the sgRNA sequence (perturbation barcode) allows simultaneous readout of: (1) which gene was perturbed (via sequencing the sgRNA), and (2) the resulting transcriptome-wide expression profile (via 10x Genomics or Drop-seq). This one-to-one mapping of perturbation to transcriptomic phenotype enables discovery of gene-expression programs and regulatory networks at scale.",
+      "source": { "type": "paper", "doi": "10.1016/j.cell.2016.11.038", "title": "Perturb-Seq: Dissecting Molecular Circuits with Scalable Single-Cell RNA Profiling of Pooled Genetic Screens" },
+      "topic": "gene-perturbation",
+      "difficulty": "medium",
+      "type": "procedural"
+    },
+    {
+      "id": "gp-003",
+      "question": "What is the difference between CRISPRi and CRISPRa, and when would you use each?",
+      "answer": "CRISPRi (CRISPR interference) uses a catalytically dead Cas9 (dCas9) fused to a transcriptional repressor (e.g., KRAB domain) to silence gene expression without cutting DNA. CRISPRa (CRISPR activation) fuses dCas9 to transcriptional activators (e.g., VP64, VPR, SAM, or SunTag) to upregulate gene expression. CRISPRi is used to study loss-of-function phenotypes, identify essential genes, and perform repression screens. CRISPRa is used for gain-of-function screens, identifying genes whose overexpression confers a phenotype, studying non-coding RNA activation, and rescuing haploinsufficient conditions. Unlike knockout screens, both preserve the genomic sequence.",
+      "source": { "type": "paper", "doi": "10.1016/j.cell.2014.09.029", "title": "Repurposing CRISPR as an RNA-Guided Platform for Sequence-Specific Control of Gene Expression" },
+      "topic": "gene-perturbation",
+      "difficulty": "easy",
+      "type": "comparative"
+    },
+    {
+      "id": "gp-004",
+      "question": "What is GEARS and how does it predict transcriptional responses to genetic perturbations?",
+      "answer": "GEARS (Gene Expression And Regulation by Similarity) is a graph neural network framework that predicts single-cell transcriptional responses to genetic perturbations, including combinations of multiple gene knockouts. It operates by: (1) representing genes as nodes in a biological knowledge graph (using GO terms and co-expression networks); (2) learning perturbation-specific embeddings that capture how each gene's knockout affects the transcriptome; (3) propagating perturbation signals through the graph using message passing; and (4) predicting the resulting gene expression profile. GEARS is notable for generalizing to unseen perturbation combinations and double-knockout predictions by leveraging biological prior knowledge.",
+      "source": { "type": "paper", "doi": "10.1038/s41587-023-01905-6", "title": "Predicting transcriptional outcomes of novel multigene perturbations with GEARS" },
+      "topic": "gene-perturbation",
+      "difficulty": "hard",
+      "type": "mechanistic"
+    },
+    {
+      "id": "gp-005",
+      "question": "What are the main steps in the MAGeCK pipeline for analyzing pooled CRISPR screens?",
+      "answer": "MAGeCK (Model-based Analysis of Genome-wide CRISPR Knockout) processes pooled CRISPR screen data in several steps: (1) Read counting: raw sequencing reads are mapped to the sgRNA library to generate a count table of sgRNA abundance before and after selection; (2) Normalization: median ratio normalization corrects for sequencing depth differences; (3) sgRNA-level test: a negative binomial model tests for significant changes in sgRNA abundance between conditions; (4) Gene-level aggregation: the RRA (Robust Rank Aggregation) algorithm combines sgRNA-level p-values to produce gene-level scores, accounting for the number and consistency of sgRNAs per gene; (5) Output: ranked gene lists with FDR-corrected enrichment or depletion scores for positive or negative selection screens.",
+      "source": { "type": "paper", "doi": "10.1038/nbt.3166", "title": "Genome-scale CRISPR-Cas9 knockout screening in human cells" },
+      "topic": "gene-perturbation",
+      "difficulty": "medium",
+      "type": "procedural"
+    },
+    {
+      "id": "gp-006",
+      "question": "What distinguishes a positive selection screen from a negative selection screen in CRISPR pooled screens?",
+      "answer": "In a negative selection screen (also called dropout screen), sgRNAs targeting essential genes cause cell death or reduced proliferation, resulting in depletion of those sgRNAs from the population over time. This identifies genes required for cell survival or growth (essential genes, fitness genes). In a positive selection screen, sgRNAs targeting genes whose loss confers a growth advantage (e.g., tumor suppressor knockouts, drug resistance genes) become enriched. The experimental design differs: negative screens require a sufficient number of cell doublings and a large initial population to detect dropout signals, while positive screens require an appropriate selective pressure (drug, toxin, immune evasion) that provides the enrichment signal.",
+      "source": { "type": "paper", "doi": "10.1126/science.1247005", "title": "Genome-Scale CRISPR-Cas9 Knockout Screening in Human Cells" },
+      "topic": "gene-perturbation",
+      "difficulty": "easy",
+      "type": "comparative"
+    },
+    {
+      "id": "gp-007",
+      "question": "How do genetic interaction scores (epistasis) reveal functional relationships in combinatorial CRISPR screens?",
+      "answer": "Genetic interaction (GI) scores quantify how the combined effect of two gene perturbations deviates from expectation. The GI score (or epsilon score) is calculated as: observed_double_KO_fitness - expected_fitness, where expected fitness = single_KO1_fitness × single_KO2_fitness (multiplicative model). A negative GI score (synthetic lethality) means the double knockout is more lethal than expected, indicating the two genes buffer each other or act in parallel pathways. A positive GI score (buffering/suppression) means the double knockout is less severe than expected, suggesting the genes act in the same pathway. Mapping thousands of GI scores across gene pairs creates a functional interaction network that reveals pathway membership and can identify synthetic lethal drug targets.",
+      "source": { "type": "paper", "doi": "10.1126/science.aac7557", "title": "A systematic mammalian genetic interaction map reveals pathways underlying ricin susceptibility" },
+      "topic": "gene-perturbation",
+      "difficulty": "hard",
+      "type": "analytical"
+    },
+    {
+      "id": "gp-008",
+      "question": "What are off-target effects in CRISPR-Cas9 and how can they be minimized?",
+      "answer": "Off-target effects occur when Cas9 cleaves DNA at unintended genomic sites with sequence similarity to the target (allowing mismatches, particularly in the PAM-distal region of the protospacer). They can be minimized through: (1) Computational sgRNA design using tools like CRISPRscan, CHOPCHOP, or Benchling that predict and avoid off-target sites; (2) Using high-fidelity Cas9 variants (eSpCas9, HiFi Cas9, HypaCas9) with reduced off-target activity; (3) Truncated sgRNAs (17-18 nt instead of 20 nt) that reduce off-target binding; (4) Paired nickases (Cas9n D10A + two sgRNAs) requiring two adjacent nicks to create a DSB; (5) Base editors or prime editors that avoid DSBs altogether; (6) Delivery optimization to reduce Cas9 exposure time (RNP electroporation vs. plasmid). Validation methods include GUIDE-seq, CIRCLE-seq, and DISCOVER-seq.",
+      "source": { "type": "paper", "doi": "10.1038/nbt.2883", "title": "Dimeric CRISPR RNA-guided FokI nucleases for highly specific genome editing" },
+      "topic": "gene-perturbation",
+      "difficulty": "medium",
+      "type": "analytical"
+    },
+    {
+      "id": "gp-009",
+      "question": "What is CROP-seq and how does it differ from Perturb-seq?",
+      "answer": "CROP-seq (CRISPR droplet sequencing) and Perturb-seq are both methods that link CRISPR perturbations to single-cell transcriptome readouts, but they differ in key implementation details. CROP-seq (Datlinger et al. 2017) uses a lentiviral vector where the sgRNA is expressed from a Pol III promoter and a barcode in the 3' UTR of a reporter transcript is captured by poly-A sequencing, allowing sgRNA identity to be inferred from the mRNA channel. Perturb-seq (Dixit et al. 2016) uses a direct capture approach where the sgRNA sequence is incorporated into the 3' end of a transcript captured by the 10x bead. Both achieve one-cell-one-perturbation pairing. Later versions of both methods were unified under the CROP-seq/direct capture approach compatible with 10x Genomics Chromium, making the practical distinction minimal in current protocols.",
+      "source": { "type": "paper", "doi": "10.1038/nmeth.4177", "title": "Pooled CRISPR screening with single-cell transcriptome readout" },
+      "topic": "gene-perturbation",
+      "difficulty": "medium",
+      "type": "comparative"
+    },
+    {
+      "id": "gp-010",
+      "question": "How is gene essentiality defined and measured in the context of CRISPR screens?",
+      "answer": "Gene essentiality refers to a gene's requirement for cell survival and proliferation. In CRISPR screens, it is measured by the Gene Effect score (DepMap) or CERES score: after performing genome-wide knockout screens across many cell lines, sgRNA dropout rates are normalized to remove copy-number artifacts and expressed as a continuous score. A score of -1 (TP53 effect) represents typical essential gene behavior; scores below -0.5 are often classified as 'common essential.' Pan-essential genes (essential in >90% of cell lines) include core spliceosome, ribosomal, and proteasome components. Context-dependent essentials are essential only in specific lineages or genetic backgrounds (e.g., KRAS in KRAS-mutant cancers). The DepMap project has profiled >1000 cancer cell lines to create a genome-wide essentiality map.",
+      "source": { "type": "web", "url": "https://depmap.org/portal/", "title": "Cancer Dependency Map (DepMap)" },
+      "topic": "gene-perturbation",
+      "difficulty": "medium",
+      "type": "factual"
+    },
+    {
+      "id": "gp-011",
+      "question": "What design principles guide effective sgRNA library construction for genome-wide CRISPR screens?",
+      "answer": "Effective genome-wide sgRNA library design follows several principles: (1) Coverage: 3-6 sgRNAs per gene to ensure statistical power and account for variable cutting efficiency; (2) On-target activity: sgRNAs are ranked by predicted cutting efficiency using algorithms like Rule Set 2 (Doench score), Azimuth, or DeepCRISPR; (3) Off-target minimization: filter sgRNAs with predicted off-targets sharing >3 mismatches in the seed region; (4) Non-targeting controls: 500-1000 negative control sgRNAs (scrambled sequences with no human genome hits) and 100-200 positive controls (essential genes) for normalization and QC; (5) Library scale: for viability screens, the library is delivered at low MOI (<0.3) to ensure most cells receive one sgRNA; (6) Coverage depth: maintain at least 200-500 cells per sgRNA throughout the screen to preserve statistical power.",
+      "source": { "type": "paper", "doi": "10.1038/nbt.3437", "title": "Optimized sgRNA design to maximize activity and minimize off-target effects of CRISPR-Cas9" },
+      "topic": "gene-perturbation",
+      "difficulty": "hard",
+      "type": "procedural"
+    },
+    {
+      "id": "gp-012",
+      "question": "What is synthetic lethality and why is it therapeutically relevant in cancer?",
+      "answer": "Synthetic lethality occurs when simultaneous loss of two genes is lethal, but loss of either gene alone is tolerated. In cancer, this principle is exploited because tumors often harbor somatic mutations that inactivate one gene—if the synthetic lethal partner of that gene is then inhibited therapeutically, only tumor cells (lacking the first gene) die while normal cells (retaining both genes) survive. The canonical example is PARP inhibition in BRCA1/2-mutant cancers: BRCA mutations impair homologous recombination, making cells dependent on PARP-mediated base excision repair for survival. PARP inhibitors (olaparib, rucaparib) exploit this vulnerability. Genome-wide CRISPR screens systematically map synthetic lethal relationships, enabling discovery of novel drug targets for genetically defined patient populations.",
+      "source": { "type": "paper", "doi": "10.1038/nature02485", "title": "Specific killing of BRCA2-deficient tumours with inhibitors of poly(ADP-ribose) polymerase" },
+      "topic": "gene-perturbation",
+      "difficulty": "medium",
+      "type": "analytical"
+    },
+    {
+      "id": "gp-013",
+      "question": "How does base editing differ from prime editing in terms of mechanism and application?",
+      "answer": "Base editing converts one DNA base to another without creating a DSB or requiring a repair template. CBEs (cytosine base editors) convert C•G to T•A using a cytidine deaminase fused to Cas9 nickase. ABEs (adenine base editors) convert A•T to G•C using an evolved adenosine deaminase. The editing window is typically within positions 4-8 of the protospacer. Prime editing uses a Cas9 nickase fused to a reverse transcriptase and a pegRNA (prime editing guide RNA) that encodes both the target sequence and the desired edit. The reverse transcriptase copies the pegRNA template into the nicked strand, enabling all 12 types of point mutations, small insertions, and deletions. Prime editing is more versatile but less efficient than base editing for the specific transitions it covers. Base editing is faster and more efficient for C→T or A→G changes; prime editing handles any base change or small indel without requiring a DSB.",
+      "source": { "type": "paper", "doi": "10.1038/s41587-019-0343-4", "title": "Search-and-replace genome editing without double-strand breaks or donor DNA" },
+      "topic": "gene-perturbation",
+      "difficulty": "hard",
+      "type": "comparative"
+    },
+    {
+      "id": "gp-014",
+      "question": "What computational approaches are used to model gene regulatory networks from Perturb-seq data?",
+      "answer": "Perturb-seq data enables construction of gene regulatory networks (GRNs) through several computational approaches: (1) SCENIC/SCENIC+ uses co-expression modules (regulons) and cis-regulatory motif analysis to identify transcription factor (TF) targets; (2) Causal graph inference methods (e.g., NOTEARS, DAG-GNN) model directional regulatory relationships from expression correlations conditioned on perturbation identity; (3) GEARS and CPA (Compositional Perturbation Autoencoder) learn latent perturbation representations that implicitly encode gene-gene interactions; (4) Factor analysis methods (scVI, MOFA) decompose expression variation into latent regulatory programs; (5) Direct causal inference using the interventional nature of perturbation data (each knockout is an experiment) to infer edges more confidently than from observational data alone. Large-scale datasets (e.g., Norman et al. 2019 with 287 genetic combinations) provide ground truth for benchmarking GRN inference.",
+      "source": { "type": "paper", "doi": "10.1016/j.cell.2019.07.048", "title": "Exploring genetic interaction manifolds constructed from rich single-cell phenotypes" },
+      "topic": "gene-perturbation",
+      "difficulty": "hard",
+      "type": "analytical"
+    },
+    {
+      "id": "gp-015",
+      "question": "What is the role of the PAM sequence in CRISPR-Cas9 targeting, and what are PAM-less variants?",
+      "answer": "The PAM (Protospacer Adjacent Motif) is a short DNA sequence (typically 5'-NGG-3' for SpCas9) immediately downstream of the target sequence that is required for Cas9 binding and activation. The PAM is recognized by the PAM-interacting (PI) domain of Cas9 and triggers R-loop formation allowing sgRNA-DNA hybridization. The PAM requirement limits targetable sequences to roughly every 8 bp in the human genome (one NGG per ~8 bp on average). PAM-flexibility has been expanded through engineering: SpCas9-NG recognizes NG PAMs; SpRY recognizes near-PAMless sequences (NRN>NYN); SaCas9 uses NNGRRT; Cas12a (Cpf1) uses T-rich PAMs (TTTV). True PAMless variants (SpRY and others) allow targeting virtually any genomic sequence but may have reduced specificity.",
+      "source": { "type": "paper", "doi": "10.1126/science.aax9249", "title": "Programmable base editing of A•T to G•C in genomic DNA without DNA cleavage" },
+      "topic": "gene-perturbation",
+      "difficulty": "medium",
+      "type": "factual"
+    },
+    {
+      "id": "gp-016",
+      "question": "How does the CPA (Compositional Perturbation Autoencoder) model predict responses to unseen perturbations?",
+      "answer": "CPA (Lotfollahi et al. 2021) is a deep learning model that factorizes the transcriptional response to perturbations into additive latent components. It models a cell's gene expression as a composition of: (1) a basal cell state embedding (cell type, batch), and (2) additive perturbation embeddings (one per gene or drug). The key insight is additivity: the effect of a double perturbation is approximated as the sum of individual perturbation embeddings in latent space. This enables out-of-distribution prediction for unseen perturbation combinations. CPA is trained on single-perturbation data and uses a classifier adversarial component to ensure the latent space is disentangled. It can also model drug responses (doses) by scaling perturbation embeddings. Compared to GEARS, CPA is more flexible for drug response prediction but relies on the additivity assumption that fails for strong epistatic interactions.",
+      "source": { "type": "paper", "doi": "10.1038/s41592-021-01357-5", "title": "Predicting cellular responses to complex perturbations in high-throughput screens" },
+      "topic": "gene-perturbation",
+      "difficulty": "hard",
+      "type": "mechanistic"
+    },
+    {
+      "id": "gp-017",
+      "question": "What is the Perturb-CITE-seq method and what additional information does it capture over standard Perturb-seq?",
+      "answer": "Perturb-CITE-seq (Frangieh et al. 2021) combines CRISPR perturbations with CITE-seq (Cellular Indexing of Transcriptomes and Epitopes by Sequencing) to simultaneously measure three modalities in each single cell: (1) gene expression (transcriptome, via scRNA-seq), (2) protein surface markers (via antibody-derived tags, ADTs), and (3) perturbation identity (via sgRNA capture). This multi-modal readout is particularly powerful because protein levels and transcriptome are often discordant (post-transcriptional regulation), and surface proteins are functionally important for immune cell identity and drug targeting. The method was applied to study melanoma immune evasion, identifying genes whose knockout affected both transcriptional programs and surface protein expression relevant to immunotherapy response.",
+      "source": { "type": "paper", "doi": "10.1038/s41588-021-00779-1", "title": "Multimodal pooled Perturb-CITE-seq screens in patient models define mechanisms of cancer immune evasion" },
+      "topic": "gene-perturbation",
+      "difficulty": "hard",
+      "type": "factual"
+    },
+    {
+      "id": "gp-018",
+      "question": "How is guide RNA efficiency predicted computationally, and what features matter most?",
+      "answer": "sgRNA cutting efficiency is predicted by sequence-based machine learning models. Key features identified as important include: (1) Nucleotide composition at specific positions (especially in the seed region, positions 1-12 from PAM); (2) GC content (optimal 40-70%); (3) Absence of T runs (>4 consecutive T's terminates Pol III transcription); (4) Specific dinucleotide patterns (e.g., avoiding 5'-G-20 position can improve expression); (5) Secondary structure of the sgRNA itself (hairpin formation reduces activity); (6) Position within the gene (5' exons preferred for loss-of-function). Notable models: Doench Rule Set 1/2 (Random Forest, trained on GFP dropout screens), DeepCRISPR (CNN), CRISPRscan, and ENPAM-GB. These models are trained on large pooled screen datasets and achieve ~0.5-0.65 Spearman correlation with experimental efficiency—sufficient for library design but imperfect.",
+      "source": { "type": "paper", "doi": "10.1038/nbt.3437", "title": "Optimized sgRNA design to maximize activity and minimize off-target effects of CRISPR-Cas9" },
+      "topic": "gene-perturbation",
+      "difficulty": "medium",
+      "type": "analytical"
+    },
+    {
+      "id": "gp-019",
+      "question": "What are the key differences between pooled and arrayed CRISPR screens?",
+      "answer": "Pooled screens deliver a library of sgRNAs collectively to a large cell population, with cells receiving individual sgRNAs (low MOI). Readout is typically by deep sequencing of sgRNA abundance (dropout or enrichment). Advantages: massively parallel (genome-wide in one experiment), low cost per gene tested, amenable to selection-based readouts. Limitations: readout must be cell-level fitness or reporter-based; cannot easily measure complex phenotypes like morphology or spatial location. Arrayed screens deliver one sgRNA per well in multi-well plates. Each well is an independent experiment. Advantages: enables rich phenotypic readouts (imaging, multiplexed protein assays, metabolomics, diverse ELISA readouts); simpler analysis per well. Limitations: expensive, lower throughput (~hundreds to thousands of genes), requires liquid handling robotics. Hybrid approaches (optical pooled screening, SPARCS) attempt to bridge this gap by barcoding cells in pooled format and extracting images per cell.",
+      "source": { "type": "paper", "doi": "10.1038/s41596-021-00604-z", "title": "Genome-wide CRISPR screen design considerations" },
+      "topic": "gene-perturbation",
+      "difficulty": "easy",
+      "type": "comparative"
+    },
+    {
+      "id": "gp-020",
+      "question": "How does scGPT use perturbation data for transfer learning in single-cell foundation models?",
+      "answer": "scGPT (Cui et al. 2024) is a generative pre-trained transformer foundation model trained on 33 million human single-cell transcriptomes. For perturbation prediction, scGPT is fine-tuned on datasets like Norman et al. (2019) Perturb-seq data. The model represents each gene as a token with its expression value and learns attention patterns capturing gene-gene dependencies. Fine-tuning for perturbation involves: (1) Adding a perturbation condition token to the input sequence indicating which gene is knocked out; (2) Training the model to predict the perturbed expression profile from the unperturbed state plus the perturbation token; (3) The attention mechanism captures which genes respond to a given perturbation and how. scGPT shows competitive performance on out-of-distribution perturbation prediction and leverages its pre-trained gene embeddings to generalize to unseen perturbations not present during fine-tuning.",
+      "source": { "type": "paper", "doi": "10.1038/s41592-024-02201-0", "title": "scGPT: toward building a foundation model for single-cell multi-omics using generative AI" },
+      "topic": "gene-perturbation",
+      "difficulty": "hard",
+      "type": "mechanistic"
+    },
+    {
+      "id": "gp-021",
+      "question": "What is the RNAi mechanism and how does it compare to CRISPR knockdowns for perturbation studies?",
+      "answer": "RNAi (RNA interference) triggers sequence-specific mRNA degradation through the RISC complex. A short hairpin RNA (shRNA) or siRNA is processed by Dicer into ~21 nt duplexes; the guide strand is loaded into RISC and directs Ago2-mediated cleavage or translational repression of complementary mRNAs. Compared to CRISPR knockouts: (1) Completeness: CRISPR achieves full gene inactivation (frameshift mutations); RNAi achieves variable knockdown (50-90%), which may miss strong phenotypes but is better for studying essential genes; (2) On-target specificity: CRISPR is DNA-level; RNAi causes significant off-target effects via miRNA-like seed-region matching; (3) Scalability: both support genome-wide pooled screens; (4) Duration: CRISPR edits are permanent; RNAi is transient (unless stably integrated); (5) Application: RNAi works post-transcriptionally, making it useful for studying mRNA stability; CRISPR can target non-coding regions and promoters.",
+      "source": { "type": "paper", "doi": "10.1016/j.cell.2006.01.040", "title": "A Lentiviral RNAi Library for Human and Mouse Genes Applied to an Arrayed Viral High-Content Screen" },
+      "topic": "gene-perturbation",
+      "difficulty": "medium",
+      "type": "comparative"
+    },
+    {
+      "id": "gp-022",
+      "question": "What normalization strategies are commonly applied in single-cell Perturb-seq analysis?",
+      "answer": "Single-cell Perturb-seq data requires careful normalization to remove technical artifacts while preserving biological perturbation signals: (1) Library size normalization: total count normalization (dividing by total UMIs per cell × 10,000, then log1p) removes sequencing depth differences; (2) Cell cycle regression: cells are scored for S/G2M phase marker expression and regressed out to prevent cell cycle as a confound; (3) Ambient RNA correction: tools like SoupX or CellBender remove RNA contamination from the cell suspension (especially important in droplet-based methods); (4) Doublet removal: Scrublet or DoubletFinder identifies cell barcodes containing two cells; (5) Pseudo-bulk aggregation: cells sharing the same perturbation are aggregated into pseudo-bulk profiles for differential expression analysis using DESeq2 or edgeR, which are better calibrated than single-cell DE methods for perturbation comparisons; (6) Confounder correction: batch effects from plate position or library preparation are regressed using ComBat or scVI.",
+      "source": { "type": "paper", "doi": "10.1186/s13059-019-1874-1", "title": "A Python library for probabilistic analysis of single-cell omics data" },
+      "topic": "gene-perturbation",
+      "difficulty": "medium",
+      "type": "procedural"
+    }
+  ]
+}

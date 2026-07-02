@@ -1,0 +1,24 @@
+{
+  "id": "Q0014",
+  "question": "Which clinical phase usually involves larger confirmatory studies to support approval?\nA. Phase 1\nB. Phase 2\nC. Phase 3\nD. Phase 0",
+  "type": "single-choice",
+  "difficulty": 2,
+  "answer": {
+    "type": "exact",
+    "content": "C"
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-015-clinical-trial-phases",
+      "original_text": "Clinical trials evaluate investigational drugs in humans through staged phases. Phase 1 usually studies safety, tolerability, dosage, and pharmacokinetics in a small group of participants. Phase 2 explores efficacy and side effects in patients with the target condition and helps select dose and endpoints. Phase 3 tests efficacy and safety in larger populations to support regulatory decisions."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "clinical-trials",
+        "phase-3"
+      ]
+    }
+  ]
+}

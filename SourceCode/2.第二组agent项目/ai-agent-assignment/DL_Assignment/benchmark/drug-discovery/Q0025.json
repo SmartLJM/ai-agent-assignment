@@ -1,0 +1,24 @@
+{
+  "id": "Q0025",
+  "question": "Which resource is best suited for retrieving molecular weight through an agent skill?\nA. PubChem\nB. Phase 3 protocol\nC. Clinical trial consent form\nD. Regulatory labeling only",
+  "type": "single-choice",
+  "difficulty": 2,
+  "answer": {
+    "type": "exact",
+    "content": "A"
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-019-pubchem-chemical-information",
+      "original_text": "PubChem is an open chemistry database that provides information about chemical substances, compounds, structures, identifiers, synonyms, computed properties, assays, bioactivity links, patents, literature links, and safety annotations. It is useful for retrieving molecular formula, molecular weight, canonical SMILES, InChIKey, and IUPAC names."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "pubchem",
+        "pug-rest"
+      ]
+    }
+  ]
+}

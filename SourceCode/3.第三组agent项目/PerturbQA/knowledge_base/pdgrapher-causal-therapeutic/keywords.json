@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "PDGrapher: Causally Inspired GNN for Combinatorial Therapeutic Perturbation Prediction",
+  "keywords": ["PDGrapher", "graph neural network", "causal model", "therapeutic targets", "phenotype-driven", "combinatorial perturbation", "disease reversal", "PPI network"]
+}

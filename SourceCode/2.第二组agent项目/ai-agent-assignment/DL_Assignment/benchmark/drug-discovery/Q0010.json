@@ -1,0 +1,38 @@
+{
+  "id": "Q0010",
+  "question": "Name two early toxicology or safety concerns that can be screened before clinical trials.",
+  "type": "short-answer",
+  "difficulty": 3,
+  "answer": {
+    "type": "keypoint",
+    "content": "Examples include cytotoxicity, genotoxicity, hERG channel inhibition, mitochondrial toxicity, reactive metabolite risk, liver toxicity, and off-target pharmacology.",
+    "keypoints": [
+      {
+        "point": "cytotoxicity or genotoxicity",
+        "score": 3.33
+      },
+      {
+        "point": "hERG or mitochondrial toxicity",
+        "score": 3.33
+      },
+      {
+        "point": "off-target or liver toxicity",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-011-toxicology-safety",
+      "original_text": "Toxicology and safety screening evaluate whether a compound may cause harmful biological effects. Early screening can include cytotoxicity, genotoxicity, hERG channel inhibition, mitochondrial toxicity, reactive metabolite risk, liver toxicity, and off-target pharmacology. Later safety work includes animal toxicology, safety pharmacology, dose-range finding, and risk assessment."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "toxicology",
+        "safety"
+      ]
+    }
+  ]
+}

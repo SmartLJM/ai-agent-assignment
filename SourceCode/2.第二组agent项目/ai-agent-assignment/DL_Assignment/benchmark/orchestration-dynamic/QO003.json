@@ -1,0 +1,12 @@
+{
+  "id": "QO003",
+  "question": "Why is a docking score not enough to approve a drug?",
+  "type": "orchestration-test",
+  "difficulty": 6,
+  "expected_dynamic_chain": [
+    "multi-hop-retrieval",
+    "synthesizer",
+    "validator"
+  ],
+  "evaluation_note": "Used to demonstrate automatic workflow generation, dynamic adjustment, loop/retry, or error recovery."
+}

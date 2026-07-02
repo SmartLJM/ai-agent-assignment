@@ -1,0 +1,5 @@
+{
+  "topic": "standardized evaluation framework for gene expression models",
+  "title": "GGE Standardized Evaluation Framework",
+  "keywords": ["GGE", "Generated Genetic Expression Evaluator", "evaluation framework", "standardization", "Wasserstein distance", "MMD", "Energy Distance", "PCA space", "DEG space", "raw space", "perturbation-effect correlation", "reproducibility", "benchmarking", "Python", "open-source"]
+}

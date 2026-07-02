@@ -1,0 +1,18 @@
+{
+  "knowledge_set_id": "dd-017-ai-machine-learning",
+  "title": "Artificial intelligence in drug discovery: recent advances and future perspectives",
+  "source_type": "research-paper",
+  "authors": [
+    "Jiménez-Luna, J.",
+    "Grisoni, F.",
+    "Schneider, G."
+  ],
+  "journal": "Nature Reviews Drug Discovery",
+  "publisher": "Springer Nature",
+  "doi": "10.1038/s41573-020-00094-5",
+  "url": "https://doi.org/10.1038/s41573-020-00094-5",
+  "publication_date": "2020",
+  "accessed": "2026-06-19",
+  "content_file": "content/content.md",
+  "license_note": "Curated educational summary included locally; original/source metadata is recorded for traceability."
+}

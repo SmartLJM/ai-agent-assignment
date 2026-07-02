@@ -1,0 +1,13 @@
+.venv/
+.idea/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+
+storage/chroma/
+storage/vector_store*/
+storage/*.db
+storage/*.sqlite
+storage/*.sqlite3

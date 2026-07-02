@@ -1,0 +1,18 @@
+{
+  "knowledge_set_id": "dd-010-adme",
+  "title": "SwissADME: a free web tool to evaluate pharmacokinetics, drug-likeness and medicinal chemistry friendliness",
+  "source_type": "research-paper",
+  "authors": [
+    "Daina, A.",
+    "Michielin, O.",
+    "Zoete, V."
+  ],
+  "journal": "Scientific Reports",
+  "publisher": "Springer Nature",
+  "doi": "10.1038/srep42717",
+  "url": "https://doi.org/10.1038/srep42717",
+  "publication_date": "2017",
+  "accessed": "2026-06-19",
+  "content_file": "content/content.md",
+  "license_note": "Curated educational summary included locally; original/source metadata is recorded for traceability."
+}

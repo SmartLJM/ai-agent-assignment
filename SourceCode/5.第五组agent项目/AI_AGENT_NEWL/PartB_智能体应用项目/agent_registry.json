@@ -1,0 +1,107 @@
+{
+  "text-retriever": {
+    "capability": "retrieve_text_evidence",
+    "inputs": ["query"],
+    "outputs": ["text_evidence"],
+    "can_parallel": true,
+    "fallback": "keyword-retriever"
+  },
+  "keyword-retriever": {
+    "capability": "fallback_keyword_search",
+    "inputs": ["query"],
+    "outputs": ["text_evidence"],
+    "can_parallel": true,
+    "fallback": null
+  },
+  "query-rewriter": {
+    "capability": "rewrite_query_for_retry",
+    "inputs": ["query", "quality_report"],
+    "outputs": ["query", "rewrite_reason"],
+    "can_parallel": false,
+    "fallback": null
+  },
+  "image-agent": {
+    "capability": "load_and_summarize_case_image",
+    "inputs": ["case_id"],
+    "outputs": ["image_summary"],
+    "can_parallel": true,
+    "fallback": "case-metadata-agent"
+  },
+  "case-metadata-agent": {
+    "capability": "list_available_cases_and_select_fallback",
+    "inputs": ["case_id"],
+    "outputs": ["case_recovery"],
+    "can_parallel": false,
+    "fallback": null
+  },
+  "mask-agent": {
+    "capability": "analyze_segmentation_mask",
+    "inputs": ["case_id"],
+    "outputs": ["mask_statistics"],
+    "can_parallel": true,
+    "fallback": "table-statistics-agent"
+  },
+  "table-statistics-agent": {
+    "capability": "retrieve_case_table_statistics",
+    "inputs": ["case_id", "query"],
+    "outputs": ["table_statistics"],
+    "can_parallel": true,
+    "fallback": "case-metadata-agent"
+  },
+  "multi-case-retriever": {
+    "capability": "retrieve_multiple_case_statistics",
+    "inputs": ["query"],
+    "outputs": ["multi_case_statistics"],
+    "can_parallel": true,
+    "fallback": "table-statistics-agent"
+  },
+  "overlay-visualizer": {
+    "capability": "create_image_mask_overlay",
+    "inputs": ["case_id", "axis", "slice_index"],
+    "outputs": ["overlay_result"],
+    "can_parallel": false,
+    "fallback": "ground-truth-overlay-agent"
+  },
+  "ground-truth-overlay-agent": {
+    "capability": "create_ground_truth_overlay",
+    "inputs": ["case_id", "axis", "slice_index"],
+    "outputs": ["overlay_result"],
+    "can_parallel": false,
+    "fallback": null
+  },
+  "medsam-agent": {
+    "capability": "optional_medsam_slice_prediction",
+    "inputs": ["case_id", "slice_index"],
+    "outputs": ["prediction_mask"],
+    "can_parallel": false,
+    "fallback": "ground-truth-overlay-agent"
+  },
+  "small-target-review-agent": {
+    "capability": "review_small_foreground_mask",
+    "inputs": ["mask_statistics"],
+    "outputs": ["target_review"],
+    "can_parallel": false,
+    "fallback": null
+  },
+  "large-region-review-agent": {
+    "capability": "review_large_foreground_mask",
+    "inputs": ["mask_statistics"],
+    "outputs": ["target_review"],
+    "can_parallel": false,
+    "fallback": null
+  },
+  "quality-validator": {
+    "capability": "validate_intermediate_results",
+    "inputs": ["context"],
+    "outputs": ["quality_report"],
+    "can_parallel": false,
+    "fallback": null
+  },
+  "report-agent": {
+    "capability": "merge_outputs_into_final_report",
+    "inputs": ["context"],
+    "outputs": ["final_report"],
+    "can_parallel": false,
+    "fallback": null
+  }
+}

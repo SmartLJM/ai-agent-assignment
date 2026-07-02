@@ -1,0 +1,38 @@
+{
+  "id": "Q0019",
+  "question": "In agentic RAG, what should happen if retrieval confidence is low?",
+  "type": "short-answer",
+  "difficulty": 4,
+  "answer": {
+    "type": "keypoint",
+    "content": "If retrieval confidence is low, the agent should adjust the workflow by broadening the query, increasing retrieval depth, retrying, using a fallback source, or reporting the limitation.",
+    "keypoints": [
+      {
+        "point": "broaden query",
+        "score": 3.33
+      },
+      {
+        "point": "retry or increase retrieval depth",
+        "score": 3.33
+      },
+      {
+        "point": "fallback/report limitation",
+        "score": 3.33
+      }
+    ]
+  },
+  "sources": [
+    {
+      "knowledge_set_id": "dd-020-agentic-rag",
+      "original_text": "Agentic retrieval-augmented generation combines retrieval, planning, tool use, memory, and answer validation. In a drug-discovery Q&A system, the agent should decide whether a question needs internal knowledge retrieval, a chemical database skill, memory retrieval, multi-hop comparison, or a fallback strategy."
+    }
+  ],
+  "theme": [
+    {
+      "drug-discovery": [
+        "agentic-rag",
+        "verification"
+      ]
+    }
+  ]
+}

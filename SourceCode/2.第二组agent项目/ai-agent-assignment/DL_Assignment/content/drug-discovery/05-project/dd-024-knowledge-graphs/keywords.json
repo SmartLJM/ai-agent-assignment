@@ -1,0 +1,8 @@
+{
+  "drug-discovery": [
+    "knowledge-graph",
+    "drug-target-disease",
+    "multi-hop-reasoning",
+    "graph-rag"
+  ]
+}

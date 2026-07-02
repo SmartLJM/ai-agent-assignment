@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "Biolord: Disentangling Single-Cell Data for Perturbation and Multi-Omic Analysis",
+  "keywords": ["biolord", "disentanglement", "single-cell", "multi-omic", "counterfactual", "perturbation prediction", "drug response", "latent space"]
+}

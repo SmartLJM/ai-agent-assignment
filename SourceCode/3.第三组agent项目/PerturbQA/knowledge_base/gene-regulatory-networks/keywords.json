@@ -1,0 +1,5 @@
+{
+  "topic": "gene-perturbation",
+  "title": "Gene Regulatory Network Inference from Perturbation Data",
+  "keywords": ["gene-regulatory-network", "transcription-factor", "grn-inference", "scenic", "causal-inference", "regulon", "network-reconstruction", "perturbation-data", "cis-regulatory", "motif"]
+}
